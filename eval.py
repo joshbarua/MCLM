@@ -2,6 +2,7 @@ import argparse
 import os
 import json
 import pandas as pd
+import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
@@ -9,8 +10,8 @@ import huggingface_hub
 
 huggingface_hub.login("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")
 
-def main(model_path, language, output_path, dataset):
-    sampling_params = SamplingParams(temperature=0.0, max_tokens=8192)
+def main(model_path, language, output_path, dataset, max_model_len):
+    sampling_params = SamplingParams(temperature=0.0, max_tokens=max_model_len*0.8)
     
     # Load dataset
     ds = load_dataset(dataset)
@@ -18,7 +19,7 @@ def main(model_path, language, output_path, dataset):
     
     # Load model and tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_path)
-    llm = LLM(model=model_path,max_model_len=8192) #, tensor_parallel_size=1)
+    llm = LLM(model=model_path,max_model_len=max_model_len, tensor_parallel_size=torch.cuda.device_count())
     
     # Process language
     col_name = f"problem_{language}"
@@ -76,6 +77,7 @@ if __name__ == "__main__":
     parser.add_argument("language", type=str, help="Language for the problems (e.g., Korean, Chinese, etc.).")
     parser.add_argument("output_path", type=str, help="Path to save output JSONL file.")
     parser.add_argument("dataset", type=str, help="Path to dataset")
+    parser.add_argument("max_model_len", type=int, help="Max length for model.")
     args = parser.parse_args()
     
-    main(args.model_path, args.language, args.output_path, args.dataset)
+    main(args.model_path, args.language, args.output_path, args.dataset, args.max_model_len)
