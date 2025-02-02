@@ -34,7 +34,7 @@ output_dir="outputs/"
 for model in "${models[@]}"; do
     for language in "${languages[@]}"; do
         echo "Running model: $model for language: $language"
-        python eval.py "$model" "$language" "$output_dir" "amphora/m-math500"
+        python eval.py "$model" "$language" "$output_dir" "amphora/m-math500" 8192
     done
 done
 
