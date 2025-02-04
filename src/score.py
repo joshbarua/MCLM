@@ -30,9 +30,9 @@ def get_score(input_path):
         try:
             text = row.response
             answer = parse(text)
-            gold = parse(row.answer)
+             gold = parse(str(row.answer))
             is_correct_math_verify = verify(gold, answer)
-            is_correct_rule = any([str(a) in row.answer for a in answer]+[row.answer in str(a) for a in answer])
+            is_correct_rule = any([str(a) in str(row.answer) for a in answer]+[str(row.answer) in str(a) for a in answer])
             
             if is_correct_math_verify:
                 correct +=1

@@ -1,15 +1,8 @@
 #!/bin/bash
 
 models=(
-    # "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-    # "Qwen/Qwen2.5-Math-7B-Instruct"
-    "meta-llama/Llama-3.1-8B-Instruct"
-    # "nvidia/AceMath-7B-Instruct"
-    # "Qwen/Qwen2.5-7B-Instruct"
-    # "CohereForAI/aya-expanse-8b"
-    # "CohereForAI/c4ai-command-r7b-12-2024"
-    "google/gemma-2-9b-it"
-    # "meta-llama/Llama-3.2-1B-Instruct"
+    # Add your model identifiers here. For example:
+    "euler/r1_sft_1.5b_sol_ckpts/71"
 )
 
 languages=(
@@ -30,30 +23,18 @@ languages=(
 )
 
 output_dir="outputs/"
-# Loop through models and languages
-for model in "${models[@]}"; do
-    for language in "${languages[@]}"; do
-        echo "Running model: $model for language: $language"
-        python eval.py "$model" "$language" "$output_dir" "amphora/m-math500" 8192
-    done
-done
 
-# # Define models and languages
-# models=(
-#     "Qwen/Qwen2.5-1.5B-Instruct"
-#     "nvidia/AceMath-1.5B-Instruct"
-#     "Qwen/Qwen2.5-Math-1.5B-Instruct"
-#     "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-#     "OLAIR/test-models"
-#     # "meta-llama/Llama-3.2-1B-Instruct"
-# )
+# Convert the arrays into space-separated strings.
+model_args="${models[@]}"
+language_args="${languages[@]}"
 
-# # Loop through models and languages
-# for model in "${models[@]}"; do
-#     for language in "${languages[@]}"; do
-#         echo "Running model: $model for language: $language"
-#         python eval.py "$model" "$language" "$output_dir" "OLAIR/M-IMO"
-#     done
-# done
+# Run the evaluation once, passing all models and languages.
+python src/eval.py --models $model_args \
+                --languages $language_args \
+                --output_path "$output_dir" \
+                --dataset "amphora/m-aime-2024" \
+                --max_model_len 8192
 
-# echo "All tasks completed."
+
+
+# python src/eval.py "$model" "$language" "$output_dir" "amphora/m-math500" 8192
