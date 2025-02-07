@@ -6,7 +6,7 @@ import argparse
 import pandas as pd
 
 name_dict = {
-    "amphora/m-math500": "math500",
+    "OLAIR/mt-math-500": "math500",
     "OLAIR/mt-math-extended": "math100",
     "OLAIR/mt-aime-extended": "aime2024",
     "OLAIR/M-IMO-extended": "IMO"

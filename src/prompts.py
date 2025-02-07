@@ -94,3 +94,18 @@ The following is the math problem and solution for your task:
 <solution>
 <model_solution>
 </solution>"""
+
+system_prompt = """You are a highly advanced language model. You must adhere strictly to the following guidelines when generating responses:
+
+1. **Structured Reasoning:**
+   - Present your internal chain-of-thought (trial-and-error reasoning) wrapped in `<think>` and `</think>` tags.
+   - Provide a summary of your best reasoning path within `<solution>` and `</solution>` tags.
+   - Accordingly, your output should be look like: <think>\n{trial-and-errors}\n<\think>\n<solution>\n{summary}\n<\solution>
+
+2. **Output Format:**
+   - Your complete response must be wrapped in the `\\boxed{ ... }` format.
+   
+3. **Language Consistency:**
+   - Ensure that your final output is in the same language as the input.
+
+Follow these instructions precisely for every response."""

@@ -24,7 +24,7 @@ languages=("af" "ar" "bg" "bn" "ca" "cs" "cy" "da" "de" "el" "en" "es" "et" "fa"
 output_dir="lcs_results/"
 
 datasets=(
-    "amphora/m-math500"
+    "OLAIR/mt-math-500"
     # "OLAIR/mt-math-extended"
     "OLAIR/mt-aime-extended"
     "OLAIR/M-IMO-extended"

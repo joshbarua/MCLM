@@ -12,6 +12,13 @@ from prompts import system_prompt
 # Log in to Hugging Face Hub (make sure your token is correct)
 huggingface_hub.login("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")
 
+name_dict = {
+    "OLAIR/mt-math-500": "math500",
+    "OLAIR/mt-math-extended": "math100",
+    "OLAIR/mt-aime-extended": "aime2024",
+    "OLAIR/M-IMO-extended": "IMO"
+}
+
 language_dict = {
     'af': 'Afrikaans',
     'sq': 'Albanian',
@@ -121,7 +128,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
     dataset_name = dataset.replace('/', '_')
     # Replace spaces in language with underscores for the filename.
     lang_clean = language.replace(" ", "_")
-    out_dir = os.path.join(output_path, dataset_name, model_name)
+    out_dir = os.path.join(output_path, name_dict[dataset], model_name)
     os.makedirs(out_dir, exist_ok=True)
     output_file = os.path.join(out_dir, f"{lang_clean}.jsonl")
 
