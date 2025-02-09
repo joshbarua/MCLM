@@ -147,9 +147,13 @@ def get_lcs_score(df, tgt_lang: str, is_think: bool) -> float:
     scores = []
     for _, row in df.iterrows():
         response = row.response
+        if not response:
+            continue
         if is_think:
             # If '<solution>' exists, only use the part after it; otherwise, use an empty string.
-            response = response.split('<solution>', 1)[1] if '<solution>' in response else ""
+            if "<solution>" not in response:
+                continue
+            response = response.split('<solution>', 1)[1].split("</solution>")[0] if '<solution>' in response else ""
         
         score = get_score_from_text(response, tgt_lang)
         scores.append(score)
@@ -159,22 +163,36 @@ def get_lcs_score(df, tgt_lang: str, is_think: bool) -> float:
 
 def main(models, languages, output_path, dataset):
     root_path = "results"
+    print(languages)
     res = {"model": []}
     os.makedirs(output_path, exist_ok=True)
     for model in models:
         rp = f"{root_path}/{name_dict[dataset]}/{model.replace('/', '_')}"
         res["model"].append(model)
-        for fp in os.listdir(rp):
-            if fp.endswith("jsonl"):
-                if fp.replace(".jsonl", "") not in res.keys():
-                    res[fp.replace(".jsonl", "")] = []
-                lang = lmap[fp[:-6]]
-                df = pd.read_json(os.path.join(rp, fp), lines=True)
-                print(f"{model} - {fp}")
-                check = "euler" in model
-                score = get_lcs_score(df,lang,check)
-                print(score)
-                res[fp.replace(".jsonl", "")].append(score)
+        for ln in languages:
+            if "Chinese" in ln:
+                try:
+                    df = pd.read_json(os.path.join(rp, "Chinese (Simplified).jsonl"), lines=True)
+                except:
+                    try:
+                        df = pd.read_json(os.path.join(rp, "Chinese.jsonl"), lines=True)
+                    except:
+                        df = pd.read_json(os.path.join(rp, "Chinese_(Simplified).jsonl"), lines=True)
+            else:
+                if len(ln) == 2:
+                    lang = ln
+                    df = pd.read_json(os.path.join(rp, f"{lang}.jsonl"), lines=True)
+                else:
+                    lang = lmap[ln]
+                    print(os.path.join(rp, f"{ln}.jsonl"))
+                    df = pd.read_json(os.path.join(rp, f"{ln}.jsonl"), lines=True)
+            if ln not in res.keys():
+                res[ln] = []
+            print(f"{model} - {ln}")
+            check = "ckpt" in model
+            score = get_lcs_score(df,lang,check)
+            print(score)
+            res[ln].append(score)
     res = pd.DataFrame(res)
     res.to_csv(f"{output_path}/{name_dict[dataset]}.csv", index=False)
 

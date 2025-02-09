@@ -43,4 +43,4 @@ def get_score(input_path):
             continue
             
         
-    return correct/len(df)
+    return correct/len(df)*100, output

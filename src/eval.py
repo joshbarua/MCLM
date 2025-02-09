@@ -103,9 +103,9 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
         else:
             if "euler" in model_path:
                 message = [
-                    {'role': 'system', 'content': system_prompt},
+                    {'role': 'system', 'content': ""},
                     {'role': 'user', 'content': p},
-                    {'role': 'assistant', 'content': '<think>'},
+                    # {'role': 'assistant', 'content': '<think>'},
                 ]
             else:
                 message = [
@@ -114,12 +114,15 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
                 ]
         if "euler" in model_path: 
             # Create text from the chat template.
-            text = tokenizer.apply_chat_template(message, tokenize=False, continue_final_message=True)
+            # text = tokenizer.apply_chat_template(message, tokenize=False, continue_final_message=True)
+            text = tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
+            
         else:
             text = tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
         qrys.append(text)
 
     # Generate responses for all questions
+    print(qrys[0])
     outputs = llm.generate(qrys, sampling_params)
     responses = [output.outputs[0].text for output in outputs]
 
@@ -146,7 +149,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
 
 def main(model_path, languages, output_path, dataset, max_model_len, sample):
     # Set sampling parameters (note: ensure max_tokens is an integer)
-    sampling_params = SamplingParams(temperature=0.0, max_tokens=int(max_model_len * 0.8))
+    sampling_params = SamplingParams(temperature=0.0, max_tokens=int(max_model_len * 0.8), stop=['</solution>'])
     
     # Load dataset (assuming the split "train" exists)
     ds = load_dataset(dataset)
