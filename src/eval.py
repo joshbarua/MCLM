@@ -7,119 +7,70 @@ from datasets import load_dataset
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 import huggingface_hub
-from prompts import system_prompt
+from prompts import lang_dict, language_dict, dataset_name_dict, system_prompt_dict
+import yaml
 
 # Log in to Hugging Face Hub (make sure your token is correct)
 huggingface_hub.login("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")
 
-name_dict = {
-    "OLAIR/mt-math-500": "math500",
-    "OLAIR/mt-math-extended": "math100",
-    "OLAIR/mt-aime-extended": "aime2024",
-    "OLAIR/M-IMO-extended": "IMO"
-}
-
-language_dict = {
-    'af': 'Afrikaans',
-    'sq': 'Albanian',
-    'ar': 'Arabic',
-    'bn': 'Bengali',
-    'bg': 'Bulgarian',
-    'ca': 'Catalan',
-    'zh-cn': 'Chinese (Simplified)',
-    'zh-tw': 'Chinese (Traditional)',
-    'hr': 'Croatian',
-    'cs': 'Czech',
-    'da': 'Danish',
-    'nl': 'Dutch',
-    'en': 'English',
-    'et': 'Estonian',
-    'fi': 'Finnish',
-    'fr': 'French',
-    'de': 'German',
-    'el': 'Greek',
-    'gu': 'Gujarati',
-    'he': 'Hebrew',
-    'hi': 'Hindi',
-    'hu': 'Hungarian',
-    'id': 'Indonesian',
-    'it': 'Italian',
-    'ja': 'Japanese',
-    'kn': 'Kannada',
-    'ko': 'Korean',
-    'lv': 'Latvian',
-    'lt': 'Lithuanian',
-    'mk': 'Macedonian',
-    'ml': 'Malayalam',
-    'mr': 'Marathi',
-    'ne': 'Nepali',
-    'no': 'Norwegian',
-    'fa': 'Persian',
-    'pl': 'Polish',
-    'pt': 'Portuguese',
-    'pa': 'Punjabi',
-    'ro': 'Romanian',
-    'ru': 'Russian',
-    'sk': 'Slovak',
-    'sl': 'Slovenian',
-    'so': 'Somali',
-    'es': 'Spanish',
-    'sw': 'Swahili',
-    'sv': 'Swedish',
-    'tl': 'Tagalog',
-    'ta': 'Tamil',
-    'te': 'Telugu',
-    'th': 'Thai',
-    'tr': 'Turkish',
-    'uk': 'Ukrainian',
-    'ur': 'Urdu',
-    'vi': 'Vietnamese',
-    'cy': 'Welsh'
-}
-
 def get_keys_by_value(d, target_value):
     return [key for key, value in d.items() if value == target_value]
+
+def lang_detect(l):
+    if len(language) == 2:
+        return l
+    else:
+        return get_keys_by_value(language_dict, l)[0]
+
+def dataset_language_detect(dataset, lang_type):
+    if not lang_type:
+        if dataset in ["OLAIR/mt-math-extended", "OLAIR/mt-aime-extended", "OLAIR/M-IMO-extended"]:
+            return lang_dict[55]
+        elif dataset in ["OLAIR/mt-math-500"]:
+            return lang_dict[14]
+        elif dataset in ["OLAIR/MMO"]:
+            return lang_dict["MMO"]
+        else:
+            raise TypeError(f"Sorry! {dataset} does not suppoorted yet.")
+    elif type(lang_type) == list:
+        return lang_type
+    else:
+        return lang_dict[lang_type]
+
+def system_prompt_select(model, system_prompt_dict=system_prompt_dict):
+    return system_prompt_dict[model] if model in list(system_prompt_dict.keys()) else 'Return your response in \\boxed{} format.'
+
+def message_generate(model, query):
+    if ("euler" in model) or ("ckpt" in model) or ("amphora" in model):
+        message = [
+            {'role': 'system', 'content': system_prompt_select(model)},
+            {'role': 'user', 'content': query if query else ""},
+            {'role': 'assistant', 'content': '<think>'},
+        ]
+        return tokenizer.apply_chat_template(message, tokenize=False, continue_final_message=True)
+    elif ("R1-Distill" in model) or ("Eurus" in model):
+        message = [
+            {'role': 'user', 'content': "\n\n".join([query, system_prompt_select(model)]) if query else ""},
+        ]
+        return tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
+    else:
+        message = [
+            {'role': 'system', 'content': system_prompt_select(model)},
+            {'role': 'user', 'content': query if query else ""},
+        ]
+        return tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
 
 def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model_path, output_path, dataset):
     # Determine the column name for the current language.
     # For English, assume the original column "problem" is used.
-    if len(language) == 2:
-        col_name = language
-    else:
-        col_name = get_keys_by_value(language_dict, language)[0]
+    col_name = lang_detect(language)
         
     if col_name not in df.columns:
         print(f"Error: Language column '{col_name}' not found in dataset for language '{language}'. Skipping...")
         return
 
     # Prepare prompts for each question
-    qrys = []
-    for p in df[col_name].values:
-        if p is None:
-            message = [
-                {'role': 'system', 'content': 'Return your response in \\boxed{} format.'},
-                {'role': 'user', 'content': ""},
-            ]
-        else:
-            if "euler" in model_path:
-                message = [
-                    {'role': 'system', 'content': ""},
-                    {'role': 'user', 'content': p},
-                    # {'role': 'assistant', 'content': '<think>'},
-                ]
-            else:
-                message = [
-                    {'role': 'system', 'content': system_prompt},
-                    {'role': 'user', 'content': p}
-                ]
-        if "euler" in model_path: 
-            # Create text from the chat template.
-            # text = tokenizer.apply_chat_template(message, tokenize=False, continue_final_message=True)
-            text = tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
-            
-        else:
-            text = tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
-        qrys.append(text)
+    qrys = [message_generate(model_path, p) for p in df[col_name].values]
 
     # Generate responses for all questions
     print(qrys[0])
@@ -131,7 +82,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
     dataset_name = dataset.replace('/', '_')
     # Replace spaces in language with underscores for the filename.
     lang_clean = language.replace(" ", "_")
-    out_dir = os.path.join(output_path, name_dict[dataset], model_name)
+    out_dir = os.path.join(output_path, dataset_name_dict[dataset], model_name)
     os.makedirs(out_dir, exist_ok=True)
     output_file = os.path.join(out_dir, f"{lang_clean}.jsonl")
 
@@ -147,36 +98,30 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     print(f"Results for language '{language}' saved to {output_file}")
 
-def main(model_path, languages, output_path, dataset, max_model_len, sample):
+def main(models, datasets, lang_type, sample, max_model_len=4096):
     # Set sampling parameters (note: ensure max_tokens is an integer)
     sampling_params = SamplingParams(temperature=0.0, max_tokens=int(max_model_len * 0.8), stop=['</solution>'])
-    
-    # Load dataset (assuming the split "train" exists)
-    ds = load_dataset(dataset)
-    df = pd.DataFrame(ds['train'])
-    if sample=='True':
-        df = df.sample(100,random_state=1210)  # Sample 100 example if dataset is large
 
-    print(f"Loading model: {model_path}")
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    llm = LLM(model=model_path, max_model_len=max_model_len, tensor_parallel_size=torch.cuda.device_count())
+    for model in models:
+        revision = model.split("***")[-1] if "***" in model else "main"
+        model_name = model.split("***")[0].replace("/", "_")
+        print(f"Loading model: {model_name} - {revision}")
+        tokenizer = AutoTokenizer.from_pretrained(model)
+        llm = LLM(model=model, max_model_len=max_model_len, tensor_parallel_size=torch.cuda.device_count(), revision=revision)
     
-    # For each model, evaluate all requested languages.
-    for language in languages:
-        print(f"Running model: {model_path} for language: {language}")
-        evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model_path, output_path, dataset)
+        for data in datasets:
+            # Load dataset (assuming the split "train" exists)
+            ds = load_dataset(data, split="train").to_pandas()
+            if sample:
+                df = df.sample(100,random_state=1210)  # Sample 100 example if dataset is large
+
+            # For each model, evaluate all requested languages.
+            for language in dataset_language_detect(data, lang_type):
+                print(f"Running model: {model_name} - {revision} for language: {language}")
+                evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model.split("***")[0], output_path, data)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Run VLLM model on math problems for specified languages."
-    )
-    parser.add_argument("--model_path", type=str, required=True, help="Model path.")
-    parser.add_argument("--languages", nargs="+", required=True, help="List of languages (e.g., Korean, Chinese, etc.).")
-    parser.add_argument("--output_path", type=str, required=True, help="Path to save the output JSONL files.")
-    parser.add_argument("--dataset", type=str, required=True, help="Dataset identifier (e.g., 'amphora/m-aime-2024').")
-    parser.add_argument("--max_model_len", type=int, required=True, help="Maximum token length for the model.")
-    parser.add_argument("--sample", type=bool, required=True, help="Sample or not.")
+    with open("../eval.yaml", "r", encoding="utf-8") as file:
+        args = yaml.safe_load(file)
     
-    args = parser.parse_args()
-    
-    main(args.model_path, args.languages, args.output_path, args.dataset, args.max_model_len, args.sample)
+    main(args["models"], args["datasets"], args["language_type"], args["samples"], args["output_path"])

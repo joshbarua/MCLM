@@ -15,15 +15,9 @@ def remove_math_expressions(text: str) -> str:
     text = re.sub(r'[\n*:\\]', '', text)
     return text.strip()
     
-lang = "English"
-
-# lang = "French"
-# lang_id = 'fr'
 def get_score(input_path):
-# df = pd.read_json(f'outputs/nvidia_AceMath-1.5B-Instruct/{lang}.jsonl',lines=True)
     df = pd.read_json(input_path,lines=True)
     
-    # df = pd.read_json(f'outputs/models_1.5b-m_ckpt-{ckpt}/{lang}.jsonl',lines=True)
     correct=0
     output = []
     for _,row in df.iterrows():
@@ -42,5 +36,4 @@ def get_score(input_path):
         except:
             continue
             
-        
     return correct/len(df)*100, output

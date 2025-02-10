@@ -109,3 +109,82 @@ system_prompt = """You are a highly advanced language model. You must adhere str
    - Ensure that your final output is in the same language as the input.
 
 Follow these instructions precisely for every response."""
+
+language_dict = {
+   'af': 'Afrikaans',
+   'sq': 'Albanian',
+   'ar': 'Arabic',
+   'bn': 'Bengali',
+   'bg': 'Bulgarian',
+   'ca': 'Catalan',
+   'zh-cn': 'Chinese (Simplified)',
+   'zh-tw': 'Chinese (Traditional)',
+   'hr': 'Croatian',
+   'cs': 'Czech',
+   'da': 'Danish',
+   'nl': 'Dutch',
+   'en': 'English',
+   'et': 'Estonian',
+   'fi': 'Finnish',
+   'fr': 'French',
+   'de': 'German',
+   'el': 'Greek',
+   'gu': 'Gujarati',
+   'he': 'Hebrew',
+   'hi': 'Hindi',
+   'hu': 'Hungarian',
+   'id': 'Indonesian',
+   'it': 'Italian',
+   'ja': 'Japanese',
+   'kn': 'Kannada',
+   'ko': 'Korean',
+   'lv': 'Latvian',
+   'lt': 'Lithuanian',
+   'mk': 'Macedonian',
+   'ml': 'Malayalam',
+   'mr': 'Marathi',
+   'ne': 'Nepali',
+   'no': 'Norwegian',
+   'fa': 'Persian',
+   'pl': 'Polish',
+   'pt': 'Portuguese',
+   'pa': 'Punjabi',
+   'ro': 'Romanian',
+   'ru': 'Russian',
+   'sk': 'Slovak',
+   'sl': 'Slovenian',
+   'so': 'Somali',
+   'es': 'Spanish',
+   'sw': 'Swahili',
+   'sv': 'Swedish',
+   'tl': 'Tagalog',
+   'ta': 'Tamil',
+   'te': 'Telugu',
+   'th': 'Thai',
+   'tr': 'Turkish',
+   'uk': 'Ukrainian',
+   'ur': 'Urdu',
+   'vi': 'Vietnamese',
+   'cy': 'Welsh'
+}
+
+dataset_name_dict = {
+    "OLAIR/mt-math-500": "math500",
+    "OLAIR/mt-math-extended": "math100",
+    "OLAIR/mt-aime-extended": "aime2024",
+    "OLAIR/M-IMO-extended": "IMO"
+}
+
+lang_dict = {
+   14: ["Afrikaans", "Arabic", "Chinese (Simplified)", "English", "French", "German", "Hebrew", "Indonesian", "Italian", "Japanese", "Korean", "Spanish", "Turkish", "Vietnamese"],
+   41: ['Albanian', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese (Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'Estonian', 'Finnish', 'Greek', 'Gujarati', 'Hindi', 'Hungarian', 'Kannada', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Ukrainian', 'Urdu', 'Welsh'],
+   55: ['Afrikaans', 'Albanian', 'Arabic', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese (Simplified)', 'Chinese (Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Estonian', 'Finnish', 'French', 'German', 'Greek', 'Gujarati', 'Hebrew', 'Hindi', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Kannada', 'Korean', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Spanish', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh'],
+   "MMO": ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German', 'Japanese', 'Korean', 'Polish', 'Russian', 'Slovakia'],
+}
+
+system_prompt_dict = {
+   "jwhj/Qwen2.5-Math-1.5B-OREO": "Please reason step by step, and put your final answer within \\boxed{}.",
+   "PRIME-RL/Eurus-2-7B-PRIME": "\n\nPresent the answer in LaTex format: \\boxed{Your answer}",
+   "Qwen/Qwen2.5-Math-1.5B-Instruct": "Please reason step by step, and put your final answer within \\boxed{}.",
+   "Qwen/Qwen2.5-Math-7B-Instruct": "Please reason step by step, and put your final answer within \\boxed{}."
+}
