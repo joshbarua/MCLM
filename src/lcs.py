@@ -1,74 +1,29 @@
 import numpy as np
 from langdetect import detect_langs
+from prompts import language_dict, dataset_name_dict
 import re
 import os
 import argparse
 import pandas as pd
 
-name_dict = {
-    "OLAIR/mt-math-500": "math500",
-    "OLAIR/mt-math-extended": "math100",
-    "OLAIR/mt-aime-extended": "aime2024",
-    "OLAIR/M-IMO-extended": "IMO"
-}
+def arg_check(root_path, models, datasets, languages):
+    output_datasets = datasets if datasets else [d for d in os.listdir(root_path) if (".DS" not in d) and ("ipynb" not in d)]
+    output_models = models if models else []
+    if not models:
+        for da in output_datasets:
+            for model in [m for m in os.listdir(os.path.join(root_path, da)) if (".DS" not in m) and ("ipynb" not in m)]:
+                if model not in model_check:
+                    output_models.append(model)
+    output_languages = []
+    if languages:
+        for l in languages:
+            output_languages.append(get_keys_by_value(language_dict, l) if l in language_dict.keys() else l)
+    else:
+        output_languages = list(language_dict.values())
+    return output_datasets, output_models, output_languages
 
-lmap = {
-    "Afrikaans": "af",
-    "Arabic": "ar",
-    "Bulgarian": "bg",
-    "Bengali": "bn",
-    "Catalan": "ca",
-    "Czech": "cs",
-    "Welsh": "cy",
-    "Danish": "da",
-    "German": "de",
-    "Greek": "el",
-    "English": "en",
-    "Spanish": "es",
-    "Estonian": "et",
-    "Persian": "fa",
-    "Finnish": "fi",
-    "French": "fr",
-    "Gujarati": "gu",
-    "Hebrew": "he",
-    "Hindi": "hi",
-    "Croatian": "hr",
-    "Hungarian": "hu",
-    "Indonesian": "id",
-    "Italian": "it",
-    "Japanese": "ja",
-    "Kannada": "kn",
-    "Korean": "ko",
-    "Lithuanian": "lt",
-    "Latvian": "lv",
-    "Macedonian": "mk",
-    "Malayalam": "ml",
-    "Marathi": "mr",
-    "Nepali": "ne",
-    "Dutch": "nl",
-    "Norwegian": "no",
-    "Punjabi": "pa",
-    "Polish": "pl",
-    "Portuguese": "pt",
-    "Romanian": "ro",
-    "Russian": "ru",
-    "Slovak": "sk",
-    "Slovenian": "sl",
-    "Somali": "so",
-    "Albanian": "sq",
-    "Swedish": "sv",
-    "Swahili": "sw",
-    "Tamil": "ta",
-    "Telugu": "te",
-    "Thai": "th",
-    "Tagalog": "tl",
-    "Turkish": "tr",
-    "Ukrainian": "uk",
-    "Urdu": "ur",
-    "Vietnamese": "vi",
-    "Chinese (Simplified)": "zh-cn",
-    "Chinese (Traditional)": "zh-tw"
-}
+def get_keys_by_value(d, target_value):
+    return [key for key, value in d.items() if value == target_value][0]
 
 def remove_math_expressions(text: str) -> str:
     """
@@ -80,6 +35,8 @@ def remove_math_expressions(text: str) -> str:
     text = re.sub(r'\\\[.*?\\\]', '', text, flags=re.DOTALL)
     # Remove boxed expressions \boxed{ ... }
     text = re.sub(r'\\boxed{.*?}', '', text, flags=re.DOTALL)
+    # Remove inline math expressions $...$
+    text = re.sub(r'\$.*?\$', '', text, flags=re.DOTALL)
     # Remove special characters, newlines, colons, and asterisks
     text = re.sub(r'[\n*:\\]', '', text)
     return text.strip()
@@ -144,6 +101,7 @@ def get_lcs_score(df, tgt_lang: str, is_think: bool) -> float:
     Returns:
         The average probability score for the target language.
     """
+    tgt_lang = tgt_lang if tgt_lang in language_dict.keys() else get_keys_by_value(language_dict, tgt_lang)
     scores = []
     for _, row in df.iterrows():
         response = row.response
@@ -161,48 +119,44 @@ def get_lcs_score(df, tgt_lang: str, is_think: bool) -> float:
     return np.mean(scores) if scores else 0.0
 
 
-def main(models, languages, output_path, dataset):
+def main(models, datasets, languages, output_path):
     root_path = "results"
-    print(languages)
-    res = {"model": []}
+    datasets, models, languages = arg_check(root_path, models, datasets, languages)
+    print(f"Evaluating languages: {languages}")
     os.makedirs(output_path, exist_ok=True)
-    for model in models:
-        rp = f"{root_path}/{name_dict[dataset]}/{model.replace('/', '_')}"
-        res["model"].append(model)
-        for ln in languages:
-            if "Chinese" in ln:
-                try:
-                    df = pd.read_json(os.path.join(rp, "Chinese (Simplified).jsonl"), lines=True)
-                except:
-                    try:
-                        df = pd.read_json(os.path.join(rp, "Chinese.jsonl"), lines=True)
-                    except:
-                        df = pd.read_json(os.path.join(rp, "Chinese_(Simplified).jsonl"), lines=True)
+    for dataset in datasets:
+        if not os.path.exists(os.path.join(root_path, dataset_name_dict[dataset])):
+            continue
+        res = {"model": []}
+        for model in models:
+            rp = f"{root_path}/{dataset_name_dict[dataset]}/{model.replace('/', '_')}"
+            if not os.path.exists(rp):
+                continue
             else:
-                if len(ln) == 2:
-                    lang = ln
-                    df = pd.read_json(os.path.join(rp, f"{lang}.jsonl"), lines=True)
-                else:
-                    lang = lmap[ln]
-                    print(os.path.join(rp, f"{ln}.jsonl"))
+                res["model"].append(model)
+            for ln in languages:
+                if ln not in res.keys():
+                    res[ln] = []
+                if os.path.exists(os.path.join(rp, f"{ln}.jsonl")):
                     df = pd.read_json(os.path.join(rp, f"{ln}.jsonl"), lines=True)
-            if ln not in res.keys():
-                res[ln] = []
-            print(f"{model} - {ln}")
-            check = "ckpt" in model
-            score = get_lcs_score(df,lang,check)
-            print(score)
-            res[ln].append(score)
-    res = pd.DataFrame(res)
-    res.to_csv(f"{output_path}/{name_dict[dataset]}.csv", index=False)
+                    print(f"{dataset} - {model} - {ln} Evaluation")
+                    check = any(keyword in model for keyword in ("ckpt", "amphora", "euler"))
+                    score = get_lcs_score(df, get_keys_by_value(language_dict, ln), check)
+                    print(score)
+                    res[ln].append(score)
+                else:
+                    print(f"{dataset} - {model} - {ln} Failed")
+                    res[ln].append(None)
+        res = pd.DataFrame(res)
+        res.to_csv(f"{output_path}/{dataset_name_dict[dataset]}.csv", index=False)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--models", nargs="+", required=True, help="List of model paths.")
-    parser.add_argument("--languages", nargs="+", required=True, help="List of languages (e.g., Korean, Chinese, etc.).")
-    parser.add_argument("--output_path", type=str, required=True, help="Path to save the output JSONL files.")
-    parser.add_argument("--dataset", type=str, required=True, help="Dataset identifier (e.g., 'amphora/m-aime-2024').")
+    parser.add_argument("--models", nargs="*", default=None, help="List of model paths.")
+    parser.add_argument("--datasets", nargs="*", default=None, help="Dataset identifier (e.g., 'amphora/m-aime-2024').")
+    parser.add_argument("--languages", nargs="*", default=None, help="List of languages (e.g., Korean, Chinese, etc.).")
+    parser.add_argument("--output_path", type=str, default="lcs_results", help="Path to save the output JSONL files.")
     args = parser.parse_args()
     
-    main(args.models, args.languages, args.output_path, args.dataset)
+    main(args.models, args.datasets, args.languages, args.output_path)

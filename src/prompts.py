@@ -117,8 +117,8 @@ language_dict = {
    'bn': 'Bengali',
    'bg': 'Bulgarian',
    'ca': 'Catalan',
-   'zh-cn': 'Chinese (Simplified)',
-   'zh-tw': 'Chinese (Traditional)',
+   'zh-cn': 'Chinese_(Simplified)',
+   'zh-tw': 'Chinese_(Traditional)',
    'hr': 'Croatian',
    'cs': 'Czech',
    'da': 'Danish',
@@ -169,16 +169,17 @@ language_dict = {
 }
 
 dataset_name_dict = {
-    "OLAIR/mt-math-500": "math500",
-    "OLAIR/mt-math-extended": "math100",
-    "OLAIR/mt-aime-extended": "aime2024",
-    "OLAIR/M-IMO-extended": "IMO"
+   "OLAIR/mt-math-500": "math500",
+   "OLAIR/mt-math-extended": "math100",
+   "OLAIR/mt-aime-extended": "aime2024",
+   "OLAIR/M-IMO-extended": "IMO",
+   "OLAIR/MMO": "MMO"
 }
 
 lang_dict = {
-   14: ["Afrikaans", "Arabic", "Chinese (Simplified)", "English", "French", "German", "Hebrew", "Indonesian", "Italian", "Japanese", "Korean", "Spanish", "Turkish", "Vietnamese"],
-   41: ['Albanian', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese (Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'Estonian', 'Finnish', 'Greek', 'Gujarati', 'Hindi', 'Hungarian', 'Kannada', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Ukrainian', 'Urdu', 'Welsh'],
-   55: ['Afrikaans', 'Albanian', 'Arabic', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese (Simplified)', 'Chinese (Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Estonian', 'Finnish', 'French', 'German', 'Greek', 'Gujarati', 'Hebrew', 'Hindi', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Kannada', 'Korean', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Spanish', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh'],
+   14: ["Afrikaans", "Arabic", "Chinese_(Simplified)", "English", "French", "German", "Hebrew", "Indonesian", "Italian", "Japanese", "Korean", "Spanish", "Turkish", "Vietnamese"],
+   41: ['Albanian', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese_(Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'Estonian', 'Finnish', 'Greek', 'Gujarati', 'Hindi', 'Hungarian', 'Kannada', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Ukrainian', 'Urdu', 'Welsh'],
+   55: ['Afrikaans', 'Albanian', 'Arabic', 'Bengali', 'Bulgarian', 'Catalan', 'Chinese_(Simplified)', 'Chinese_(Traditional)', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Estonian', 'Finnish', 'French', 'German', 'Greek', 'Gujarati', 'Hebrew', 'Hindi', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Kannada', 'Korean', 'Latvian', 'Lithuanian', 'Macedonian', 'Malayalam', 'Marathi', 'Nepali', 'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Somali', 'Spanish', 'Swahili', 'Swedish', 'Tagalog', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh'],
    "MMO": ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German', 'Japanese', 'Korean', 'Polish', 'Russian', 'Slovakia'],
 }
 
