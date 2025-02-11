@@ -1,0 +1,189 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+"\boxed{294}
+
+Nechť cesta je sekvencí 16 tahů obsahujících osm tahů doprava a osm tahů nahoru. Každý přechod z tahu jednoho směru na tah druhého směru představuje ""otočku"". Úloha požaduje spočítat ty cesty, kde se směr mění právě čtyřikrát, což znamená, že sekvence se skládá z pěti souvislých bloků tahů (protože počet bloků je o jeden větší než počet otoček).
+
+Rozlišme dva případy podle prvního tahu:
+
+1. Pokud cesta začíná tahem doprava, pak má posloupnost tvar: R, U, R, U, R. Označme délky těchto bloků jako r₁, u₁, r₂, u₂, r₃, kde  
+   r₁ + r₂ + r₃ = 8 (celkem 8 tahů doprava) a  
+   u₁ + u₂ = 8 (celkem 8 tahů nahoru),  
+   přičemž všechna čísla musí být kladná (každý blok musí mít alespoň 1 tah). Počet řešení pro r₁, r₂, r₃ je dán počtem kladných celočíselných řešení rovnice r₁ + r₂ + r₃ = 8, což je C(8 – 1, 3 – 1) = C(7,2) = 21. Podobně pro u₁ a u₂ máme C(8 – 1, 2 – 1) = C(7,1) = 7. Takže pro tento případ je celkem 21 × 7 = 147 možností.
+
+2. Pokud začne cesta tahem nahoru, pak má posloupnost tvar: U, R, U, R, U. Označme délky bloků jako u₁, r₁, u₂, r₂, u₃, kde  
+   u₁ + u₂ + u₃ = 8 a  
+   r₁ + r₂ = 8.  
+   Podobně spočítáme: počet řešení pro u₁, u₂, u₃ je C(8 – 1, 3 – 1) = C(7,2) = 21 a počet řešení pro r₁, r₂ je C(7,1) = 7, což dává 21 × 7 = 147 možností.
+
+Součtem obou případů dostáváme 147 + 147 = 294 cest.
+
+Tedy počet cest, které mění směr přesně čtyřikrát, je \boxed{294}.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Nechť ω je 13. kořen jednotky (ω ≠ 1). Máme spočítat
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+Nejprve přepišme člen součinu:
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2 = (ωᵏ)² – 2ωᵏ + 2.
+
+Poznamenáme, že tento výraz lze psát také jako
+  (ωᵏ – (1+i)) (ωᵏ – (1–i)),
+jelikož kořeny kvadratické rovnice x² – 2x + 2 = 0 jsou x = 1 ± i.
+
+Tedy
+  P = ∏ₖ₌₀¹² (ωᵏ – (1+i)) (ωᵏ – (1–i))
+    = [∏ₖ₌₀¹² (ωᵏ – (1+i))] · [∏ₖ₌₀¹² (ωᵏ – (1–i))].
+
+Víme, že 13. kořeny jednotky splňují
+  x¹³ – 1 = ∏ₖ₌₀¹² (x – ωᵏ).
+
+Dosadíme x = 1+i a x = 1–i:
+  ∏ₖ₌₀¹² ((1+i) – ωᵏ) = (1+i)¹³ – 1,
+  ∏ₖ₌₀¹² ((1–i) – ωᵏ) = (1–i)¹³ – 1.
+
+Pozor: Jelikož
+  ωᵏ – (1+i) = –((1+i) – ωᵏ),
+každý z těchto součinů získáme násobením (-1)¹³ = -1. Nicméně, když oba vynásobíme, znaménko (-1)² = 1 se vyruší.
+
+Tedy
+  P = [(1+i)¹³ – 1] · [(1–i)¹³ – 1].
+
+Nyní spočítáme (1+i)¹³ a (1–i)¹³. Uvažme 1+i v polárním tvaru:
+  1+i = √2·exp(iπ/4)  ⇒  (1+i)¹³ = (√2)¹³ · exp(13iπ/4) = 2^(6.5) · exp(13iπ/4) = 64√2 · exp(13iπ/4).
+
+Protože
+  13π/4 = 3π + π/4  a  exp(i3π) = -1,
+dostáváme
+  (1+i)¹³ = -64√2 · exp(iπ/4) = -64√2·(cos(π/4) + i sin(π/4)).
+Vzhledem k tomu, že cos(π/4) = sin(π/4) = √2/2, pak
+  (1+i)¹³ = -64√2 · (√2/2 + i√2/2) = -64 (1 + i).
+
+Analogicky
+  1–i = √2·exp(–iπ/4)  ⇒  (1–i)¹³ = -64 (1 – i).
+
+Tedy
+  (1+i)¹³ – 1 = -64(1+i) – 1 = -65 – 64i,
+  (1–i)¹³ – 1 = -64(1–i) – 1 = -65 + 64i.
+
+Nyní vynásobíme:
+  P = (-65 – 64i)(-65 + 64i) = (65 + 64i)(65 – 64i)
+     = 65² – (64i)² = 4225 – (-4096) = 4225 + 4096 = 8321.
+
+Hledáme zbytek po dělení 8321 číslem 1000:
+  8321 mod 1000 = 321.
+
+Proto je výsledný zbytek
+  \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+"\boxed{45} 
+
+Nechme mřížku vypadat následovně:
+  | a b c |
+  | d e f |
+
+Čteme čísla zleva doprava (řádkově) i shora dolů (sloupcově). Podmínky jsou:
+1) Číslo utvořené z prvního řádku plus číslo z druhého řádku dává 999:
+  (100a + 10b + c) + (100d + 10e + f) = 999.
+2) Součet tří čísel vytvořených ve sloupcích (každý ze 2 číslic) dává 99:
+  (10a + d) + (10b + e) + (10c + f) = 99.
+
+Postup analýzy:
+───────────────────────────── 
+Krok 1. Zjednodušíme podmínku pro sloupce:
+  (10a + d) + (10b + e) + (10c + f) = 10(a+b+c) + (d+e+f) = 99. 
+Nechť S₁ = a+b+c a S₂ = d+e+f. Pak máme:
+  10S₁ + S₂ = 99.                 (1)
+
+Krok 2. Rozepíšeme podmínku pro řádky:
+  100a+10b+c + 100d+10e+f = 100(a+d) + 10(b+e) + (c+f) = 999.
+Nechť X = a+d, Y = b+e, Z = c+f. Takže:
+  100X + 10Y + Z = 999.            (2)
+
+Podíváme se na (2) modulo 10:
+  Z ≡ 999 (mod 10) ⟹ Z ≡ 9 (mod 10).
+Protože Z je součet dvou číslic (maximálně 18), jediná možnost je Z = 9.
+
+Dosadíme Z = 9 do (2):
+  100X + 10Y = 990 ⟹ 10X + Y = 99.
+Jelikož X a Y jsou součty dvou číslic, mají hodnoty 0 až 18. Aby 10X + Y = 99, musí X být maximální:
+  X = 9 → Y = 99 - 10·9 = 9.
+Takže máme:
+  a + d = 9, b + e = 9, c + f = 9.         (3)
+
+Krok 3. Využijeme (3) k nalezení podmínky ze sloupcového čtení, tedy (1). Součet všech šesti číslic je:
+  (a+d) + (b+e) + (c+f) = 9 + 9 + 9 = 27.
+Ale zároveň S₁ + S₂ = 27. Dosadíme S₂ = 27 - S₁ do (1):
+  10S₁ + (27 - S₁) = 99 ⟹ 9S₁ + 27 = 99 ⟹ 9S₁ = 72 ⟹ S₁ = 8.
+Potom S₂ = 27 - 8 = 19.
+
+Shrnutí podmínek:
+─────────────────────
+• a + d = 9, b + e = 9, c + f = 9.
+• Součet číslic v první řadě: a + b + c = 8.
+• Číslice a, b, c (i d, e, f = 9 minus odpovídající hodnota) mohou nabývat hodnot 0 až 9.
+
+Konečné řešení svádíme na výběr (a, b, c) nezáporných celých čísel (do 9) tak, aby platilo:
+  a + b + c = 8.
+Počet netriviálních řešení je daný kombinatorickým vzorcem (s opakováním):
+  C(8+3-1, 3-1) = C(10, 2) = 45.
+
+Pro každou volbu (a, b, c) se určí jednoznačně (d, e, f) pomocí rovnic d = 9 - a, e = 9 - b, f = 9 - c, které budou splňovat i podmínku S₂ = 19.
+
+Odpověď je tedy:
+  \boxed{45}.","[45, '45']",45,"[45, '45']",True
+\boxed{47},"[47, '47']",33,"[33, '33']",False
+None,[],80,"[80, '80']",False
+"\boxed{55}
+
+Nechť A je množina, kterou vybral Alice. Každá konečná neprázdná množina B, ze které jejím maximálním prvkem je číslo m ∈ A, vznikne volbou libovolné podmnožiny čísel menších než m (včetně prázdné množiny). Celkový počet množin B, pro jejichž maximální prvek m, je tedy 2^(m–1). Bobův seznam obsahuje všechny množiny B, tudíž platí:
+
+  ∑_(m∈A) 2^(m–1) = 2024.
+
+Protože reprezentace čísla jako součet různých mocnin dvojky je jednoznačná, rozeberme 2024 na mocniny dvojky:
+
+  2024 – 2^10 = 2024 – 1024 = 1000,
+  1000 – 2^9 = 1000 – 512 = 488,
+  488 – 2^8 = 488 – 256 = 232,
+  232 – 2^7 = 232 – 128 = 104,
+  104 – 2^6 = 104 – 64 = 40,
+  40 – 2^5 = 40 – 32 = 8,
+  8 – 2^3 = 8 – 8 = 0.
+
+Tedy
+
+  2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+
+Protože prvek m ∈ A dává do součtu člen 2^(m–1), plyne, že A musí být
+
+  { m : m–1 ∈ {10, 9, 8, 7, 6, 5, 3} } = {11, 10, 9, 8, 7, 6, 4}.
+
+Po seřazení máme A = {4, 6, 7, 8, 9, 10, 11}.
+
+Hledaný součet prvků množiny A je tedy
+
+  4 + 6 + 7 + 8 + 9 + 10 + 11 = 55.
+
+Odpověď je tedy \boxed{55}.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

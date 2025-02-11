@@ -1,0 +1,164 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809} 
+
+Vi analyserer spillet ved at bestemme, hvilke positioner (antal jetoner) der er tabende (“P‐positioner”) for den spiller, der skal trække. Lad n være antallet af jetoner, og lad en position være tabende, hvis enhver lovlig handling fører til en position, hvor modstanderen kan vinde.
+
+Vi regner ud med n = 0 som tabende (ingen jetoner = ingen træk). For n ≥ 1 gælder:
+
+• n = 1: Her kan spilleren fjerne 1 jeton og efterlade n = 0 (tabende). Altså er n = 1 en vindende (“N‐position”).
+• n = 2: Her er det eneste lovlige træk at fjerne 1 jeton, som giver n = 1 (vindende). Derfor er n = 2 tabende.
+• n = 3: Ved at fjerne 1 jeton efterlades n = 2 (tabende). Så n = 3 er vindende.
+• n = 4: Ved at fjerne 4 jetoner efterlades n = 0 (tabende), derfor er n = 4 vindende.
+• n = 5: De mulige træk er at fjerne 1 jeton (efterlader n = 4, vindende) eller 4 jetoner (efterlader n = 1, vindende). Dermed er n = 5 tabende.
+
+Efter at have regnet videre for de næste par n, opstår mønsteret: 
+ Positionerne er tabende, når n ≡ 0 eller n ≡ 2 (mod 5).
+
+Da Alice starter, er positionerne tabende for hende, hvis startpositionen er en tabende position. Derfor vil Bob kunne garantere sejr, hvis spillet starter med n jetoner, hvor n er tabende, dvs. n ≡ 0 eller n ≡ 2 (mod 5).
+
+Nu skal vi finde antallet af positive heltal n ≤ 2024 med n ≡ 0 eller n ≡ 2 (mod 5).
+
+1. For n ≡ 0 (mod 5): De positive værdier begynder med 5 og slutter med 2020. Antal: 
+  (2020 − 5)/5 + 1 = 404.
+2. For n ≡ 2 (mod 5): De positive værdier begynder med 2 og slutter med 2022. Antal: 
+  (2022 − 2)/5 + 1 = 405.
+
+Så det samlede antal er 404 + 405 = 809.
+
+Derfor er antallet af positive heltal n ≤ 2024, for hvilke Bob har en vindende strategi, \boxed{809}.","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{199-\sqrt{8481}}
+
+Vi viser nu, hvordan man kan komme frem til svaret.
+
+Vi har to rektangler: ABCD og EFGH med siderne givet ved
+  AB = 107, BC = 16
+  EF = 184,","[199 - sqrt(8481), '199-\\sqrt{8481}']",104,"[104, '104']",False
+\boxed{294},"[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+"\boxed{601} 
+
+Vi observerer, at de givne betingelser er
+  a + b + c = 300
+og 
+  a²b + a²c + b²a + b²c + c²a + c²b = 6 000 000.
+
+Bemærk først, at vi kan omskrive det symmetriske udtryk ved at gruppere parvise termer:
+  a²(b+c) + b²(a+c) + c²(a+b).
+Da a + b + c = 300, får vi f.eks. b + c = 300 – a osv. Dermed skrives udtrykket som
+  a²(300 – a) + b²(300 – b) + c²(300 – c) = 6 000 000.
+Men en smart observation er, at der gælder en almen identitet for tre variable:
+  a²b + a²c + b²a + b²c + c²a + c²b = (a+b+c)(ab+ac+bc) – 3abc.
+Med a + b + c = 300 bliver betingelsen:
+  300·(ab+ac+bc) – 3abc = 6 000 000    (1)
+Og dividerer vi med 3:
+  100·(ab+ac+bc) – abc = 2 000 000.
+
+Nu indfører vi elementære symmetriske variable:
+  p = a+b+c = 300,
+  q = ab+ac+bc,
+  r = abc.
+Så er (1) lig med
+  100q – r = 2 000 000    (2).
+
+Forestil dig nu at forskyde variablene med 100, dvs. sæt
+  x = a–100, y = b–100, z = c–100.
+Da a+b+c = 300, får vi:
+  x+y+z = 0.
+Bemærk desuden den følgende relation:
+  (a–100)(b–100)(c–100) = abc – 100(ab+ac+bc) + 100²(a+b+c) – 100³.
+Indsætter vi r, q og p, får vi:
+  (a–100)(b–100)(c–100) = r – 100q + 100²·300 – 1 000 000.
+Men ifølge (2) er r = 100q – 2 000 000, så
+  (a–100)(b–100)(c–100) = (100q – 2 000 000) – 100","[601, '601']",601,"[601, '601']",True
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Vi begynder med at omskrive hvert led i produktet:
+  2 − 2ω^k + ω^(2k) = (ω^k)^2 − 2ω^k + 2.
+
+Bemærk, at vi kan se dette som en lille forskydning af kvadratet:
+  (ω^k − 1)^2 = ω^(2k) − 2ω^k + 1,
+hvilket betyder, at
+  ω^(2k) − 2ω^k + 2 = (ω^k − 1)^2 + 1.
+
+Vi omskriver dog i stedet på en måde, der letter beregningen af produktet over alle 13. rødder af enhed. Betragt produktet
+  P = ∏ₖ₌₀¹² (ω^(2k) − 2ω^k + 2) = ∏₍ω^(13)=1₎ (z² − 2z + 2),
+hvor vi sætter z = ω^k.
+
+Lad os nu betragte polynomiet
+  Q(z) = z² − 2z + 2.
+Vi finder dets rødder:
+  z = [2 ± √(4 − 8)]/2 = 1 ± i.
+Dermed kan vi faktorisere:
+  Q(z) = (z − (1 + i))(z − (1 − i)).
+
+Vigtigt er nu at bemærke, at produktet over alle 13. rødder af enhed af (z − α) for et vilkårligt α er givet ved:
+  ∏₍z^(13)=1₎ (z − α) = 1 − α^(13),
+hvor vi bruger at
+  ∏₍z^(13)=1₎ (α − z) = α^(13) − 1,
+og da antal faktorer er 13 (ulige), giver det et fortegnskift.
+
+For α = 1 + i får vi således:
+  ∏₍z^(13)=1₎ (z − (1 + i)) = 1 − (1 + i)^(13).
+Tilsvarende for α = 1 − i:
+  ∏₍z^(13)=1₎ (z − (1 − i)) = 1 − (1 − i)^(13).
+
+Dermed kan vi skrive:
+  P = [1 − (1 + i)^(13)] · [1 − (1 − i)^(13)].
+
+For at beregne (1 + i)^(13) benytter vi den polære fremstilling af 1 + i:
+  |1 + i| = √2 og argumentet er 45°,
+så
+  (1 + i)^(13) = (√2)^(13) · cis(13 × 45°) = 2^(13/2) · cis(585°).
+Bemærk, at 585° = 585° − 360° = 225°, og
+  cis(225°) = −√2/2 − i(√2/2).
+Da 2^(13/2) = 2^(6.5) = 64√2, får vi:
+  (1 + i)^(13) = 64√2 · (−√2/2 − i√2/2) = −64(1 + i).
+
+Tilsvarende er (1 − i)^(13) konjugeret:
+  (1 − i)^(13) = −64(1 − i).
+
+Derfor bliver:
+  1 − (1 + i)^(13) = 1 − [−64(1 + i)] = 1 + 64(1 + i) = 65 + 64i,
+  1 − (1 − i)^(13) = 65 − 64i.
+
+Så produktet bliver:
+  P = (65 + 64i)(65 − 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+Da opgaven spørger efter resten ved division med 1000, beregner vi:
+  8321 mod 1000 = 321.
+
+Derfor er svaret:
+  \boxed{321}","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{\boxed{33}},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Forklaring: Hver endelig ikke-tom mængde B med maksimum n (hvor n er et positivt heltal) kan dannes ved at vælge et vilkårligt (muligvis tomt) delmængde af {1, 2, …, n–1} og tilføje n, hvilket giver 2^(n–1) muligheder. Da Bob kun medtager mængder B, hvor maksimum n tilhører A, er det totale antal mængder Bob laver summen ∑_(n∈A) 2^(n–1). Vi får altså
+
+  ∑_(n∈A) 2^(n–1) = 2024.
+
+Ved at skrive 2024 som en sum af potenser af 2:
+  2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+
+Det svarer til, at for n–1 = 10, 9, 8, 7, 6, 5, 3, dvs. n = 11, 10, 9, 8, 7, 6, 4. Dermed er A = {4, 6, 7, 8, 9, 10, 11}, og summen af elementerne i A er 4 + 6 + 7 + 8 + 9 + 10 + 11 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

@@ -1,0 +1,265 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+"\boxed{25}
+
+Máme zadané rovnice:
+  logₓ(yˣ) = 10  a  logᵧ(x^(4y)) = 10.
+
+1. Z prvej rovnice: logₓ(yˣ) = x · logₓ y = 10 ⟹ logₓ y = 10/x.
+
+2. Zo druhej rovnice: logᵧ(x^(4y)) = 4y · logᵧ x = 10 ⟹ logᵧ x = 10/(4y) = 5/(2y).
+
+Vlastnosť prepojenia logaritmov hovorí, že logᵧ x = 1/(logₓ y). Takže:
+  1/(logₓ y) = 5/(2y).
+
+Dosadíme logₓ y = 10/x:
+  1/(10/x) = x/10 = 5/(2y).
+
+Rovnicu upravíme:
+  x/10 = 5/(2y) ⟹ x·(2y) = 10·5 ⟹ 2xy = 50 ⟹ xy = 25.
+
+Preto platí: xy = \boxed{25}.","[25, '25']",25,"[25, '25']",True
+"\boxed{\text{809}}
+
+Vysvetlenie: Označme stav hry s n žetónmi za n. Pozícia sa nazýva prehrávajúca (pre hráča, ktorý je na ťahu), ak zo všetkých možných ťahov (odoberieme 1 alebo 4 žetóny) vedie len k víťazným pozíciám pre súpera. Pre víťaznú pozíciu (W) existuje aspoň jeden ťah, ktorý vedie do prehrávajúcej pozície (L) pre súpera.
+
+Základný prípad: n = 0 je L (hráč na ťahu nemôže ťahať).
+
+Postupne zisťujeme:
+n = 1: 1 → 0 (L), teda n = 1 je W.
+n = 2: 1 → n = 1 (W), 4 neplatí, teda n = 2 je L.
+n = 3: 1 → n = 2 (L) ⇒ W.
+n = 4: 1 → n = 3 (W), 4 → n = 0 (L) ⇒ W.
+n = 5: 1 → n = 4 (W), 4 → n = 1 (W) ⇒ L.
+
+Pokračovaním zistíme, že prehrávajúce pozície vznikajú, ak n ≡ 0 alebo n ≡ 2 (mod 5) (pre n ≥ 1). Preto Bob má vyhrávaciu stratégiu (ako druhý hráč) práve pre tie n, kde hra začína v L pozícii pre Alice, teda keď n ≡ 0 alebo 2 (mod 5).
+
+Ďalej spočítame kladné čísla n ≤ 2024, pre ktoré n mod 5 je 0 alebo 2.
+
+ – Počet čísel n ≡ 0 (mod 5): Najmenšie je 5, najväčšie 2020. Počet je 2020/5 = 404.
+ – Počet čísel n ≡ 2 (mod 5): Čísla majú tvar 5k+2, kde k začína od 0. Posledné také číslo spĺňa 5k+2 ≤ 2024, t.j. k ≤ ⌊(2024-2)/5⌋ = 404. Takže počet je 405.
+
+Celkovo: 404 + 405 = 809.","[809, '\\text{809}']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Naša úloha obsahuje dva obdĺžniky – obdĺžnik ABCD s rozmermi AB = 107 a BC = 16 (teda AD = 16 a CD = 107) a obdĺžnik EFGH s rozmermi EF = 184 a FG = 17 (teda EH = 17 a GH = 184). Zadané je navyše, že body D, E, C a F ležia na jednej priamke a body A, D, H, G sú kolineárne na kružnici.
+
+Pre prehľadnosť umiestnime obdĺžnik ABCD do súradnicového systému nasledovne:
+  A = (0, 0),
+  B = (107, 0),
+  C = (107, 16),
+  D = (0, 16).
+
+Pretože D, E, C a F ležia na jednej priamke, zvolíme, že táto priamka je horizontálna (y = 16). Nech E = (x_E, 16) a F = (x_E + 184, 16). Potom vzhľadom na vlastnosti obdĺžnika EFGH budú:
+  H = (x_E, 16 + 17) = (x_E, 33) a
+  G = (x_E + 184, 33).
+
+Podmienka, že body A, D, H, G ležia na jednej kružnici, nám umožní určiť neznáme súradnice. Nech má táto kružnica rovnicu (x − h)² + (y − k)² = R². Body A = (0, 0) a D = (0, 16) ležia na kružnici, takže:
+  (0 − h)² + (0 − k)² = R²  → h² + k² = R²,  (1)
+  (0 − h)² + (16 − k)² = R²  → h² + (16 − k)² = R².  (2)
+
+Odčítaním (1) od (2) dostaneme:
+  (16 − k)² − k² = 0  → 256 − 32k = 0  → k = 8.
+
+Teda je stred kružnice (h, 8) a R² = h² + 64.
+
+Ďalej, bod H = (x_E, 33) leží na kružnici, čo dáva:
+  (x_E − h)² + (33 − 8)² = h² + 64  → (x_E − h)² + 25² = h² + 64  → (x_E − h)² = h² + 64 − 625 = h² − 561.  (3)
+
+Rovnako, bod G = (x_E + 184, 33) musí ležať na tej istej kružnici:
+  (x_E + 184 − h)² + 25² = h² + 64  → (x_E + 184 − h)² = h² − 561.  (4)
+
+Z rovníc (3) a (4) vyplýva, že:
+  (x_E − h)² = (x_E + 184 − h)².
+Kvôli štandardnej vlastnosti mocnín to znamená, že alebo
+  x_E − h = x_E + 184 − h  (čo nie je možné), alebo
+  x_E − h = −(x_E + 184 − h).
+Z druhej možnosti máme:
+  x_E − h = −x_E − 184 + h  → 2x_E = −184 + 2h  → x_E = h − 92.
+
+Dosadíme tento vzťah do (3):
+  (x_E − h)² = (h − 92 − h)² = (−92)² = 8464.
+Ale zo vzťahu (3) vieme, že (x_E − h)² = h² − 561, preto:
+  h² − 561 = 8464  → h² = 8464 + 561 = 9025.
+Keďže 9025 = 95², vyberáme h = 95 (keďže kladná hodnota je vhodná pre našu konfiguráciu).
+
+Potom je:
+  x_E = 95 − 92 = 3,
+čo znamená, že E je v bode (3, 16), a potom F = (187, 16).
+
+V obdĺžniku ABCD má bod C súradnice (107, 16). Požadovaná dĺžka CE je teda vzdialenosť medzi bodmi E = (3, 16) a C = (107, 16), čo je:
+  CE = 107 − 3 = 104.
+
+Preto je výsledná dĺžka CE rovná:
+
+\boxed{104}","[104, '104']",104,"[104, '104']",True
+"\boxed{294} 
+
+Poznámka: Každá cesta je reprezentovaná postupnosťou 16 krokov – 8 posunov doprava (R) a 8 posunov hore (U). Ak sa cesta zmení smer presne štyrikrát, potom má 5 blokov po sebe idúcich rovnakých smerov (napr. R^a U^b R^c U^d R^e alebo U^a R^b U^c R^d U^e, pričom každá mocnina predstavuje počet po sebe idúcich krokov v danom smere a všetky čísla musia byť kladné). 
+
+Pre prípad, že cesta začína krokom R, máme:
+• R-blokov celkovo 3 s podmienkou a + c + e = 8, pričom počet riešení v ℕ⁺ je C(8 – 1, 3 – 1) = C(7, 2) = 21. 
+• U-blokov celkovo 2 s podmienkou b + d = 8, a počet riešení v ℕ⁺ je C(8 – 1, 2 – 1) = C(7, 1) = 7. 
+Tieto možnosti dajú 21 · 7 = 147 ciest.
+
+Pre prípad, že cesta začína krokom U, postupujeme analogicky – aj tu opäť dostaneme 147 ciest.
+
+Spolu je tak počet požadovaných ciest 147 + 147 = 294.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Na riešení úlohy označíme vrcholy kosoštvorca ako A = (a, b) a B = (c, d) (prvá strana), pričom protiľahlé body sú potom C = (–a, –b) a D = (–c, –d). Keďže stred kosoštvorca je prienik uhlopriečiek, ten je nulový a vrcholy ležia v pároch opačných bodov, pričom body A a B (ako susediace vrcholy) musia spĺňať dodatočnú podmienku, aby boli všetky strany rovnako dlhé. Pre kosoštvorec (rovnostranný rovnobežník) s vektormi strán AB = B–A a BC = C–B = (–a–c, –b–d) bude dĺžka strany AB = |B–A|, a dĺžka BC = |–(A+B)| = |A+B|. Preto podmienka rovnosti strán je: 
+
+  |A – B| = |A + B|.
+
+Vypočítaním dostaneme:
+  |A – B|² = (a – c)² + (b – d)² = a² + c² – 2ac + b² + d² – 2bd,
+  |A + B|² = (a + c)² + (b + d)² = a² + c² + 2ac + b² + d² + 2bd.
+Z rovnosti týchto dvoch výrazov vyplýva:
+  –2(ac+bd) = 2(ac+bd) ⟹ ac+bd = 0.
+
+Naše vrcholy tiež ležia na hyperbole 
+  x²/20 – y²/24 = 1.
+Pre bod A = (a, b) dostávame:
+  a²/20 – b²/24 = 1,  (1)
+a pre bod B = (c, d):
+  c²/20 – d²/24 = 1.  (2)
+A ďalšia podmienka je:
+  ac + bd = 0.  (3)
+
+Poznamenejme, že uhlopriečka BD spája B = (c, d) a D = (–c, –d), takže jej vektor je: 
+  BD = D – B = (–2c, –2d) ⟹ BD² = 4(c² + d²).
+
+Úlohou je nájsť najväčšie reálne číslo,","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Na začiatku si všimneme, že výraz v súčine môžeme prepísať ako
+  2 – 2ω^k + ω^(2k) = ω^(2k) – 2ω^k + 2,
+čo je rovnaké ako hodnotenie polynómu
+  f(x) = x² – 2x + 2
+v bode x = ω^k.
+
+Keďže ω je 13. koreň z jednoty, tak ω^k (pre k = 0, 1, …, 12) sú všetky korene polynómu
+  x¹³ – 1 = ∏[k=0 to 12](x – ω^k).
+
+Výpočet súčinu
+  P = ∏[k=0 to 12] f(ω^k)
+môžeme „presunúť“ do súčinu cez korene f. Napíšeme totiž f(x) ako
+  f(x) = (x – r₁)(x – r₂),
+pričom sú korene
+  r₁ = 1 + i a r₂ = 1 – i.
+Potom je
+
+  P = ∏[k=0 to 12](ω^k – r₁)(ω^k – r₂)
+    = (∏[k=0 to 12](ω^k – r₁)) (∏[k=0 to 12](ω^k – r₂)).
+
+Pre ľubovoľné r platí, že
+  ∏[k=0 to 12](r – ω^k) = r¹³ – 1.
+Avšak máme faktory (ω^k – r), takže
+  ∏[k=0 to 12](ω^k – r) = (–1)¹³ (r¹³ – 1) = –(r¹³ – 1).
+
+Avšak keď oba faktory vynásobíme, dostaneme:
+  P = [–(r₁¹³–1)]·[–(r₂¹³–1)] = (r₁¹³–1)(r₂¹³–1).
+
+Ďalej teda musíme vypočítať (1 + i)¹³ – 1 a (1 – i)¹³ – 1.
+
+Pozrime sa na (1 + i)¹³:
+1. Napíšeme 1 + i v polárnej forme:
+  1 + i = √2·(cos(π/4) + i sin(π/4)).
+2. Potom
+  (1 + i)¹³ = (√2)¹³·(cos(13π/4) + i sin(13π/4)).
+  (√2)¹³ = 2^(13/2).
+3. Keď zredukujeme uhol, lebo 13π/4 = 3π + π/4, máme:
+  cos(13π/4) = –cos(π/4) = –(√2/2),
+  sin(13π/4) = –sin(π/4) = –(√2/2).
+4. Teda:
+  (1 + i)¹³ = 2^(13/2)·[–(√2/2) – i (√2/2)] = –2^(13/2)·(√2/2)(1 + i).
+5. Preto, pretože 2^(13/2)·(√2) = 2^((13+1)/2) = 2^7 = 128, a potom 128/2 = 64, dostávame:
+  (1 + i)¹³ = –64(1 + i).
+6. Odtiaľ:
+  (1 + i)¹³ – 1 = –64(1 + i) – 1.
+
+Podobne
+  (1 – i)¹³ = –64(1 – i),
+  (1 – i)¹³ – 1 = –64(1 – i) – 1.
+
+Vynásobením dostaneme:
+  P = [–64(1 + i) – 1]·[–64(1 – i) – 1].
+Zjednotíme:
+  –64(1 + i) – 1 = –65 – 64i,
+  –64(1 – i) – 1 = –65 + 64i.
+Takže
+  P = (–65 – 64i)(–65 + 64i).
+
+Keďže (a – bi)(a + bi) = a² + b², tu a = –65 a b = 64, takže:
+  P = 65² + 64² = 4225 + 4096 = 8321.
+
+Nakoniec nám zostáva určiť zvyšok po delení 8321 číslom 1000:
+  8321 = 8×1000 + 321,
+teda zvyšok je 321.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{30},"[30, '30']",315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+"\boxed{45}
+
+Poznámka: Označme horný riadok tromi ciframi a dolný riadok tromi ciframi:
+  a b c
+  d e f.
+Podľa zadania musíme mať:
+ (1) čísla čítané zľava doprava: 100a+10b+c a 100d+10e+f, pričom
+  (100a+10b+c) + (100d+10e+f) = 999.
+ (2) čísla čítané zhora nadol (v bunkách stĺpca): 10a+d, 10b+e, 10c+f, pričom
+  (10a+d)+(10b+e)+(10c+f) = 99.
+
+Prvým krokom je spozorovať, že podmienka (2) sa dá prepísať ako:
+ 10(a+b+c) + (d+e+f) = 99.
+Označme X = a+b+c (súčet horného riadku) a Y = d+e+f (súčet dolného riadku). Potom platí:
+ 10X + Y = 99  (∗).
+
+Avšak zo zadania (1) vieme, že
+ 100(a+d)+10(b+e)+(c+f) = 999.
+Uvažujme stĺpcové súčty: U = a+d, V = b+e, W = c+f. Navyše je zrejmé, že U+V+W = (a+b+c)+(d+e+f) = X+Y.
+
+Pozorujeme, že modulo 10 platí:
+ 100U+10V+W ≡ W (mod 10),
+a preto W ≡ 999 ≡ 9 (mod 10). Keďže súčet dvoch cifier je najviac 18, musíme mať W = 9.
+
+Dosaďme W = 9 do rovnice (1):
+ 100U+10V+9 = 999 ⟹ 100U+10V = 990 ⟹ 10U+V = 99 ⟹ V = 99 − 10U.
+Navyše:
+ U + V + 9 = X+Y = 99 − 9X  (za predpis z (∗), lebo Y = 99 − 10X a teda X + Y = 99 − 9X).
+Z toho majme dve možnosti pre X, keď berieme do úvahy, že ciferné súčty horného riadku (X) a dolného riadku (Y) spadajú do intervalu, prípadne obmedzenia (Y ≤ 27, pretože 3 cifry najvä","[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Vysvetlenie:
+Keďže Bob vypíše všetky konečné neprázdne množiny B kladných celých čísel, také, že najväčší prvok množiny B patrí do A, počet množín B s najväčším prvkom n je 2^(n-1) (pretože nad množinou {1,2,…, n–1} môžeme vybrať ľubovoľnú podmnožinu, ktorá sa potom k n pripočíta). Celkový počet Bobových množín teda je suma 2^(n–1) pre všetky n ∈ A a to je 2024:
+
+  ∑[n ∈ A] 2^(n–1) = 2024.
+
+Keď zapíšeme 2024 ako súčet mocnín dvojky, zistíme:
+  2024 = 1024 + 512 + 256 + 128 + 64 + 32 + 8,
+čo je rovnaké ako
+  2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+
+Preto musí pre každé n ∈ A platiť, že 2^(n–1) zodpovedá jednej z týchto mocnín, čo znamená:
+  n–1 ∈ {10, 9, 8, 7, 6, 5, 3}  ⟹  n ∈ {11, 10, 9, 8, 7, 6, 4}.
+
+Hľadaný súčet prvkov množiny A je teda:
+  11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

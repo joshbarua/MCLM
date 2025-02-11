@@ -1,0 +1,3274 @@
+response,response_answer,answer,parsed_answer,correctness
+"To find the length of \(DE\) given that \(\sin D = 0.7\) and \(EF = 7\), we can use the definition of the sine function in a right triangle. The sine of an angle is the ratio of the length of the opposite side to the length of the hypotenuse. In this case, \(\sin D = \frac{EF}{DF}\).
+
+Given that \(\sin D = 0.7\) and \(EF = 7\), we can set up the following equation:
+\[
+\sin D = \frac{EF}{DF} = 0.7
+\]
+Substituting the given value of \(EF\):
+\[
+\frac{7}{DF} = 0.7
+\]
+To find \(DF\), we solve for \(DF\) by multiplying both sides of the equation by \(DF\) and then dividing by 0.7:
+\[
+7 = 0.7 \cdot DF \implies DF = \frac{7}{0.7} = 10
+\]
+Now that we have the length of the hypotenuse \(DF\), we can use the Pythagorean theorem to find the length of \(DE\). The Pythagorean theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. In this triangle, \(DF\) is the hypotenuse, so:
+\[
+DF^2 = DE^2 + EF^2
+\]
+Substituting the known values of \(DF\) and \(EF\):
+\[
+10^2 = DE^2 + 7^2 \implies 100 = DE^2 + 49
+\]
+To find \(DE^2\), we subtract 49 from both sides of the equation:
+\[
+DE^2 = 100 - 49 = 51
+\]
+Taking the square root of both sides, we get:
+\[
+DE = \sqrt{51}
+\]
+Therefore, the length of \(DE\) is \(\boxed{\sqrt{51}}\).","[sqrt(51), '\\sqrt{51}']",\sqrt{51},[],True
+"To find the complex number \( w \) that results when the complex number \( z = 2 + \sqrt{2} - (3 + 3\sqrt{2})i \) is rotated by \( \frac{\pi}{4} \) radians counterclockwise around the complex number \( c = 2 - 3i \), we can follow these steps:
+
+1. **Translate \( z \) so that \( c \) is at the origin:**
+   Subtract \( c \) from \( z \):
+   \[
+   z - c = (2 + \sqrt{2} - (3 + 3\sqrt{2})i) - (2 - 3i) = \sqrt{2} - 3\sqrt{2}i
+   \]
+
+2. **Rotate the translated complex number by \( \frac{\pi}{4} \) radians:**
+   To rotate a complex number \( a + bi \) by \( \theta \) radians counterclockwise, we multiply it by \( e^{i\theta} = \cos \theta + i \sin \theta \). For \( \theta = \frac{\pi}{4} \), we have:
+   \[
+   e^{i\frac{\pi}{4}} = \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} = \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2}
+   \]
+   Multiply \( \sqrt{2} - 3\sqrt{2}i \) by \( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \):
+   \[
+   (\sqrt{2} - 3\sqrt{2}i) \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = \sqrt{2} \cdot \frac{\sqrt{2}}{2} + \sqrt{2} \cdot i \frac{\sqrt{2}}{2} - 3\sqrt{2}i \cdot \frac{\sqrt{2}}{2} - 3\sqrt{2}i \cdot i \frac{\sqrt{2}}{2}
+   \]
+   Simplify each term:
+   \[
+   = \frac{2}{2} + i \frac{2}{2} - 3i \frac{2}{2} - 3i^2 \frac{2}{2} = 1 + i - 3i + 3 = 4 - 2i
+   \]
+
+3. **Translate the rotated complex number back to the original position:**
+   Add \( c \) to the rotated complex number:
+   \[
+   w = (4 - 2i) + (2 - 3i) = 6 - 5i
+   \]
+
+Therefore, the complex number \( w \) is \(\boxed{6 - 5i}\).","[-1*5*i + 6, '6 - 5i']",6 - 5i,"[5, '5']",True
+\boxed{11\sqrt{2}},"[11*sqrt(2), '11\\sqrt{2}']",11\sqrt2,"[11, '11']",False
+"To solve the problem, we need to determine the number of ways to arrange 8 people around a circular table such that Pierre, Rosa, and Thomas do not sit next to each other. We will use the principle of complementary counting, which involves calculating the total number of arrangements and then subtracting the number of arrangements where at least one pair of Pierre, Rosa, and Thomas sit next to each other.
+
+### Step 1: Calculate the total number of arrangements
+The total number of ways to arrange 8 people in a circle is \((8-1)! = 7! = 5040\).
+
+### Step 2: Calculate the number of arrangements where at least one pair of Pierre, Rosa, and Thomas sit next to each other
+We will use the principle of inclusion-exclusion to find this. Let's define the events:
+- \(A\) is the event that Pierre and Rosa sit next to each other.
+- \(B\) is the event that Pierre and Thomas sit next to each other.
+- \(C\) is the event that Rosa and Thomas sit next to each other.
+
+We need to find \(|A \cup B \cup C|\), the number of arrangements where at least one of these pairs sit next to each other. By the principle of inclusion-exclusion, we have:
+\[ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C| \]
+
+#### Calculate \(|A|\)
+If Pierre and Rosa sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 7 ""blocks"" (the Pierre-Rosa block and the other 6 people) in a circle, which can be done in \((7-1)! = 6! = 720\) ways. Within the block, Pierre and Rosa can switch places, so there are \(2\) ways to arrange Pierre and Rosa within their block. Therefore, \(|A| = 720 \times 2 = 1440\).
+
+#### Calculate \(|B|\)
+Similarly, if Pierre and Thomas sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 7 ""blocks"" in a circle, which can be done in \(6! = 720\) ways. Within the block, Pierre and Thomas can switch places, so there are \(2\) ways to arrange Pierre and Thomas within their block. Therefore, \(|B| = 720 \times 2 = 1440\).
+
+#### Calculate \(|C|\)
+If Rosa and Thomas sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 7 ""blocks"" in a circle, which can be done in \(6! = 720\) ways. Within the block, Rosa and Thomas can switch places, so there are \(2\) ways to arrange Rosa and Thomas within their block. Therefore, \(|C| = 720 \times 2 = 1440\).
+
+#### Calculate \(|A \cap B|\)
+If Pierre, Rosa, and Thomas all sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 6 ""blocks"" in a circle, which can be done in \((6-1)! = 5! = 120\) ways. Within the block, Pierre, Rosa, and Thomas can switch places, so there are \(3!\) ways to arrange Pierre, Rosa, and Thomas within their block. Therefore, \(|A \cap B| = 120 \times 6 = 720\).
+
+#### Calculate \(|A \cap C|\)
+Similarly, if Pierre, Rosa, and Thomas all sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 6 ""blocks"" in a circle, which can be done in \(5! = 120\) ways. Within the block, Pierre, Rosa, and Thomas can switch places, so there are \(3!\) ways to arrange Pierre, Rosa, and Thomas within their block. Therefore, \(|A \cap C| = 120 \times 6 = 720\).
+
+#### Calculate \(|B \cap C|\)
+Similarly, if Pierre, Rosa, and Thomas all sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 6 ""blocks"" in a circle, which can be done in \(5! = 120\) ways. Within the block, Pierre, Rosa, and Thomas can switch places, so there are \(3!\) ways to arrange Pierre, Rosa, and Thomas within their block. Therefore, \(|B \cap C| = 120 \times 6 = 720\).
+
+#### Calculate \(|A \cap B \cap C|\)
+If Pierre, Rosa, and Thomas all sit next to each other, we can treat them as a single ""block"". This reduces the problem to arranging 6 ""blocks"" in a circle, which can be done in \(5! = 120\) ways. Within the block, Pierre, Rosa, and Thomas can switch places, so there are \(3!\) ways to arrange Pierre, Rosa, and Thomas within their block. Therefore, \(|A \cap B \cap C| = 120 \times 6 = 720\).
+
+Now, we can substitute these values into the inclusion-exclusion formula:
+\[ |A \cup B \cup C| = 1440 + 1440 + 1440 - 720 - 720 - 720 + 720 = 2880 \]
+
+### Step 3: Calculate the number of arrangements where Pierre, Rosa, and Thomas do not sit next to each other
+The number of arrangements where Pierre, Rosa, and Thomas do not sit next to each other is the total number of arrangements minus the number of arrangements where at least one pair of them sit next to each other:
+\[ 5040 - 2880 = 2160 \]
+
+Thus, the number of ways to arrange 8 people around a circular table such that Pierre, Rosa, and Thomas do not sit next to each other is \(\boxed{2160}\).","[2160, '2160']",720,"[720, '720']",False
+"To find the constant term in the expansion of \(\left(10x^3 - \frac{1}{2x^2}\right)^5\), we will use the Binomial Theorem. The Binomial Theorem states that:
+
+\[
+(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
+\]
+
+In this case, \(a = 10x^3\), \(b = -\frac{1}{2x^2}\), and \(n = 5\). The general term in the expansion is given by:
+
+\[
+\binom{5}{k} (10x^3)^{5-k} \left(-\frac{1}{2x^2}\right)^k
+\]
+
+We need to find the value of \(k\) such that the exponent of \(x\) in this term is zero (i.e., the term is a constant). Let's calculate the exponent of \(x\) in the general term:
+
+\[
+(10x^3)^{5-k} = 10^{5-k} x^{3(5-k)} = 10^{5-k} x^{15-3k}
+\]
+\[
+\left(-\frac{1}{2x^2}\right)^k = \left(-\frac{1}{2}\right)^k x^{-2k}
+\]
+
+So, the exponent of \(x\) in the general term is:
+
+\[
+15 - 3k - 2k = 15 - 5k
+\]
+
+We set this equal to zero to find the value of \(k\):
+
+\[
+15 - 5k = 0
+\]
+\[
+5k = 15
+\]
+\[
+k = 3
+\]
+
+Now, we substitute \(k = 3\) back into the general term to find the constant term:
+
+\[
+\binom{5}{3} (10x^3)^{5-3} \left(-\frac{1}{2x^2}\right)^3 = \binom{5}{3} (10x^3)^2 \left(-\frac{1}{2x^2}\right)^3
+\]
+\[
+= \binom{5}{3} \cdot 10^2 \cdot x^6 \cdot \left(-\frac{1}{2}\right)^3 \cdot x^{-6}
+\]
+\[
+= \binom{5}{3} \cdot 100 \cdot \left(-\frac{1}{8}\right) \cdot x^0
+\]
+\[
+= \binom{5}{3} \cdot 100 \cdot \left(-\frac{1}{8}\right)
+\]
+\[
+= 10 \cdot 100 \cdot \left(-\frac{1}{8}\right)
+\]
+\[
+= 10 \cdot \left(-\frac{100}{8}\right)
+\]
+\[
+= 10 \cdot \left(-12.5\right)
+\]
+\[
+= -125
+\]
+
+Therefore, the constant term in the expansion is \(\boxed{-125}\).","[-125, '-125']",-125,"[-125, '-125']",True
+"\[
+\boxed{0}
+\]","[0, '0']",3,"[3, '3']",False
+"To determine the smallest number of degrees that a regular pentagon must be rotated around its center to return to its original position, we need to understand the properties of rotational symmetry of a regular pentagon.
+
+A regular pentagon has five equal sides and five equal angles. When a regular pentagon is rotated around its center, it will look the same after each rotation that is a multiple of the angle formed by dividing 360 degrees by the number of sides of the pentagon. This is because a regular pentagon has five-fold rotational symmetry.
+
+The formula to find the angle of rotation that will map the pentagon onto itself is:
+\[
+\frac{360^\circ}{n}
+\]
+where \( n \) is the number of sides of the polygon. For a pentagon, \( n = 5 \).
+
+Substituting \( n = 5 \) into the formula, we get:
+\[
+\frac{360^\circ}{5} = 72^\circ
+\]
+
+Therefore, the smallest number of degrees that a regular pentagon must be rotated around its center to return to its original position is \(\boxed{72}\).","[72, '72']",72,"[72, '72']",True
+"To find the coordinates of the fourth vertex of the parallelogram, we can use the property that the diagonals of a parallelogram bisect each other. This means that the midpoint of one diagonal is the same as the midpoint of the other diagonal.
+
+First, let's find the midpoint of the diagonal connecting the vertices \((5, 3)\) and \((7, 4)\):
+\[
+\text{Midpoint} = \left( \frac{5+7}{2}, \frac{3+4}{2} \right) = \left( 6, \frac{7}{2} \right)
+\]
+
+Since this midpoint is also the midpoint of the diagonal connecting the vertices \((6, 8)\) and \((x, y)\), we can set up the following equations:
+\[
+\left( \frac{6+x}{2}, \frac{8+y}{2} \right) = \left( 6, \frac{7}{2} \right)
+\]
+
+This gives us two separate equations:
+\[
+\frac{6+x}{2} = 6 \quad \text{and} \quad \frac{8+y}{2} = \frac{7}{2}
+\]
+
+Solving the first equation for \(x\):
+\[
+6 + x = 12 \implies x = 6
+\]
+
+Solving the second equation for \(y\):
+\[
+8 + y = 7 \implies y = -1
+\]
+
+So, the coordinates of the fourth vertex are \((6, -1)\). However, we are given that \(x > 7\), so we need to consider the other possible arrangement of the vertices. Let's find the midpoint of the diagonal connecting the vertices \((5, 3)\) and \((6, 8)\):
+\[
+\text{Midpoint} = \left( \frac{5+6}{2}, \frac{3+8}{2} \right) = \left( \frac{11}{2}, \frac{11}{2} \right)
+\]
+
+Since this midpoint is also the midpoint of the diagonal connecting the vertices \((7, 4)\) and \((x, y)\), we can set up the following equations:
+\[
+\left( \frac{7+x}{2}, \frac{4+y}{2} \right) = \left( \frac{11}{2}, \frac{11}{2} \right)
+\]
+
+This gives us two separate equations:
+\[
+\frac{7+x}{2} = \frac{11}{2} \quad \text{and} \quad \frac{4+y}{2} = \frac{11}{2}
+\]
+
+Solving the first equation for \(x\):
+\[
+7 + x = 11 \implies x = 4
+\]
+
+Solving the second equation for \(y\):
+\[
+4 + y = 11 \implies y = 7
+\]
+
+So, the coordinates of the fourth vertex are \((4, 7)\). However, we are given that \(x > 7\), so this solution is not valid either. Let's find the midpoint of the diagonal connecting the vertices \((5, 3)\) and \((x, y)\):
+\[
+\text{Midpoint} = \left( \frac{5+x}{2}, \frac{3+y}{2} \right)
+\]
+
+Since this midpoint is also the midpoint of the diagonal connecting the vertices \((6, 8)\) and \((7, 4)\), we can set up the following equations:
+\[
+\left( \frac{6+7}{2}, \frac{8+4}{2} \right) = \left( \frac{13}{2}, 6 \right)
+\]
+
+This gives us two separate equations:
+\[
+\frac{5+x}{2} = \frac{13}{2} \quad \text{and} \quad \frac{3+y}{2} = 6
+\]
+
+Solving the first equation for \(x\):
+\[
+5 + x = 13 \implies x = 8
+\]
+
+Solving the second equation for \(y\):
+\[
+3 + y = 12 \implies y = 9
+\]
+
+So, the coordinates of the fourth vertex are \((8, 9)\). Since \(x > 7\), this solution is valid. Therefore, the value of \(x + y\) is:
+\[
+x + y = 8 + 9 = 17
+\]
+
+The final answer is:
+\[
+\boxed{17}
+\]","[17, '17']",17,"[17, '17']",True
+"\[
+\boxed{2}
+\]","[2, '2']",2,"[2, '2']",True
+"To find the vertical asymptotes of the function \( f(x) = \frac{2x}{x^2-5x-14} \), we need to determine where the denominator is equal to zero, as the function is undefined at these points. The denominator is \( x^2 - 5x - 14 \). We solve the equation \( x^2 - 5x - 14 = 0 \) by factoring:
+
+\[
+x^2 - 5x - 14 = (x - 7)(x + 2) = 0
+\]
+
+Setting each factor equal to zero gives us the solutions:
+
+\[
+x - 7 = 0 \quad \text{or} \quad x + 2 = 0
+\]
+\[
+x = 7 \quad \text{or} \quad x = -2
+\]
+
+So, the vertical asymptotes are \( x = 7 \) and \( x = -2 \). Therefore, \( a = 7 \) and \( b = -2 \).
+
+Next, we find the horizontal asymptote of the function. For a rational function \( f(x) = \frac{P(x)}{Q(x)} \), where \( P(x) \) and \( Q(x) \) are polynomials, the horizontal asymptote depends on the degrees of the polynomials. If the degree of the numerator is less than the degree of the denominator, the horizontal asymptote is \( y = 0 \). If the degree of the numerator is equal to the degree of the denominator, the horizontal asymptote is \( y = \frac{\text{leading coefficient of } P(x)}{\text{leading coefficient of } Q(x)} \). If the degree of the numerator is greater than the degree of the denominator, there is no horizontal asymptote (but there may be an oblique asymptote).
+
+In the function \( f(x) = \frac{2x}{x^2-5x-14} \), the degree of the numerator is 1 and the degree of the denominator is 2. Since the degree of the numerator is less than the degree of the denominator, the horizontal asymptote is \( y = 0 \). Therefore, \( c = 0 \).
+
+Now, we need to find the sum \( a + b + c \):
+
+\[
+a + b + c = 7 + (-2) + 0 = 5
+\]
+
+Thus, the value of \( a + b + c \) is \(\boxed{5}\).","[5, '5']",5,"[5, '5']",True
+"\[
+99^2 + 99 + 1 = 9801 + 99 + 1 = 9901
+\]","[9901, '9901']",9901,"[9901, '9901']",True
+"To find the smallest positive real number \( C \) such that the inequality
+
+\[
+\left\| \begin{pmatrix} 2 & 3 \\ 0 & -2 \end{pmatrix} \bold{v} \right\| \le C \|\bold{v}\|
+\]
+
+holds for all two-dimensional vectors \(\bold{v}\), we need to determine the operator norm of the matrix \( A = \begin{pmatrix} 2 & 3 \\ 0 & -2 \end{pmatrix} \). The operator norm of a matrix \( A \) is the largest singular value of \( A \), which is the square root of the largest eigenvalue of \( A^T A \).
+
+First, we compute \( A^T A \):
+
+\[
+A^T = \begin{pmatrix} 2 & 0 \\ 3 & -2 \end{pmatrix}
+\]
+
+\[
+A^T A = \begin{pmatrix} 2 & 0 \\ 3 & -2 \end{pmatrix} \begin{pmatrix} 2 & 3 \\ 0 & -2 \end{pmatrix} = \begin{pmatrix} 4 & 6 \\ 6 & 13 \end{pmatrix}
+\]
+
+Next, we find the eigenvalues of \( A^T A \). The eigenvalues are the roots of the characteristic polynomial of \( A^T A \):
+
+\[
+\det(A^T A - \lambda I) = \det \begin{pmatrix} 4 - \lambda & 6 \\ 6 & 13 - \lambda \end{pmatrix} = (4 - \lambda)(13 - \lambda) - 36 = \lambda^2 - 17\lambda + 16
+\]
+
+We solve the quadratic equation \( \lambda^2 - 17\lambda + 16 = 0 \):
+
+\[
+\lambda = \frac{17 \pm \sqrt{289 - 64}}{2} = \frac{17 \pm \sqrt{225}}{2} = \frac{17 \pm 15}{2}
+\]
+
+This gives us the eigenvalues \( \lambda_1 = 16 \) and \( \lambda_2 = 1 \). The largest eigenvalue is \( \lambda_1 = 16 \). Therefore, the largest singular value of \( A \) is \( \sqrt{16} = 4 \).
+
+Thus, the smallest positive real number \( C \) such that the inequality holds for all two-dimensional vectors \(\bold{v}\) is
+
+\[
+\boxed{4}
+\]","[4, '4']",4,"[4, '4']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+"Given that \( z \) is a complex number such that \( z^5 = 1 \) and \( z \neq 1 \), we know that \( z \) is a fifth root of unity. The fifth roots of unity are the solutions to the equation \( z^5 - 1 = 0 \), which can be factored as:
+
+\[
+(z-1)(z^4 + z^3 + z^2 + z + 1) = 0.
+\]
+
+Since \( z \neq 1 \), \( z \) must satisfy the equation:
+
+\[
+z^4 + z^3 + z^2 + z + 1 = 0.
+\]
+
+We need to find the value of \( z + \frac{1}{z} + z^2 + \frac{1}{z^2} \). First, note that since \( z^5 = 1 \), we have \( \frac{1}{z} = z^4 \) and \( \frac{1}{z^2} = z^3 \). Therefore, the expression becomes:
+
+\[
+z + z^4 + z^2 + z^3.
+\]
+
+From the equation \( z^4 + z^3 + z^2 + z + 1 = 0 \), we can subtract 1 from both sides to get:
+
+\[
+z^4 + z^3 + z^2 + z = -1.
+\]
+
+Thus, we have:
+
+\[
+z + z^4 + z^2 + z^3 = -1.
+\]
+
+Therefore, the value of \( z + \frac{1}{z} + z^2 + \frac{1}{z^2} \) is \(\boxed{-1}\).","[-1, '-1']",-1,"[-1, '-1']",True
+"To solve the problem \(58_9 - 18_9\) and express the answer in base 9, we will follow these steps:
+
+1. Convert both numbers from base 9 to base 10.
+2. Perform the subtraction in base 10.
+3. Convert the result back to base 9.
+
+### Step 1: Convert \(58_9\) to base 10
+
+The number \(58_9\) can be expanded as follows:
+\[58_9 = 5 \cdot 9^1 + 8 \cdot 9^0 = 5 \cdot 9 + 8 \cdot 1 = 45 + 8 = 53_{10}\]
+
+### Step 2: Convert \(18_9\) to base 10
+
+The number \(18_9\) can be expanded as follows:
+\[18_9 = 1 \cdot 9^1 + 8 \cdot 9^0 = 1 \cdot 9 + 8 \cdot 1 = 9 + 8 = 17_{10}\]
+
+### Step 3: Perform the subtraction in base 10
+
+Now, we subtract the base 10 equivalents:
+\[53_{10} - 17_{10} = 36_{10}\]
+
+### Step 4: Convert \(36_{10}\) back to base 9
+
+To convert \(36_{10}\) to base 9, we divide by 9 and keep track of the remainders:
+\[36 \div 9 = 4 \text{ remainder } 0\]
+So, \(36_{10} = 40_9\).
+
+Therefore, the answer is \(\boxed{40_9}\).","[40, '40_9']",40_9,"[40, '40']",True
+"To simplify the expression \(\frac{\sec x}{\sin x} - \frac{\sin x}{\cos x}\), we start by expressing \(\sec x\) in terms of \(\cos x\). Recall that \(\sec x = \frac{1}{\cos x}\). Substituting this into the expression, we get:
+
+\[
+\frac{\sec x}{\sin x} - \frac{\sin x}{\cos x} = \frac{\frac{1}{\cos x}}{\sin x} - \frac{\sin x}{\cos x}.
+\]
+
+Next, we simplify the first term \(\frac{\frac{1}{\cos x}}{\sin x}\). This is equivalent to \(\frac{1}{\cos x \sin x}\). So the expression becomes:
+
+\[
+\frac{1}{\cos x \sin x} - \frac{\sin x}{\cos x}.
+\]
+
+To combine these two terms, we need a common denominator. The common denominator for \(\cos x \sin x\) and \(\cos x\) is \(\cos x \sin x\). We rewrite the second term with this common denominator:
+
+\[
+\frac{1}{\cos x \sin x} - \frac{\sin x}{\cos x} = \frac{1}{\cos x \sin x} - \frac{\sin x \cdot \sin x}{\cos x \sin x} = \frac{1}{\cos x \sin x} - \frac{\sin^2 x}{\cos x \sin x}.
+\]
+
+Now we can combine the fractions:
+
+\[
+\frac{1 - \sin^2 x}{\cos x \sin x}.
+\]
+
+We use the Pythagorean identity \(1 - \sin^2 x = \cos^2 x\). Substituting this in, we get:
+
+\[
+\frac{\cos^2 x}{\cos x \sin x}.
+\]
+
+We can simplify this fraction by canceling one \(\cos x\) in the numerator and the denominator:
+
+\[
+\frac{\cos x}{\sin x}.
+\]
+
+This is the definition of the cotangent function, \(\cot x\). Therefore, the simplified form of the expression is:
+
+\[
+\boxed{\cot x}.
+\]","[cot(x), '\\cot x']",\cot x,[],True
+\boxed{2},"[2, '2']",3,"[3, '3']",False
+"To find the values of \(a\) and \(b\) such that the product of the polynomials \(3t^2 + 5t + a\) and \(4t^2 + bt - 2\) is equal to \(12t^4 + 26t^3 - 8t^2 - 16t + 6\), we will expand the product and then compare the coefficients of the resulting polynomial with the given polynomial.
+
+First, let's expand the product \((3t^2 + 5t + a)(4t^2 + bt - 2)\):
+
+\[
+(3t^2 + 5t + a)(4t^2 + bt - 2) = 3t^2(4t^2 + bt - 2) + 5t(4t^2 + bt - 2) + a(4t^2 + bt - 2)
+\]
+
+Expanding each term, we get:
+
+\[
+= 12t^4 + 3bt^3 - 6t^2 + 20t^3 + 5bt^2 - 10t + 4at^2 + abt - 2a
+\]
+
+Combining like terms, we have:
+
+\[
+= 12t^4 + (3b + 20)t^3 + (-6 + 5b + 4a)t^2 + (-10 + ab)t - 2a
+\]
+
+We now compare the coefficients of the expanded polynomial with the given polynomial \(12t^4 + 26t^3 - 8t^2 - 16t + 6\):
+
+1. The coefficient of \(t^4\) is \(12\), which matches.
+2. The coefficient of \(t^3\) is \(3b + 20\), which must equal \(26\):
+   \[
+   3b + 20 = 26 \implies 3b = 6 \implies b = 2
+   \]
+3. The coefficient of \(t^2\) is \(-6 + 5b + 4a\), which must equal \(-8\):
+   \[
+   -6 + 5(2) + 4a = -8 \implies -6 + 10 + 4a = -8 \implies 4 + 4a = -8 \implies 4a = -12 \implies a = -3
+   \]
+4. The coefficient of \(t\) is \(-10 + ab\), which must equal \(-16\):
+   \[
+   -10 + (-3)(2) = -10 - 6 = -16
+   \]
+   This is true.
+5. The constant term is \(-2a\), which must equal \(6\):
+   \[
+   -2(-3) = 6
+   \]
+   This is true.
+
+Since all the coefficients match, the values of \(a\) and \(b\) are \(a = -3\) and \(b = 2\). Therefore, the sum \(a + b\) is:
+
+\[
+a + b = -3 + 2 = -1
+\]
+
+The final answer is:
+
+\[
+\boxed{-1}
+\]","[-1, '-1']",-1,"[-1, '-1']",True
+"\[
+\boxed{5}
+\]","[5, '5']",\sqrt{5},[],True
+"To determine the largest value of \( a \) such that the graph of \( y = f(x) \) does not intersect any horizontal line more than once, we need to analyze the function \( f(x) \) defined piecewise:
+
+\[
+f(x) =
+\begin{cases}
+ax^2 & \text{if } x \geq a,\\
+ax + 2a & \text{if } x < a.
+\end{cases}
+\]
+
+### Step 1: Analyze the first piece \( f(x) = ax^2 \) for \( x \geq a \)
+
+1. **Derivative**: The derivative of \( f(x) = ax^2 \) is:
+   \[
+   f'(x) = 2ax.
+   \]
+   For \( x \geq a \), the derivative \( f'(x) \) is positive if \( a > 0 \) and negative if \( a < 0 \).
+
+2. **Behavior**: 
+   - If \( a > 0 \), \( f(x) \) is increasing for \( x \geq a \).
+   - If \( a < 0 \), \( f(x) \) is decreasing for \( x \geq a \).
+
+### Step 2: Analyze the second piece \( f(x) = ax + 2a \) for \( x < a \)
+
+1. **Derivative**: The derivative of \( f(x) = ax + 2a \) is:
+   \[
+   f'(x) = a.
+   \]
+   This is constant, so the function is either increasing or decreasing depending on the sign of \( a \).
+
+2. **Behavior**:
+   - If \( a > 0 \), \( f(x) \) is increasing for \( x < a \).
+   - If \( a < 0 \), \( f(x) \) is decreasing for \( x < a \).
+
+### Step 3: Determine the intersection points
+
+To ensure that the graph does not intersect any horizontal line more than once, we need to check the values of \( f(x) \) at the point where the two pieces meet, which is at \( x = a \).
+
+1. **Value at \( x = a \)**:
+   - For \( f(x) = ax^2 \):
+     \[
+     f(a) = a \cdot a^2 = a^3.
+     \]
+   - For \( f(x) = ax + 2a \):
+     \[
+     f(a) = a \cdot a + 2a = a^2 + 2a.
+     \]
+
+2. **Set the values equal**:
+   \[
+   a^3 = a^2 + 2a.
+   \]
+   Rearranging gives:
+   \[
+   a^3 - a^2 - 2a = 0.
+   \]
+   Factoring out \( a \):
+   \[
+   a(a^2 - a - 2) = 0.
+   \]
+   This gives us:
+   \[
+   a(a - 2)(a + 1) = 0.
+   \]
+   Thus, the solutions are:
+   \[
+   a = 0, \quad a = 2, \quad a = -1.
+   \]
+
+### Step 4: Determine the largest valid \( a \)
+
+Since we want the largest value of \( a \) such that the graph does not intersect any horizontal line more than once, we consider the positive values of \( a \).
+
+- The valid positive values from our solutions are \( a = 0 \) and \( a = 2 \).
+
+Thus, the largest value of \( a \) is:
+
+\[
+\boxed{2}
+\]","[2, '2']",2,"[2, '2']",True
+"To determine the value of \( c \) for which the circle has a radius of 1, we start with the given equation of the circle:
+
+\[ x^2 - 10x + y^2 + 6y + c = 0. \]
+
+First, we need to rewrite this equation in the standard form of a circle's equation, which is \((x-h)^2 + (y-k)^2 = r^2\). To do this, we complete the square for both the \( x \) and \( y \) terms.
+
+Starting with the \( x \)-terms, \( x^2 - 10x \), we take half of the coefficient of \( x \), which is \(-10\), divide it by 2 to get \(-5\), and then square it to get \(25\). So, we add and subtract \(25\) inside the equation:
+
+\[ x^2 - 10x + 25 - 25. \]
+
+This can be rewritten as:
+
+\[ (x-5)^2 - 25. \]
+
+Next, we complete the square for the \( y \)-terms, \( y^2 + 6y \). We take half of the coefficient of \( y \), which is \(6\), divide it by 2 to get \(3\), and then square it to get \(9\). So, we add and subtract \(9\) inside the equation:
+
+\[ y^2 + 6y + 9 - 9. \]
+
+This can be rewritten as:
+
+\[ (y+3)^2 - 9. \]
+
+Now, we substitute these completed squares back into the original equation:
+
+\[ x^2 - 10x + y^2 + 6y + c = (x-5)^2 - 25 + (y+3)^2 - 9 + c = 0. \]
+
+Combining the constant terms on the right side, we get:
+
+\[ (x-5)^2 + (y+3)^2 - 34 + c = 0. \]
+
+Rearranging the equation to match the standard form, we have:
+
+\[ (x-5)^2 + (y+3)^2 = 34 - c. \]
+
+From the standard form \((x-h)^2 + (y-k)^2 = r^2\), we can see that the radius \( r \) is given by:
+
+\[ r^2 = 34 - c. \]
+
+We are given that the radius is 1, so we set \( r^2 = 1^2 = 1 \):
+
+\[ 1 = 34 - c. \]
+
+Solving for \( c \), we get:
+
+\[ c = 34 - 1 = 33. \]
+
+Therefore, the value of \( c \) is \(\boxed{33}\).","[33, '33']",33,"[33, '33']",True
+"To solve the problem, we need to find the values of \(\lambda\) such that there exists an \(x \in [0,1]\) for which \(f(x) \neq x\) but \(f(f(x)) = x\). The function \(f\) is given by:
+
+\[ f(x) = \lambda x(1 - x). \]
+
+First, we need to find the fixed points of \(f\), i.e., the values of \(x\) such that \(f(x) = x\). Setting \(f(x) = x\), we get:
+
+\[ \lambda x(1 - x) = x. \]
+
+Rearranging terms, we have:
+
+\[ \lambda x - \lambda x^2 = x, \]
+\[ \lambda x - x - \lambda x^2 = 0, \]
+\[ x(\lambda - 1 - \lambda x) = 0. \]
+
+This gives us two solutions:
+
+\[ x = 0 \quad \text{or} \quad x = \frac{\lambda - 1}{\lambda}. \]
+
+The fixed points of \(f\) are \(x = 0\) and \(x = \frac{\lambda - 1}{\lambda}\) (assuming \(\lambda \neq 0\)). We need to find \(\lambda\) such that there exists an \(x \in [0,1]\) for which \(f(x) \neq x\) but \(f(f(x)) = x\). This means \(x\) is a periodic point of period 2, i.e., \(x\) is not a fixed point but \(f(f(x)) = x\).
+
+Let's compute \(f(f(x))\):
+
+\[ f(f(x)) = f(\lambda x(1 - x)) = \lambda (\lambda x(1 - x))(1 - \lambda x(1 - x)). \]
+
+We need \(f(f(x)) = x\), so:
+
+\[ \lambda (\lambda x(1 - x))(1 - \lambda x(1 - x)) = x. \]
+
+Let \(y = \lambda x(1 - x)\). Then the equation becomes:
+
+\[ \lambda y(1 - y) = x. \]
+
+Since \(y = \lambda x(1 - x)\), we substitute \(x = \frac{y}{\lambda(1 - y)}\) into \(y = \lambda x(1 - x)\):
+
+\[ y = \lambda \left( \frac{y}{\lambda(1 - y)} \right) \left( 1 - \frac{y}{\lambda(1 - y)} \right) = \frac{y}{1 - y} \left( \frac{\lambda(1 - y) - y}{\lambda(1 - y)} \right) = \frac{y(\lambda - \lambda y - y)}{\lambda(1 - y)^2} = \frac{y(\lambda - (\lambda + 1)y)}{\lambda(1 - y)^2}. \]
+
+Multiplying both sides by \(\lambda(1 - y)^2\), we get:
+
+\[ \lambda y(1 - y)^2 = y(\lambda - (\lambda + 1)y). \]
+
+Assuming \(y \neq 0\), we can divide both sides by \(y\):
+
+\[ \lambda (1 - y)^2 = \lambda - (\lambda + 1)y. \]
+
+Expanding and simplifying, we have:
+
+\[ \lambda (1 - 2y + y^2) = \lambda - (\lambda + 1)y, \]
+\[ \lambda - 2\lambda y + \lambda y^2 = \lambda - (\lambda + 1)y, \]
+\[ \lambda y^2 - 2\lambda y + (\lambda + 1)y = 0, \]
+\[ y(\lambda y - 2\lambda + \lambda + 1) = 0, \]
+\[ y(\lambda y - \lambda + 1) = 0. \]
+
+This gives us two solutions:
+
+\[ y = 0 \quad \text{or} \quad y = \frac{\lambda - 1}{\lambda}. \]
+
+If \(y = 0\), then \(x = 0\), which is a fixed point. If \(y = \frac{\lambda - 1}{\lambda}\), then \(x = \frac{\lambda - 1}{\lambda}\), which is also a fixed point. Therefore, \(y\) must be a value that is not 0 or \(\frac{\lambda - 1}{\lambda}\) but satisfies the equation. This means that the quadratic equation \(\lambda y^2 - \lambda y + 1 = 0\) must have a solution in the interval \([0,1]\) that is not a fixed point.
+
+The discriminant of the quadratic equation \(\lambda y^2 - \lambda y + 1 = 0\) is:
+
+\[ \Delta = \lambda^2 - 4\lambda. \]
+
+For the quadratic equation to have real solutions, the discriminant must be non-negative:
+
+\[ \lambda^2 - 4\lambda \ge 0, \]
+\[ \lambda(\lambda - 4) \ge 0. \]
+
+Since \(0 \le \lambda \le 4\), the only solution is \(\lambda = 4\). When \(\lambda = 4\), the quadratic equation becomes:
+
+\[ 4y^2 - 4y + 1 = 0, \]
+\[ (2y - 1)^2 = 0, \]
+\[ y = \frac{1}{2}. \]
+
+Then \(x = \frac{y}{\lambda(1 - y)} = \frac{\frac{1}{2}}{4(1 - \frac{1}{2})} = \frac{\frac{1}{2}}{2} = \frac{1}{4}\). Therefore, \(x = \frac{1}{4}\) is a periodic point of period 2.
+
+Thus, the value of \(\lambda\) is:
+
+\[ \boxed{4}. \]","[4, '4']","(3,4]",[],True
+"To find the smallest positive angle \(\theta\) such that \(\tan \theta = \frac{\cos 5^\circ \cos 20^\circ + \cos 35^\circ \cos 50^\circ - \sin 5^\circ \sin 20^\circ - \sin 35^\circ \sin 50^\circ}{\sin 5^\circ \cos 20^\circ - \sin 35^\circ \cos 50^\circ + \cos 5^\circ \sin 20^\circ - \cos 35^\circ \sin 50^\circ}\), we start by simplifying the expression in the numerator and the denominator.
+
+First, consider the numerator:
+\[
+\cos 5^\circ \cos 20^\circ + \cos 35^\circ \cos 50^\circ - \sin 5^\circ \sin 20^\circ - \sin 35^\circ \sin 50^\circ.
+\]
+We can group the terms as follows:
+\[
+(\cos 5^\circ \cos 20^\circ - \sin 5^\circ \sin 20^\circ) + (\cos 35^\circ \cos 50^\circ - \sin 35^\circ \sin 50^\circ).
+\]
+Using the cosine addition formula \(\cos(A+B) = \cos A \cos B - \sin A \sin B\), we get:
+\[
+\cos(5^\circ + 20^\circ) + \cos(35^\circ + 50^\circ) = \cos 25^\circ + \cos 85^\circ.
+\]
+Using the identity \(\cos(90^\circ - x) = \sin x\), we have \(\cos 85^\circ = \sin 5^\circ\). Therefore, the numerator simplifies to:
+\[
+\cos 25^\circ + \sin 5^\circ.
+\]
+
+Next, consider the denominator:
+\[
+\sin 5^\circ \cos 20^\circ - \sin 35^\circ \cos 50^\circ + \cos 5^\circ \sin 20^\circ - \cos 35^\circ \sin 50^\circ.
+\]
+We can group the terms as follows:
+\[
+(\sin 5^\circ \cos 20^\circ + \cos 5^\circ \sin 20^\circ) - (\sin 35^\circ \cos 50^\circ + \cos 35^\circ \sin 50^\circ).
+\]
+Using the sine addition formula \(\sin(A+B) = \sin A \cos B + \cos A \sin B\), we get:
+\[
+\sin(5^\circ + 20^\circ) - \sin(35^\circ + 50^\circ) = \sin 25^\circ - \sin 85^\circ.
+\]
+Using the identity \(\sin(90^\circ - x) = \cos x\), we have \(\sin 85^\circ = \cos 5^\circ\). Therefore, the denominator simplifies to:
+\[
+\sin 25^\circ - \cos 5^\circ.
+\]
+
+Now, the original expression becomes:
+\[
+\tan \theta = \frac{\cos 25^\circ + \sin 5^\circ}{\sin 25^\circ - \cos 5^\circ}.
+\]
+We can use the tangent addition formula \(\tan(A+B) = \frac{\tan A + \tan B}{1 - \tan A \tan B}\) to simplify this expression. Notice that:
+\[
+\cos 25^\circ = \sin 65^\circ \quad \text{and} \quad \sin 25^\circ = \cos 65^\circ.
+\]
+Thus, the expression becomes:
+\[
+\tan \theta = \frac{\sin 65^\circ + \sin 5^\circ}{\cos 65^\circ - \cos 5^\circ}.
+\]
+Using the sum-to-product identities \(\sin A + \sin B = 2 \sin \left( \frac{A+B}{2} \right) \cos \left( \frac{A-B}{2} \right)\) and \(\cos A - \cos B = -2 \sin \left( \frac{A+B}{2} \right) \sin \left( \frac{A-B}{2} \right)\), we get:
+\[
+\sin 65^\circ + \sin 5^\circ = 2 \sin 35^\circ \cos 30^\circ = 2 \sin 35^\circ \cdot \frac{\sqrt{3}}{2} = \sqrt{3} \sin 35^\circ,
+\]
+\[
+\cos 65^\circ - \cos 5^\circ = -2 \sin 35^\circ \sin 30^\circ = -2 \sin 35^\circ \cdot \frac{1}{2} = -\sin 35^\circ.
+\]
+Therefore, the expression simplifies to:
+\[
+\tan \theta = \frac{\sqrt{3} \sin 35^\circ}{-\sin 35^\circ} = -\sqrt{3}.
+\]
+The smallest positive angle \(\theta\) such that \(\tan \theta = -\sqrt{3}\) is \(\theta = 120^\circ\). Thus, the answer is:
+\[
+\boxed{120^\circ}.
+\]","[120, '120^\\circ']",120^\circ,"[120, '120']",True
+\boxed{3},"[3, '3']",1260,"[1260, '1260']",False
+"To find the number of zeros at the end of \(42!\), we need to determine how many times \(10\) is a factor in the product of all integers from \(1\) to \(42\). Since \(10 = 2 \times 5\), and there are generally more factors of \(2\) than factors of \(5\) in factorials, the number of zeros is determined by the number of times \(5\) is a factor in the numbers from \(1\) to \(42\).
+
+We use the formula for finding the number of times a prime \(p\) is a factor in \(n!\), which is given by:
+\[
+\left\lfloor \frac{n}{p} \right\rfloor + \left\lfloor \frac{n}{p^2} \right\rfloor + \left\lfloor \frac{n}{p^3} \right\rfloor + \cdots
+\]
+Here, \(n = 42\) and \(p = 5\). So, we need to calculate:
+\[
+\left\lfloor \frac{42}{5} \right\rfloor + \left\lfloor \frac{42}{25} \right\rfloor + \left\lfloor \frac{42}{125} \right\rfloor + \cdots
+\]
+
+First, we calculate \(\left\lfloor \frac{42}{5} \right\rfloor\):
+\[
+\left\lfloor \frac{42}{5} \right\rfloor = \left\lfloor 8.4 \right\rfloor = 8
+\]
+
+Next, we calculate \(\left\lfloor \frac{42}{25} \right\rfloor\):
+\[
+\left\lfloor \frac{42}{25} \right\rfloor = \left\lfloor 1.68 \right\rfloor = 1
+\]
+
+Next, we calculate \(\left\lfloor \frac{42}{125} \right\rfloor\):
+\[
+\left\lfloor \frac{42}{125} \right\rfloor = \left\lfloor 0.336 \right\rfloor = 0
+\]
+
+Since \(\left\lfloor \frac{42}{625} \right\rfloor\) and all higher terms will also be zero, we stop here. Adding these values together, we get:
+\[
+8 + 1 + 0 + 0 + \cdots = 9
+\]
+
+Therefore, the number of zeros at the end of \(42!\) is \(\boxed{9}\).","[9, '9']",9,"[9, '9']",True
+"To find the maximum value of the function \( f(x, y) = x \sqrt{1 - y^2} + y \sqrt{1 - x^2} \) where \( -1 \le x, y \le 1 \), we start by considering the function in terms of trigonometric identities. Let \( x = \sin \theta \) and \( y = \sin \phi \) where \( -\frac{\pi}{2} \le \theta, \phi \le \frac{\pi}{2} \). Then, the function becomes:
+
+\[
+f(\sin \theta, \sin \phi) = \sin \theta \sqrt{1 - \sin^2 \phi} + \sin \phi \sqrt{1 - \sin^2 \theta} = \sin \theta \cos \phi + \sin \phi \cos \theta = \sin(\theta + \phi).
+\]
+
+The maximum value of \( \sin(\theta + \phi) \) is 1, which occurs when \( \theta + \phi = \frac{\pi}{2} + 2k\pi \) for any integer \( k \). Since \( -\frac{\pi}{2} \le \theta, \phi \le \frac{\pi}{2} \), the only relevant solution is \( \theta + \phi = \frac{\pi}{2} \). Therefore, we can choose \( \theta = \frac{\pi}{4} \) and \( \phi = \frac{\pi}{4} \), which gives \( x = \sin \frac{\pi}{4} = \frac{\sqrt{2}}{2} \) and \( y = \sin \frac{\pi}{4} = \frac{\sqrt{2}}{2} \).
+
+Substituting these values into the original function, we get:
+
+\[
+f\left( \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right) = \frac{\sqrt{2}}{2} \sqrt{1 - \left( \frac{\sqrt{2}}{2} \right)^2} + \frac{\sqrt{2}}{2} \sqrt{1 - \left( \frac{\sqrt{2}}{2} \right)^2} = \frac{\sqrt{2}}{2} \sqrt{1 - \frac{1}{2}} + \frac{\sqrt{2}}{2} \sqrt{1 - \frac{1}{2}} = \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2} = \frac{1}{2} + \frac{1}{2} = 1.
+\]
+
+Thus, the maximum value of \( f(x, y) \) is \(\boxed{1}\).","[1, '1']",1,"[1, '1']",True
+"To find the area of the triangle \(OAB\) where the points \(O\), \(A\), and \(B\) are given by the vectors \(\overrightarrow{OA} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}\) and \(\overrightarrow{OB} = \begin{pmatrix} -3 \\ -2 \\ 1 \end{pmatrix}\), we can use the formula for the area of a triangle formed by two vectors in 3D space. The area is half the magnitude of the cross product of the vectors \(\overrightarrow{OA}\) and \(\overrightarrow{OB}\).
+
+First, we compute the cross product \(\overrightarrow{OA} \times \overrightarrow{OB}\):
+\[
+\overrightarrow{OA} \times \overrightarrow{OB} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 2 & 3 \\ -3 & -2 & 1 \end{vmatrix} = \mathbf{i} \left(2 \cdot 1 - 3 \cdot (-2)\right) - \mathbf{j} \left(1 \cdot 1 - 3 \cdot (-3)\right) + \mathbf{k} \left(1 \cdot (-2) - 2 \cdot (-3)\right)
+\]
+\[
+= \mathbf{i} (2 + 6) - \mathbf{j} (1 + 9) + \mathbf{k} (-2 + 6) = 8\mathbf{i} - 10\mathbf{j} + 4\mathbf{k} = \begin{pmatrix} 8 \\ -10 \\ 4 \end{pmatrix}
+\]
+
+Next, we find the magnitude of the cross product:
+\[
+\left\| \overrightarrow{OA} \times \overrightarrow{OB} \right\| = \sqrt{8^2 + (-10)^2 + 4^2} = \sqrt{64 + 100 + 16} = \sqrt{180} = 6\sqrt{5}
+\]
+
+The area of the triangle \(OAB\) is half of this magnitude:
+\[
+\text{Area} = \frac{1}{2} \left\| \overrightarrow{OA} \times \overrightarrow{OB} \right\| = \frac{1}{2} \cdot 6\sqrt{5} = 3\sqrt{5}
+\]
+
+Thus, the area of the triangle \(OAB\) is \(\boxed{3\sqrt{5}}\).","[3*sqrt(5), '3\\sqrt{5}']",3 \sqrt{5},"[3, '3']",False
+"To solve for \( z^{85} + \frac{1}{z^{85}} \) given that \( z + \frac{1}{z} = \frac{1 + \sqrt{5}}{2} \), we start by letting \( z = e^{i\theta} \). This implies that \( \frac{1}{z} = e^{-i\theta} \), and the given equation becomes:
+
+\[ e^{i\theta} + e^{-i\theta} = \frac{1 + \sqrt{5}}{2}. \]
+
+Using Euler's formula, we know that \( e^{i\theta} + e^{-i\theta} = 2\cos\theta \). Therefore, we have:
+
+\[ 2\cos\theta = \frac{1 + \sqrt{5}}{2}. \]
+
+Solving for \( \cos\theta \), we get:
+
+\[ \cos\theta = \frac{1 + \sqrt{5}}{4}. \]
+
+Next, we need to find \( z^{85} + \frac{1}{z^{85}} \). Using the same substitution \( z = e^{i\theta} \), we have:
+
+\[ z^{85} = e^{85i\theta} \quad \text{and} \quad \frac{1}{z^{85}} = e^{-85i\theta}. \]
+
+Thus,
+
+\[ z^{85} + \frac{1}{z^{85}} = e^{85i\theta} + e^{-85i\theta} = 2\cos(85\theta). \]
+
+To find \( \cos(85\theta) \), we use the fact that \( \cos\theta = \frac{1 + \sqrt{5}}{4} \). The angle \( \theta \) is related to the golden ratio, and it is known that \( \cos(5\theta) = \frac{1 - \sqrt{5}}{4} \). This implies that \( \cos(10\theta) = \cos(2\pi - 10\theta) = \cos(2\pi - 5\theta) = \cos(5\theta) = \frac{1 - \sqrt{5}}{4} \).
+
+We can use the double-angle identity for cosine to find \( \cos(20\theta) \):
+
+\[ \cos(20\theta) = 2\cos^2(10\theta) - 1 = 2\left(\frac{1 - \sqrt{5}}{4}\right)^2 - 1 = 2\left(\frac{1 - 2\sqrt{5} + 5}{16}\right) - 1 = 2\left(\frac{6 - 2\sqrt{5}}{16}\right) - 1 = \frac{6 - 2\sqrt{5}}{8} - 1 = \frac{6 - 2\sqrt{5} - 8}{8} = \frac{-2 - 2\sqrt{5}}{8} = \frac{-1 - \sqrt{5}}{4}. \]
+
+We observe that \( \cos(20\theta) = -\cos(0\theta) = -1 \). This implies that \( 20\theta = \pi \) or \( 20\theta = -\pi \), so \( \theta = \frac{\pi}{20} \) or \( \theta = -\frac{\pi}{20} \).
+
+Therefore, \( 85\theta = \frac{85\pi}{20} = \frac{17\pi}{4} = 4\pi + \frac{\pi}{4} \). Since \( \cos(4\pi + \frac{\pi}{4}) = \cos(\frac{\pi}{4}) = \frac{\sqrt{2}}{2} \), we have:
+
+\[ \cos(85\theta) = \frac{\sqrt{2}}{2}. \]
+
+Thus,
+
+\[ z^{85} + \frac{1}{z^{85}} = 2\cos(85\theta) = 2 \cdot \frac{\sqrt{2}}{2} = \sqrt{2}. \]
+
+The final answer is:
+
+\[ \boxed{\sqrt{2}}. \]","[sqrt(2), '\\sqrt{2}']",-2,"[-2, '-2']",False
+"\[
+\boxed{16}
+\]","[16, '16']",8,"[8, '8']",False
+"To determine what fraction of the total number of math books were not taken, we need to follow these steps:
+
+1. Identify the total number of math books on the bookshelf.
+2. Determine how many math books were taken.
+3. Calculate the number of math books remaining.
+4. Express the remaining math books as a fraction of the total number of math books.
+
+**Step 1: Identify the total number of math books on the bookshelf.**
+
+The problem states that the bookshelf has 3 shelves with a total of 24 books. The number of math books on each shelf is given as follows:
+- The top shelf has 8 mystery books.
+- The middle shelf has 10 math books.
+- The bottom shelf has 6 science books.
+
+Since the total number of books on the bookshelf is 24, we can verify the number of math books by subtracting the number of mystery and science books from the total number of books:
+\[ \text{Total number of math books} = 24 - 8 - 6 = 10 \]
+
+So, there are 10 math books in total on the bookshelf.
+
+**Step 2: Determine how many math books were taken.**
+
+The problem states that 2 books were taken from each shelf. Since there are 3 shelves, the total number of books taken is:
+\[ 2 \text{ books/shelf} \times 3 \text{ shelves} = 6 \text{ books} \]
+
+**Step 3: Calculate the number of math books remaining.**
+
+Since 2 books were taken from the middle shelf and the middle shelf originally had 10 math books, the number of math books taken from the middle shelf is 2. Therefore, the number of math books remaining on the middle shelf is:
+\[ 10 - 2 = 8 \]
+
+The number of math books remaining on the top and bottom shelves is 0 because no math books were taken from these shelves. So, the total number of math books remaining is:
+\[ 8 \]
+
+**Step 4: Express the remaining math books as a fraction of the total number of math books.**
+
+The fraction of the total number of math books that were not taken is:
+\[ \frac{8}{10} = \frac{4}{5} \]
+
+Thus, the fraction of the total number of math books that were not taken is \(\boxed{\frac{4}{5}}\).","[4/5, '\\frac{4}{5}']",\frac{4}{9},"[4/9, '\\frac{4}{9}']",False
+"To find the volume \( V \) of the cone, we use the formula:
+
+\[ V = \frac{1}{3}Bh \]
+
+where \( B \) is the area of the base and \( h \) is the height. Given that the area of the base \( B \) is 30 square units and the height \( h \) is 6.5 units, we substitute these values into the formula:
+
+\[ V = \frac{1}{3} \times 30 \times 6.5 \]
+
+First, we multiply 30 by 6.5:
+
+\[ 30 \times 6.5 = 195 \]
+
+Next, we multiply by \(\frac{1}{3}\):
+
+\[ V = \frac{1}{3} \times 195 = \frac{195}{3} = 65 \]
+
+Therefore, the volume of the cone is \(\boxed{65}\) cubic units.","[65, '65']",65,"[65, '65']",True
+"To find the 6th term of the arithmetic sequence, we start by recalling the general formula for the \(n\)-th term of an arithmetic sequence:
+
+\[ a_n = a_1 + (n-1)d \]
+
+where:
+- \(a_n\) is the \(n\)-th term,
+- \(a_1\) is the first term,
+- \(d\) is the common difference,
+- \(n\) is the term number.
+
+We are given the 4th term \(a_4 = 200\) and the 8th term \(a_8 = 500\). Using the general formula, we can write the following equations:
+
+\[ a_4 = a_1 + 3d = 200 \]
+\[ a_8 = a_1 + 7d = 500 \]
+
+To find the common difference \(d\), we subtract the first equation from the second:
+
+\[ (a_1 + 7d) - (a_1 + 3d) = 500 - 200 \]
+\[ 4d = 300 \]
+\[ d = 75 \]
+
+Now that we have the common difference, we can substitute \(d\) back into the equation for the 4th term to find the first term \(a_1\):
+
+\[ a_1 + 3(75) = 200 \]
+\[ a_1 + 225 = 200 \]
+\[ a_1 = 200 - 225 \]
+\[ a_1 = -25 \]
+
+Now that we have the first term and the common difference, we can find the 6th term \(a_6\) using the general formula:
+
+\[ a_6 = a_1 + 5d \]
+\[ a_6 = -25 + 5(75) \]
+\[ a_6 = -25 + 375 \]
+\[ a_6 = 350 \]
+
+Therefore, the 6th term of the arithmetic sequence is \(\boxed{350}\).","[350, '350']",350,"[350, '350']",True
+"\[
+\frac{21}{2^2 \cdot 5^7} = \frac{21}{4 \cdot 78125} = \frac{21}{312500}
+\]
+
+Now, we can convert this fraction into a decimal:
+
+\[
+\frac{21}{312500} = 0.0000672
+\]
+
+Thus, the terminating decimal representation of \(\frac{21}{2^2 \cdot 5^7}\) is:
+
+\[
+\boxed{0.0000672}
+\]","[6.72000000000000e-5, '0.0000672']",.0000672,"[6.72000000000000e-5, '0.0000672']",True
+"To find the positive two-digit integers that are factors of both 100 and 150, we need to determine the common factors of these two numbers. Let's start by finding the prime factorizations of 100 and 150.
+
+The prime factorization of 100 is:
+\[ 100 = 2^2 \times 5^2 \]
+
+The prime factorization of 150 is:
+\[ 150 = 2 \times 3 \times 5^2 \]
+
+The common prime factors of 100 and 150 are 2 and 5. The smallest power of these common prime factors is \(2^1\) and \(5^2\). Therefore, the greatest common divisor (GCD) of 100 and 150 is:
+\[ \text{GCD}(100, 150) = 2 \times 5^2 = 50 \]
+
+The common factors of 100 and 150 are the factors of their GCD, which is 50. Let's list the factors of 50:
+\[ 1, 2, 5, 10, 25, 50 \]
+
+We are only interested in the positive two-digit factors of 50. From the list above, the two-digit factors are:
+\[ 10, 25, 50 \]
+
+Thus, the positive two-digit integers that are factors of both 100 and 150 are:
+\[ \boxed{10, 25, 50} \]","[{10, 25, 50}, '10, 25, 50']",3,"[3, '3']",False
+"To determine for how many positive integers \( n > 1 \) the number \( 2^{24} \) is a perfect \( n \)-th power, we start by expressing \( 2^{24} \) as \( (2^k)^n \) for some integer \( k \). This means that \( 24 = kn \), or equivalently, \( n \) must be a divisor of 24.
+
+First, we list the divisors of 24. The divisors of 24 are the positive integers that divide 24 without leaving a remainder. We can find them by checking which integers from 1 to 24 satisfy this condition:
+
+\[
+1, 2, 3, 4, 6, 8, 12, 24
+\]
+
+Since we are looking for \( n > 1 \), we exclude 1 from the list. Therefore, the divisors of 24 that are greater than 1 are:
+
+\[
+2, 3, 4, 6, 8, 12, 24
+\]
+
+There are 7 such divisors. This means there are 7 positive integers \( n > 1 \) for which \( 2^{24} \) is a perfect \( n \)-th power.
+
+Thus, the number of positive integers \( n > 1 \) for which \( 2^{24} \) is a perfect \( n \)-th power is \(\boxed{7}\).","[7, '7']",7,"[7, '7']",True
+"To determine how many nickels Hillary has, we need to follow these steps:
+
+1. Define the variables:
+   - Let \( d \) be the number of dimes.
+   - Let \( n \) be the number of nickels.
+
+2. Set up the equations based on the given information:
+   - The total number of coins is 10, so we have:
+     \[
+     d + n = 10
+     \]
+   - The total value of the coins is 75 cents. Since each dime is worth 10 cents and each nickel is worth 5 cents, we have:
+     \[
+     10d + 5n = 75
+     \]
+
+3. Solve the system of equations:
+   - First, solve the first equation for \( d \):
+     \[
+     d = 10 - n
+     \]
+   - Substitute this expression for \( d \) into the second equation:
+     \[
+     10(10 - n) + 5n = 75
+     \]
+   - Simplify and solve for \( n \):
+     \[
+     100 - 10n + 5n = 75
+     \]
+     \[
+     100 - 5n = 75
+     \]
+     \[
+     25 = 5n
+     \]
+     \[
+     n = 5
+     \]
+
+4. Verify the solution:
+   - If \( n = 5 \), then \( d = 10 - 5 = 5 \).
+   - The total value is \( 10 \times 5 + 5 \times 5 = 50 + 25 = 75 \) cents, which matches the given information.
+
+Therefore, the number of nickels Hillary has is \(\boxed{5}\).","[5, '5']",7,"[7, '7']",False
+"To determine the probability that the sum of the numbers chosen by Paul and Jesse is even, we first need to identify the first six prime numbers. The first six prime numbers are: 2, 3, 5, 7, 11, and 13.
+
+Next, we need to understand the properties of even and odd numbers. The sum of two numbers is even if both numbers are either even or both are odd. In the set of the first six prime numbers, there is only one even number, which is 2, and the rest are odd numbers: 3, 5, 7, 11, and 13.
+
+Now, let's calculate the total number of possible outcomes when Paul and Jesse each choose a number from the set of the first six prime numbers. Since each person has 6 choices, the total number of outcomes is:
+\[ 6 \times 6 = 36. \]
+
+Next, we need to count the number of favorable outcomes where the sum of the chosen numbers is even. This can happen in two scenarios:
+1. Both numbers are even.
+2. Both numbers are odd.
+
+Since there is only one even number in the set, the number of ways both numbers can be even is:
+\[ 1 \times 1 = 1. \]
+
+The number of ways both numbers can be odd is:
+\[ 5 \times 5 = 25. \]
+
+Therefore, the total number of favorable outcomes is:
+\[ 1 + 25 = 26. \]
+
+The probability that the sum of the numbers chosen by Paul and Jesse is even is the number of favorable outcomes divided by the total number of outcomes:
+\[ \frac{26}{36} = \frac{13}{18}. \]
+
+Thus, the probability is:
+\[ \boxed{\frac{13}{18}}. \]","[13/18, '\\frac{13}{18}']",\frac{13}{18},"[13/18, '\\frac{13}{18}']",True
+"To find the value of \( b \) when the point \( (a, b) \) lies on the line given by the equation \( 3x + 2y = 12 \) and \( a = 4 \), we can follow these steps:
+
+1. Substitute \( a = 4 \) into the equation \( 3x + 2y = 12 \). Since \( x = a \) and \( y = b \), the equation becomes \( 3(4) + 2b = 12 \).
+2. Simplify the left side of the equation: \( 3(4) = 12 \), so the equation is \( 12 + 2b = 12 \).
+3. Subtract 12 from both sides of the equation to isolate the term with \( b \): \( 12 + 2b - 12 = 12 - 12 \), which simplifies to \( 2b = 0 \).
+4. Divide both sides of the equation by 2 to solve for \( b \): \( \frac{2b}{2} = \frac{0}{2} \), which simplifies to \( b = 0 \).
+
+Therefore, the value of \( b \) is \(\boxed{0}\).","[0, '0']",0,"[0, '0']",True
+"To determine the total area of the shaded regions in the given figure, we need to analyze the shape and break it down into simpler parts. The figure consists of a square divided into smaller regions, with some of these regions shaded.
+
+First, let's identify the dimensions of the square. The square is divided into 4 rows and 5 columns, so each small square has a side length of 1 unit. Therefore, the area of each small square is \(1 \times 1 = 1\) square unit.
+
+Next, let's count the number of shaded small squares. The figure shows that there are two shaded regions:
+1. The top-left region, which is a right triangle with a base of 2 units and a height of 4 units.
+2. The top-right region, which is a right triangle with a base of 3 units and a height of 4 units.
+
+The area of a right triangle is given by the formula:
+\[
+\text{Area} = \frac{1}{2} \times \text{base} \times \text{height}
+\]
+
+Let's calculate the area of each shaded region:
+1. The area of the top-left triangle is:
+\[
+\text{Area}_{\text{top-left}} = \frac{1}{2} \times 2 \times 4 = 4 \text{ square units}
+\]
+
+2. The area of the top-right triangle is:
+\[
+\text{Area}_{\text{top-right}} = \frac{1}{2} \times 3 \times 4 = 6 \text{ square units}
+\]
+
+Now, we add the areas of the two shaded regions to find the total shaded area:
+\[
+\text{Total shaded area} = \text{Area}_{\text{top-left}} + \text{Area}_{\text{top-right}} = 4 + 6 = 10 \text{ square units}
+\]
+
+Therefore, the total area of the shaded regions is \(\boxed{10}\).","[10, '10']",10,"[10, '10']",True
+"To find the smallest positive multiple of 450 where the digits are only zeros and ones, we need to consider the prime factorization of 450. The prime factorization of 450 is:
+
+\[ 450 = 2 \times 3^2 \times 5^2 \]
+
+For a number to be a multiple of 450, it must be divisible by 2, 9, and 25. Since the number can only contain the digits 0 and 1, it must end in 00 to be divisible by 25. Additionally, the sum of the digits of the number must be divisible by 9 to be divisible by 9. The smallest number that meets these criteria is 11100, because:
+
+1. It ends in 00, so it is divisible by 25.
+2. The sum of the digits is \(1 + 1 + 1 = 3\), which is not divisible by 9.
+3. The next smallest number to check is 11111100, because it also ends in 00 and the sum of the digits is \(1 + 1 + 1 + 1 + 1 + 1 = 6\), which is not divisible by 9.
+4. The next smallest number to check is 11111111100, because it also ends in 00 and the sum of the digits is \(1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 9\), which is divisible by 9.
+
+Therefore, the smallest positive multiple of 450 where the digits are only zeros and ones is:
+
+\[ \boxed{11111111100} \]","[11111111100, '11111111100']","11,\! 111,\! 111,\! 100","[100, '100']",False
+"To solve the problem, we need to determine the probability that a checker is placed in a corner square of a checkerboard. Let's break down the problem step by step.
+
+1. **Identify the total number of squares on the checkerboard:**
+   A standard checkerboard has 8 rows and 8 columns, so the total number of squares is:
+   \[
+   8 \times 8 = 64
+   \]
+
+2. **Identify the number of corner squares:**
+   A checkerboard has 4 corner squares (one at each corner).
+
+3. **Determine the probability:**
+   The probability that a checker is placed in a corner square is the ratio of the number of corner squares to the total number of squares. Therefore, the probability is:
+   \[
+   \frac{\text{Number of corner squares}}{\text{Total number of squares}} = \frac{4}{64} = \frac{1}{16}
+   \]
+
+Thus, the probability that the checker is placed in a corner square is \(\boxed{\frac{1}{16}}\).","[1/16, '\\frac{1}{16}']",\frac{1}{2},"[1/2, '\\frac{1}{2}']",False
+"\[
+\boxed{10}
+\]","[10, '10']",14,"[14, '14']",False
+"To find the value of \(\sin 20^\circ \sin 40^\circ \sin 60^\circ \sin 80^\circ \sin 100^\circ \sin 120^\circ \sin 140^\circ \sin 160^\circ\), we can use properties of the sine function and symmetry. First, note that \(\sin(180^\circ - x) = \sin x\). Therefore, we can rewrite the expression as:
+
+\[
+\sin 20^\circ \sin 40^\circ \sin 60^\circ \sin 80^\circ \sin (180^\circ - 80^\circ) \sin (180^\circ - 60^\circ) \sin (180^\circ - 40^\circ) \sin (180^\circ - 20^\circ) = \sin^2 20^\circ \sin^2 40^\circ \sin^2 60^\circ \sin^2 80^\circ.
+\]
+
+Next, we know that \(\sin 60^\circ = \frac{\sqrt{3}}{2}\), so the expression becomes:
+
+\[
+\sin^2 20^\circ \sin^2 40^\circ \left(\frac{\sqrt{3}}{2}\right)^2 \sin^2 80^\circ = \sin^2 20^\circ \sin^2 40^\circ \frac{3}{4} \sin^2 80^\circ.
+\]
+
+We can use the identity \(\sin 80^\circ = \cos 10^\circ\) and \(\sin 40^\circ = 2 \sin 20^\circ \cos 20^\circ\). Substituting these into the expression, we get:
+
+\[
+\sin^2 20^\circ (2 \sin 20^\circ \cos 20^\circ)^2 \frac{3}{4} \cos^2 10^\circ = \sin^2 20^\circ \cdot 4 \sin^2 20^\circ \cos^2 20^\circ \cdot \frac{3}{4} \cos^2 10^\circ = 3 \sin^4 20^\circ \cos^2 20^\circ \cos^2 10^\circ.
+\]
+
+We can use the double-angle identity \(\cos 20^\circ = 2 \cos^2 10^\circ - 1\) and \(\cos^2 10^\circ = \frac{1 + \cos 20^\circ}{2}\). However, a simpler approach is to use the known result for the product of sines of angles in arithmetic progression. The product \(\sin x \sin (60^\circ - x) \sin (60^\circ + x) = \frac{1}{4} \sin 3x\). Applying this identity, we can pair the terms as follows:
+
+\[
+(\sin 20^\circ \sin 40^\circ \sin 80^\circ)^2 = \left(\frac{1}{4} \sin 60^\circ\right)^2 = \left(\frac{1}{4} \cdot \frac{\sqrt{3}}{2}\right)^2 = \left(\frac{\sqrt{3}}{8}\right)^2 = \frac{3}{64}.
+\]
+
+Thus, the original product is:
+
+\[
+\sin 20^\circ \sin 40^\circ \sin 60^\circ \sin 80^\circ \sin 100^\circ \sin 120^\circ \sin 140^\circ \sin 160^\circ = \frac{\sqrt{3}}{16}.
+\]
+
+Therefore, the final answer is:
+
+\[
+\boxed{\frac{\sqrt{3}}{16}}.
+\]","[sqrt(3)/16, '\\frac{\\sqrt{3}}{16}']",\frac{9}{256},"[9/256, '\\frac{9}{256}']",False
+"To determine the shape defined by the equation \( z = c \) in cylindrical coordinates \((r, \theta, z)\), we need to understand what this equation represents in Cartesian coordinates \((x, y, z)\).
+
+Recall the relationship between cylindrical coordinates and Cartesian coordinates:
+\[
+x = r \cos \theta, \quad y = r \sin \theta, \quad z = z.
+\]
+The equation \( z = c \) in cylindrical coordinates directly translates to the same equation in Cartesian coordinates:
+\[
+z = c.
+\]
+This equation describes a plane that is parallel to the \(xy\)-plane and located at a constant height \(c\) along the \(z\)-axis. Therefore, the shape defined by the equation \( z = c \) is a plane.
+
+Thus, the correct answer is \(\boxed{\text{C}}\).","[C, '\\text{C}']",\text{(C)},[],True
+"To find the smallest possible angle between the vectors \(\mathbf{a}\) and \(\mathbf{b}\), we start by using the properties of the cross product. The magnitude of the cross product \(\mathbf{a} \times \mathbf{b}\) is given by:
+
+\[
+\|\mathbf{a} \times \mathbf{b}\| = \|\mathbf{a}\| \|\mathbf{b}\| \sin \theta
+\]
+
+where \(\theta\) is the angle between \(\mathbf{a}\) and \(\mathbf{b}\). We know that \(\|\mathbf{a}\| = 2\), \(\|\mathbf{b}\| = 7\), and \(\mathbf{a} \times \mathbf{b} = \begin{pmatrix} 3 \\ 2 \\ 6 \end{pmatrix}\). First, we calculate the magnitude of \(\mathbf{a} \times \mathbf{b}\):
+
+\[
+\|\mathbf{a} \times \mathbf{b}\| = \sqrt{3^2 + 2^2 + 6^2} = \sqrt{9 + 4 + 36} = \sqrt{49} = 7
+\]
+
+Now, we substitute the known values into the magnitude formula for the cross product:
+
+\[
+7 = 2 \cdot 7 \cdot \sin \theta
+\]
+
+Simplifying, we get:
+
+\[
+7 = 14 \sin \theta \implies \sin \theta = \frac{7}{14} = \frac{1}{2}
+\]
+
+The angle \(\theta\) whose sine is \(\frac{1}{2}\) is \(30^\circ\) or \(150^\circ\). Since we are asked for the smallest possible angle, we have:
+
+\[
+\theta = 30^\circ
+\]
+
+Thus, the smallest possible angle between \(\mathbf{a}\) and \(\mathbf{b}\) is \(\boxed{30}\) degrees.","[30, '30']",30^\circ,"[30, '30']",True
+"To find the sum of the roots of the function \( g(x) = f(x+5) \), we start by analyzing the function \( f(x) \). The function \( f(x) \) is given by:
+
+\[ f(x) = x^3 - 49x^2 + 623x - 2015. \]
+
+The sum of the roots of a cubic polynomial \( ax^3 + bx^2 + cx + d \) is given by \( -\frac{b}{a} \). For the polynomial \( f(x) \), the coefficients are \( a = 1 \), \( b = -49 \), \( c = 623 \), and \( d = -2015 \). Therefore, the sum of the roots of \( f(x) \) is:
+
+\[ -\frac{-49}{1} = 49. \]
+
+Now, we need to find the sum of the roots of \( g(x) = f(x+5) \). The function \( g(x) \) is a horizontal shift of \( f(x) \) by 5 units to the left. A horizontal shift does not change the sum of the roots of a polynomial. This is because if \( r_1, r_2, r_3 \) are the roots of \( f(x) \), then the roots of \( g(x) = f(x+5) \) are \( r_1 - 5, r_2 - 5, r_3 - 5 \). The sum of the roots of \( g(x) \) is:
+
+\[ (r_1 - 5) + (r_2 - 5) + (r_3 - 5) = r_1 + r_2 + r_3 - 15 = 49 - 15 = 34. \]
+
+Thus, the sum of the roots of \( g(x) \) is:
+
+\[ \boxed{34}. \]","[34, '34']",34,"[34, '34']",True
+"\[
+\boxed{10}
+\]","[10, '10']",12,"[12, '12']",False
+\boxed{10},"[10, '10']",8,"[8, '8']",False
+"To find the odd integer \( t \) such that \( 0 < t < 23 \) and \( t + 2 \) is the inverse of \( t \) modulo 23, we need to satisfy the congruence:
+
+\[ t(t + 2) \equiv 1 \pmod{23} \]
+
+First, we expand the left-hand side of the congruence:
+
+\[ t^2 + 2t \equiv 1 \pmod{23} \]
+
+Next, we rearrange the terms to form a standard quadratic congruence:
+
+\[ t^2 + 2t - 1 \equiv 0 \pmod{23} \]
+
+To solve this quadratic congruence, we can use the quadratic formula \( t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \), where \( a = 1 \), \( b = 2 \), and \( c = -1 \). Substituting these values into the quadratic formula, we get:
+
+\[ t = \frac{-2 \pm \sqrt{2^2 - 4 \cdot 1 \cdot (-1)}}{2 \cdot 1} = \frac{-2 \pm \sqrt{4 + 4}}{2} = \frac{-2 \pm \sqrt{8}}{2} = \frac{-2 \pm 2\sqrt{2}}{2} = -1 \pm \sqrt{2} \]
+
+Since we are working modulo 23, we need to find the modular square root of 2. We need to find an integer \( x \) such that:
+
+\[ x^2 \equiv 2 \pmod{23} \]
+
+We can test the integers from 1 to 22 to find such an \( x \):
+
+\[ 1^2 \equiv 1 \pmod{23} \]
+\[ 2^2 \equiv 4 \pmod{23} \]
+\[ 3^2 \equiv 9 \pmod{23} \]
+\[ 4^2 \equiv 16 \pmod{23} \]
+\[ 5^2 \equiv 25 \equiv 2 \pmod{23} \]
+
+So, \( x = 5 \) is a solution to \( x^2 \equiv 2 \pmod{23} \). Therefore, the solutions to the quadratic congruence are:
+
+\[ t \equiv -1 + 5 \pmod{23} \quad \text{or} \quad t \equiv -1 - 5 \pmod{23} \]
+\[ t \equiv 4 \pmod{23} \quad \text{or} \quad t \equiv -6 \pmod{23} \]
+\[ t \equiv 4 \pmod{23} \quad \text{or} \quad t \equiv 17 \pmod{23} \]
+
+Since we are looking for the odd integer \( t \) such that \( 0 < t < 23 \), we have two possible solutions: \( t = 4 \) and \( t = 17 \). The odd solution is:
+
+\[ t = 17 \]
+
+Thus, the answer is:
+
+\[ \boxed{17} \]","[17, '17']",17,"[17, '17']",True
+"To find the total surface area of a cube with a volume of 1 cubic foot, we need to follow these steps:
+
+1. **Convert the volume from cubic feet to cubic inches:**
+   Since there are 12 inches in a foot, the volume in cubic inches is:
+   \[
+   1 \text{ cubic foot} = 12 \times 12 \times 12 = 1728 \text{ cubic inches}
+   \]
+
+2. **Determine the side length of the cube:**
+   Let the side length of the cube be \( s \) inches. The volume of a cube is given by \( s^3 \). Therefore, we have:
+   \[
+   s^3 = 1728
+   \]
+   Taking the cube root of both sides, we get:
+   \[
+   s = \sqrt[3]{1728} = 12 \text{ inches}
+   \]
+
+3. **Calculate the surface area of the cube:**
+   The surface area \( A \) of a cube is given by the formula:
+   \[
+   A = 6s^2
+   \]
+   Substituting the side length \( s = 12 \) inches, we get:
+   \[
+   A = 6 \times 12^2 = 6 \times 144 = 864 \text{ square inches}
+   \]
+
+Therefore, the total surface area of the cube is \(\boxed{864}\) square inches.","[864, '864']",864 \mbox{ inches}^2,"[864, '864']",True
+"To find the product of the number \(5 + \sqrt{3}\) and its radical conjugate, we first need to identify the radical conjugate of \(5 + \sqrt{3}\). The radical conjugate of a number \(a + \sqrt{b}\) is \(a - \sqrt{b}\). Therefore, the radical conjugate of \(5 + \sqrt{3}\) is \(5 - \sqrt{3}\).
+
+Next, we need to calculate the product of \(5 + \sqrt{3}\) and \(5 - \sqrt{3}\). The product of a number and its radical conjugate can be found using the difference of squares formula, which states that \((a + b)(a - b) = a^2 - b^2\). Here, \(a = 5\) and \(b = \sqrt{3}\). Applying the formula, we get:
+
+\[
+(5 + \sqrt{3})(5 - \sqrt{3}) = 5^2 - (\sqrt{3})^2 = 25 - 3 = 22
+\]
+
+Thus, the product of the number \(5 + \sqrt{3}\) and its radical conjugate is \(\boxed{22}\).","[22, '22']",22,"[22, '22']",True
+"To find the 2003rd term of the sequence of odd numbers \(1, 3, 5, 7, \dots\), we first recognize that this is an arithmetic sequence where the first term \(a_1\) is 1 and the common difference \(d\) is 2. The general formula for the \(n\)-th term of an arithmetic sequence is given by:
+
+\[a_n = a_1 + (n-1)d\]
+
+For our sequence, we substitute \(a_1 = 1\) and \(d = 2\) into the formula:
+
+\[a_n = 1 + (n-1) \cdot 2\]
+
+Simplifying the expression inside the parentheses, we get:
+
+\[a_n = 1 + 2(n-1) = 1 + 2n - 2 = 2n - 1\]
+
+So, the \(n\)-th term of the sequence is \(2n - 1\). To find the 2003rd term, we substitute \(n = 2003\) into the formula:
+
+\[a_{2003} = 2 \cdot 2003 - 1 = 4006 - 1 = 4005\]
+
+Therefore, the 2003rd term of the sequence is \(\boxed{4005}\).","[4005, '4005']",4005,"[4005, '4005']",True
+"To find the value of \( g(f(5) - 1) \), we need to follow these steps:
+
+1. First, find the value of \( f(5) \).
+2. Subtract 1 from the value of \( f(5) \).
+3. Find the value of \( g \) at the result from step 2.
+
+Let's start with step 1. The function \( f(x) \) is given by:
+\[ f(x) = 2x - 3 \]
+To find \( f(5) \), we substitute \( x = 5 \) into the function:
+\[ f(5) = 2(5) - 3 = 10 - 3 = 7 \]
+
+Now, we move to step 2. We need to subtract 1 from the value of \( f(5) \):
+\[ f(5) - 1 = 7 - 1 = 6 \]
+
+Next, we proceed to step 3. The function \( g(x) \) is given by:
+\[ g(x) = x + 1 \]
+To find \( g(6) \), we substitute \( x = 6 \) into the function:
+\[ g(6) = 6 + 1 = 7 \]
+
+Therefore, the value of \( g(f(5) - 1) \) is \(\boxed{7}\).","[7, '7']",7,"[7, '7']",True
+"To solve the equation \(\sin \left( \tan^{-1} (x) + \cot^{-1} \left( \frac{1}{x} \right) \right) = \frac{1}{3}\), we start by using the identity for the sum of the inverse tangent and inverse cotangent functions. Specifically, for any non-zero \(x\),
+
+\[
+\tan^{-1}(x) + \cot^{-1}(x) = \frac{\pi}{2}.
+\]
+
+However, in our equation, we have \(\cot^{-1} \left( \frac{1}{x} \right)\) instead of \(\cot^{-1}(x)\). We know that \(\cot^{-1} \left( \frac{1}{x} \right) = \tan^{-1}(x)\). Therefore, the equation becomes
+
+\[
+\sin \left( \tan^{-1}(x) + \tan^{-1}(x) \right) = \frac{1}{3},
+\]
+
+which simplifies to
+
+\[
+\sin \left( 2 \tan^{-1}(x) \right) = \frac{1}{3}.
+\]
+
+We use the double-angle identity for sine, \(\sin(2\theta) = 2 \sin(\theta) \cos(\theta)\), where \(\theta = \tan^{-1}(x)\). Thus, we have
+
+\[
+2 \sin(\tan^{-1}(x)) \cos(\tan^{-1}(x)) = \frac{1}{3}.
+\]
+
+Let \(\theta = \tan^{-1}(x)\). Then \(\tan(\theta) = x\), and we can express \(\sin(\theta)\) and \(\cos(\theta)\) in terms of \(x\). We know that
+
+\[
+\sin(\theta) = \frac{x}{\sqrt{1+x^2}} \quad \text{and} \quad \cos(\theta) = \frac{1}{\sqrt{1+x^2}}.
+\]
+
+Substituting these into the equation, we get
+
+\[
+2 \left( \frac{x}{\sqrt{1+x^2}} \right) \left( \frac{1}{\sqrt{1+x^2}} \right) = \frac{1}{3},
+\]
+
+which simplifies to
+
+\[
+2 \frac{x}{1+x^2} = \frac{1}{3}.
+\]
+
+To clear the fraction, we multiply both sides by \(3(1+x^2)\):
+
+\[
+6x = 1 + x^2.
+\]
+
+Rearranging the terms, we obtain a quadratic equation:
+
+\[
+x^2 - 6x + 1 = 0.
+\]
+
+We solve this quadratic equation using the quadratic formula \(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\), where \(a = 1\), \(b = -6\), and \(c = 1\):
+
+\[
+x = \frac{6 \pm \sqrt{36 - 4}}{2} = \frac{6 \pm \sqrt{32}}{2} = \frac{6 \pm 4\sqrt{2}}{2} = 3 \pm 2\sqrt{2}.
+\]
+
+Thus, the solutions to the equation are
+
+\[
+x = 3 + 2\sqrt{2} \quad \text{and} \quad x = 3 - 2\sqrt{2}.
+\]
+
+Therefore, the final answer is
+
+\[
+\boxed{3 \pm 2\sqrt{2}}.
+\]","[{3 - 2*sqrt(2), 2*sqrt(2) + 3}, '3 \\pm 2\\sqrt{2}']",3 \pm 2 \sqrt{2},"[2, '2']",False
+"\[
+\boxed{0}
+\]","[0, '0']",7,"[7, '7']",False
+"To determine the number of integer-coordinate points that lie strictly inside the rectangle defined by the vertices \((5,4)\), \((-5,4)\), \((-5,-4)\), and \((5,-4)\), we need to follow these steps:
+
+1. **Identify the dimensions of the rectangle:**
+   The length of the rectangle is the distance between the points \((5,4)\) and \((-5,4)\), which is \(5 - (-5) = 10\).
+   The width of the rectangle is the distance between the points \((5,4)\) and \((5,-4)\), which is \(4 - (-4) = 8\).
+
+2. **Calculate the area of the rectangle:**
+   The area \(A\) of the rectangle is given by the product of its length and width:
+   \[
+   A = 10 \times 8 = 80
+   \]
+
+3. **Determine the number of integer-coordinate points on the boundary of the rectangle:**
+   - Points on the top side: \((x,4)\) where \(x\) ranges from \(-5\) to \(5\). There are \(5 - (-5) + 1 = 11\) points.
+   - Points on the bottom side: \((x,-4)\) where \(x\) ranges from \(-5\) to \(5\). There are \(5 - (-5) + 1 = 11\) points.
+   - Points on the right side: \((5,y)\) where \(y\) ranges from \(-4\) to \(4\). There are \(4 - (-4) + 1 = 9\) points.
+   - Points on the left side: \((-5,y)\) where \(y\) ranges from \(-4\) to \(4\). There are \(4 - (-4) + 1 = 9\) points.
+   - However, the four vertices \((5,4)\), \((-5,4)\), \((-5,-4)\), and \((5,-4)\) are counted twice, so we subtract 4 points.
+   The total number of boundary points is:
+   \[
+   11 + 11 + 9 + 9 - 4 = 36
+   \]
+
+4. **Calculate the number of integer-coordinate points inside the rectangle:**
+   The number of interior points is the total number of points in the rectangle minus the number of boundary points. The total number of points in the rectangle (including the boundary) is:
+   \[
+   (5 - (-5) + 1) \times (4 - (-4) + 1) = 11 \times 9 = 99
+   \]
+   Therefore, the number of interior points is:
+   \[
+   99 - 36 = 63
+   \]
+
+The number of integer-coordinate points that lie strictly inside the rectangle is \(\boxed{63}\).","[63, '63']",63,"[63, '63']",True
+"To find \((2 \mathbf{b} - \mathbf{a}) \times (3 \mathbf{c} + \mathbf{a})\), we will use the properties of the cross product. The cross product is distributive over vector addition, so we can expand the expression as follows:
+
+\[
+(2 \mathbf{b} - \mathbf{a}) \times (3 \mathbf{c} + \mathbf{a}) = 2 \mathbf{b} \times 3 \mathbf{c} + 2 \mathbf{b} \times \mathbf{a} - \mathbf{a} \times 3 \mathbf{c} - \mathbf{a} \times \mathbf{a}.
+\]
+
+We know that the cross product of any vector with itself is zero, so \(\mathbf{a} \times \mathbf{a} = \mathbf{0}\). Therefore, the expression simplifies to:
+
+\[
+6 \mathbf{b} \times \mathbf{c} + 2 \mathbf{b} \times \mathbf{a} - 3 \mathbf{a} \times \mathbf{c}.
+\]
+
+Next, we use the property of the cross product that \(\mathbf{b} \times \mathbf{a} = -\mathbf{a} \times \mathbf{b}\). Substituting this in, we get:
+
+\[
+6 \mathbf{b} \times \mathbf{c} + 2 (-\mathbf{a} \times \mathbf{b}) - 3 \mathbf{a} \times \mathbf{c} = 6 \mathbf{b} \times \mathbf{c} - 2 \mathbf{a} \times \mathbf{b} - 3 \mathbf{a} \times \mathbf{c}.
+\]
+
+We are given the values of \(\mathbf{a} \times \mathbf{b}\), \(\mathbf{a} \times \mathbf{c}\), and \(\mathbf{b} \times \mathbf{c}\):
+
+\[
+\mathbf{a} \times \mathbf{b} = \begin{pmatrix} 6 \\ -7 \\ 3 \end{pmatrix}, \quad \mathbf{a} \times \mathbf{c} = \begin{pmatrix} 4 \\ 7 \\ 2 \end{pmatrix}, \quad \mathbf{b} \times \mathbf{c} = \begin{pmatrix} 1 \\ -7 \\ 18 \end{pmatrix}.
+\]
+
+Substituting these values into the expression, we get:
+
+\[
+6 \begin{pmatrix} 1 \\ -7 \\ 18 \end{pmatrix} - 2 \begin{pmatrix} 6 \\ -7 \\ 3 \end{pmatrix} - 3 \begin{pmatrix} 4 \\ 7 \\ 2 \end{pmatrix}.
+\]
+
+We now perform the scalar multiplications:
+
+\[
+6 \begin{pmatrix} 1 \\ -7 \\ 18 \end{pmatrix} = \begin{pmatrix} 6 \\ -42 \\ 108 \end{pmatrix}, \quad -2 \begin{pmatrix} 6 \\ -7 \\ 3 \end{pmatrix} = \begin{pmatrix} -12 \\ 14 \\ -6 \end{pmatrix}, \quad -3 \begin{pmatrix} 4 \\ 7 \\ 2 \end{pmatrix} = \begin{pmatrix} -12 \\ -21 \\ -6 \end{pmatrix}.
+\]
+
+Adding these vectors together, we get:
+
+\[
+\begin{pmatrix} 6 \\ -42 \\ 108 \end{pmatrix} + \begin{pmatrix} -12 \\ 14 \\ -6 \end{pmatrix} + \begin{pmatrix} -12 \\ -21 \\ -6 \end{pmatrix} = \begin{pmatrix} 6 - 12 - 12 \\ -42 + 14 - 21 \\ 108 - 6 - 6 \end{pmatrix} = \begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix}.
+\]
+
+Therefore, the value of \((2 \mathbf{b} - \mathbf{a}) \times (3 \mathbf{c} + \mathbf{a})\) is \(\boxed{\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix}}\).","[Matrix([
+[-18],
+[-49],
+[ 96]]), '\\begin{pmatrix} -18 \\\\ -49 \\\\ 96 \\end{pmatrix}']",\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix},"[96, '96']",True
+"\[
+\boxed{12}
+\]","[12, '12']",5.4 \text{ cents},"[5.40000000000000, '5.4']",False
+"\[
+\boxed{21}
+\]","[21, '21']",28,"[28, '28']",False
+"\[
+\frac{\sqrt{2x}}{\sqrt{3x-1}} = \frac{3}{2}
+\]
+
+To solve for \( x \), we start by squaring both sides of the equation to eliminate the square roots:
+
+\[
+\left( \frac{\sqrt{2x}}{\sqrt{3x-1}} \right)^2 = \left( \frac{3}{2} \right)^2
+\]
+
+This simplifies to:
+
+\[
+\frac{2x}{3x-1} = \frac{9}{4}
+\]
+
+Next, we cross-multiply to eliminate the fraction:
+
+\[
+4 \cdot 2x = 9 \cdot (3x - 1)
+\]
+
+This gives us:
+
+\[
+8x = 27x - 9
+\]
+
+Now, we rearrange the equation to isolate \( x \):
+
+\[
+8x - 27x = -9
+\]
+
+This simplifies to:
+
+\[
+-19x = -9
+\]
+
+Dividing both sides by -19 gives:
+
+\[
+x = \frac{9}{19}
+\]
+
+Thus, the value of \( x \) is:
+
+\[
+\boxed{\frac{9}{19}}
+\]","[9/19, '\\frac{9}{19}']",\frac9{19},[],False
+"To find the value of \(\frac{7}{30} @ \frac{10}{21}\) using the operation @ defined as \(\frac{m}{n} @ \frac{p}{q} = (m)(p)\left(\frac{q}{n}\right)\), we need to follow these steps:
+
+1. Identify the values of \(m\), \(n\), \(p\), and \(q\). Here, \(m = 7\), \(n = 30\), \(p = 10\), and \(q = 21\).
+2. Substitute these values into the definition of the operation @:
+   \[
+   \frac{7}{30} @ \frac{10}{21} = (7)(10)\left(\frac{21}{30}\right)
+   \]
+3. Calculate the product \((7)(10)\):
+   \[
+   (7)(10) = 70
+   \]
+4. Simplify the fraction \(\frac{21}{30}\). The greatest common divisor of 21 and 30 is 3, so we divide both the numerator and the denominator by 3:
+   \[
+   \frac{21}{30} = \frac{21 \div 3}{30 \div 3} = \frac{7}{10}
+   \]
+5. Multiply 70 by \(\frac{7}{10}\):
+   \[
+   70 \left(\frac{7}{10}\right) = 70 \cdot \frac{7}{10} = 7 \cdot 7 = 49
+   \]
+
+Therefore, the value of \(\frac{7}{30} @ \frac{10}{21}\) is \(\boxed{49}\).","[49, '49']",49,"[49, '49']",True
+"To determine the probability that the segments \(AB\) and \(CD\) intersect, we need to consider the geometric properties of the points and the segments formed by them. Let's break down the problem step by step.
+
+1. **Understanding the Problem:**
+   - We have four points \(A\), \(B\), \(C\), and \(D\) chosen randomly and independently on a circle.
+   - We need to find the probability that the segments \(AB\) and \(CD\) intersect.
+
+2. **Geometric Interpretation:**
+   - For two segments \(AB\) and \(CD\) to intersect, the points must be arranged in an alternating pattern around the circle. This means that if we traverse the circle in one direction, the points must appear in the order \(A, C, B, D\) or \(A, D, B, C\) (or any cyclic permutation of these orders).
+
+3. **Counting the Total Arrangements:**
+   - There are \(4!\) (24) possible ways to arrange the four points \(A\), \(B\), \(C\), and \(D\) in a sequence.
+   - However, since the points are on a circle, we fix one point (say \(A\)) and arrange the remaining three points. This gives us \(3!\) (6) distinct arrangements.
+
+4. **Counting the Favorable Arrangements:**
+   - Out of these 6 arrangements, only 2 will result in the segments \(AB\) and \(CD\) intersecting. These are the arrangements \(A, C, B, D\) and \(A, D, B, C\).
+   - Therefore, there are 2 favorable arrangements.
+
+5. **Calculating the Probability:**
+   - The probability is the ratio of the number of favorable arrangements to the total number of arrangements.
+   - Thus, the probability is \(\frac{2}{6} = \frac{1}{3}\).
+
+Therefore, the probability that the segments \(AB\) and \(CD\) intersect is \(\boxed{\frac{1}{3}}\).","[1/3, '\\frac{1}{3}']",\frac{1}{3},"[1/3, '\\frac{1}{3}']",True
+"To determine the measure of \(\angle ADC\), we start by analyzing the given information and the diagram. We have two circles with centers at \(D\), radii of 1 and 2, and the overlapping area of the smaller circle is \(\frac{5}{12}\) of the area of the larger circle.
+
+First, we calculate the area of the larger circle:
+\[
+\text{Area of the larger circle} = \pi \times 2^2 = 4\pi
+\]
+
+Next, we calculate the area of the smaller circle:
+\[
+\text{Area of the smaller circle} = \pi \times 1^2 = \pi
+\]
+
+The overlapping area is given as \(\frac{5}{12}\) of the area of the larger circle:
+\[
+\text{Overlapping area} = \frac{5}{12} \times 4\pi = \frac{20\pi}{12} = \frac{5\pi}{3}
+\]
+
+Since the overlapping area is also the area of the smaller circle, we can use the formula for the area of a sector of a circle to find the central angle \(\angle ADC\). The area of a sector of a circle is given by:
+\[
+\text{Area of a sector} = \frac{\theta}{360^\circ} \times \pi r^2
+\]
+where \(\theta\) is the central angle in degrees and \(r\) is the radius of the circle. For the smaller circle, \(r = 1\), so the area of the sector is:
+\[
+\text{Area of the sector} = \frac{\theta}{360^\circ} \times \pi \times 1^2 = \frac{\theta}{360^\circ} \pi
+\]
+
+We set this equal to the overlapping area:
+\[
+\frac{\theta}{360^\circ} \pi = \frac{5\pi}{3}
+\]
+
+We can cancel \(\pi\) from both sides of the equation:
+\[
+\frac{\theta}{360^\circ} = \frac{5}{3}
+\]
+
+To solve for \(\theta\), we multiply both sides by 360:
+\[
+\theta = \frac{5}{3} \times 360^\circ = 600^\circ
+\]
+
+However, this result is not possible because the maximum angle in a circle is \(360^\circ\). This indicates that the overlapping area is actually the area of the smaller circle minus the area of the segment of the larger circle that is outside the smaller circle. The correct interpretation is that the angle \(\angle ADC\) is the angle that subtends the arc of the smaller circle that is within the larger circle, which is the angle that corresponds to the area of the smaller circle minus the area of the segment of the larger circle that is outside the smaller circle.
+
+The correct angle is:
+\[
+\theta = 100^\circ
+\]
+
+Thus, the measure of \(\angle ADC\) is:
+\[
+\boxed{100}
+\]","[100, '100']",120,"[120, '120']",False
+"To determine how many cylindrical beakers are needed to fill a spherical tank, we need to calculate the volumes of both the cylindrical beaker and the spherical tank, and then find the ratio of the volume of the spherical tank to the volume of one cylindrical beaker.
+
+First, let's calculate the volume of the cylindrical beaker. The formula for the volume \( V \) of a cylinder is:
+\[ V_{\text{cylinder}} = \pi r^2 h \]
+where \( r \) is the radius and \( h \) is the height. For the cylindrical beaker, the radius \( r \) is 3 cm and the height \( h \) is 8 cm. Substituting these values into the formula, we get:
+\[ V_{\text{cylinder}} = \pi (3)^2 (8) = \pi \cdot 9 \cdot 8 = 72\pi \, \text{ cubic cm} \]
+
+Next, let's calculate the volume of the spherical tank. The formula for the volume \( V \) of a sphere is:
+\[ V_{\text{sphere}} = \frac{4}{3} \pi r^3 \]
+where \( r \) is the radius. For the spherical tank, the radius \( r \) is 6 cm. Substituting this value into the formula, we get:
+\[ V_{\text{sphere}} = \frac{4}{3} \pi (6)^3 = \frac{4}{3} \pi \cdot 216 = 288\pi \, \text{ cubic cm} \]
+
+Now, to find out how many cylindrical beakers are needed to fill the spherical tank, we divide the volume of the spherical tank by the volume of one cylindrical beaker:
+\[ \text{Number of beakers} = \frac{V_{\text{sphere}}}{V_{\text{cylinder}}} = \frac{288\pi}{72\pi} = \frac{288}{72} = 4 \]
+
+Therefore, the number of cylindrical beakers needed to fill the spherical tank is \(\boxed{4}\).","[4, '4']",4,"[4, '4']",True
+"To find the value of \(\sin (\arcsin 0.4 + \arcsin 0.5) \cdot \sin (\arcsin 0.5 - \arcsin 0.4)\), we will use the angle addition and subtraction formulas for sine. Let's denote \(\arcsin 0.4 = A\) and \(\arcsin 0.5 = B\). Then, we need to find \(\sin (A + B) \cdot \sin (B - A)\).
+
+First, recall the angle addition formula for sine:
+\[
+\sin (A + B) = \sin A \cos B + \cos A \sin B.
+\]
+And the angle subtraction formula for sine:
+\[
+\sin (B - A) = \sin B \cos A - \cos B \sin A.
+\]
+Now, we can substitute these into our expression:
+\[
+\sin (A + B) \cdot \sin (B - A) = (\sin A \cos B + \cos A \sin B)(\sin B \cos A - \cos B \sin A).
+\]
+This is a product of two binomials, which can be expanded as follows:
+\[
+(\sin A \cos B + \cos A \sin B)(\sin B \cos A - \cos B \sin A) = \sin A \cos B \sin B \cos A - \sin A \cos B \cos B \sin A + \cos A \sin B \sin B \cos A - \cos A \sin B \cos B \sin A.
+\]
+Combining like terms, we get:
+\[
+\sin A \cos B \sin B \cos A - \sin^2 A \cos^2 B + \cos^2 A \sin^2 B - \cos A \sin B \cos B \sin A = 2 \sin A \cos B \sin B \cos A - \sin^2 A \cos^2 B - \cos^2 A \sin^2 B.
+\]
+Notice that the terms \(2 \sin A \cos B \sin B \cos A\) cancel out:
+\[
+2 \sin A \cos B \sin B \cos A - \sin^2 A \cos^2 B - \cos^2 A \sin^2 B = - \sin^2 A \cos^2 B - \cos^2 A \sin^2 B.
+\]
+We can factor out \(-\sin^2 A \sin^2 B\) from the expression:
+\[
+- \sin^2 A \cos^2 B - \cos^2 A \sin^2 B = - \sin^2 A \sin^2 B (\cos^2 B + \cos^2 A).
+\]
+Since \(\sin A = 0.4\) and \(\sin B = 0.5\), we have \(\sin^2 A = 0.16\) and \(\sin^2 B = 0.25\). We also know that \(\cos^2 A = 1 - \sin^2 A = 1 - 0.16 = 0.84\) and \(\cos^2 B = 1 - \sin^2 B = 1 - 0.25 = 0.75\). Substituting these values in, we get:
+\[
+- \sin^2 A \sin^2 B (\cos^2 B + \cos^2 A) = - (0.16)(0.25)(0.75 + 0.84) = - (0.16)(0.25)(1.59) = - 0.0636.
+\]
+Therefore, the value is:
+\[
+\boxed{-0.0636}.
+\]","[-0.0636000000000000, '-0.0636']",\frac{9}{100},"[9/100, '\\frac{9}{100}']",False
+" upayayang = 20 talampakan / minuto
+
+Pumili ang isang minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 sekundo
+
+Pumili ng 1 talampakan:
+
+1 talampakan = 12 pulgada
+
+Pumili ng 1 minuto:
+
+1 minuto = 60 secular
+
+\boxed{4}","[4, '4']",4,"[4, '4']",True
+"To determine the number of ways to form a subcommittee of 5 members from a committee of 8 Republicans and 6 Democrats, with the condition that the subcommittee must include at least one member from each party, we can follow these steps:
+
+1. **Calculate the total number of ways to form a subcommittee of 5 members from the committee:**
+   The committee has a total of \(8 + 6 = 14\) members. The number of ways to choose 5 members from 14 is given by the combination formula \(\binom{14}{5}\):
+   \[
+   \binom{14}{5} = \frac{14!}{5!(14-5)!} = \frac{14!}{5!9!} = 2002
+   \]
+
+2. **Calculate the number of ways to form a subcommittee of 5 members that are all Republicans:**
+   There are 8 Republicans in the committee. The number of ways to choose 5 Republicans from 8 is given by \(\binom{8}{5}\):
+   \[
+   \binom{8}{5} = \frac{8!}{5!(8-5)!} = \frac{8!}{5!3!} = 56
+   \]
+
+3. **Calculate the number of ways to form a subcommittee of 5 members that are all Democrats:**
+   There are 6 Democrats in the committee. The number of ways to choose 5 Democrats from 6 is given by \(\binom{6}{5}\):
+   \[
+   \binom{6}{5} = \frac{6!}{5!(6-5)!} = \frac{6!}{5!1!} = 6
+   \]
+
+4. **Calculate the number of ways to form a subcommittee of 5 members that includes at least one member from each party:**
+   This is the total number of ways to form a subcommittee of 5 members minus the number of ways to form a subcommittee of 5 members that are all Republicans and the number of ways to form a subcommittee of 5 members that are all Democrats:
+   \[
+   \binom{14}{5} - \binom{8}{5} - \binom{6}{5} = 2002 - 56 - 6 = 1940
+   \]
+
+Therefore, the number of ways to form a subcommittee of 5 members that includes at least one member from each party is \(\boxed{1940}\).","[1940, '1940']",1940,"[1940, '1940']",True
+"To find the value of \(513^2 - 487^2\), we can use the difference of squares formula. The difference of squares formula states that \(a^2 - b^2 = (a - b)(a + b)\). Here, \(a = 513\) and \(b = 487\).
+
+First, we calculate \(a - b\):
+\[
+a - b = 513 - 487 = 26
+\]
+
+Next, we calculate \(a + b\):
+\[
+a + b = 513 + 487 = 1000
+\]
+
+Now, we substitute these values into the difference of squares formula:
+\[
+513^2 - 487^2 = (513 - 487)(513 + 487) = 26 \times 1000 = 26000
+\]
+
+Therefore, the value of \(513^2 - 487^2\) is \(\boxed{26000}\).","[26000, '26000']",26000,"[26000, '26000']",True
+\boxed{8},"[8, '8']",6,"[6, '6']",False
+"To find the positive value of \( x \) that satisfies the equation \(\sqrt[3]{x^2 - 4x + 4} = 16\), we start by eliminating the cube root by cubing both sides of the equation. This gives us:
+
+\[
+x^2 - 4x + 4 = 16^3
+\]
+
+Next, we calculate \( 16^3 \):
+
+\[
+16^3 = 16 \times 16 \times 16 = 4096
+\]
+
+So the equation becomes:
+
+\[
+x^2 - 4x + 4 = 4096
+\]
+
+We can simplify the left side of the equation by recognizing that \( x^2 - 4x + 4 \) is a perfect square trinomial:
+
+\[
+x^2 - 4x + 4 = (x - 2)^2
+\]
+
+Thus, the equation is now:
+
+\[
+(x - 2)^2 = 4096
+\]
+
+To solve for \( x \), we take the square root of both sides. Remember that taking the square root introduces both a positive and a negative solution:
+
+\[
+x - 2 = \pm 64
+\]
+
+This gives us two possible equations to solve:
+
+1. \( x - 2 = 64 \)
+2. \( x - 2 = -64 \)
+
+Solving the first equation:
+
+\[
+x - 2 = 64 \implies x = 64 + 2 \implies x = 66
+\]
+
+Solving the second equation:
+
+\[
+x - 2 = -64 \implies x = -64 + 2 \implies x = -62
+\]
+
+Since we are asked to find the positive value of \( x \), we discard \( x = -62 \) and keep \( x = 66 \).
+
+Therefore, the positive value of \( x \) is \(\boxed{66}\).","[66, '66']",66,"[66, '66']",True
+"\[
+\boxed{\frac{1}{16}}
+\]","[1/16, '\\frac{1}{16}']",\frac{1}{16},"[1/16, '\\frac{1}{16}']",True
+"Given that \( \triangle ABC \) is isosceles with \( AB = AC \) and altitude \( AM = 11 \), we need to find the perimeter of \( \triangle ABC \) given that there is a point \( D \) on \( \overline{AM} \) such that \( AD = 10 \) and \( \angle BDC = 3 \angle BAC \).
+
+First, let \( \angle BAC = \theta \). Then \( \angle BDC = 3\theta \). Since \( D \) is on the altitude \( AM \), \( D \) is the foot of the perpendicular from \( A \) to \( BC \) and \( AD = 10 \), so \( DM = AM - AD = 11 - 10 = 1 \).
+
+Next, we use the tangent function in \( \triangle BDM \) and \( \triangle BMA \):
+\[
+\tan \left( \frac{3\theta}{2} \right) = \frac{BD}{DM} = \frac{BD}{1} = BD
+\]
+\[
+\tan \left( \frac{\theta}{2} \right) = \frac{BD}{AM} = \frac{BD}{11}
+\]
+
+Using the tangent triple angle identity, we have:
+\[
+\tan \left( \frac{3\theta}{2} \right) = \frac{3 \tan \left( \frac{\theta}{2} \right) - \tan^3 \left( \frac{\theta}{2} \right)}{1 - 3 \tan^2 \left( \frac{\theta}{2} \right)}
+\]
+
+Let \( x = \tan \left( \frac{\theta}{2} \right) \). Then:
+\[
+BD = \frac{3x - x^3}{1 - 3x^2}
+\]
+\[
+BD = \frac{11x}{1}
+\]
+
+Equating the two expressions for \( BD \):
+\[
+\frac{3x - x^3}{1 - 3x^2} = 11x
+\]
+
+Cross-multiplying gives:
+\[
+3x - x^3 = 11x - 33x^3
+\]
+\[
+32x^3 - 8x = 0
+\]
+\[
+8x(4x^2 - 1) = 0
+\]
+\[
+x(2x - 1)(2x + 1) = 0
+\]
+
+Since \( x = \tan \left( \frac{\theta}{2} \right) \) cannot be zero, we have:
+\[
+2x - 1 = 0 \quad \text{or} \quad 2x + 1 = 0
+\]
+\[
+x = \frac{1}{2} \quad \text{or} \quad x = -\frac{1}{2}
+\]
+
+We take \( x = \frac{1}{2} \) (since \( \tan \left( \frac{\theta}{2} \right) \) must be positive for an acute angle \( \theta \)):
+\[
+\tan \left( \frac{\theta}{2} \right) = \frac{1}{2}
+\]
+
+Using the double angle identity for tangent:
+\[
+\tan \theta = \frac{2 \tan \left( \frac{\theta}{2} \right)}{1 - \tan^2 \left( \frac{\theta}{2} \right)} = \frac{2 \cdot \frac{1}{2}}{1 - \left( \frac{1}{2} \right)^2} = \frac{1}{1 - \frac{1}{4}} = \frac{1}{\frac{3}{4}} = \frac{4}{3}
+\]
+
+Now, we find \( \sin \theta \) and \( \cos \theta \):
+\[
+\sin \theta = \frac{4}{5}, \quad \cos \theta = \frac{3}{5}
+\]
+
+The length of \( BC \) is:
+\[
+BC = 2 \cdot AB \cdot \sin \left( \frac{\theta}{2} \right) = 2 \cdot \frac{11}{\cos \theta} \cdot \sin \theta = 2 \cdot \frac{11}{\frac{3}{5}} \cdot \frac{4}{5} = 2 \cdot \frac{55}{3} \cdot \frac{4}{5} = 2 \cdot \frac{44}{3} = \frac{88}{3}
+\]
+
+The perimeter of \( \triangle ABC \) is:
+\[
+AB + AC + BC = 2 \cdot \frac{11}{\cos \theta} + \frac{88}{3} = 2 \cdot \frac{11}{\frac{3}{5}} + \frac{88}{3} = 2 \cdot \frac{55}{3} + \frac{88}{3} = \frac{110}{3} + \frac{88}{3} = \frac{198}{3} = 66
+\]
+
+Thus, the perimeter of \( \triangle ABC \) is:
+\[
+\boxed{66}
+\]","[66, '66']",11 \sqrt{5} + 11,"[11, '11']",False
+"To find the median of the 27 consecutive positive integers whose sum is \(3^7\), we start by determining the sum of these integers. Given that the sum is \(3^7\), we calculate:
+
+\[
+3^7 = 2187
+\]
+
+The sum of the first \(n\) consecutive integers starting from \(a\) is given by the formula:
+
+\[
+S = \frac{n}{2} \left(2a + (n-1)\right)
+\]
+
+For our problem, \(n = 27\) and \(S = 2187\). Substituting these values into the formula, we get:
+
+\[
+2187 = \frac{27}{2} \left(2a + 26\right)
+\]
+
+Simplifying the right-hand side, we have:
+
+\[
+2187 = \frac{27}{2} \cdot 2 \left(a + 13\right) = 27 \left(a + 13\right)
+\]
+
+Next, we solve for \(a\):
+
+\[
+a + 13 = \frac{2187}{27} = 81
+\]
+\[
+a = 81 - 13 = 68
+\]
+
+So, the 27 consecutive integers are \(68, 69, 70, \ldots, 94\). The median of a set of 27 consecutive integers is the 14th term in the sequence. To find the 14th term, we use the formula for the \(k\)-th term of an arithmetic sequence:
+
+\[
+a_k = a + (k-1)d
+\]
+
+where \(a\) is the first term, \(d\) is the common difference, and \(k\) is the term number. Here, \(a = 68\), \(d = 1\), and \(k = 14\):
+
+\[
+a_{14} = 68 + (14-1) \cdot 1 = 68 + 13 = 81
+\]
+
+Therefore, the median of the 27 consecutive positive integers is \(\boxed{81}\).","[81, '81']",81,"[81, '81']",True
+"To determine the values of \( x \) that satisfy the inequality \( -4 < x^4 + 4x^2 < 21 \), we will analyze the expression \( x^4 + 4x^2 \) step by step.
+
+First, let's rewrite the expression in a more convenient form. Notice that \( x^4 + 4x^2 \) can be factored as follows:
+\[
+x^4 + 4x^2 = x^2(x^2 + 4)
+\]
+Since \( x^2 \geq 0 \) for all real \( x \) and \( x^2 + 4 \geq 4 > 0 \) for all real \( x \), the expression \( x^4 + 4x^2 \) is always non-negative. Therefore, the inequality \( -4 < x^4 + 4x^2 \) is always true for all real \( x \). So, we only need to solve the inequality:
+\[
+x^4 + 4x^2 < 21
+\]
+
+Let \( y = x^2 \). Then the inequality becomes:
+\[
+y^2 + 4y < 21
+\]
+Rearranging terms, we get a quadratic inequality:
+\[
+y^2 + 4y - 21 < 0
+\]
+To solve this quadratic inequality, we first find the roots of the corresponding quadratic equation:
+\[
+y^2 + 4y - 21 = 0
+\]
+Using the quadratic formula \( y = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \) where \( a = 1 \), \( b = 4 \), and \( c = -21 \), we get:
+\[
+y = \frac{-4 \pm \sqrt{16 + 84}}{2} = \frac{-4 \pm \sqrt{100}}{2} = \frac{-4 \pm 10}{2}
+\]
+This gives us two roots:
+\[
+y = \frac{6}{2} = 3 \quad \text{and} \quad y = \frac{-14}{2} = -7
+\]
+The quadratic expression \( y^2 + 4y - 21 \) can be factored as:
+\[
+(y + 7)(y - 3)
+\]
+So, the inequality \( y^2 + 4y - 21 < 0 \) becomes:
+\[
+(y + 7)(y - 3) < 0
+\]
+The roots \( y = -7 \) and \( y = 3 \) divide the real number line into three intervals: \( (-\infty, -7) \), \( (-7, 3) \), and \( (3, \infty) \). We test a point from each interval to determine where the inequality holds.
+
+- For \( y \in (-\infty, -7) \), choose \( y = -8 \):
+  \[
+  (-8 + 7)(-8 - 3) = (-1)(-11) = 11 > 0
+  \]
+  So, the inequality does not hold in this interval.
+
+- For \( y \in (-7, 3) \), choose \( y = 0 \):
+  \[
+  (0 + 7)(0 - 3) = (7)(-3) = -21 < 0
+  \]
+  So, the inequality holds in this interval.
+
+- For \( y \in (3, \infty) \), choose \( y = 4 \):
+  \[
+  (4 + 7)(4 - 3) = (11)(1) = 11 > 0
+  \]
+  So, the inequality does not hold in this interval.
+
+Therefore, the solution to the inequality \( y^2 + 4y - 21 < 0 \) is:
+\[
+-7 < y < 3
+\]
+Recall that \( y = x^2 \). Since \( x^2 \geq 0 \) for all real \( x \), we have:
+\[
+0 \leq x^2 < 3
+\]
+Taking the square root of all parts of the inequality, we get:
+\[
+-\sqrt{3} < x < \sqrt{3}
+\]
+In interval notation, the solution is:
+\[
+\boxed{(-\sqrt{3}, \sqrt{3})}
+\]","[Interval.open(-sqrt(3), sqrt(3)), '(-\\sqrt{3}, \\sqrt{3})']","(-\sqrt{3}, \sqrt{3})",[],True
+"To find the value of \(xy + yz + zx\) given the equations \(xyz = 4\), \(x^3 + y^3 + z^3 = 4\), and \(xy^2 + x^2 y + xz^2 + x^2 z + yz^2 + y^2 z = 12\), we can use the identity for the sum of cubes and the given equations.
+
+First, recall the identity for the sum of cubes:
+\[x^3 + y^3 + z^3 - 3xyz = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx).\]
+Given that \(x^3 + y^3 + z^3 = 4\) and \(xyz = 4\), we substitute these values into the identity:
+\[4 - 3 \cdot 4 = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx),\]
+which simplifies to
+\[-8 = (x + y + z)(x^2 + y^2 + z^2 - xy - yz - zx).\]
+
+Next, we use the given equation \(xy^2 + x^2 y + xz^2 + x^2 z + yz^2 + y^2 z = 12\). We can rewrite this equation as:
+\[xy(y + x) + xz(z + x) + yz(z + y) = 12.\]
+We can express \(x^2 + y^2 + z^2\) in terms of \(xy + yz + zx\) and \(x + y + z\):
+\[x^2 + y^2 + z^2 = (x + y + z)^2 - 2(xy + yz + zx).\]
+Substituting this into the identity, we get:
+\[-8 = (x + y + z)((x + y + z)^2 - 3(xy + yz + zx)).\]
+
+Let \(s = x + y + z\) and \(p = xy + yz + zx\). Then the equation becomes:
+\[-8 = s(s^2 - 3p).\]
+
+We also know that:
+\[xy^2 + x^2 y + xz^2 + x^2 z + yz^2 + y^2 z = xy(y + x) + xz(z + x) + yz(z + y) = (x + y + z)(xy + yz + zx) - 3xyz = sp - 12.\]
+Given that this expression equals 12, we have:
+\[sp - 12 = 12,\]
+which simplifies to
+\[sp = 24.\]
+
+Now we have two equations:
+1. \(-8 = s(s^2 - 3p)\),
+2. \(sp = 24\).
+
+Substituting \(p = \frac{24}{s}\) into the first equation, we get:
+\[-8 = s\left(s^2 - 3 \cdot \frac{24}{s}\right) = s(s^2 - \frac{72}{s}) = s^3 - 72.\]
+Rearranging terms, we have:
+\[s^3 - 72 = -8,\]
+which simplifies to
+\[s^3 = 64.\]
+Taking the cube root of both sides, we get:
+\[s = 4.\]
+
+Now substituting \(s = 4\) back into \(sp = 24\), we get:
+\[4p = 24,\]
+which simplifies to
+\[p = 6.\]
+
+Therefore, the value of \(xy + yz + zx\) is \(\boxed{6}\).","[6, '6']",6,"[6, '6']",True
+"To determine for which baitang the number of male students who took the bus is closest to \(135\%\) of the number of female students who took the bus, we need to calculate the number of male and female students who took the bus for each baitang and then find the ratio of these numbers.
+
+First, let's calculate the number of male and female students who took the bus for each baitang:
+
+1. **9th baitang:**
+   - Number of male students who took the bus: \(41.1\% \times 300 = 123.3 \approx 123\)
+   - Number of female students who took the bus: \(39.4\% \times 300 = 118.2 \approx 118\)
+   - Ratio: \(\frac{123}{118} \approx 1.0424\)
+
+2. **10th baitang:**
+   - Number of male students who took the bus: \(34.4\% \times 300 = 103.2 \approx 103\)
+   - Number of female students who took the bus: \(33.1\% \times 300 = 99.3 \approx 99\)
+   - Ratio: \(\frac{103}{99} \approx 1.0404\)
+
+3. **11th baitang:**
+   - Number of male students who took the bus: \(20.6\% \times 300 = 61.8 \approx 62\)
+   - Number of female students who took the bus: \(13.8\% \times 300 = 41.4 \approx 41\)
+   - Ratio: \(\frac{62}{41} \approx 1.5122\)
+
+4. **12th baitang:**
+   - Number of male students who took the bus: \(11.6\% \times 300 = 34.8 \approx 35\)
+   - Number of female students who took the bus: \(8.6\% \times 300 = 25.8 \approx 26\)
+   - Ratio: \(\frac{35}{26} \approx 1.3462\)
+
+Next, we need to find which of these ratios is closest to \(1.35\):
+
+- The ratio for the 9th baitang is \(1.0424\).
+- The ratio for the 10th baitang is \(1.0404\).
+- The ratio for the 11th baitang is \(1.5122\).
+- The ratio for the 12th baitang is \(1.3462\).
+
+The ratio for the 12th baitang is the closest to \(1.35\).
+
+Therefore, the baitang where the number of male students who took the bus is closest to \(135\%\) of the number of female students who took the bus is \(\boxed{12}\).","[12, '12']",12,"[12, '12']",True
+"To solve the inequality \(\frac{|x^2 - 81|}{x^2 - 36x} < 0\), we need to analyze the expression step by step.
+
+First, let's rewrite the inequality:
+\[
+\frac{|x^2 - 81|}{x^2 - 36x} < 0.
+\]
+
+The numerator \(|x^2 - 81|\) is the absolute value of \(x^2 - 81\), which can be factored as \(|x^2 - 81| = |(x-9)(x+9)|\). The denominator \(x^2 - 36x\) can be factored as \(x(x-36)\).
+
+So, the inequality becomes:
+\[
+\frac{|(x-9)(x+9)|}{x(x-36)} < 0.
+\]
+
+The absolute value function \(|(x-9)(x+9)|\) is always non-negative, and it is zero when \(x = 9\) or \(x = -9\). Therefore, the expression \(\frac{|(x-9)(x+9)|}{x(x-36)}\) will be negative when the denominator \(x(x-36)\) is negative, because the numerator is non-negative and not zero (since the inequality is strict).
+
+Next, we need to determine where the denominator \(x(x-36)\) is negative. The roots of the equation \(x(x-36) = 0\) are \(x = 0\) and \(x = 36\). The sign of \(x(x-36)\) changes at these roots. We can test the intervals determined by these roots: \((-\infty, 0)\), \((0, 36)\), and \((36, \infty)\).
+
+- For \(x \in (-\infty, 0)\), both \(x\) and \(x-36\) are negative, so their product \(x(x-36)\) is positive.
+- For \(x \in (0, 36)\), \(x\) is positive and \(x-36\) is negative, so their product \(x(x-36)\) is negative.
+- For \(x \in (36, \infty)\), both \(x\) and \(x-36\) are positive, so their product \(x(x-36)\) is positive.
+
+Therefore, the denominator \(x(x-36)\) is negative in the interval \((0, 36)\).
+
+However, we must also ensure that the numerator \(|(x-9)(x+9)|\) is not zero in this interval. The numerator is zero at \(x = 9\) and \(x = -9\). Since \(x = -9\) is not in the interval \((0, 36)\), we only need to exclude \(x = 9\).
+
+Thus, the solution to the inequality is:
+\[
+(0, 9) \cup (9, 36).
+\]
+
+In boxed form, the answer is:
+\[
+\boxed{(0, 9) \cup (9, 36)}.
+\]","[Union(Interval.open(0, 9), Interval.open(9, 36)), '(0, 9) \\cup (9, 36)']","(0,9) \cup (9,36)",[],False
+"To determine the largest possible area of the field, we need to analyze the given track and break it down into its components: two straight sections and two semicircular sections.
+
+1. **Identify the components of the track:**
+   - The track consists of two straight sections and two semicircular sections.
+   - The total length of the track is 400 meters.
+
+2. **Define the variables:**
+   - Let \( L \) be the length of each straight section.
+   - Let \( r \) be the radius of each semicircular section.
+
+3. **Calculate the total length of the track:**
+   - The total length of the track is the sum of the lengths of the two straight sections and the circumferences of the two semicircular sections.
+   - The circumference of one semicircular section is \( \pi r \).
+   - Therefore, the total length of the track is \( 2L + 2\pi r = 400 \).
+
+4. **Solve for \( L \) in terms of \( r \):**
+   \[
+   2L + 2\pi r = 400
+   \]
+   \[
+   L + \pi r = 200
+   \]
+   \[
+   L = 200 - \pi r
+   \]
+
+5. **Calculate the area of the field:**
+   - The field consists of a rectangle with two semicircles on the ends.
+   - The area of the rectangle is \( L \times 2r \).
+   - The area of one semicircle is \( \frac{1}{2} \pi r^2 \).
+   - Therefore, the area of two semicircles is \( \pi r^2 \).
+   - The total area of the field is \( L \times 2r + \pi r^2 \).
+
+6. **Substitute \( L \) in the area formula:**
+   \[
+   \text{Area} = (200 - \pi r) \times 2r + \pi r^2
+   \]
+   \[
+   \text{Area} = 400r - 2\pi r^2 + \pi r^2
+   \]
+   \[
+   \text{Area} = 400r - \pi r^2
+   \]
+
+7. **Find the value of \( r \) that maximizes the area:**
+   - The area is a quadratic function of \( r \) and opens downwards (since the coefficient of \( r^2 \) is negative).
+   - The maximum value occurs at the vertex of the parabola, which is given by \( r = -\frac{b}{2a} \), where \( a = -\pi \) and \( b = 400 \).
+   \[
+   r = -\frac{400}{2(-\pi)} = \frac{200}{\pi}
+   \]
+
+8. **Calculate the maximum area:**
+   \[
+   \text{Area} = 400 \left( \frac{200}{\pi} \right) - \pi \left( \frac{200}{\pi} \right)^2
+   \]
+   \[
+   \text{Area} = \frac{80000}{\pi} - \pi \left( \frac{40000}{\pi^2} \right)
+   \]
+   \[
+   \text{Area} = \frac{80000}{\pi} - \frac{40000}{\pi}
+   \]
+   \[
+   \text{Area} = \frac{40000}{\pi}
+   \]
+
+Therefore, the largest possible area of the field is \(\boxed{\frac{40000}{\pi}}\) square meters.","[40000/pi, '\\frac{40000}{\\pi}']",\frac{20000}{\pi},[],False
+"To find \(\sin{T}\) in the right triangle \(\triangle RST\) where \(\sin{R} = \frac{2}{5}\) and the hypotenuse \(RT = 5\), we can follow these steps:
+
+1. **Determine the length of the opposite side to angle \(R\):**
+   Since \(\sin{R} = \frac{\text{opposite}}{\text{hypotenuse}}\), and given that \(\sin{R} = \frac{2}{5}\) and the hypotenuse \(RT = 5\), the length of the opposite side \(RS\) is:
+   \[
+   RS = 5 \times \frac{2}{5} = 2
+   \]
+
+2. **Determine the length of the adjacent side to angle \(R\):**
+   Using the Pythagorean theorem, we can find the length of the adjacent side \(ST\):
+   \[
+   ST = \sqrt{RT^2 - RS^2} = \sqrt{5^2 - 2^2} = \sqrt{25 - 4} = \sqrt{21}
+   \]
+
+3. **Determine \(\sin{T}\):**
+   In a right triangle, the sine of an angle is the length of the opposite side to that angle divided by the hypotenuse. For angle \(T\), the opposite side is \(RS\) and the hypotenuse is \(RT\). Therefore:
+   \[
+   \sin{T} = \frac{RS}{RT} = \frac{2}{5}
+   \]
+
+Thus, the value of \(\sin{T}\) is \(\boxed{\frac{2}{5}}\).","[2/5, '\\frac{2}{5}']",\frac{\sqrt{21}}{5},[],False
+"\[
+\boxed{5}
+\]","[5, '5']",12,"[12, '12']",False
+"To find \( f^{-1}(0) + f^{-1}(6) \), we need to determine the values of \( x \) such that \( f(x) = 0 \) and \( f(x) = 6 \), and then sum these values.
+
+First, let's find \( f^{-1}(0) \). This means we need to solve \( f(x) = 0 \).
+
+1. For \( x \leq 3 \):
+   \[
+   f(x) = 3 - x
+   \]
+   Setting \( f(x) = 0 \):
+   \[
+   3 - x = 0 \implies x = 3
+   \]
+   Since \( x = 3 \) satisfies \( x \leq 3 \), \( f^{-1}(0) = 3 \).
+
+2. For \( x > 3 \):
+   \[
+   f(x) = -x^3 + 2x^2 + 3x
+   \]
+   Setting \( f(x) = 0 \):
+   \[
+   -x^3 + 2x^2 + 3x = 0 \implies x(-x^2 + 2x + 3) = 0
+   \]
+   This gives us two factors: \( x = 0 \) and \( -x^2 + 2x + 3 = 0 \). Since \( x > 3 \), \( x = 0 \) is not a solution. Solving the quadratic equation:
+   \[
+   -x^2 + 2x + 3 = 0 \implies x^2 - 2x - 3 = 0 \implies (x - 3)(x + 1) = 0
+   \]
+   This gives us \( x = 3 \) and \( x = -1 \). Since \( x > 3 \), \( x = 3 \) and \( x = -1 \) are not solutions. Therefore, there are no solutions for \( x > 3 \).
+
+Thus, the only solution is \( x = 3 \), so \( f^{-1}(0) = 3 \).
+
+Next, let's find \( f^{-1}(6) \). This means we need to solve \( f(x) = 6 \).
+
+1. For \( x \leq 3 \):
+   \[
+   f(x) = 3 - x
+   \]
+   Setting \( f(x) = 6 \):
+   \[
+   3 - x = 6 \implies x = -3
+   \]
+   Since \( x = -3 \) satisfies \( x \leq 3 \), \( f^{-1}(6) = -3 \).
+
+2. For \( x > 3 \):
+   \[
+   f(x) = -x^3 + 2x^2 + 3x
+   \]
+   Setting \( f(x) = 6 \):
+   \[
+   -x^3 + 2x^2 + 3x = 6 \implies x^3 - 2x^2 - 3x + 6 = 0
+   \]
+   We can use the Rational Root Theorem to test possible rational roots. Testing \( x = 2 \):
+   \[
+   2^3 - 2 \cdot 2^2 - 3 \cdot 2 + 6 = 8 - 8 - 6 + 6 = 0
+   \]
+   So, \( x = 2 \) is a root. However, \( x = 2 \) does not satisfy \( x > 3 \), so it is not a solution. Testing other possible rational roots or using numerical methods would show that there are no other real roots greater than 3. Therefore, there are no solutions for \( x > 3 \).
+
+Thus, the only solution is \( x = -3 \), so \( f^{-1}(6) = -3 \).
+
+Finally, we sum the values of \( f^{-1}(0) \) and \( f^{-1}(6) \):
+\[
+f^{-1}(0) + f^{-1}(6) = 3 + (-3) = 0
+\]
+
+The answer is \(\boxed{0}\).","[0, '0']",0,"[0, '0']",True
+"To solve the problem, we need to understand the geometric properties of a regular octahedron and the distances from a point \( P \) to its vertices. A regular octahedron has 8 vertices, and the distances from any point inside or outside the octahedron to its vertices can be analyzed using symmetry and geometric relationships.
+
+Given that the distances from \( P \) to five of the vertices are 3, 7, 8, 9, and 11, we need to find the distance from \( P \) to the sixth vertex. Let's denote the vertices of the octahedron as \( A_1, A_2, A_3, A_4, A_5, A_6, A_7, \) and \( A_8 \). Without loss of generality, let's assume the distances from \( P \) to \( A_1, A_2, A_3, A_4, \) and \( A_5 \) are 3, 7, 8, 9, and 11, respectively. We need to find the distance from \( P \) to \( A_6 \).
+
+In a regular octahedron, the sum of the squares of the distances from any point to the vertices is constant. This is a known geometric property of regular polyhedra. Therefore, we can use this property to find the unknown distance.
+
+Let the distance from \( P \) to \( A_6 \) be \( d \). The sum of the squares of the distances from \( P \) to all eight vertices is:
+\[
+3^2 + 7^2 + 8^2 + 9^2 + 11^2 + d^2 + \text{(sum of the squares of the distances to the other two vertices)}
+\]
+Since the sum of the squares of the distances is constant, we can use the fact that the sum of the squares of the distances from \( P \) to the vertices of a regular octahedron is equal to \( 4a^2 \), where \( a \) is the edge length of the octahedron. However, we don't need the exact edge length to solve this problem. We only need to use the fact that the sum of the squares of the distances is constant.
+
+Given that the sum of the squares of the distances from \( P \) to five vertices is:
+\[
+3^2 + 7^2 + 8^2 + 9^2 + 11^2 = 9 + 49 + 64 + 81 + 121 = 324
+\]
+The sum of the squares of the distances from \( P \) to the other three vertices must be equal to the sum of the squares of the distances from \( P \) to the vertices of a regular octahedron minus 324. Since the sum of the squares of the distances from \( P \) to the vertices of a regular octahedron is constant, the sum of the squares of the distances from \( P \) to the other three vertices must be equal to the sum of the squares of the distances from \( P \) to the vertices of a regular octahedron minus 324.
+
+Therefore, the distance from \( P \) to \( A_6 \) is:
+\[
+\boxed{6}
+\]","[6, '6']",\sqrt{66},[],True
+"To solve the problem, we start with the formula for power, which is given by:
+
+\[
+P = m \cdot v
+\]
+
+where \( P \) is the power, \( m \) is the mass, and \( v \) is the velocity (speed).
+
+### Step 1: Define the masses and speeds
+Let:
+- \( m_{\text{softball}} = 200 \, \text{g} \)
+- \( m_{\text{baseball}} = 150 \, \text{g} \)
+
+Let \( v_{\text{softball}} \) be the speed of the softball and \( v_{\text{baseball}} \) be the speed of the baseball.
+
+### Step 2: Set the powers equal
+Since the power of the softball is equal to the power of the baseball, we can set their power equations equal to each other:
+
+\[
+m_{\text{softball}} \cdot v_{\text{softball}} = m_{\text{baseball}} \cdot v_{\text{baseball}}
+\]
+
+### Step 3: Substitute the masses
+Substituting the masses into the equation gives:
+
+\[
+200 \cdot v_{\text{softball}} = 150 \cdot v_{\text{baseball}}
+\]
+
+### Step 4: Solve for the ratio of speeds
+To find the ratio of the speeds, we can rearrange the equation:
+
+\[
+\frac{v_{\text{softball}}}{v_{\text{baseball}}} = \frac{150}{200}
+\]
+
+### Step 5: Simplify the fraction
+Now, we simplify \( \frac{150}{200} \):
+
+\[
+\frac{150}{200} = \frac{3}{4}
+\]
+
+### Final Answer
+Thus, the ratio of the speed of the softball to the speed of the baseball is:
+
+\[
+\boxed{\frac{3}{4}}
+\]","[3/4, '\\frac{3}{4}']",\frac 34,"[34, '34']",False
+"To determine how many digits are the same in the base 7 and base 8 representations of \(629_{10}\), we first need to convert \(629_{10}\) to both base 7 and base 8.
+
+### Step 1: Convert \(629_{10}\) to base 7
+We repeatedly divide the number by 7 and keep track of the remainders.
+
+\[
+629 \div 7 = 89 \quad \text{remainder} \quad 6
+\]
+\[
+89 \div 7 = 12 \quad \text{remainder} \quad 5
+\]
+\[
+12 \div 7 = 1 \quad \text{remainder} \quad 5
+\]
+\[
+1 \div 7 = 0 \quad \text{remainder} \quad 1
+\]
+
+Reading the remainders from bottom to top, we get the base 7 representation of \(629_{10}\) as \(1556_7\).
+
+### Step 2: Convert \(629_{10}\) to base 8
+We repeatedly divide the number by 8 and keep track of the remainders.
+
+\[
+629 \div 8 = 78 \quad \text{remainder} \quad 5
+\]
+\[
+78 \div 8 = 9 \quad \text{remainder} \quad 6
+\]
+\[
+9 \div 8 = 1 \quad \text{remainder} \quad 1
+\]
+\[
+1 \div 8 = 0 \quad \text{remainder} \quad 1
+\]
+
+Reading the remainders from bottom to top, we get the base 8 representation of \(629_{10}\) as \(1165_8\).
+
+### Step 3: Compare the digits of the base 7 and base 8 representations
+The base 7 representation is \(1556_7\) and the base 8 representation is \(1165_8\). We compare the digits:
+
+- Base 7: \(1, 5, 5, 6\)
+- Base 8: \(1, 1, 6, 5\)
+
+The digits that are the same are \(1, 5,\) and \(6\). There are 3 digits that are the same.
+
+Thus, the number of digits that are the same in the base 7 and base 8 representations of \(629_{10}\) is \(\boxed{3}\).","[3, '3']",3,"[3, '3']",True
+\boxed{1},"[1, '1']",60,"[60, '60']",False
+"To find the polynomial \( g(x) \) which is equal to \( f(x-1) \), we start with the given polynomial \( f(x) = 3x^4 + 5x^2 - 9x - 2 \). We need to substitute \( x-1 \) for \( x \) in \( f(x) \) and then expand the resulting expression.
+
+First, let's write down the substitution:
+\[ g(x) = f(x-1) = 3(x-1)^4 + 5(x-1)^2 - 9(x-1) - 2. \]
+
+Next, we expand each term separately.
+
+1. Expand \( (x-1)^4 \):
+\[ (x-1)^4 = x^4 - 4x^3 + 6x^2 - 4x + 1. \]
+So,
+\[ 3(x-1)^4 = 3(x^4 - 4x^3 + 6x^2 - 4x + 1) = 3x^4 - 12x^3 + 18x^2 - 12x + 3. \]
+
+2. Expand \( (x-1)^2 \):
+\[ (x-1)^2 = x^2 - 2x + 1. \]
+So,
+\[ 5(x-1)^2 = 5(x^2 - 2x + 1) = 5x^2 - 10x + 5. \]
+
+3. Expand \( -9(x-1) \):
+\[ -9(x-1) = -9x + 9. \]
+
+Now, we combine all these expanded terms:
+\[ g(x) = 3x^4 - 12x^3 + 18x^2 - 12x + 3 + 5x^2 - 10x + 5 - 9x + 9 - 2. \]
+
+Next, we combine like terms:
+\[ g(x) = 3x^4 - 12x^3 + (18x^2 + 5x^2) + (-12x - 10x - 9x) + (3 + 5 + 9 - 2) \]
+\[ g(x) = 3x^4 - 12x^3 + 23x^2 - 31x + 15. \]
+
+The coefficients of the polynomial \( g(x) \) are 3, -12, 23, -31, and 15. To find the sum of the coefficients, we add these values together:
+\[ 3 + (-12) + 23 + (-31) + 15 = 3 - 12 + 23 - 31 + 15 = 8. \]
+
+Therefore, the sum of the coefficients of \( g(x) \) is \(\boxed{8}\).","[8, '8']",-2,"[-2, '-2']",False
+"To find the shortest distance from the point \((6, 0)\) to the line \(y = 2x - 2\), we can use the formula for the distance from a point to a line. The formula is given by:
+
+\[
+d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}}
+\]
+
+where the line is in the form \(Ax + By + C = 0\). First, we need to rewrite the equation of the line \(y = 2x - 2\) in the standard form. This can be done by moving all terms to one side of the equation:
+
+\[
+2x - y - 2 = 0
+\]
+
+Here, \(A = 2\), \(B = -1\), and \(C = -2\). The point \((x_1, y_1)\) is \((6, 0)\). Substituting these values into the distance formula, we get:
+
+\[
+d = \frac{|2(6) + (-1)(0) + (-2)|}{\sqrt{2^2 + (-1)^2}} = \frac{|12 - 2|}{\sqrt{4 + 1}} = \frac{|10|}{\sqrt{5}} = \frac{10}{\sqrt{5}} = \frac{10\sqrt{5}}{5} = 2\sqrt{5}
+\]
+
+Therefore, the shortest distance from the point \((6, 0)\) to the line \(y = 2x - 2\) is \(\boxed{2\sqrt{5}}\).","[2*sqrt(5), '2\\sqrt{5}']",2\sqrt{5},"[2, '2']",True
+"To solve the problem, we start by finding the roots of the polynomial equation \(x^4 + 2x^3 + 2 = 0\). Let the roots be \(\alpha_1, \alpha_2, \alpha_3,\) and \(\alpha_4\). According to Vieta's formulas, we have the following relationships among the roots:
+\[
+\alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 = -2,
+\]
+\[
+\alpha_1\alpha_2 + \alpha_1\alpha_3 + \alpha_1\alpha_4 + \alpha_2\alpha_3 + \alpha_2\alpha_4 + \alpha_3\alpha_4 = 0,
+\]
+\[
+\alpha_1\alpha_2\alpha_3 + \alpha_1\alpha_2\alpha_4 + \alpha_1\alpha_3\alpha_4 + \alpha_2\alpha_3\alpha_4 = 0,
+\]
+\[
+\alpha_1\alpha_2\alpha_3\alpha_4 = 2.
+\]
+
+We need to find the value of the expression \(\{\alpha_1\alpha_2 + \alpha_3\alpha_4, \alpha_1\alpha_3 + \alpha_2\alpha_4, \alpha_1\alpha_4 + \alpha_2\alpha_3\}\). Let's denote these expressions by \(a\), \(b\), and \(c\) respectively:
+\[
+a = \alpha_1\alpha_2 + \alpha_3\alpha_4,
+\]
+\[
+b = \alpha_1\alpha_3 + \alpha_2\alpha_4,
+\]
+\[
+c = \alpha_1\alpha_4 + \alpha_2\alpha_3.
+\]
+
+We know that:
+\[
+a + b + c = (\alpha_1\alpha_2 + \alpha_3\alpha_4) + (\alpha_1\alpha_3 + \alpha_2\alpha_4) + (\alpha_1\alpha_4 + \alpha_2\alpha_3) = \alpha_1\alpha_2 + \alpha_1\alpha_3 + \alpha_1\alpha_4 + \alpha_2\alpha_3 + \alpha_2\alpha_4 + \alpha_3\alpha_4 = 0.
+\]
+
+Next, we need to find the product \(abc\):
+\[
+abc = (\alpha_1\alpha_2 + \alpha_3\alpha_4)(\alpha_1\alpha_3 + \alpha_2\alpha_4)(\alpha_1\alpha_4 + \alpha_2\alpha_3).
+\]
+
+Expanding this product is quite complex, so we use the fact that the roots of the polynomial can be expressed in terms of complex numbers. The roots of the polynomial \(x^4 + 2x^3 + 2 = 0\) can be found using numerical methods or by recognizing a pattern. However, for the purpose of this problem, we can use the fact that the roots are symmetric and the expressions \(a\), \(b\), and \(c\) are symmetric sums of the roots.
+
+Given the symmetry and the fact that the sum of the roots taken two at a time is zero, we can deduce that the values of \(a\), \(b\), and \(c\) are the roots of the polynomial \(t^3 + 4t + 4 = 0\). Solving this polynomial, we get:
+\[
+t = -2, \quad t = 1 + i, \quad t = 1 - i.
+\]
+
+Therefore, the values of \(a\), \(b\), and \(c\) are \(-2\), \(1 + i\), and \(1 - i\). The set \(\{\alpha_1\alpha_2 + \alpha_3\alpha_4, \alpha_1\alpha_3 + \alpha_2\alpha_4, \alpha_1\alpha_4 + \alpha_2\alpha_3\}\) is:
+\[
+\boxed{\{-2, 1+i, 1-i\}}.
+\]","[{-2, 1 - i, i + 1}, '\\{-2, 1+i, 1-i\\}']","\{1\pm\sqrt{5},-2\}",[],False
+"To determine the cost of one lapis, we need to set up a system of linear equations based on the given information. Let's define the variables first:
+
+- Let \( L \) be the cost of one lapis.
+- Let \( J \) be the cost of one jumbo na pambura.
+
+From the problem, we have the following two equations:
+
+1. Three lapis and one jumbo na pambura cost \$1.24:
+   \[
+   3L + J = 1.24
+   \]
+
+2. Five lapis and one jumbo na pambura cost \$1.82:
+   \[
+   5L + J = 1.82
+   \]
+
+To eliminate \( J \), we can subtract the first equation from the second equation:
+\[
+(5L + J) - (3L + J) = 1.82 - 1.24
+\]
+Simplifying the left side, we get:
+\[
+2L = 0.58
+\]
+Solving for \( L \), we divide both sides by 2:
+\[
+L = \frac{0.58}{2} = 0.29
+\]
+
+Therefore, the cost of one lapis is \(\boxed{0.29}\).","[0.290000000000000, '0.29']",29,"[29, '29']",True
+\boxed{7},"[7, '7']",4,"[4, '4']",False
+"To solve the problem, we need to find the probability that a randomly chosen point inside the rectangle \(ABCD\) is closer to the center \(O\) than to any of the four vertices \(A\), \(B\), \(C\), and \(D\).
+
+First, let's define the dimensions of the rectangle. Let \(AB = a\) and \(AD = b\). Given that \( \frac{AB}{AD} = k \), we have \( a = kb \).
+
+The center \(O\) of the rectangle is the midpoint of both \(AB\) and \(CD\), and also the midpoint of both \(AD\) and \(BC\). Therefore, the coordinates of \(O\) are \((0, 0)\) if we place the rectangle in the coordinate plane with \(A = (-\frac{a}{2}, -\frac{b}{2})\), \(B = (\frac{a}{2}, -\frac{b}{2})\), \(C = (\frac{a}{2}, \frac{b}{2})\), and \(D = (-\frac{a}{2}, \frac{b}{2})\).
+
+Next, we need to determine the region inside the rectangle where a point is closer to \(O\) than to any of the vertices. This region is bounded by the perpendicular bisectors of the segments connecting \(O\) to each vertex. The perpendicular bisector of \(OA\) is the line \(x = 0\), the perpendicular bisector of \(OB\) is the line \(x = \frac{a}{4}\), the perpendicular bisector of \(OC\) is the line \(x = \frac{a}{4}\), and the perpendicular bisector of \(OD\) is the line \(x = -\frac{a}{4}\). Similarly, the perpendicular bisectors of \(OA\), \(OB\), \(OC\), and \(OD\) in the \(y\)-direction are the lines \(y = 0\), \(y = \frac{b}{4}\), \(y = \frac{b}{4}\), and \(y = -\frac{b}{4}\), respectively.
+
+These perpendicular bisectors form a smaller rectangle with center \(O\) and side lengths \(\frac{a}{2}\) and \(\frac{b}{2}\). The area of this smaller rectangle is:
+\[
+\left(\frac{a}{2}\right) \left(\frac{b}{2}\right) = \frac{ab}{4}
+\]
+
+The area of the original rectangle \(ABCD\) is:
+\[
+ab
+\]
+
+The probability that a randomly chosen point inside the rectangle \(ABCD\) is closer to \(O\) than to any of the four vertices is the ratio of the area of the smaller rectangle to the area of the original rectangle:
+\[
+\frac{\frac{ab}{4}}{ab} = \frac{1}{4}
+\]
+
+Thus, the probability is:
+\[
+\boxed{\frac{1}{4}}
+\]","[1/4, '\\frac{1}{4}']",\frac{1}{2},"[1/2, '\\frac{1}{2}']",False
+"To find the remainder when 54 is divided by 6, we can use the modulo operation. The modulo operation, denoted as \( a \mod b \), gives the remainder of the division of \( a \) by \( b \).
+
+Here, \( a = 54 \) and \( b = 6 \). We need to determine how many times 6 can fit into 54 and then find the remainder.
+
+First, we perform the division:
+\[ 54 \div 6 = 9 \]
+This means that 6 can fit into 54 exactly 9 times. To find the remainder, we multiply 6 by 9 and subtract the result from 54:
+\[ 54 - (6 \times 9) = 54 - 54 = 0 \]
+Therefore, the remainder when 54 is divided by 6 is 0.
+
+So, the answer is \(\boxed{0}\).","[0, '0']",0,"[0, '0']",True
+"To find the value of \( f\left(\frac{\pi}{3}\right) + f(\sqrt{45}) + f(8^{2/3}) \), we need to evaluate each term separately using the given piecewise function \( f(n) \).
+
+The function \( f(n) \) is defined as:
+\[ f(n) = \left\{
+\begin{array}{cl}
+\lfloor n \rfloor & \text{if } n \geq 4, \\
+\lceil n \rceil & \text{if } n < 4.
+\end{array}
+\right. \]
+
+Let's evaluate each term step by step:
+
+1. Evaluate \( f\left(\frac{\pi}{3}\right) \):
+   - First, calculate \( \frac{\pi}{3} \). Using the approximation \( \pi \approx 3.14159 \), we get \( \frac{\pi}{3} \approx 1.0472 \).
+   - Since \( \frac{\pi}{3} < 4 \), we use the ceiling function \( \lceil n \rceil \).
+   - Therefore, \( f\left(\frac{\pi}{3}\right) = \lceil 1.0472 \rceil = 2 \).
+
+2. Evaluate \( f(\sqrt{45}) \):
+   - First, calculate \( \sqrt{45} \). Using the approximation \( \sqrt{45} \approx 6.7082 \).
+   - Since \( \sqrt{45} \geq 4 \), we use the floor function \( \lfloor n \rfloor \).
+   - Therefore, \( f(\sqrt{45}) = \lfloor 6.7082 \rfloor = 6 \).
+
+3. Evaluate \( f(8^{2/3}) \):
+   - First, calculate \( 8^{2/3} \). Using the property of exponents, \( 8^{2/3} = (8^{1/3})^2 = 2^2 = 4 \).
+   - Since \( 8^{2/3} = 4 \geq 4 \), we use the floor function \( \lfloor n \rfloor \).
+   - Therefore, \( f(8^{2/3}) = \lfloor 4 \rfloor = 4 \).
+
+Now, we sum the values of the three terms:
+\[ f\left(\frac{\pi}{3}\right) + f(\sqrt{45}) + f(8^{2/3}) = 2 + 6 + 4 = 12. \]
+
+Thus, the final answer is:
+\[ \boxed{12} \]","[12, '12']",12,"[12, '12']",True
+\boxed{10},"[10, '10']",59,"[59, '59']",False
+"To find the average (mean) score of the class, we need to calculate the total score of all the students and then divide that by the number of students. Here are the steps:
+
+1. Determine the total score for the students who got 80.
+2. Determine the total score for the students who got 90.
+3. Determine the total score for the students who got 100.
+4. Add up all these total scores to get the overall total score.
+5. Divide the overall total score by the number of students in the class.
+
+Let's go through each step in detail:
+
+1. The total score for the students who got 80 is:
+   \[
+   20 \times 80 = 1600
+   \]
+
+2. The total score for the students who got 90 is:
+   \[
+   8 \times 90 = 720
+   \]
+
+3. The total score for the students who got 100 is:
+   \[
+   2 \times 100 = 200
+   \]
+
+4. Add up all these total scores to get the overall total score:
+   \[
+   1600 + 720 + 200 = 2520
+   \]
+
+5. Divide the overall total score by the number of students in the class:
+   \[
+   \frac{2520}{30} = 84
+   \]
+
+Therefore, the average (mean) score of the class is \(\boxed{84}\).","[84, '84']",84,"[84, '84']",True
+"\[
+\boxed{5}
+\]","[5, '5']",7,"[7, '7']",False
+"To determine how many more Talampakans Jim was blown than Martha, we need to calculate the distance each person was blown by the wind and then find the difference between these distances.
+
+First, let's calculate the distance Jim was blown. Jim was blown pahilis, so he was blown in a straight line perpendicular to the wind. The wind has a haba of 400 Talampakans and a lapad of 300 Talampakans. Since Jim was blown pahilis, the distance he was blown is equal to the haba of the wind, which is 400 Talampakans.
+
+Next, let's calculate the distance Martha was blown. Martha was blown along the diagonal of the rectangle formed by the haba and lapad of the wind. The distance she was blown can be found using the Pythagorean theorem, which states that the diagonal \(d\) of a rectangle with length \(l\) and width \(w\) is given by:
+\[ d = \sqrt{l^2 + w^2} \]
+Here, the length \(l\) is the haba of the wind, which is 400 Talampakans, and the width \(w\) is the lapad of the wind, which is 300 Talampakans. Therefore, the distance Martha was blown is:
+\[ d = \sqrt{400^2 + 300^2} = \sqrt{160000 + 90000} = \sqrt{250000} = 500 \text{ Talampakans} \]
+
+Now, we find the difference between the distance Jim was blown and the distance Martha was blown:
+\[ 500 - 400 = 100 \text{ Talampakans} \]
+
+Thus, Martha was blown 100 Talampakans more than Jim. The answer is:
+\[
+\boxed{100}
+\]","[100, '100']",200,"[200, '200']",False
+"Given that \(\omega\) is a complex number such that \(\omega^3 = 1\), we know that \(\omega\) is a cube root of unity. The cube roots of unity are \(1, \omega, \omega^2\) where \(\omega \neq 1\) and \(\omega^2 \neq 1\). These roots satisfy the equation \(\omega^2 + \omega + 1 = 0\).
+
+We need to find the value of the expression \(\frac{1}{1 + \omega} + \frac{1}{1 + \omega^2}\).
+
+First, we combine the fractions:
+\[
+\frac{1}{1 + \omega} + \frac{1}{1 + \omega^2} = \frac{(1 + \omega^2) + (1 + \omega)}{(1 + \omega)(1 + \omega^2)} = \frac{2 + \omega + \omega^2}{(1 + \omega)(1 + \omega^2)}.
+\]
+
+Using the property of cube roots of unity, \(\omega^2 + \omega + 1 = 0\), we can simplify the numerator:
+\[
+2 + \omega + \omega^2 = 2 - 1 = 1.
+\]
+
+So the expression becomes:
+\[
+\frac{1}{(1 + \omega)(1 + \omega^2)}.
+\]
+
+Next, we need to simplify the denominator. We expand \((1 + \omega)(1 + \omega^2)\):
+\[
+(1 + \omega)(1 + \omega^2) = 1 + \omega^2 + \omega + \omega^3.
+\]
+
+Again, using the property \(\omega^3 = 1\), we substitute \(\omega^3\) with 1:
+\[
+1 + \omega^2 + \omega + \omega^3 = 1 + \omega^2 + \omega + 1 = 2 + \omega + \omega^2 = 2 - 1 = 1.
+\]
+
+So the denominator simplifies to 1. Therefore, the expression simplifies to:
+\[
+\frac{1}{1} = 1.
+\]
+
+Thus, the only possible value of \(\frac{1}{1 + \omega} + \frac{1}{1 + \omega^2}\) is \(\boxed{1}\).","[1, '1']",1,"[1, '1']",True
+"To determine the pinakamaikling distansya na maaaring lakbayin kung magsisimula ka sa alinmang punto \(A\), \(B\), \(C\), o \(D\) at bisitahin ang tatlo pang natitirang mga punto nang isang beses, we need to consider the distances between the points and the possible paths.
+
+First, let's list the distances between the points:
+- \(AB = 6\)
+- \(AC = 6\)
+- \(AD = 5\)
+- \(BC = 5\)
+- \(BD = 3\)
+- \(CD = 4\)
+
+We need to find the maximum distance for a path that starts at one point and visits three other points exactly once. We will consider each starting point and calculate the maximum possible distance for each path.
+
+**Starting at point \(A\):**
+- Path \(A \to B \to C \to D\): \(AB + BC + CD = 6 + 5 + 4 = 15\)
+- Path \(A \to B \to D \to C\): \(AB + BD + DC = 6 + 3 + 4 = 13\)
+- Path \(A \to C \to B \to D\): \(AC + CB + BD = 6 + 5 + 3 = 14\)
+- Path \(A \to C \to D \to B\): \(AC + CD + DB = 6 + 4 + 3 = 13\)
+- Path \(A \to D \to B \to C\): \(AD + DB + BC = 5 + 3 + 5 = 13\)
+- Path \(A \to D \to C \to B\): \(AD + DC + CB = 5 + 4 + 5 = 14\)
+
+The maximum distance starting at point \(A\) is \(15\).
+
+**Starting at point \(B\):**
+- Path \(B \to A \to C \to D\): \(BA + AC + CD = 6 + 6 + 4 = 16\)
+- Path \(B \to A \to D \to C\): \(BA + AD + DC = 6 + 5 + 4 = 15\)
+- Path \(B \to C \to A \to D\): \(BC + CA + AD = 5 + 6 + 5 = 16\)
+- Path \(B \to C \to D \to A\): \(BC + CD + DA = 5 + 4 + 5 = 14\)
+- Path \(B \to D \to A \to C\): \(BD + DA + AC = 3 + 5 + 6 = 14\)
+- Path \(B \to D \to C \to A\): \(BD + DC + CA = 3 + 4 + 6 = 13\)
+
+The maximum distance starting at point \(B\) is \(16\).
+
+**Starting at point \(C\):**
+- Path \(C \to A \to B \to D\): \(CA + AB + BD = 6 + 6 + 3 = 15\)
+- Path \(C \to A \to D \to B\): \(CA + AD + DB = 6 + 5 + 3 = 14\)
+- Path \(C \to B \to A \to D\): \(CB + BA + AD = 5 + 6 + 5 = 16\)
+- Path \(C \to B \to D \to A\): \(CB + BD + DA = 5 + 3 + 5 = 13\)
+- Path \(C \to D \to A \to B\): \(CD + DA + AB = 4 + 5 + 6 = 15\)
+- Path \(C \to D \to B \to A\): \(CD + DB + BA = 4 + 3 + 6 = 13\)
+
+The maximum distance starting at point \(C\) is \(16\).
+
+**Starting at point \(D\):**
+- Path \(D \to A \to B \to C\): \(DA + AB + BC = 5 + 6 + 5 = 16\)
+- Path \(D \to A \to C \to B\): \(DA + AC + CB = 5 + 6 + 5 = 16\)
+- Path \(D \to B \to A \to C\): \(DB + BA + AC = 3 + 6 + 6 = 15\)
+- Path \(D \to B \to C \to A\): \(DB + BC + CA = 3 + 5 + 6 = 14\)
+- Path \(D \to C \to A \to B\): \(DC + CA + AB = 4 + 6 + 6 = 16\)
+- Path \(D \to C \to B \to A\): \(DC + CB + BA = 4 + 5 + 6 = 15\)
+
+The maximum distance starting at point \(D\) is \(16\).
+
+From the above calculations, the pinakamaikling distansya na maaaring lakbayin kung magsisimula ka sa alinmang punto at bisitahin ang tatlo pang natitirang mga point nang isang beses is \(\boxed{16}\).","[16, '16']",13,"[13, '13']",False

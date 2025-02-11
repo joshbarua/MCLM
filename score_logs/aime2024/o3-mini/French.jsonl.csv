@@ -1,0 +1,147 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+"\boxed{721} 
+
+Soit x, y, z les dimensions de la boîte. On a :
+  Volume : xyz = 23,
+  Surface : 2(xy + yz + zx) = 54, donc xy + yz + zx = 27.
+
+Pour qu'une sphère contienne une boîte, son diamètre doit être au moins égal à la longueur de la diagonale de la boîte, qui est d² = x² + y² + z². Ainsi, le rayon minimal d'une sphère contenant la boîte est r = (1/2)√(x² + y² + z²).
+
+Dans notre problème, r doit satisfaire r² = (x² + y² + z²)/4. Pour trouver le plus petit diamètre nécessaire à contenir toutes les boîtes (autrement dit la plus grande diagonale parmi toutes les boîtes satisfaisant les conditions), il faut maximiser x² + y² + z² sous les contraintes données.
+
+On se rappelle que :
+  (x + y + z)² = x² + y² + z² + 2(xy + yz + zx),
+donc
+  x² + y² + z² = (x + y + z)² - 2·27 = (x+y+z)² - 54.
+
+Maximiser x²+y²+z² revient à maximiser s = x+y+z.
+
+Une façon standard de chercher ce maximum est de supposer que deux dimensions sont égales. Posons donc x = y. Alors, avec x = x et z = z, les conditions deviennent :
+
+1) Le volume : x²z = 23  ⟹  z = 23/x².
+2) La surface : x² + 2xz = 27  ⟹  x² + 2x·(23/x²) = x² + 46/x = 27.
+
+On multiplie par x pour éliminer le dénominateur :
+  x³ + 46 = 27x  ⟹  x³ - 27x + 46 = 0.
+Vérifions x = 2 :
+  2³ - 27·2 + 46 = 8 - 54 + 46 = 0.
+Donc x = 2 est solution, et par suite, x = y = 2 et z = 23/4.
+
+Alors la somme des longueurs est :
+  s = x + y + z = 2 + 2 + 23/4 = 4 + 23/4 = (16 + 23)/4 = 39/4.
+La somme des carrés est :
+  x² + y² + z² = s² - 54 = (39/4)² - 54 = 1521/16 - 54 = (1521 - 864)/16 = 657/16.
+
+Le rayon minimal pour couvrir la boîte ayant la plus grande diagonale est :
+  r² = (x²+y²+z²)/4 = (657/16)/4 = 657/64.
+
+Comme 657 et 64 sont premiers entre eux (657 = 3²·73 et 64 = 2⁶), on peut écrire r² = p/q avec p = 657 et q = 64. La somme demandée est p + q = 657 + 64 = 721.
+
+Ainsi, la réponse finale est \boxed{721}.","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+"\boxed{294} 
+
+Pour expliquer brièvement : une modification (changement) de direction correspond au passage d’une séquence consécutive de pas d’une direction à l’autre (de R à U ou inversement). Un chemin de 16 pas se décomposant en 5 segments (ou « runs ») aura exactement 4 changements de directions. Il y a deux cas possibles selon que le chemin commence par un pas vers la droite (R) ou par un pas vers le haut (U).
+
+• Cas 1 (départ par R) : La suite est R, U, R, U, R. On doit répartir 8 pas « R » sur les trois segments de R et 8 pas « U » sur les deux segments de U, avec au moins un pas dans chaque segment. Le nombre de solutions positives pour R est le nombre de solutions entières de a + c + e = 8 avec a, c, e ≥ 1, soit C(7,2)=21, et pour U, la répartition est donnée par b + d = 8, soit C(7,1)=7. Ce cas donne 21×7 = 147 chemins.
+
+• Cas 2 (départ par U) : La suite est U, R, U, R, U. De façon analogue, on répartit 8 pas « U » sur les trois segments de U (C(7,2)=21) et 8 pas « R » sur les deux segments de R (C(7,1)=7). Ce cas donne également 21×7 = 147 chemins.
+
+En additionnant les deux cas, on obtient 147 + 147 = 294 chemins.
+
+Ainsi, la réponse est \boxed{294}.","[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Pour expliquer brièvement, on écrit z sous forme polaire : z = 4e^(iθ). L'expression devient  
+  (75+117i)·4e^(iθ) + (96+144i)/(4e^(iθ))  
+= 4(75+117i)e^(iθ) + (1/4)(96+144i)e^(–iθ).  
+En développant et en ne considérant que la partie réelle, on obtient  
+  4(75 cosθ – 117 sinθ) + (1/4)(96 cosθ +144 sinθ)  
+= (300+24) cosθ + (–468+36) sinθ  
+= 324 cosθ – 432 sinθ.  
+
+Cette expression s'écrit aussi sous la forme r cos(θ + φ) où  
+  r = √(324² + 432²) = 108√(9+16) = 108×5 = 540.  
+La valeur maximale pour la partie réelle est donc 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Soit A","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Pour résumer brièvement la démarche :
+
+Soit ω une racine 13ème de l’unité (avec ω ≠ 1) et considérons
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+On remarque que
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2 = (ωᵏ – 1)²+1,
+ce qui se factorise sur ℂ en
+  (ωᵏ – 1+i)(ωᵏ – 1–i).
+
+Ainsi,
+  P = (∏ₖ (ωᵏ – (1–i)))(∏ₖ (ωᵏ – (1+i))).
+
+Or, le polynôme minimal des 13ème racines de l’unité est
+  x¹³–1 = ∏ₖ (x–ωᵏ).
+
+En évaluant en x = 1–i et x = 1+i, on obtient
+  ∏ₖ ((1–i)–ωᵏ) = (1–i)¹³–1 et ∏ₖ ((1+i)–ωᵏ) = (1+i)¹³–1.
+Attention aux signes : on a
+  ωᵏ–(1–i) = –[(1–i)–ωᵏ],
+donc en introduisant deux facteurs de –1 (dont le produit est 1) on trouve
+  P = [(1–i)¹³–1]•[(1+i)¹³–1].
+
+En passant aux formes polaires, on écrit
+  1–i = √2·e^(–iπ/4) et 1+i = √2·e^(iπ/4).
+Alors,
+  (1–i)¹³ = (√2)¹³ e^(–i13π/4) = 2^(13/2) e^(–i13π/4),
+  (1+i)¹³ = 2^(13/2) e^(i13π/4).
+Notant que 13π/4 = 3π + π/4 et que e^(–i3π)= –1 (idem pour e^(i3π)), on obtient
+  (1–i)¹³ = –2^(13/2) e^(–iπ/4) et (1+i)¹³ = –2^(13/2) e^(iπ/4).
+
+Ainsi,
+  (1–i)¹³–1 = –2^(13/2) e^(–iπ/4) – 1 et (1+i)¹³–1 = –2^(13/2) e^(iπ/4) – 1.
+On remarque que 2^(13/2) = 64√2 et que
+  64√2 e^(–iπ/4) = 64(1–i), 64√2 e^(iπ/4) = 64(1+i).
+
+Donc,
+  (1–i)¹³–1 = –64(1–i) – 1 = –65 + 64i,
+  (1+i)¹³–1 = –64(1+i) – 1 = –65 – 64i.
+
+Le produit P devient alors
+  P = (–65 + 64i)(–65 – 64i) = (65)² + (64)² = 4225 + 4096 = 8321.
+
+Finalement, le reste de la division de 8321 par 1000 est 321.
+
+La réponse finale est donc \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Pour expliquer brièvement : chaque ensemble non vide B de nombres positifs dont le maximum est n peut être construit en choisissant n (qui doit être présent) et en prenant arbitrairement un sous-ensemble de {1,2,…,n–1} (possiblement vide), ce qui donne 2^(n–1) ensembles B. La condition que Bob obtienne 2024 ensembles s’écrit donc  
+  ∑ₙ∈A 2^(n–1) = 2024.  
+En décomposant 2024 en puissances de 2, on trouve  
+  2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.  
+Cela correspond aux éléments n de A satisfaisant n–1 = 10, 9, 8, 7, 6, 5, 3, soit n = 11, 10, 9, 8, 7, 6, 4.  
+La somme des éléments de A est donc 4 + 6 + 7 + 8 + 9 + 10 + 11 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

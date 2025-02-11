@@ -1,0 +1,179 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Per una breve spiegazione: Abbiamo posto il rettangolo ABCD con A = (0,0), B = (107,0), C = (107,16) e D = (0,16) (dato che AB = 107 e BC = 16), in modo che D e C stiano sulla retta orizzontale y = 16. Poiché D, E, C, F sono collineari, scegliamo E = (d,16) e, dato che EF = 184, F = (d + 184,16). Analogamente, ponendo il rettangolo EFGH con FG = 17 e quindi H = (d,33) e G = (d + 184,33). 
+
+La condizione che A, D, H, G siano conciclici porta ad impostare l’equazione della circonferenza passante per A = (0,0), D = (0,16) e H = (d,33). Calcolando, si ottiene che il centro della circonferenza ha ordinata k = 8 e che la coordinata h si esprime in funzione di d, trovando h = (d² + 561)/(2d). Richiedendo poi che anche G = (d+184,33) giaccia sulla stessa circonferenza, si deduce (per eliminare le radici) l’equazione (d+184-h)² = (d-h)², che porta a h = d + 92. Uguagliando le due espressioni per h si ottiene l’equazione quadratica d² + 184d - 561 = 0, la cui soluzione positiva risulta d = 3 (e compatibile con l’ordine dei punti: D=(0,16), E=(3,16), C=(107,16), F=(187,16)). 
+
+Infine, la lunghezza CE risulta CE = 107 - 3 = 104.","[104, '104']",104,"[104, '104']",True
+"\boxed{294} 
+
+Consideriamo che ogni percorso da un angolo all'altro in una griglia 8×8 deve essere composto da 8 passi verso destra (R) e 8 passi verso l'alto (U), per un totale di 16 mosse. Per avere esattamente 4 cambiamenti di direzione il percorso deve essere diviso in 5 blocchi (sequenze consecutive di mosse uguali), poiché ogni volta che si passa da un blocco all'altro si verifica un cambio di direzione.
+
+Esistono due casi:
+1. Il percorso inizia con R, quindi la sequenza è: R, U, R, U, R.
+   - I passi R sono disposti in 3 blocchi: se indichiamo con a, b e c il numero di mosse in ciascun blocco (ognuno ≥ 1), abbiamo:
+     a + b + c = 8. 
+     Il numero di soluzioni positive è dato da C(8 − 1, 3 − 1) = C(7, 2) = 21.
+   - I passi U sono in 2 blocchi: se indichiamo con d ed e il numero di mosse (entrambi ≥ 1), allora:
+     d + e = 8 
+     con C(8 − 1, 2 − 1) = C(7, 1) = 7.
+   - Quindi per questo caso il numero di percorsi è 21 × 7 = 147.
+
+2. Il percorso inizia con U, quindi la sequenza è: U, R, U, R, U.
+   - In questo caso le considerazioni sono analoghe:
+     - Le mosse U nei blocchi 1, 3 e 5:  U₁ + U₃ + U₅ = 8, numero di soluzioni = C(7, 2) = 21.
+     - Le mosse R nei blocchi 2 e 4: R₁ + R₂ = 8, numero di soluzioni = C(7, 1) = 7.
+   - Il numero di percorsi risulta ancora 21 × 7 = 147.
+
+Sommando entrambi i casi abbiamo: 147 + 147 = 294.
+
+Pertanto, il numero di percorsi che cambiano direzione esattamente 4 volte è \boxed{294}.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Sia il rombo ABCD con i vertici A = (x, y), C = (–x, –y) e B = (u, v), D = (–u, –v) tale che:
+ 1) A e B giacciono sull'iperbole x²/20 – y²/24 = 1 e u²/20 – v²/24 = 1.
+ 2) Le due diagonali si intersecano nell’origine (O = (0,0)).
+ 3) Essendo ABCD un rombo, tutti i lati sono uguali; in particolare, uguagliando le lunghezze dei lati AB e BC (ricordando che C = (–x, –y)), si ottiene:
+  (u – x)² + (v – y)² = (u + x)² + (v + y)².
+ Sviluppando e semplificando si trova:
+  –2(ux + vy) = 2(ux + vy) ⟹ ux + vy = 0.
+Quindi i vettori (x, y) e (u, v) sono ortogonali.
+
+Notiamo che, essendo i vertici simmetrici rispetto all’origine, il lato BD ha:
+ BD² = [(u – (–u))² + (v – (–v))²] = (2u)² + (2v)² = 4(u² + v²).
+Il problema chiede di trovare il massimo numero reale M tale che, per ogni rombo ottenuto con tali condizioni, si ha M < BD²; in altri termini, occorre trovare l’infimo dei possibili valori di BD².
+
+Procediamo step‐per‐step.
+
+1) Imponiamo che B = (u, v) sia sulla iperbole:
+  u²/20 – v²/24 = 1 ⟹ u² = 20 + (20/24) v² = 20 + (5/6) v².
+Definiamo t = u² + v²; allora:
+  t = 20 + (5/6) v² + v² = 20 + (11/6)v².
+
+2) L’esistenza di un punto A = (x, y) sulla stessa iperbole e tale che ux + vy = 0 richiede che la retta R: u x + v y = 0 intersechi l’iperbole x²/20 – y²/24 = 1. Supponendo v ≠ 0 (il caso v = 0 porta a soluzioni banali escludibili), scriviamo R nella forma
+  y = –(u/v)x.
+Sostituendo in x²/20 – y²/24 = 1:
+  x²/20 – (u²/v²)x²/24 = 1 ⟹ x² (1/20 – u²/(24 v²)) = 1.
+Per avere soluzioni reali è necessario che il coefficiente di x² sia positivo:
+  1/20 – u²/(24 v²) > 0 ⟹ u²/(24 v²) < 1/20.
+Sostituendo u² = 20 + (5/6)v²:
+  [20 + (5/6)v²] / (24 v²) < 1/20.
+Calcoliamo:
+  20/(24v²) + (5/(144)) < 1/20.
+Questa disuguaglianza, dopo calcoli, si traduce nella condizione:
+  v² > 600/11.
+
+3) Con la condizione v² > 600/11, l’espressione di t diventa:
+  t = 20 + (11/6)v² > 20 + (11/6)⋅(600/11) = 20 + ","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+"\boxed{23}
+
+Per risolvere il problema, osserviamo che ogni segmento della famiglia 𝓕 ha estremi P = (a, 0) e Q = (0, √(1 – a²)), con a ∈ [0, 1], così che la lunghezza PQ = √(a² + (1 – a²)) = 1. L’insieme di questi segmenti è dato dalle rette che uniscono (a, 0) e (0, √(1–a²)). Ogni punto X = (x, y) appartenente a un segmento di 𝓕 (dove x, y ≥ 0) soddisfa la relazione
+  x/a + y/√(1–a²) = 1,
+per qualche a ∈ (0, 1).
+
+Si osservi che il segmento AB, con A = (½, 0) e B = (0, √3⁄2) (poiché √(1–(½)²) = √(3/4) = √3⁄2), appartiene ad 𝓕 perché AB ha lunghezza unità.
+
+Si consideri ora il punto C∈AB, diverso da A e B, parametrizzato con
+  C = A + λ(B – A) = ((1 – λ)/2, (√3 λ)/2)  con λ ∈ (0, 1).
+
+La condizione posta nel problema è che C non appartenga a nessun segmento di 𝓕 diverso da AB, ovvero: data una generica retta della famiglia (con a ≠ ½), non esista t ∈ [0, 1] tale che
+  (1)  a(1–t) = (1 – λ)/2  e  (2)  √(1–a²)·t = (√3 λ)/2.
+
+Da (2) si deduce t = (√3 λ)/(2√(1–a²)); sostituendo in (1) troviamo
+  a [1 – (√3 λ)/(2√(1–a²))] = (1 – λ)/2.
+Moltiplicando per 2 e risolvendo per λ (considerando a ≠ ½) si ottiene
+  (2a – 1) = λ[(a√3/√(1–a²)) – 1].
+
+Con a = ½, infatti, sia numeratore che denominatore si annullano, e il rapporto indeterminato
+  F(a) = (2a – 1)/(a√3/√(1–a²) – 1)
+ha un limite per a → ½. Utilizzando il criterio di de l’Hôpital notiamo che:
+
+• N(a) = 2a – 1 con N′(a) = 2,
+• D(a) = a√3/√(1–a²) – 1. Scr","[23, '23']",23,"[23, '23']",True
+"\boxed{321} 
+
+Consider the following solution outline:
+
+1. Sia ω una radice 13-esima dell'unità, cioè ω^13 = 1. L’espressione data è
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+2. Osserviamo che il polinomio in ωᵏ può essere scritto come
+  ω²ᵏ – 2ωᵏ + 2.
+Notiamo che se consideriamo i numeri complessi 1 + i e 1 – i, allora
+  (ωᵏ – (1+i)) (ωᵏ – (1–i)) = ω²ᵏ – [(1+i)+(1–i)]ωᵏ + (1+i)(1–i) 
+                   = ω²ᵏ – 2ωᵏ + (1²+1²) = ω²ᵏ – 2ωᵏ + 2.
+Così, possiamo scrivere
+  2 – 2ωᵏ + ω²ᵏ = (ωᵏ – (1+i))(ωᵏ – (1–i)).
+
+3. Pertanto, il prodotto P si riscrive come
+  P = ∏ₖ₌₀¹² (ωᵏ – (1+i)) (ωᵏ – (1–i))
+     = [∏ₖ₌₀¹² (ωᵏ – (1+i))] · [∏ₖ₌₀¹² (ωᵏ – (1–i))].
+
+4. Ora, osserviamo che x¹³ – 1 = ∏ₖ₌₀¹² (x – ωᵏ). Sostituendo x = (1+i) otteniamo
+  (1+i)¹³ – 1 = ∏ₖ₌₀¹² ((1+i) – ωᵏ).
+Ma notiamo che ciò equivale al prodotto ∏ₖ (ωᵏ – (1+i)) fino a un segno (dato che 13 è dispari):
+  ∏ₖ₌₀¹² (ωᵏ – (1+i)) = 1 – (1+i)¹³.
+Analogamente,
+  ∏ₖ₌₀¹² (ωᵏ – (1–i)) = 1 – (1–i)¹³.
+
+5. Quindi, il prodotto diventa
+  P = [1 – (1+i)¹³] · [1 – (1–i)¹³].
+
+6. Per calcolare (1+i)¹³, scriviamo 1+i in forma polare:
+  1+i = √2·e^(iπ/4),
+quindi
+  (1+i)¹³ = (√2)¹³ · e^(i13π/4) = 2^(6.5) · e^(i(3π + π/4))
+        = 2⁶ · √2 · (– e^(iπ/4))
+        = –64 · (√2·e^(iπ/4)).
+Ma si nota che √2·e^(iπ/4) = 1+i; dunque
+  (1+i)¹³ = –64(1+i).
+Allo stesso modo, (1–i)¹³ = –64(1–i).
+
+7. Sostituendo, abbiamo:
+  P = [1 – (–64(1+i))] · [1 – (–64(1–i))]
+     = [1+64(1+i)] · [1+64(1–i)].
+Espandiamo ciascun fattore:
+  1 + 64(1+i) = 65 + 64i,
+  1 + 64(1–i) = 65 – 64i.
+
+8. Il prodotto dunque è:
+  (65 + 64i)(65 – 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+9. Infine, il resto della divisione di 8321 per 1000 è:
+  8321 mod 1000 = 321.
+
+Quindi, il risultato finale è \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+"\boxed{1024}
+
+Consideriamo la griglia 5×5 e notiamo che, per soddisfare le condizioni, ogni riga e ogni colonna non può essere vuota (altrimenti si potrebbe aggiungere un gettone senza rompere la regola sulla monocromaticità). Quindi, in ogni riga (e in ogni colonna) tutti i gettoni presenti devono essere dello stesso colore.
+
+Definiamo dunque per ogni riga i colori r₁, r₂, …, r₅ ∈ {bianco, nero} e, analogamente, per ogni colonna i colori c₁, c₂, …, c₅ ∈ {bianco, nero}. La configurazione della griglia è determinata in maniera “prodotta”: in ogni cella (i, j viene posizionato un gettone se e solo se rᵢ = cⱼ, avente quel colore.
+
+Esaminiamo ora la proprietà di “massimalità”. Supponiamo che (i, j) sia una cella vuota. Allora, per via della definizione, deve essere rᵢ ≠ cⱼ. Se si provasse ad aggiungere un gettone nella cella vuota, essendo disponibili solo i colori bianco e nero, si potrebbe tentare di usare il colore rᵢ oppure cⱼ. In entrambi i casi verrebbe a crearsi un conflitto: se si aggiunge un gettone di colore rᵢ, nella colonna j vi sarebbero gettoni di colore cⱼ (diverso da rᵢ) e viceversa. Quindi in ogni cella vuota l'aggiunta di un gettone violerebbe la condizione di monocromaticità per quella riga o quella colonna, garantendo la massimalità della configurazione.
+
+Siccome non vi sono ulteriori restrizioni (anche considerando che il numero di gettoni necessari in ogni configurazione è sempre minore o ug","[1024, '1024']",902,"[902, '902']",False

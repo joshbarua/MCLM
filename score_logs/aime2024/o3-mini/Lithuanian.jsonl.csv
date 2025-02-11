@@ -1,0 +1,171 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+"\boxed{721} 
+
+Paaiškinimas: 
+
+Tegul dėžės kraštinės yra a, b, c. Turime paviršiaus plotą 2(ab+ac+bc)=54, t. y. ab+ac+bc=27, ir tūrį abc=23. Dėžės įdiegtos sferos spindulys r turi būti ne mažesnis už pusę dėžės įstrižainės d, kur d²=a²+b²+c². 
+
+Pastebime, kad (a+b+c)²=a²+b²+c²+2(ab+ac+bc)=d²+54, tad d²=(a+b+c)²-54. Todėl didžiausią d² atitinka didžiausias a+b+c. 
+
+Simetrijos sumetimais didžiausias a+b+c įmanoma rasti laikant a=b=x ir c=y. Tada: 
+ • ab+ac+bc=x²+2xy=27, 
+ • abc=x²y=23, t. y. y=23/x². 
+Įstatant į pirmąją lygtį: x²+2x(23/x²)=x²+46/x=27. Dauginant iš x: x³-27x+46=0. 
+Tikrinus x=2: 8-54+46=0, taigi x=2; tada y=23/2²=23/4. 
+
+Tada a+b+c=2+2+23/4=39/4, todėl: 
+ d²=(39/4)²-54=1521/16-54=(1521-864)/16=657/16. 
+
+Kadangi sfera turi talpinti dėžę, spindulys turi būti ne mažesnis už d/2, tad r²=d²/4=657/64. 
+
+Rašant r² kaip p/q, matome p=657, q=64 ir p+q=657+64=721.","[721, '721']",721,"[721, '721']",True
+"\boxed{25} 
+
+Paaiškinimas: Turime du lygtis:
+1) logₓ(yˣ) = 10, t.y. ln(yˣ)/ln(x) = 10 ⟹ x · ln(y) = 10 · ln(x).
+2) log_y(x^(4y)) = 10, t.y. ln(x^(4y))/ln(y) = 10 ⟹ 4y · ln(x) = 10 · ln(y).
+
+Padalijame pirmą lygtį iš ln(x) (nes x > 1, todėl ln(x) > 0):
+  ln(y) = (10 · ln(x)) / x.
+
+Įstatome į antrąją lygtį:
+  4y · ln(x) = 10 · [ (10 · ln(x)) / x ] ⟹ 4y = 100/x ⟹ xy = 25.","[25, '25']",25,"[25, '25']",True
+"\boxed{809} 
+
+Paaiškinimas: Analizuojant pozicijas nuo nulio, pastebime, kad žaidimo pozicijos yra pralaimėjimo (P) pozicijos, jei žetonų skaičius tenkina rekurentinį modelį, kur sprendžiant nuo n = 0 (pralaimėjimo pozicija) seka kas kartą +2, po to +3. Gautos pralaimėjimo pozicijos (kai žaidėjas, kurio eilė žaisti, neturi laimės strategijos) yra 
+  n = 0, 2, 5, 7, 10, 12, … 
+Uždavinio sąlygoje svarstome teigiamus n. Pastebime, kad pralaimėjimo pozicijų skaičiai (n > 0) susidaro reguliariai: 
+  n = 5m (kai m ≥ 1) ir n = 5m + 2 (kai m ≥ 0). 
+Tai atitinka n ≡ 0 (mod 5) (pradedant nuo 5) ir n ≡ 2 (mod 5) (pradedant nuo 2). 
+Bobas (antras žaidėjas) gali laimėti tik tada, kai pradinis (Alisos) žaidimo pozicija yra pralaimėjimo pozicija. 
+Skaičiuojame: 
+
+1) Skaičiai, kurie yra ≡ 0 (mod 5) ir didesni už 0 bei ≤ 2024: 
+  Mažiausias toks skaičius yra 5, o didžiausias – 2020. 
+  Jų kiekis: ⎣2024/5⎦ = 404.
+
+2) Skaičiai, kurie yra ≡ 2 (mod 5) ir ≤ 2024: 
+  Mažiausias toks skaičius yra 2, o didžiausias – 5·404 + 2 = 2022. 
+  Šių skaičių kiekis: 404 + 1 = 405.
+
+Bendras skaičius = 404 + 405 = 809. 
+
+Todėl teigiamų skaičių n (≤ 2024), kuriems Bobas turi laimėjimo strategiją, yra \boxed{809}.","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+"\boxed{294} 
+
+Paaiškinimas: Kiekvienas kelias bežymi 16 žingsnių – 8 į dešinę (R) ir 8 aukštyn (U). Tiksliai keturių krypčių pasikeitimų atveju kelias susidaro iš penkių nuoseklių žingsnių blokų, kuriuose visi žingsniai yra vienos krypties, ir kiekvienas blokas yra ne tuščias. 
+
+Yra dvi galimos pradinės krypties parinktys:
+
+1. Jei kelias prasideda R, tada blokų seka yra: R, U, R, U, R. 
+   • Tokių kelių R žingsnų skaičius yra a + c + e = 8, kur a, c, e ≥ 1. Skaičių skaičius yra C(8–1, 3–1) = C(7, 2) = 21. 
+   • U žingsnų skaičius yra b + d = 8, kur b, d ≥ 1. Galimų sprendinių skaičius yra C(8–1, 2–1) = C(7, 1) = 7. 
+   Iš viso tokių kelių yra 21 · 7 = 147.
+
+2. Jei kelias prasideda U, tada blokų seka yra: U, R, U, R, U. 
+   • U žingsnų skaičius: a + c + e = 8 su a, c, e ≥ 1: 21 sprendinių. 
+   • R žingsnų skaičius: b + d = 8 su b, d ≥ 1: 7 sprendinių. 
+   Iš viso – 21 · 7 = 147.
+
+Abiem atvejais kartu turime 147 + 147 = 294 galimus kelius, todėl teisingas atsakymas yra \boxed{294}.","[294, '294']",294,"[294, '294']",True
+"\boxed{
+\begin{aligned}
+\text{Rašykime } z &= 4e^{i\theta} \text{, kur } \theta \in \mathbb{R}.\\[1mm]
+\text{Tada išraiška tampa:}\\[1mm]
+(75+117i)z+\frac{96+144i}{z} &= (75+117i)4e^{i\theta} + \frac{96+144i}{4e^{i\theta}}\\[1mm]
+&= 4(75+117i)e^{i\theta} + \frac{96+144i}{4}e^{-i\theta}\\[1mm]
+&= \bigl(300+468i\bigr)e^{i\theta} + \bigl(24+36i\bigr)e^{-i\theta}.
+\end{aligned}
+\\[2mm]
+\text{Išskirstykime realiąją dalį:}\\[1mm]
+\Re\left(\bigl(300+468i\bigr)e^{i\theta}\right) &= 300\cos\theta - 468\sin\theta,\\[1mm]
+\Re\left(\bigl(24+36i\bigr)e^{-i\theta}\right) &= 24\cos\theta + 36\sin\theta,\\[1mm]
+\text{todėl bendra realioji dalis yra:}\\[1mm]
+R(\theta) &= (300+24)\cos\theta + (-468+36)\sin\theta\\[1mm]
+&= 324\cos\theta - 432\sin\theta.
+\\[2mm]
+\text{Maksimalios reikšmės radome naudodami amplitudės formulę:}\\[1mm]
+\max R(\theta) &= \sqrt{324^2+432^2}=\sqrt{104976+186624}=\sqrt{291600}=540.
+\end{aligned}
+}","[540, '\\begin{aligned}']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Paaiškinimas:
+
+Tarkime, kad rombo viršūnės yra A = (a, b), B = (c, d), C = (–a, –b) ir D = (–c, –d). Kadangi vidurio taškas yra kilme ir rombas turi lygias kraštines, iš B ir D sudarytas įstrižainė yra BD, kurios kvadratas yra
+
+  BD² = [2c – (–2c)]²/4 + [2d – (–2d)]²/4 = (2c)² + (2d)² = 4(c² + d²).
+
+Be to, kad visos viršūnės guli hiperbolėje
+  x²/20 – y²/24 = 1,
+turi galiojimą
+  a²/20 – b²/24 = 1 ir c²/20 – d²/24 = 1.
+
+Kad būtų lygiakraštis keturkampis (rombas), kraštinių ilgiai turi būti vienodi","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Paaiškinimas:
+
+Pastebėkime, kad išraišką galima interpretuoti kaip polinomo f(x) = x² – 2x + 2 įvertinimą 13-osios vienybės šaknėms ωᵏ (k = 0, 1, …, 12), t. y. 
+  ∏ₖ₌₀¹² f(ωᵏ).
+
+Naudodami resultanto savybę, kuriai taikomas formulavimas
+  ∏ₖ₌₀¹² f(ωᵏ) = ∏₍η, f(η)=0₎ (η¹³ – 1),
+pastebime, kad f(x) = x² – 2x + 2 turi šaknis:
+  x = 1 ± i.
+
+Taigi,
+  ∏ₖ₌₀¹² f(ωᵏ) = [(1 + i)¹³ – 1]·[(1 – i)¹³ – 1].
+
+Dauginamėms (1 ± i) poliariniu formatu:
+  1 ± i = √2 · cis(±π/4),
+todėl
+  (1 ± i)¹³ = (√2)¹³ · cis(13·(±π/4)) = 2^(13/2) · cis(±13π/4).
+
+Kadangi 13π/4 = 3π + π/4, gauname
+  (1 ± i)¹³ = –2^(13/2) · cis(±π/4) = –2⁶·(1 ± i)  (nes (√2)¹³ = 2^(6.5) = 2⁶·√2).
+
+Taigi:
+  (1 + i)¹³ – 1 = –64(1 + i) – 1 = –65 – 64i,
+  (1 – i)¹³ – 1 = –64(1 – i) – 1 = –65 + 64i.
+
+Dabar daugindami:
+  (–65 – 64i)(–65 + 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+Kai 8321 daliname iš 1000, liekana yra 321.
+
+Todėl atsakymas yra \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+"\boxed{15} 
+
+Norint rasti tokius stačiakampius, pastebime, kad bet koks stačiakampis, įbrėžtas į apskritą, yra apskritai apiimamas apskritimo, todėl jo įstrižainės kertasi apskritimo centre. Dėl to stačiakampio įstrižainės yra diametrai, o tai reiškia, kad antrą tarpusavyje priešingos viršūnės dodekagone turi būti diametriškai priešingos.
+
+Dodekagone (12-kampyje) viršūnes pažymėkime ratu skaičiais 0, 1, 2, …, 11. Kiekviena viršūnė i turi diametriškai priešingą viršūnę i+6 (mod 12). Taigi yra 6 diametrinių viršūnių poros: (0,6), (1,7), (2,8), (3,9), (4,10) ir (5,11).
+
+Kadangi stačiakampis turi dvi įstrižaines (t. y. dvi diametralias poras), stačiakampį galima pasirinkti kaip bet kurias dvi iš šių 6 diametrinių porų. Todėl galimų stačiakampių skaičius yra:
+  C(6, 2) = 15.
+
+Be to, kadangi visos stačiakampio kraštinės sujungia dodekagono viršūnes, jos iš tikrųjų yra dodekagono kraštinės (jei viršūnės yra gretimos) arba įstrižainės (jei – ne gretimos).
+
+Atsakymas yra \boxed{15}.","[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

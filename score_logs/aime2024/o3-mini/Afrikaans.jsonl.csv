@@ -1,0 +1,255 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+"\boxed{155} 
+
+Ons begin deur te agtervind dat p = 2 nie werk nie. Want vir enige heelgetal n het ons:
+ • As n pair, is n⁴ ≡ 0 (mod 4) en dus n⁴ + 1 ≡ 1 (mod 4).
+ • As n odd is n⁴ ≡ 1 (mod 4) en dus n⁴ + 1 ≡ 2 (mod 4).
+Dus is 4 (oftewel 2²) nooit 'n delers van n⁴ + 1 nie.
+
+Vir priemgetalle anders as 2 moet die bestaan van n met n⁴ ≡ –1 (mod p²) eers begin met n⁴ ≡ –1 (mod p). ’n Klassieke resultaat toon dat x⁴ ≡ –1 (mod p) 'n oplossing het as en slegs as die orde van x (in die veeltermgroep mod p) 8 is – wat impliseer dat 8 die orde van die groep (p – 1) deel, d.w.s. p ≡ 1 (mod 8). Die kleinste priem wat hieraan voldoen, is p = 17.
+
+Ons kyk na n = 2 omdat:
+ 2⁴ + 1 = 16 + 1 = 17,
+wat deelbaar is deur 17. Aangesien die afgeleide f′(n) = 4n³ by n = 2 is:
+ 4·2³ = 32 ≡ 15 (mod 17) (en 15 is nie 0 mod 17 nie),
+kan Hensel se Lemma gebruik word om hierdie oplossing tot ’n unieke oplossing modulo 17² = 289 op te hef.
+
+Neem","[155, '155']",110,"[110, '110']",False
+\boxed{6},"[6, '6']",104,"[104, '104']",False
+"\boxed{721} 
+
+Ons begin deur te noem dat elke reghoekige boks met afmetings a, b, c (positiewe reëls) se omtrek van die ingeschreven sfeer gegee word deur die ruimte-diagonaal, d = √(a² + b² + c²), en dat die minimale sfeer wat die boks heeltemal bevat 'n radius van d/2 benodig. 
+
+Die probleem lê daarin om die grootste moontlike waarde van a² + b² + c² te bepaal (sodat r = ½·√(a²+b²+c²) minimaal moet wees om alle bokse te kan bevat). 
+
+Ons het die volgende voorwaardes vir elke boks in ℬ:
+1. Oppervlakte: 2(ab + ac + bc) = 54 ⟹ ab + ac + bc = 27.
+2. Volume: abc = 23.
+
+Let s = a + b + c. Dan het ons:
+  a² + b² + c² = s² - 2(ab + ac + bc) = s² - 54.
+
+Dus moet ons s maksimeer. Omdat abc en ab+ac+bc vaste waardes is, is die maksimum van s gewoonlik behaal wanneer twee van die drie veranderlikes gelyk is. Stel byvoorbeeld b = c = t en a = 23/t² (aangebied deur abc = 23). 
+
+Die voorwaarde ab + ac + bc word dan:
+  a·t + a·t + t² = 2at + t² = 2(23/t²)·t + t² = 46/t + t² = 27.
+
+Dit lei tot die kubiese vergelyking:
+  t³ - 27t + 46 = 0.
+
+Probeer t = 2:
+  2³ - 27·2 + 46 = 8 - 54 + 46 = 0.
+Dus werk t = 2.
+
+Dan is:
+  b = c = 2  en  a = 23/(2²) = 23/4.
+
+Die som s word:
+  s = a + b + c = 23/4 + 2 + 2 = 23/4 + 4 = (23 + 16)/4 = 39/4.
+
+So is:
+  a² + b² + c² = s² - 54 = (39/4)² - 54 = (1521/16) - 54 = (1521 - 864)/16 = 657/16.
+
+Die minimaal vereiste sfererisus moet minstens die helfte wees van die grootste moontlike ruimte-diagonaal, dus:
+  r² = (1/4)·(a² + b² + c²) = (1/4)·(657/16) = 657/64.
+
+Hiermee skryf ons r² as p/q met p = 657 en q = 64. Aangesien 657 = 3²·73 en 64 = 2⁶, is p en q relatief priem. 
+
+Uiteindelik soek ons p + q, wat gee:
+  657 + 64 = 721.
+
+Dus is die finale antwoord: \boxed{721}.","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809}
+
+Kom ons verduidelik kort:
+
+In hierdie spel, met moontlike stepe van 1 of 4 tokens, is dit ‘n klassieke afleiding met ""winnende"" en ""verlore"" posisies. Met 0 tokens is die posisie verlore (geen geldige skuif nie). Deur agteruit te redeneer kry ons:
+
+ • f(1) = wen (omdat 1 − 1 = 0 verlore is)  
+ • f(2) = verlore (enige skuif lei na 'n wen-posisie)  
+ • f(3) = wen (3 − 1 = 2, verlore)  
+ • f(4) = wen (omdat 4 − 4 = 0 verlore is)  
+ • f(5) = verlore, ens.
+
+Die patroon bly: Verlore posisies kom voor wanneer n ≡ 0 of n ≡ 2 (mod 5). Bob, as tweede speler, kan slegs altyd wen wanneer, by die begin, Alice in 'n verlore posisie speel. Aangesien n positives getalle is, beteken dit dat Bob 'n wenstrategie het as n mod 5 = 0 of n mod 5 = 2.
+
+Tel nou hoeveel n ≤ 2024 in elk van hierdie klasse val:
+
+1. n ≡ 0 (mod 5): daar is ⌊2024/5⌋ = 404 gevalle.
+2. n ≡ 2 (mod 5): die antale is ⌊(2024 – 2)/5⌋ + 1 = ⌊2022/5⌋ + 1 = 404 + 1 = 405.
+
+Dus is die totale telling 404 + 405 = 809.
+
+Ons finale antwoord is dus \boxed{809}.","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Kom ons verduidelik kort die proses:
+
+Ons stel voor om die twee reghoeke in 'n koordinatenstelsel te plaas sodat die gegewe lengtes maklik gebruik kan word. Laat vierkante ABCD 'n reghoek wees met A = (0,0), B = (107,0), C = (107,16), en D = (0,16) (aangesien AB = 107 en BC = 16). Dit beteken dat D en C op die","[104, '104']",104,"[104, '104']",True
+\boxed{294},"[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Ons stel eers voor dat z in polêre vorm geskryf word as z = 4e^(iθ). Hierdie substitusie gee:
+ (75+117i)z + (96+144i)/z = 4(75+117i)e^(iθ) + (24+36i)e^(–iθ).
+
+Skryf e^(iθ) = cosθ + i sinθ en e^(–iθ) = cosθ – i sinθ, en beskou slegs die reële dele:
+ Re[4(75+117i)e^(iθ)] = 4[75 cosθ – 117 sinθ] = 300 cosθ – 468 sinθ,
+ Re[(24+36i)e^(–iθ)] = 24 cosθ + 36 sinθ.
+
+Tel dit op:
+ Re(Tot) = (300 cosθ – 468 sinθ) + (24 cosθ + 36 sinθ) = 324 cosθ – 432 sinθ.
+
+Die maksimum waarde van 'n uitdrukking in die vorm A cosθ + B sinθ is sqrt(A²+B²). Here:
+ A = 324, B = –432, dus:
+ Max waarde = sqrt(324² + (–432)²) = sqrt(104976 + 186624) = sqrt(291600) = 540.
+
+Dus, die grootste moontlike reële deel is 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+"\boxed{601} 
+
+Ons begin deur die simmetriese uitdrukking te herskryf. Let 
+  s₁ = a + b + c = 300, 
+  s₂ = ab + ac + bc, 
+  s₃ = abc. 
+Dit is bekend dat
+
+  a²b + a²c + b²a + b²c + c²a + c²b = s₁·s₂ – 3s₃.
+
+Die gegewe vergelyking word dan:
+  300·s₂ – 3s₃ = 6,000,000.
+Deel deur 3:
+  100·s₂ – s₃ = 2,000,000   (1)
+
+Bemark nou die driedelige simmetrie deur a, b, c te herskryf as:
+  a = 100 + x, b = 100 + y, c = 100 + z,
+waar x, y, z heelgetalle is wat optel tot 0, aangesien
+  (100 + x) + (100 + y) + (100 + z) = 300 ⟹ x + y + z = 0.
+
+Berekende ons (a – 100)(b – 100)(c – 100):
+  (a – 100)(b – 100)(c – 100) = abc – 100(ab + ac + bc) + 100²(a + b + c) – 100³
+                             = s₃ – 100 s₂ + 100²·300 – 100³
+                             = s₃ – 100 s₂ + 3,000,000 – 1,000,000
+                             = s₃ – 100 s₂ + 2,000,000. 
+
+Vergelyk nou met (1):
+  100·s₂ – s₃ = 2,000,000  ⟹ s₃ – 100·s₂ = -2,000,000.
+Dus:
+  (a – 100)(b – 100)(c – 100) = 0.
+
+Hieruit volg dat ten minste een van a, b, c gelyk moet wees aan 100.
+
+Ons soek dus al die drietal nie-negatiewe heelgetalle (a, b, c) met 
+  a + b + c = 300
+en
+  a = 100 of b = 100 of c = 100.
+
+Kom nou die optelling deur inklusie–uitsluiting:
+
+1. Laat A = {(a, b, c) met a = 100}. Dan is b + c = 200, so |A| = 200 + 1 = 201.
+2. Soortgelyk, |B| = 201 en |C| = 201.
+3. A ∩ B = {(100, 100, c)} met c = 100 (omdat 100 + 100 + c = 300), dus 1 oplossing.
+  A ∩ C = 1 en B ∩ C = 1.
+4. A ∩ B ∩ C bevat net (100, 100, 100), so 1 oplossing.
+
+Daarmee, deur inklusie–uitsluiting:
+  Totale aantal = |A| + |B| + |C| – |A∩B| – |A∩C| – |B∩C| + |A∩B∩C|
+         = 201 + 201 + 201 – 1 – 1 – 1 + 1 = 603 – 3 + 1 = 601.
+
+Dus is daar 601 oplossings.
+
+Die finale antwoord is dus:
+\boxed{601}","[601, '601']",601,"[601, '601']",True
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Ons benadering is soos volg. Laat ω 'n 13de eenheidswortel wees en oorweeg die produk
+
+  P = ∏ₖ₌₀¹² (2 - 2ωᵏ + ω²ᵏ).
+
+Op merk dat die faktor in die produk ooreenstem met 'n kwadratiese, want
+
+  2 - 2ωᵏ + ω²ᵏ = ω²ᵏ - 2ωᵏ + 2.
+
+Ons noteer dat die kwadratiese faktor veroorsaak dat ons hom kan faktoriseer as
+
+  ω²ᵏ - 2ωᵏ + 2 = (ωᵏ - (1 + i)) (ωᵏ - (1 - i)).
+
+Hiermee kan die produk geskei word in twee dele:
+  P = ∏ₖ₌₀¹² (ωᵏ - (1 + i)) · ∏ₖ₌₀¹² (ωᵏ - (1 - i)).
+
+Aangesien ωᵏ, vir k = 0, 1, …, 12, al die 13de eenheidswortels vorm en vir enige komplexe getal z is
+
+  ∏ₖ₌₀¹² (z - ωᵏ) = z¹³ - 1,
+  ∏ₖ₌₀¹² (ωᵏ - z) = (-1)¹³ (z¹³ - 1) = - (z¹³ - 1).
+
+Stel nou z = 1 + i en z = 1 - i; dan kry ons
+  ∏ₖ₌₀¹² (ωᵏ - (1 + i)) = -((1 + i)¹³ - 1),
+  ∏ₖ₌₀¹² (ωᵏ - (1 - i)) = -((1 - i)¹³ - 1).
+
+Dus is die produk
+  P = ((1 + i)¹³ - 1) · ((1 - i)¹³ - 1).
+
+Let nou op dat 1 + i in polêre vorm gegee is deur √2·exp(iπ/4). Dan is
+  (1 + i)¹³ = (√2)¹³ exp(i13π/4) = 2^(6.5) exp(i13π/4) = 64√2 exp(i13π/4).
+
+Aangesien 13π/4 = 3π + π/4 en exp(i3π) = -1, kry ons
+  exp(i13π/4) = -exp(iπ/4) = -((1 + i)/√2).
+
+Hiermee kry ons
+  (1 + i)¹³ = 64√2 · [ - (1 + i)/√2 ] = -64(1 + i).
+
+Op soortgelyke wyse kry ons
+  (1 - i)¹³ = -64(1 - i).
+
+Dus word ons produk
+  P = [ -64(1 + i) - 1 ] · [ -64(1 - i) - 1 ] = (-65 - 64i) · (-65 + 64i).
+
+Die produk van 'n komplekse getal en sy konjugaat is die som van die kwadrate van die reële en imaginaire dele:
+  (-65)² + (64)² = 4225 + 4096 = 8321.
+
+Ten slotte, die residu wanneer 8321 deur 1000 verdeel word is
+  8321 mod 1000 = 321.
+
+Dus is die finale antwoord
+  \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+"\boxed{15}
+
+Ons besef dat elke reghoek wat in die vaste gereelde dodekagoon ingeskryf is, 'n sirkelreghoek is. In 'n sirkelreghoek kruis die diagonale by die middelpunt, dus moet die twee teenoorgestelde hoekpuntpare diametries teenoor mekaar lê. 
+
+Aangesien ons dodekagoon 12 ewe verspreide hoekpunten het, kan elke hoekpunt saam met sy diametriese teenoorgestelde hoekpunt 'n paar vorm. Daar is presies 6 sulke diametriese paar (want 12/2 = 6). As 'n reghoek gekenmerk word deur twee sulke diametriese heel maal verskillende paren, moet ons 2 paren kies uit die 6 beskikbare, wat gegee word deur 
+  C(6,2) = 15. 
+
+Dus is daar presies 15 reghoeke wat aan die gegewe voorwaarde voldoen.","[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55}
+
+Laat ons verduidelik: 
+
+Alice se stel A bestaan uit positiewe heelgetalle. Vir enige eindige nie-leë stel B van positiewe heelgetalle met maksimum b, is die aantal moontlike kiesings vir B (aangesien B ⊆ {1, 2, …, b} en b moet in B wees) gelyk aan 2^(b–1). Omdat Bob al die stelle met maksimum in A lys en sy lys 2024 stelle bevat, kry ons:
+  ∑(b ∈ A) 2^(b–1) = 2024.
+
+Die getal 2024 kan unik by sy binêre voorstelling geskryf word. Skryf 2024 as 'n som van magte van 2:
+  2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+Hieruit volg dat die ooreenstemmende getalle in A (aangesien b–1 die eksponent is, so b = eksponent + 1) is:
+  A = {11, 10, 9, 8, 7, 6, 4}.
+
+Die som van die elemente in A is dan:
+  11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.
+
+Dus, die antwoord is \boxed{55}.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

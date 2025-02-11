@@ -1,3 +1,1 @@
-python src/score.py \
-    --datasets math500 \
-    --languages 
+python src/score.py

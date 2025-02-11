@@ -12,6 +12,7 @@ models=(
     "nvidia/AceMath-7B-Instruct"
     "Qwen/Qwen2.5-Math-7B-Instruct"
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+    "o3-mini"
 )
 
 # List of languages to evaluate

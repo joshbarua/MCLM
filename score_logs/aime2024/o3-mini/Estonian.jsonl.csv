@@ -1,0 +1,185 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{ \text{Bob võidustrateegia eksisteerib täpselt siis, kui } n \equiv 0 \text{ või } 2 \pmod{5}. } 
+
+Selgitus: Mängu puhul, kus käigu valikud on eemaldada kas 1 või 4 žetooni, leiame mängu positsioonidele väärtused (võitva ja kaotava mängija seisukohast). Alustades baasjuhtudest:
+
+• n = 0: mäng on otsas – mängija, kellele käik on, kaotab.  
+• n = 1: mängija saab 1 eemaldades võita (võidav positsioon).  
+• n = 2: ainukeseks käiguks on 1 eemaldamine, andes järele 1 (mis on võidav positsioon vastasele), seega n = 2 on kaotav.  
+• n = 3: võimalik käik 1 eemaldada annab n = 2 (kaotav), ehk n = 3 on võidav.  
+• n = 4: saab võtta 4 ja võita kohe, seega võidav.  
+• n = 5: nii kui võtta 1 (annetab n = 4, võidava positsiooni) või võtta 4 (annetab n = 1, võidava positsiooni), jääb n = 5 kaotavaks.
+
+Jätkates arvutusi ning märkides kaotavate positsioonide väärtused, leiame, et kaotavad positsioonid tekivad täpselt n väärtustel, mis on 2, 5, 7, 10, 12, 15, 17, 20 jne. Vaadates arve mooduli 5 järgi, on selge mustrit:
+  n mod 5 = 2 või n mod 5 = 0.
+
+Seega, kuna Alice alustab ning Bob tahab strateegiat, mis garanteerib tema võidu igal juhul, peab algseis olema kaotav (väheste võiduvõimalustega) Alice jaoks. See juhtum tekib täpselt siis, kui n ≡ 0 või 2 (mod 5).
+
+Kuna ülesande tingimus on n positiivne täisarv ja n ≤ 2024, on lõplik vastus: kõik sellised n, mille korral n ≡ 0 või 2 (mod 5).","[5, '\\text{Bob võidustrateegia eksisteerib täpselt siis, kui } n \\equiv 0 \\text{ või } 2 \\pmod{5}.']",809,"[809, '809']",False
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Vaatleme probleemi järgmiselt. Olgu ristküliku ABCD korral A = (0, 0), B = (107, 0), C = (107, 16) ja D = (0, 16) (sest AB = 107 ja BC = 16). Kuna punktid D, E, C ja F on ühel sirgel, võime valida need horisontaalsele sirgele y = 16. Märgime E = (a, 16) ja F = (a + 184, 16), sest EF = 184. Edasi, ristküliku EFGH korral on ka FG = 17; eeldades, et ristkülik ""tõuseb"" (v.t. lahenduse lihtsuse huvides) saame F = (a + 184, 16) ja G = (a + 184, 33) ning H = (a, 33).
+
+Lisaks on antud, et nurgad A, D, H ja G asuvad ühel ringjoonel. Kuna A = (0, 0) ja D = (0, 16) on fikseeritud, määrame ringjoone, mille keskpunkt asub täpselt risti lõikude A–D ja A–H keskpunktide ühendamise kaudu. Kuna A ja D on vertikaalselt, on AD keskpunkt (0, 8) ning tema risti poolejoon on horisontaalne: y = 8. Oletame ringjoone keskuseks (h, 8). 
+
+Kuna A, D ja H = (","[104, '104']",104,"[104, '104']",True
+"\boxed{294}
+
+Meeles tuleb, et igal 8 × 8 ruudustiku teekonnal on 16 sammu – 8 ""paremale"" (R) ja 8 ""üles"" (U). Kui teekond muudab suunda täpselt neli korda, jaguneb see viide järjestikuseks ühesuunaliseks lõiguks ehk sisaldab 5 lõiku.
+
+Võime eraldada kaks juhtumit, sõltuvalt sellest, kas teekond algab R-käigust või U-käigust.
+
+1. Juhtum: teekond algab R. Siis on mustriteks:
+  R – U – R – U – R.
+  - R suunas lõike: 3 lõiku, ühiks kokku 8 käiku.
+  - U suunas lõike: 2 lõiku, ühiks kokku 8 käiku.
+
+Kuna igas lõigus peab olema vähemalt üks käik, loendame positiivsete täisarvude lahendusi:
+  R-lõikude jagunemine: x₁ + x₂ + x₃ = 8, xᵢ ≥ 1. Lahendusi on C(8–1, 3–1) = C(7, 2) = 21.
+  U-lõikude jagunemine: y₁ + y₂ = 8, yᵢ ≥ 1. Lahendusi on C(8–1, 2–1) = C(7, 1) = 7.
+Seega on juhtumi korral teekondi: 21 × 7 = 147.
+
+2. Juhtum: teekond algab U. Siis on mustriteks:
+  U – R – U – R – U.
+  - U suunas lõike: 3 lõiku, kokku 8 käiku – 21 võimalust.
+  - R suunas lõike: 2 lõiku, kokku 8 käiku – 7 võimalust.
+Seega on ka selle juhtumi korral teekondi: 21 × 7 = 147.
+
+Kokku: 147 + 147 = 294 teekonda, mis muudavad suunda täpselt neli korda.
+
+Seega on lõplik vastus:
+\boxed{294}","[294, '294']",294,"[294, '294']",True
+None,[],540,"[540, '540']",False
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Vaatleme probleemi samm-sammult. Olgu hulga hüperbooli x²/20 – y²/24 = 1-lahtri punktid A, B, C ja D nii, et nelinurk ABCD on romb, mille diagonaalid lõik","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+"\boxed{23}
+
+Olgu esmalt antud punktid O = (0,0), A = (½, 0) ja B = (0, (√3)/2). Perekond segmentidest𝒻 koosneb kõikidest 1 ühiku pikkustest lõigust, mille üks ots asub x-teljel ja teine y-teljel, ning mis asuvad esimese võrdküljelise ruudu esimese piirkonnas. Selliste lõikude otsude koordinaadid on P = (a, 0","[23, '23']",23,"[23, '23']",True
+"\boxed{321} 
+
+Me lähme samm-sammult läbi.
+
+Olgu ω ≠ 1 13. järku ühikjuur. Meil on vaja arvutada
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+1. Märkame, et väljend saab kirjutada kujul
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2.
+Võime mõelda sellele kui teise astme polünoomile:
+  f(x) = x² – 2x + 2,
+kus x = ωᵏ.
+
+2. Polünoomi faktoriseerimiseks leiame selle nullkohad:
+  x² – 2x + 2 = 0  ⟹  x = 1 ± i.
+Seega
+  2 – 2ωᵏ + ω²ᵏ = (ωᵏ – (1 + i)) (ωᵏ – (1 – i)).
+
+3. Seega saab kogu korrutise kirjutada kujul:
+  P = ∏ₖ₌₀¹² (ωᵏ – (1 + i)) · (ωᵏ – (1 – i))
+     = (∏ₖ₌₀¹² (ωᵏ – (1 + i))) · (∏ₖ₌₀¹² (ωᵏ – (1 – i))).
+
+4. Kasutame valemit, et kui ωᵏ on kõik 13. järku ühikjuured, siis
+  ∏ₖ₌₀¹² (z – ωᵏ) = z¹³ – 1.
+Märkame aga, et meie korrutistes on tegurid (ωᵏ – (1 ± i)), seega
+  ∏ₖ₌₀¹² ((1 ± i) – ωᵏ) = (1 ± i)¹³ – 1.
+Kuna
+  ωᵏ – (1 ± i) = – ((1 ± i) – ωᵏ),
+saame
+  ∏ₖ₌₀¹² (ωᵏ – (1 ± i)) = (–1)¹³ ((1 ± i)¹³ – 1) = –((1 ± i)¹³ – 1)
+(kuna 13 on paaritu).
+
+Seega
+  P = [–((1 + i)¹³ – 1)] · [–((1 – i)¹³ – 1)] = ((1 + i)¹³ – 1) ((1 – i)¹³ – 1).
+
+5. Leiame (1 + i)¹³ ja (1 – i)¹³. Märkame, et
+  1 + i = √2 · e^(iπ/4)
+  1 – i = √2 · e^(–iπ/4).
+
+Seega:
+  (1 + i)¹³ = (√2)¹³ · e^(i13π/4) = 2^(6.5) · e^(i13π/4) = 64√2 · e^(i13π/4).
+Kuna 13π/4 = 3π + π/4, siis
+  e^(i13π/4) = e^(i3π) e^(iπ/4) = (–1)·e^(iπ/4) = –e^(iπ/4) = –(cos(π/4) + i sin(π/4)) = –(√2/2 + i√2/2).
+Seega:
+  (1 + i)¹³ = 64√2 · (–√2/2)(1 + i) = –64(1 + i).
+
+Sarnaselt:
+  (1 – i)¹³ = –64(1 – i).
+
+6. Arvutame:
+  (1 + i)¹³ – 1 = –64(1 + i) – 1 = –65 – 64i,
+  (1 – i)¹³ – 1 = –64(1 – i) – 1 = –65 + 64i.
+
+Nüüd korrutis:
+  P = (–65 – 64i)(–65 + 64i) = (–65)² – (64i)² = 4225 – (–4096) = 4225 + 4096 = 8321.
+
+7. Lõpuks, kuna ülesande küsimus oli leida jääk jagamisel 1000-ga,
+  vajame 8321 mod 1000.
+Arvutame:
+  8321 = 8·1000 + 321,
+  seega jääk on 321.
+
+Seega on lõpptulemus:
+  \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Alustame sellega, et iga kinniste ja mitte\-tühja hulga B, mille maksimelemendiks on m ∈ ℕ, saab moodustada järgmiselt: B ⊆ {1, 2, …, m} ja m ∈ B. Selliste hulkade arv, kus maksimelemendiks on m, on seega 2^(m–1) (sest iga element 1-st m–1-st võib kas kuuluda hulka või mitte).
+
+Bob loetleb kõik sellised B, mille maksimelemendiks on mingi element m ∈ A. Üldarv B-de puhul on seega 
+  Σ (m ∈ A) 2^(m–1).
+
+Antud on, et see summa on 2024, ehk
+
+  Σ (m ∈ A) 2^(m–1) = 2024.
+
+Kirjutame 2024 kahendsüsteemis: 
+  2^11 = 2048 on liiga suur, kuid 2^10 = 1024 sobib.
+  2024 – 1024 = 1000.
+  Edasi, 2^9 = 512, 1000 – 512 = 488.
+  2^8 = 256, 488 – 256 = 232.
+  2^7 = 128, 232 – 128 = 104.
+  2^6 = 64, 104 – 64 = 40.
+  2^5 = 32, 40 – 32 = 8.
+  2^4 = 16, mis on suurem kui 8, seega vahele jääb.
+  2^3 = 8, 8 – 8 = 0.
+
+Seega on kasutatud potensid: 2^10, 2^9, 2^8, 2^7, 2^6, 2^5 ja 2^3.
+
+Nüüd need vastavad väärtustele m, kus m–1 võrdub kummagi täis arvu eksponendiga:
+  m–1 = 10  ⇒  m = 11,
+  m–1 = 9   ⇒  m = 10,
+  m–1 = 8   ⇒  m = 9,
+  m–1 = 7   ⇒  m = 8,
+  m–1 = 6   ⇒  m = 7,
+  m–1 = 5   ⇒  m = 6,
+  m–1 = 3   ⇒  m = 4.
+
+Seega on hulk A = {4, 6, 7, 8, 9, 10, 11}.
+
+Küsimuse lõpus küsitakse A elementide summa:
+  4 + 6 + 7 + 8 + 9 + 10 + 11 = 55.
+
+Seega on lõplik vastus:
+
+\boxed{55}","[55, '55']",55,"[55, '55']",True
+\boxed{1008},"[1008, '1008']",699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

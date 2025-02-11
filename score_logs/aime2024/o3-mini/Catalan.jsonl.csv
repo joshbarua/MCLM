@@ -1,0 +1,203 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+"\boxed{721} 
+
+Per a resoldre el problema, considerem una caixa rectangular amb dimensions positives x, y, z que satisfan:
+
+ 1) Àrea de superfície: 2(xy + yz + zx) = 54, és a dir, xy + yz + zx = 27.
+ 2) Volum: xyz = 23.
+
+La esfera més petita que conté una caixa té com a radi la meitat de la diagonal de la caixa, que és r = (1/2)√(x² + y² + z²). Volem trobar el valor de r tal que totes les caixes amb les propietats anteriors estiguin contingudes en una esfera de radi r. Això implica que hem de trobar el màxim possible de la diagonal, és a dir, max √(x² + y² + z²), subjecte a les condicions donades.
+
+Observem que:
+ (x + y + z)² = x² + y² + z² + 2(xy + yz + zx),
+per tant, x² + y² + z² = (x + y + z)² − 2·27 = (x + y + z)² − 54.
+
+Per maximitzar x² + y² + z², és equivalent a maximitzar S = x + y + z.
+
+Una intuïció habitual és que el màxim de S subjecte a aquests tipus de restriccions es pot aconseguir quan dues dimensions són iguals. Suposem, per tant, que x = y = a amb a > 0. Llavors:
+
+ • El volum ens dona: a²·z = 23, d’on z = 23 / a².
+ • La suma dels productes parells és: xy + yz + zx = a² + 2a·z = a² + 2a·(23 / a²) = a² + 46 / a.
+
+Així, hem de complir:
+ a² + 46 / a = 27.
+Multiplicant per a per treure el denominador:
+ a³ − 27a + 46 = 0.
+Comprovem que a = 2 és solució:
+ 2³ − 27·2 + 46 = 8 − 54 + 46 = 0.
+
+Per tant, a = 2, i aleshores z = 23 / (2²) = 23 / 4.
+
+Ara, la suma total de les dimensions és:
+ S = 2 + 2 + 23 / 4 = 4 + 23 / 4 = (16 + 23) / 4 = 39/4.
+
+La diagonal al quadrat és:
+ x² + y² + z² = S² − 54 = (39/4)² − 54 = 1521/16 − 54 = (1521 − 864) / 16 = 657/16.
+
+Per tant, el radi de la esfera que conté la caixa (la meitat de la diagonal) és:
+ r = (1/2) √(657/16) ⇒ r² = (1/4)(657/16) = 657/64.
+
+Així, s'expressa r² = 657/64, amb 657 i 64 primers entre si, i doncs p + q = 657 + 64 = 721.","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+\boxed{294},"[294, '294']",294,"[294, '294']",True
+"\boxed{540}
+
+Per trobar la part real màxima de l'expressió
+  (75 + 117i)z + (96 + 144i)/z,
+on z és un nombre complex amb |z| = 4, procedim de la següent forma.
+
+1. Com que |z| = 4, escrivim z en forma polar:
+  z = 4e^(iθ).
+
+2. Substituïm z a l'expressió:
+  (75 + 117i)·4e^(iθ) + (96 + 144i)/(4e^(iθ))
+    = 4(75 + 117i)e^(iθ) + (96 + 144i)/4 · e^(–iθ)
+    = (300 + 468i)e^(iθ) + (24 + 36i)e^(–iθ).
+
+3. Expressar e^(iθ) i e^(–iθ) en funció de cosθ i sinθ:
+  e^(iθ) = cosθ + i sinθ       e^(–iθ) = cosθ – i sinθ.
+
+4. Multiplicant,
+  (300 + 468i)(cosθ + i sinθ) = 300cosθ – 468 sinθ + i(300sinθ + 468cosθ),
+  (24 + 36i)(cosθ – i sinθ) = 24cosθ + 36 sinθ + i(36cosθ – 24sinθ).
+
+5. Sumant les parts reals:
+  Re = [300cosθ – 468 sinθ] + [24cosθ + 36 sinθ] = 324 cosθ – 432 sinθ.
+
+6. La funció a maximitzar és:
+  R(θ) = 324 cosθ – 432 sinθ.
+
+La màxima de R(θ) és el valor màxim d'una combinació lineal de sin i cos, que és igual a la norma del vector dels coeficients:
+  Màxim = √(324² + (–432)²) = √(104976 + 186624) = √291600 = 540.
+
+Per tant, la part real més gran possible de l'expressió donada és 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Suposem que A, B, C i D són punts de la hipèrbola 
+  x²/20 – y²/24 = 1
+disposats de tal manera que, identificats com a vectors, 
+  A = (a, b), B = (c, d), C = (–a, –b) i D = (–c, –d).
+Així, el centre del rombe (punt d'intersecció de les diagonals) és l'origen.
+
+Com que A i C pertanyen a la hipèrbola, tenim:
+  (1) a²/20 – b²/24 = 1.
+Igualment, B i D satisfan:
+  (2) c²/20 – d²/24 = 1.
+
+Recordem que en qualsevol rombe les diagonals es tallen perpendicularment i es biseixen mútuament. Aquí, la condició de ser paral·lelogram amb centre l'origen ja està garantida per la simetria (A i C, B i D són oposats). Perquè les diagonals siguin perpendiculars hem d'exigir:
+  (3) (A – C)·(B – D) = (2a, 2b)·(2c, 2d) = 4(ac + bd) = 0,
+és a dir,  a·c + b·d = 0.
+
+Llavors, l'únic “grau de llibertat” està en escollir els vectors (a, b) i (c, d) sobre la hipèrbola amb la propietat que siguin ortogonals. Una forma pràctica és començar fixant B = (c, d) sobre la hipèrbola i cercar A = (a, b) tal que (3) es compleixi.
+
+Notem que el vector (a, b) ha de ser perpendicular a (c, d); per tant, podem escriure:
+  (a, b) = t·(d, –c),  amb t ∈ ℝ.
+Substituint en (1):
+  [t·d]²/20 –","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+"\boxed{468}
+
+Per trobar AB·AC, seguim els següents passos:
+
+1. S'observa primer que la distància del centre del circumcircle, O, al centre de la circumferència inscrit, I, està donada per la fórmula coneguda:
+  OI² = R² – 2Rr.
+Com que R = 13 i r = 6, tenim:
+  OI² = 13² – 2·13·6 = 169 – 156 = 13,
+  donant OI = √13.
+
+2. La condició IA ⟂ OI implica que, en el triangle AIO, l'angle a I és recte. Per tant, pel teorema de Pitàgores tenim:
+  AO² = AI² + OI².
+Sabent que AO = R = 13, resulta:
+  13² = AI² + 13 ⟹ AI² = 169 – 13 = 156,
+  donant AI = √156 = 2√39.
+
+3. D'altra banda, se sap que la distància des del vèrtex A fins a l'incentre es pot expressar en funció del semiangle A/2:
+  AI = r/sin(A/2).
+Així, obtenim:
+  2√39 = 6/sin(A/2) ⟹  sin(A/2) = 6/(2√39) = 3/√39.
+
+4. Calculem ara sinA. Usant l'identitat del doble angle:
+  sinA = 2 sin(A/2) cos(A/2).
+Ens cal cos(A/2), que obtenim a partir de:
+  cos²(A/2) = 1 – sin²(A/2) = 1 – (9/39) = (30/39) = 10/13,
+  donant cos(A/2) = √(10/13) = (√10)/(√13).
+Per tant,
+  sinA = 2·(3/√39)·(√10/√13) = (6√10)/(√39·√13).
+Notem que √39·√13 = √507 i, alternativament, podem trobar cosA utilitzant:
+  cosA = 1 – 2 sin²(A/2) = 1 – 2·(9/39) = 1 – 18/39 = 1 – 6/13 = 7/13.
+Així, calculant sinA a","[468, '468']",468,"[468, '468']",True
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Per explicar breument el raonament:
+
+Es vol calcular
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ)
+on ω és una arrel tretzena de la unitat (ω ≠ 1).
+
+Observem que
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2,
+la qual expressió és un polinomi en ωᵏ de grau 2 que podem escriure com:
+  ω²ᵏ – 2ωᵏ + 2 = (ωᵏ – (1+i))·(ωᵏ – (1–i)).
+
+Per tant,
+  P = ∏ₖ₌₀¹² (ωᵏ – (1+i))·(ωᵏ – (1–i))
+   = (∏ₖ₌₀¹² (ωᵏ – (1+i))) · (∏ₖ₌₀¹² (ωᵏ – (1–i))).
+
+Recordem que si ω₀, ω₁, …, ω₁₂ són les arrels del polinomi X¹³–1 (ja que ω és arrel primitiva), tenim:
+  ∏ₖ₌₀¹² (X – ωᵏ) = X¹³ – 1.
+Així, per a qualsevol a ∈ ℂ:
+  ∏ₖ₌₀¹² (a – ωᵏ) = a¹³ – 1.
+Per tant,
+  ∏ₖ₌₀¹² (ωᵏ – a) = (–1)¹³ (a¹³ – 1) = –(a¹³ – 1).
+
+Aplicant-ho per a a = 1+i i per a a = 1–i obtenim:
+  ∏ₖ₌₀¹² (ωᵏ – (1+i)) = –[(1+i)¹³ – 1],
+  ∏ₖ₌₀¹² (ωᵏ – (1–i)) = –[(1–i)¹³ – 1].
+
+Per tant,
+  P = [(1+i)¹³ – 1]·[(1–i)¹³ – 1].
+
+Ara, calculem (1+i)¹³. Representem 1+i en forma polar:
+  |1+i| = √2, arg(1+i) = π/4,
+així,
+  (1+i)¹³ = (√2)¹³·e^(i·13π/4) = 2^(6.5)·e^(i·13π/4).
+Notem que 13π/4 = 2π + 5π/4, per tant e^(i·13π/4) = e^(i·5π/4) = –(1+i)/√2.
+Llavors,
+  (1+i)¹³ = 2^(6.5)/√2 · (–(1+i)) = 2⁶ · (–(1+i)) = –64(1+i) = –64 – 64i.
+D'aquí,
+  (1+i)¹³ – 1 = –64 – 64i – 1 = –65 – 64i.
+
+Com que (1–i) és el conjugat de (1+i), tenim:
+  (1–i)¹³ = –64 + 64i  ⟹ (1–i)¹³ – 1 = –65 + 64i.
+
+Llavors, el producte és:
+  P = (–65 – 64i)(–65 + 64i) = (65)² – (64i)² = 4225 – (4096·(–1)) = 4225 + 4096 = 8321.
+
+Finalment, el residu de 8321 dividit per 1000 és 321.
+
+Per tant, la resposta és:
+  \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+\boxed{236},"[236, '236']",236,"[236, '236']",True
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55}
+
+Observació: Per a cada enter m ∈ A, Bob pot formar 2^(m–1) conjunts B (escollint qualsevol subconjunt de {1,...,m–1} i afegint m). Aquesta suma per tots els m ∈ A ha de ser 2024, és a dir, ∑₍ₘ ∈ A₎ 2^(m–1) = 2024. Expressant 2024 en potències de dos obtenim 2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3. Així, els elements de A són aquells que satisfaen m – 1 ∈ {10, 9, 8, 7, 6, 5, 3}, és a dir, A = {11, 10, 9, 8, 7, 6, 4}. La suma dels elements de A és 11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

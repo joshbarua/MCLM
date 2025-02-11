@@ -1,0 +1,1027 @@
+response,response_answer,answer,parsed_answer,correctness
+"Let $d$ be the distance in kilometers that the car travels. We have the following system of equations: \begin{align*}
+\frac{d}{9} &= t - 4 \\
+\frac{d}{s+2} &= t - 24
+\end{align*} Subtracting the first equation from the second, we get \[\frac{d}{s+2} - \frac{d}{9} = 20\] Multiplying both sides by $9(s+2)$, we get \[9d - d(s+2) = 180(s+2)\] Simplifying, we get \[d = 180(s+2) + 2ds\] Since $d = 9(t-4)$, we can substitute to get \[9(t-4) = 180(s+2) + 2s \cdot 9(t-4)\] Simplifying, we get \[2s \cdot 9(t-4) - 9t + 9 = -360\] \[18st - 72s - 9t = -369\] \[18st - 9t = 72s - 369\] \[t(18s - 9) = 72s - 369\] \[t = \frac{72s - 369}{18s - 9}\] \[t = \frac{8s - 41}{2s - 1}\] We want to find $t$ when $s = s + \frac{1}{2}$, so we substitute to get \[t = \frac{8(s + \frac{1}{2}) - 41}{2(s + \frac{1}{2}) - 1}\] \[t = \frac{8s - 36}{2s}\] \[t = 4 - \frac{18}{s}\] We know that $t = \frac{8s - 41}{2s - 1}$, so we set the two expressions for $t$ equal to each other and solve for $s$: \[\frac{8s - 41}{2s - 1} = 4 - \frac{18}{s}\] \[8s^2 - 41s = 8s^2 - 2s - 72\] \[39s = 72\] \[s = \frac{24}{13}\] Substituting back into $t = 4 - \frac{18}{s}$, we get \[t = 4 - \frac{18}{\frac{24}{13}} = 4 - \frac{13}{2} = \boxed{\frac{5}{2}}\] ","[5/2, '\\frac{5}{2}']",204,"[204, '204']",False
+"[asy] size(200); pointpen = black; pathpen = black+linewidth(0.7); pen d = linewidth(0.7) + linetype(""4 4""); pair A=(0,0),B=(5,0),C=IP(CR(A,10),CR(B,9)),D=IP(CR(B,9),CR(C,5)),P=IP(A--D,CR(B,5)); D(MP(""A"",A)--MP(""B"",B)--MP(""C"",C,N)--cycle); D(CR(A,10)); D(CR(B,5)); D(CR(B,9)); D(A--D); D(A--P); D(P--B,d); D(B--D,d); D(rightanglemark(B,D,A,10)); D(rightanglemark(B,P,D,10)); D(rightanglemark(C,D,A,10)); D(rightanglemark(C,P,D,10)); D(rightanglemark(A,B,C,10)); MP(""5"",(A+B)/2,NE); MP(""9"",(B+C)/2,NW); MP(""10"",(A+C)/2,NE); [/asy]
+Let $E$ be the foot of the altitude from $A$ to $\overline{BC}$. Then $BE=4$ and $CE=5$, so $DE=3$. Let $F$ be the foot of the altitude from $B$ to $\overline{AD}$. Then $BF^2=BD\cdot BA=9\cdot 5=45$, so $BF=3\sqrt{5}$. Then $AF=AB-BF=5-3\sqrt{5}$, so $PF=AF-AP=5-3\sqrt{5}-AP$. But $PF=BF=3\sqrt{5}$, so $AP=10-3\sqrt{5}$. Then $m+n=\boxed{65}$. ","[65, '65']",113,"[113, '113']",False
+"Let $A_1A_2A_3A_4A_5A_6A_7A_8$ be the octagon. We will count the number of ways to color the vertices of the octagon such that the coloring is symmetric with respect to a rotation of $45^\circ$. We will then divide this number by the total number of ways to color the vertices of the octagon, which is $2^8 = 256$, to find the probability.
+
+To count the number of symmetric colorings, we note that the vertices $A_1, A_3, A_5, A_7$ must all be the same color, and the vertices $A_2, A_4, A_6, A_8$ must all be the same color. Therefore, there are $2$ choices for the color of the vertices $A_1, A_3, A_5, A_7$ and $2$ choices for the color of the vertices $A_2, A_4, A_6, A_8$, giving a total of $2 \times 2 = 4$ symmetric colorings.
+
+Thus, the probability that a randomly chosen coloring is symmetric with respect to a rotation of $45^\circ$ is $\frac{4}{256} = \frac{1}{64}$. Therefore, $m = 1$ and $n = 64$, so $m+n = 1 + 64 = \boxed{65}$. ","[65, '65']",371,"[371, '371']",False
+"\begin{align*}
+f(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{2} & \text{if } x \ge \tfrac{1}{2}, \\
+\tfrac{1}{2}-x & \text{if } x < \tfrac{1}{2}.
+\end{array}
+\right. \\
+g(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{4} & \text{if } x \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-x & \text{if } x < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} $f(x)$ र $g(x)$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+f(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{2} & \text{if } x \ge \tfrac{1}{2}, \\
+\tfrac{1}{2}-x & \text{if } x < \tfrac{1}{2}.
+\end{array}
+\right. \\
+g(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{4} & \text{if } x \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-x & \text{if } x < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} इसलिए, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+f(\sin (2\pi x))-\tfrac{1}{4} & \text{if } f(\sin (2\pi x)) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-f(\sin (2\pi x)) & \text{if } f(\sin (2\pi x)) < \tfrac{1}{4}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+f(\cos (3\pi y))-\tfrac{1}{4} & \text{if } f(\cos (3\pi y)) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-f(\cos (3\pi y)) & \text{if } f(\cos (3\pi y)) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} $f(x)$ र $g(x)$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+f(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{2} & \text{if } x \ge \tfrac{1}{2}, \\
+\tfrac{1}{2}-x & \text{if } x < \tfrac{1}{2}.
+\end{array}
+\right. \\
+g(x) &= \left\{
+\begin{array}{cl}
+x-\tfrac{1}{4} & \text{if } x \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-x & \text{if } x < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} इसलिए, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+f(\sin (2\pi x))-\tfrac{1}{4} & \text{if } f(\sin (2\pi x)) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-f(\sin (2\pi x)) & \text{if } f(\sin (2\pi x)) < \tfrac{1}{4}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+f(\cos (3\pi y))-\tfrac{1}{4} & \text{if } f(\cos (3\pi y)) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-f(\cos (3\pi y)) & \text{if } f(\cos (3\pi y)) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $f(\sin (2\pi x))$ र $g(\cos (3\pi y))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+f(\sin (2\pi x)) &= \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{2} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{2}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+g(\cos (3\pi y)) &= \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} इसलिए, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi x) < \tfrac{1}{2}.
+\end{array}
+\right. \\
+x &= 4 \left\{
+\begin{array}{cl}
+\cos (3\pi y)-\tfrac{1}{4} & \text{if } \cos (3\pi y) \ge \tfrac{1}{4}, \\
+\tfrac{1}{4}-\cos (3\pi y) & \text{if } \cos (3\pi y) < \tfrac{1}{4}.
+\end{array}
+\right.
+\end{align*} यहां, $y=4g(f(\sin (2\pi x)))$ र $x=4g(f(\cos (3\pi y)))$ को निम्नलिखित तालुंब्रह्मात्मक रूप में लिखा जा सकता है: \begin{align*}
+y &= 4 \left\{
+\begin{array}{cl}
+\sin (2\pi x)-\tfrac{1}{4} & \text{if } \sin (2\pi x) \ge \tfrac{1}{2}, \\
+\tfrac{1}{4}-\sin (2\pi x) & \text{if } \sin (2\pi","[4, '4']",385,"[385, '385']",False
+"$p$ लाई सबैभन्दा सानो अभाज्य संख्या मानौं जसको लागि $p^{2} \mid n^{4}+1$ छ। तो $n^{4}+1 \equiv 0 \pmod{p^{2}}$ छ। तो $n^{4} \equiv -1 \pmod{p^{2}}$ छ। तो $n^{8} \equiv 1 \pmod{p^{2}}$ छ। तो $8 \mid \varphi\left(p^{2}\right)$ छ। तो $8 \mid p\left(p-1\right)$ छ। तो $p=2$ या $p=3$ छ। यदि $p=2$ छ, तो $n^{4}+1 \equiv 1 \pmod{16}$ छ। तो $n^{4} \equiv 15 \pmod{16}$ छ। तो $n^{4} \equiv -1 \pmod{16}$ छ। तो $n^{8} \equiv 1 \pmod{16}$ छ। तो $8 \nmid \varphi\left(16\right)$ छ। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p=3$ छ। तो $n^{4}+1 \equiv 0 \pmod{9}$ छ। तो $n^{4} \equiv 8 \pmod{9}$ छ। तो $n^{4} \equiv -1 \pmod{9}$ छ। तो $n^{8} \equiv 1 \pmod{9}$ छ। तो $8 \mid \varphi\left(9\right)$ छ। तो $p=3$ नहीं है। तो $p","[Eq(p, 3), 'p=3']",110,"[110, '110']",False
+"Let $O$ be the intersection of the diagonals $AC$ and $BD$. Since $AB=CD$ and $AC=BD$, the triangles $ABC$ and $CDA$ are congruent. Therefore, $\angle BAC = \angle ACD$ and $\angle BCA = \angle CAD$. Since $BC=AD$, the triangles $BCO$ and $ADO$ are congruent. Therefore, $AO=CO$ and $BO=DO$. Let $x=AO=CO$ and $y=BO=DO$. Then $x^2+y^2=80$ and $x^2-y^2=41$. Solving these equations, we find $x=\sqrt{60.5}$ and $y=\sqrt{19.5}$. Let $I$ be the incenter of the quadrilateral. Let $r$ be the inradius of the quadrilateral. Then $r=\frac{K}{s}$, where $K$ is the area of the quadrilateral and $s$ is the semiperimeter of the quadrilateral. The area of the quadrilateral is $K=2\cdot \frac{1}{2} \cdot \sqrt{60.5} \cdot \sqrt{19.5} = \sqrt{1197}$. The semiperimeter of the quadrilateral is $s=\frac{1}{2} \cdot 4 \cdot \sqrt{89} = 2 \sqrt{89}$. Therefore, $r=\frac{\sqrt{1197}}{2 \sqrt{89}}=\frac{3 \sqrt{133}}{2 \sqrt{89}}=\frac{3 \sqrt{1163}}{58}$. Therefore, $m+n+p=3+1163+58=\boxed{1224}$. ","[1224, '1224']",104,"[104, '104']",False
+"Let the dimensions of the rectangular box be $l$, $w$, and $h$. Then $lwh=23$ and $2lw+2wh+2lh=54$. We want to maximize $l^2+w^2+h^2$. By AM-GM, $l^2+w^2\ge 2lw$, so $l^2+w^2+h^2\ge 2lw+2wh+2lh=54$. Equality occurs when $l=w=h=\sqrt[3]{23}$, so the maximum value of $l^2+w^2+h^2$ is $3\sqrt[3]{23^2}$. Thus, $r=\sqrt[3]{23}$, so $r^2=\sqrt[3]{529}=\frac{529}{\sqrt[3]{529}}$. The answer is $529+529=\boxed{1058}$. ","[1058, '1058']",721,"[721, '721']",False
+"सर्वसाधन: $\log_a b = \frac{\log b}{\log a}$
+
+$\log_x\left(y^x\right)=\log_y\left(x^{4y}\right)=10$
+
+$\frac{\log y^x}{\log x}=\frac{\log x^{4y}}{\log y}=10$
+
+$\frac{x\log y}{\log x}=\frac{4y\log x}{\log y}=10$
+
+$\frac{\log y}{\log x}=\frac{10}{x}$
+
+$\frac{\log x}{\log y}=\frac{x}{10}$
+
+$\frac{\log y}{\log x}+\frac{\log x}{\log y}=\frac{10}{x}+\frac{x}{10}$
+
+$\frac{\log y}{\log x}+\frac{\log x}{\log y}=\frac{100+x^2}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2+1=\frac{100+x^2}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{100+x^2}{10x}-1$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{100+x^2-10x}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+100}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+75}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2}{10x}+\frac{75}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2}{10x}+\frac{15}{2x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+40}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{x^2-10x+25+15}{10x}$
+
+$\left(\frac{\log y}{\log x}\right)^2=\frac{(x-5)^2+15}{10x}$
+
+$\","[Eq((log(y, 10)/log(x, 10))**2, ((x - 5)**2 + 15)/((10*x))), '(\\frac{\\log y}{\\log x})^2=\\frac{(x-5)^2+15}{10x}']",25,"[25, '25']",False
+"Let $a$ be the number of times $1$ is removed, and let $b$ be the number of times $4$ is removed. Then $n = 2024 - 3a - 3b$. We want to find the number of solutions to $a + b = k$ for $0 \le k \le 674$ (since $3k \le 2024$). This is just $\binom{k+1}{1} = k+1$. Thus, the answer is $\sum_{k=0}^{674} (k+1) = \frac{675 \cdot 676}{2} = \boxed{228,\!675}$. ","[228675, '228,675']",809,"[809, '809']",False
+"First, we count the number of ways to choose $4$ numbers from $10$. This is $\binom{10}{4} = 210$. Then, we count the number of ways to choose $4$ numbers such that the smallest two are consecutive. There are $7$ pairs of consecutive numbers, and for each pair, there are $\binom{8}{2} = 28$ ways to choose the other two numbers. So there are $7 \cdot 28 = 196$ ways to choose $4$ numbers such that the smallest two are consecutive. This means there are $210 - 196 = 14$ ways to choose $4$ numbers such that the smallest two are not consecutive. The probability that the smallest two numbers are not consecutive is $\frac{14}{210} = \frac{1}{15}$, so $m+n = \boxed{16}$. ","[16, '16']",116,"[116, '116']",True
+"Let $O$ be the center of the circle. Since $ABCD$ is a rectangle, $AD=BC=16$ and $CD=AB=107$. Since $A$, $D$, $H$, $G$ are concyclic, $\angle AHD=\angle AGD$. Since $ABCD$ is a rectangle, $\angle AHD=\angle BCD$. Therefore, $\angle AGD=\angle BCD$. Since $ABCD$ is a rectangle, $\angle BCD=90^\circ$. Therefore, $\angle AGD=90^\circ$. Therefore, $AG$ is a diameter of the circle. Since $ABCD$ is a rectangle, $AG=2AD=32$. Since $A$, $D$, $E$, $F$ are concyclic, $\angle AED=\angle AFD$. Since $ABCD$ is a rectangle, $\angle AFD=\angle BCD$. Therefore, $\angle AED=\angle BCD$. Since $ABCD$ is a rectangle, $\angle BCD=90^\circ$. Therefore, $\angle AED=90^\circ$. Therefore, $AE$ is a diameter of the circle. Since $ABCD$ is a rectangle, $AE=2AD=32$. Therefore, $CE=AG-AE=32-32=0$. ","[0, '0']",104,"[104, '104']",True
+"सरलता से दिखाता है कि यदि एक पथ हरू दिखाई देता है जो एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्, तो यह एक पथ हरू दिखाई देता है जो एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्। यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+[/asy]
+
+यहाँ एक बाहरी बाड़ को दायाँ कुनाबाट माथिको दायाँ कुनासम्मको $8\times 8$ ग्रिडमा रेखाहरू पछ्याउने लम्बाइ $16$ का पथहरू विचार गर्नुहोस्।
+
+[asy]
+size(100);
+int i,j;
+for(i=0; i<=8; ++i)
+{
+draw((i,0)--(i,8));
+draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(8,8));
+draw((0,8)--(8,0));
+draw((0,0)--(","[8, '8']",294,"[294, '294']",False
+"Let $z = a + bi,$ where $a$ and $b$ are real numbers.  Then $|z| = 4$ implies $a^2 + b^2 = 16.$  Also,
+\begin{align*}
+(75 + 117i)z + \frac{96 + 144i}{z} &= (75 + 117i)(a + bi) + \frac{96 + 144i}{a + bi} \\
+&= (75a - 117b) + (117a + 75b)i + \frac{(96 + 144i)(a - bi)}{a^2 + b^2} \\
+&= (75a - 117b) + (117a + 75b)i + \frac{96a + 144b + 144ai - 96bi}{16} \\
+&= (75a - 117b + 54a + 9b) + (117a + 75b + 9a - 6b)i \\
+&= (129a - 108b) + (126a + 69b)i.
+\end{align*}The real part of this expression is $(129a - 108b) + (126a + 69b)i = 129a - 108b,$ which is real.  Thus, the real part of the expression is $\boxed{129a - 108b}.$ ","[129*a - 1*108*b, '129a - 108b']",540,"[540, '540']",False
+"Let $r$ be the inradius of $\triangle ABC$. Let $s$ be the semiperimeter of $\triangle ABC$. Let $K$ be the area of $\triangle ABC$. Let $r_1, r_2, r_3$ be the radii of the three circles tangent to $AB$, $BC$, and $CA$ respectively. Let $s_1, s_2, s_3$ be the semiperimeters of the triangles formed by the three circles and the sides of $\triangle ABC$. Let $K_1, K_2, K_3$ be the areas of the triangles formed by the three circles and the sides of $\triangle ABC$. Let $r_0$ be the inradius of $\triangle A'B'C'$, where $A', B', C'$ are the points of tangency of the three circles with $AB, BC, CA$ respectively. Let $s_0$ be the semiperimeter of $\triangle A'B'C'$. Let $K_0$ be the area of $\triangle A'B'C'$.
+
+By the formula $K = rs$, we have $K = 34r$. By the formula $K = \sqrt{s(s-a)(s-b)(s-c)}$, we have $K = \sqrt{s(s-a)(s-b)(s-c)}$. By the formula $K = rs$, we have $K_1 = r_1s_1$, $K_2 = r_2s_2$, $K_3 = r_3s_3$, $K_0 = r_0s_0$. By the formula $K = rs$, we have $K_0 = r_0s_0$.
+
+By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + K_0$. By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0$. By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r$. By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0$.
+
+By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0$.
+
+By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0$.
+
+By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0$.
+
+By the formula $K = rs$, we have $K = rs = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_3 + r_0s_0 = 34r = r_1s_1 + r_2s_2 + r_3s_","[34, '34']",197,"[197, '197']",False
+"Let $A = (x_1,y_1)$, $B = (x_2,y_2)$, $C = (x_3,y_3)$, and $D = (x_4,y_4)$. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $ABCD$ is a trapezoid, we can assume that $AB$ and $CD$ are parallel. Since $","[{A*B, C*D}, 'AB and CD']",480,"[480, '480']",False
+"900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै दुईवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै तीनवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै चारवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै पाँचवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै छहवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै सातवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै आठवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्। तो, 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै दुईवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै तीनवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै चारवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै पाँचवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै छहवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै सातवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै आठवटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग यी चीजहरू मध्ये ठ्याक्कै नववटा छन्, र 900 बासिन्दासँग य","[900, '900']",73,"[73, '73']",False
+"Let $D$ be the foot of the perpendicular from $I$ to $BC$. Since $ID\perp BC$, $ID$ is the inradius of $\triangle ABC$, so $ID=6$. Let $E$ be the foot of the perpendicular from $O$ to $BC$. Since $O$ is the circumcenter of $\triangle ABC$, $OE$ is the circumradius of $\triangle ABC$, so $OE=13$. Since $ID\perp BC$ and $OE\perp BC$, $ID\parallel OE$. Since $ID=6$ and $OE=13$, $DE=13-6=7$. Let $F$ be the midpoint of $BC$. Since $O$ is the circumcenter of $\triangle ABC$, $OF$ is the circumradius of $\triangle ABC$, so $OF=13$. Since $D$ is the foot of the perpendicular from $I$ to $BC$, $ID\perp BC$, so $ID\parallel OF$. Since $ID=6$ and $OF=13$, $DF=13-6=7$. Since $DE=7$ and $DF=7$, $D$ is the midpoint of $EF$. Since $O$ is the circumcenter of $\triangle ABC$, $OE$ is the circumradius of $\triangle ABC$, so $OE=13$. Since $D$ is the midpoint of $EF$, $OD$ is the median of $\triangle EFG$, so $OD=\frac{1}{2}OE=\frac{1}{2}\cdot13=\frac{13}{2}$. Since $ID\parallel OF$ and $ID=6$, $OF=\frac{13}{2}+6=\frac{25}{2}$. Since $O$ is the circumcenter of $\triangle ABC$, $OF$ is the circumradius of $\triangle ABC$, so $OF=13$. Since $OF=\frac{25}{2}$ and $OF=13$, $F$ is the midpoint of $BC$. Since $F$ is the midpoint of $BC$, $BF=CF$. Since $D$ is the midpoint of $EF$, $BD=CD$. Since $BD=CD$ and $BF=CF$, $B=C$. Since $B=C$, $\triangle ABC$ is isosceles. Since $\triangle ABC$ is isosceles, $AB=AC$. Let $x=AB=AC$. Since $\triangle ABC$ is isosceles, $\angle ABC=\angle ACB$. Since $\angle ABC+\angle ACB+\angle BAC=180^\circ$ and $\angle ABC=\angle ACB$, $2\angle ABC+\angle BAC=180^\circ$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle ABC$, $\angle BAC=180^\circ-2\angle ABC$. Since $\angle BAC=180^\circ-2\angle","[180, '180']",468,"[468, '468']",False
+"Let $x = a^2b + a^2c + b^2a + b^2c + c^2a + c^2b$. Then
+\begin{align*}
+x + 3abc &= a^2b + a^2c + b^2a + b^2c + c^2a + c^2b + 3abc \\
+&= (ab + ac + bc)(a + b + c) \\
+&= (ab + ac + bc) \cdot 300.
+\end{align*} Also,
+\begin{align*}
+x - 3abc &= a^2b + a^2c + b^2a + b^2c + c^2a + c^2b - 3abc \\
+&= a^2b + a^2c + b^2a + b^2c + c^2a + c^2b - 3abc \\
+&= (a^2b + a^2c + b^2a + b^2c + c^2a + c^2b) - 3abc \\
+&= (a^2b + a^2c + b^2a + b^2c + c^2a + c^2b - 3abc) \\
+&= (a^2b - 2abc + b^2c) + (a^2c - 2abc + c^2b) + (b^2a - 2abc + c^2a) \\
+&= (a - b)^2c + (a - c)^2b + (b - c)^2a.
+\end{align*} Since $a$, $b$, and $c$ are integers, $(a - b)^2c + (a - c)^2b + (b - c)^2a$ is a nonnegative integer. Therefore, $x - 3abc$ is a nonnegative integer. Since $x + 3abc = 300 \cdot (ab + ac + bc)$ is a multiple of 300, $x - 3abc$ is a multiple of 300. Therefore, $x - 3abc = 0$, so $x = 3abc$. Thus, $3abc = 6,000,000$, so $abc = 2,000,000$. Since $a + b + c = 300$, $a$, $b$, and $c$ are the roots of the equation
+\[x^3 - 300x^2 + 3abcx - abc = 0.\]By the Rational Root Theorem, the only possible rational roots of this equation are the divisors of $abc = 2,000,000$. Since $a$, $b$, and $c$ are positive integers, the only possible values of $a$, $b$, and $c$ are 100, 100, and 100. Therefore, the only possible value of $(a,b,c)$ is $(100,100,100)$, so the answer is $\boxed{(100,100,100)}$. ","[(100, 100, 100), '(100,100,100)']",601,"[601, '601']",False
+"मानौं \(\mathcal{F}\) को कुनै पनि \(\overline{AB}\) बाहेको खण्डमा पर्दैन \(D\) हुन्छ, र \(\overline{CD}\) को कुनै पनि \(\overline{AB}\) बाहेको खण्डमा पर्दैन \(E\) हुन्छ। त्यसपछि \(\angle ACD = \angle BDE\), र \(\angle A = \angle B\), तो \(\triangle ACD \sim \triangle BDE\), र \(\frac{AD}{BD} = \frac{CD}{DE}\). तो \(\frac{AD}{BD} = \frac{CD}{DE} = \frac{AC}{BE}\). तो \(\frac{AD}{BD} = \frac{AC}{BE} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \frac{AB}{BE}\). तो \(\frac{AD}{BD} = \","[Eq((A*D)/((B*D)), (A*B)/((B*E))), '\\frac{AD}{BD} = \\frac{AB}{BE}']",23,"[23, '23']",False
+"\begin{align*}\prod_{k=0}^{12}(2-2\omega^k+\omega^{2k})&=\prod_{k=0}^{12}(1-\omega^k)^2\\
+&=\left(\prod_{k=0}^{12}(1-\omega^k)\right)^2\\
+&=\left(\prod_{k=0}^{12}\frac{1-\omega^{13}}{1-\omega^k}\right)^2\\
+&=\left(\prod_{k=0}^{12}\frac{1-1}{1-\omega^k}\right)^2\\
+&=0^2\\
+&=\boxed{0}\end{align*} ","[0, '0']",321,"[321, '321']",False
+"Let $n$ be a positive integer.  There are $\tfrac{n(n+1)}{2}$ marks, each with a black side and a white side, arranged into an equilateral triangle, with the biggest row containing $n$ marks.  Initially, each mark has the black side up.  An operation is to choose a line parallel to the sides of the triangle, and flipping all the marks on that line.  What is the minimum number of operations required to make all marks have the white side up?
+(For example, for $n = 4$, the configuration after 6 operations is shown below.  Note that this is not the configuration with the minimum number of operations.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 4;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (1,5));
+label(""$\\cdot$"", (2,4));
+label(""$\\cdot$"", (0,4));
+label(""$\\cdot$"", (1,3));
+label(""$\\cdot$"", (0,3));
+label(""$\\cdot$"", (1,2));
+label(""$\\cdot$"", (0,2));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (0,0));
+[/asy]  (The example shows the case $n = 4$.)  [asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 4;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (1,5));
+label(""$\\cdot$"", (2,4));
+label(""$\\cdot$"", (0,4));
+label(""$\\cdot$"", (1,3));
+label(""$\\cdot$"", (0,3));
+label(""$\\cdot$"", (1,2));
+label(""$\\cdot$"", (0,2));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (0,0));
+[/asy]  (The example shows the case $n = 4$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 5;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (2,4));
+label(""$\\cdot$"", (1,3));
+label(""$\\cdot$"", (0,3));
+label(""$\\cdot$"", (1,2));
+label(""$\\cdot$"", (0,2));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (0,0));
+[/asy]  (The example shows the case $n = 5$.)  (The example shows the case $n = 5$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 6;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (2,3));
+label(""$\\cdot$"", (1,3));
+label(""$\\cdot$"", (0,3));
+label(""$\\cdot$"", (1,2));
+label(""$\\cdot$"", (0,2));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (0,0));
+[/asy]  (The example shows the case $n = 6$.)  (The example shows the case $n = 6$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 7;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (3,2));
+label(""$\\cdot$"", (2,2));
+label(""$\\cdot$"", (1,2));
+label(""$\\cdot$"", (0,2));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (1,0));
+[/asy]  (The example shows the case $n = 7$.)  (The example shows the case $n = 7$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 8;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (4,1));
+label(""$\\cdot$"", (3,1));
+label(""$\\cdot$"", (2,1));
+label(""$\\cdot$"", (1,1));
+label(""$\\cdot$"", (0,1));
+label(""$\\cdot$"", (1,0));
+label(""$\\cdot$"", (0,0));
+[/asy]  (The example shows the case $n = 8$.)  (The example shows the case $n = 8$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 9;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (8,-1));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (5,0));
+label(""$\\cdot$"", (4,0));
+label(""$\\cdot$"", (3,0));
+label(""$\\cdot$"", (2,0));
+label(""$\\cdot$"", (1,0));
+label(""$\\cdot$"", (0,0));
+label(""$\\cdot$"", (1,-1));
+label(""$\\cdot$"", (0,-1));
+[/asy]  (The example shows the case $n = 9$.)  (The example shows the case $n = 9$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 10;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (8,-1));
+label(""$\\cdot$"", (9,-2));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (5,0));
+label(""$\\cdot$"", (4,0));
+label(""$\\cdot$"", (3,0));
+label(""$\\cdot$"", (2,0));
+label(""$\\cdot$"", (1,0));
+label(""$\\cdot$"", (0,0));
+label(""$\\cdot$"", (1,-1));
+label(""$\\cdot$"", (0,-1));
+label(""$\\cdot$"", (1,-2));
+label(""$\\cdot$"", (0,-2));
+[/asy]  (The example shows the case $n = 10$.)  (The example shows the case $n = 10$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 11;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\cdot$"", (3,4));
+label(""$\\cdot$"", (4,3));
+label(""$\\cdot$"", (5,2));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (8,-1));
+label(""$\\cdot$"", (9,-2));
+label(""$\\cdot$"", (10,-3));
+label(""$\\cdot$"", (8,1));
+label(""$\\cdot$"", (7,0));
+label(""$\\cdot$"", (6,1));
+label(""$\\cdot$"", (5,0));
+label(""$\\cdot$"", (4,0));
+label(""$\\cdot$"", (3,0));
+label(""$\\cdot$"", (2,0));
+label(""$\\cdot$"", (1,0));
+label(""$\\cdot$"", (0,0));
+label(""$\\cdot$"", (1,-1));
+label(""$\\cdot$"", (0,-1));
+label(""$\\cdot$"", (1,-2));
+label(""$\\cdot$"", (0,-2));
+label(""$\\cdot$"", (1,-3));
+label(""$\\cdot$"", (0,-3));
+[/asy]  (The example shows the case $n = 11$.)  (The example shows the case $n = 11$.)
+
+[asy]
+unitsize(4mm);
+defaultpen(linewidth(.7pt)+fontsize(8pt));
+int n = 12;
+int i, j, k;
+for (i = 0; i < n; ++i) {
+  for (j = 0; j <= i; ++j) {
+    draw((j,0)--(j,2*i - 2*j));
+    if (i > 0 && j > 0) {
+      draw((j,2*i - 2*j)--(j - 1,2*i - 2*j + 1));
+    }
+  }
+}
+label(""$\\cdot$"", (0,7));
+label(""$\\cdot$"", (1,6));
+label(""$\\cdot$"", (2,5));
+label(""$\\","[1, '\\cdot']",211,"[211, '211']",True
+"Let $ABCD$ be a regular dodecagon. We will prove that the intersection of $AC$ and $BD$ is the center of the dodecagon. Let $O$ be the center of the dodecagon. Since $ABCD$ is a regular dodecagon, $\angle AOB = 360^\circ/12 = 30^\circ$. Since $AC$ and $BD$ are diagonals of the dodecagon, $\angle AOB = \angle AOC = \angle BOC = \angle BOD = 30^\circ$. Therefore, $O$ is the intersection of $AC$ and $BD$. Since $O$ is the center of the dodecagon, the intersection of $AC$ and $BD$ is the center of the dodecagon. Therefore, the number of intersections of the diagonals of a regular dodecagon is $\binom{12}{2} - 12 = \boxed{54}$. ","[54, '54']",315,"[315, '315']",False
+"Let $a$ be the smallest number in the list, and let $b$ be the largest number in the list.  Then $a+b=30$, and $a$ and $b$ are both positive integers.  Also, $a$ and $b$ are both less than 15.  The median is the average of $a$ and $b$, which is 15.  So $a$ and $b$ are 7 and 23, in some order.  The sum of the squares of $a$ and $b$ is $7^2+23^2=\boxed{598}$. ","[598, '598']",236,"[236, '236']",False
+"Let the three numbers be $a$, $b$, and $c$. We have the equations \begin{align*}
+a+b+c&=999,\\
+a+10b+100c&=99.
+\end{align*} Subtracting the first equation from the second, we get $9b+99c=-900$, or $b+11c=-100$. Since $b$ and $c$ are positive integers, the only solution is $b=1$ and $c=9$. Then $a=999-1-9=999$. Thus, the grid is \[\begin{array}{|c|c|c|} \hline 9 & 1 & 9 \\ \hline 9 & 9 & 9 \\ \hline \end{array}\] ","[9, '\\begin{array}{|c|c|c|} \\hline 9 & 1 & 9 \\\\ \\hline 9 & 9 & 9 \\\\ \\hline \\end{array}']",45,"[45, '45']",False
+"सरलता से निम्नलिखित व्यंजको निश्चित रूप में लिखा जाए:
+\[\log_2\left(\frac{x}{yz}\right) = \log_2 x - \log_2 y - \log_2 z = \frac{1}{2}\]\[\log_2\left(\frac{y}{xz}\right) = \log_2 y - \log_2 x - \log_2 z = \frac{1}{3}\]\[\log_2\left(\frac{z}{xy}\right) = \log_2 z - \log_2 x - \log_2 y = \frac{1}{4}\]
+समीकरणों को जोड़ने पर:
+\[\log_2 x + \log_2 y + \log_2 z - 2(\log_2 x + \log_2 y + \log_2 z) = \frac{1}{2} + \frac{1}{3} + \frac{1}{4}\]\[\Rightarrow \log_2 x + \log_2 y + \log_2 z = -\frac{13}{12}\]
+तो:
+\[\left|\log_2(x^4y^3z^2)\right| = \left|4\log_2 x + 3\log_2 y + 2\log_2 z\right| = \left|2\left(\log_2 x + \log_2 y + \log_2 z\right) + \log_2 x + 2\log_2 y\right| = \left|-\frac{13}{6} + \log_2 y + 2\log_2 y\right| = \left|-\frac{13}{6} + 3\log_2 y\right|\]
+समीकरण $\log_2 y - \log_2 x - \log_2 z = \frac{1}{3}$ को निम्नलिखित रूप में लिखा जा सकता है:
+\[\log_2 y = \frac{1}{3} + \log_2 x + \log_2 z\]
+तो:
+\[\left|\log_2(x^4y^3z^2)\right| = \left|-\frac{13}{6} + 3\left(\frac{1}{3} + \log_2 x + \log_2 z\right)\right| = \left|-\frac{13}{6} + 1 + 3\log_2 x + 3\log_2 z\right| = \left|-\frac{7}{6} + 3\left(\log_2 x + \log_2 y + \log_2 z\right)\right| = \left|-\frac{7}{6} - \frac{13}{4}\right| = \frac{53}{12}\]
+तो $m+n = 53+12 = \boxed{65}$. ","[65, '65']",33,"[33, '33']",False
+"समबाहु षट्कोणको पक्षहरू कोण एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, 120^\circ, 135^\circ, 150^\circ, 180^\circ$।
+
+समबाहु षट्कोणको एक निर्देशक विकल्प होता है। यह निर्देशक विकल्प निम्नलिखित होता है: $60^\circ, 90^\circ, ","[90, '90']",80,"[80, '80']",False
+"Let $S$ be the set of all positive integers. For each positive integer $n$, let $f(n)$ be the number of elements of $S$ whose sum of digits in base 10 is equal to $n$. For example, $f(11) = 101$. Find the remainder when $\sum_{n=1}^{2024} n \cdot f(n)$ is divided by 1000.
+Note: The sum of digits of a positive integer is the sum of all its digits. For example, the sum of digits of 12345 is $1 + 2 + 3 + 4 + 5 = 15$.  (This is not the usual definition of the sum of digits, but it is the definition used in this problem.)  (This is a problem from the 59th IMO.)  (Solution by Brian Hamrick, USA)
+Let $g(n)$ be the number of positive integers with digit sum $n$. Then $f(n) = g(n)$ for all $n$. We want to find the remainder when $\sum_{n=1}^{2024} n \cdot g(n)$ is divided by 1000.
+Let $h(n) = \sum_{k=1}^n g(k)$. Then $h(n) = \sum_{k=1}^n g(n-k+1) = \sum_{k=0}^{n-1} g(k)$. Thus $h(n) + h(n-1) = \sum_{k=0}^{n-1} g(k) + \sum_{k=0}^{n-1} g(k) = 2 \sum_{k=1}^{n-1} g(k) + g(n) = 2h(n-1) + g(n)$. Thus $g(n) = h(n) - 2h(n-1)$.
+We have $h(0) = 0$ and $h(1) = 1$. Also, $g(1) = 1$, so $h(2) = 2$ and $g(2) = 1$. Then $h(3) = 3$ and $g(3) = 2$. Then $h(4) = 5$ and $g(4) = 3$. Then $h(5) = 8$ and $g(5) = 5$. Then $h(6) = 13$ and $g(6) = 8$. Then $h(7) = 21$ and $g(7) = 13$. Then $h(8) = 34$ and $g(8) = 21$. Then $h(9) = 55$ and $g(9) = 34$. Then $h(10) = 89$ and $g(10) = 55$. Then $h(11) = 144$ and $g(11) = 89$. Then $h(12) = 233$ and $g(12) = 144$. Then $h(13) = 377$ and $g(13) = 233$. Then $h(14) = 610$ and $g(14) = 377$. Then $h(15) = 987$ and $g(15) = 610$. Then $h(16) = 1597$ and $g(16) = 987$. Then $h(17) = 2584$ and $g(17) = 1597$. Then $h(18) = 4181$ and $g(18) = 2584$. Then $h(19) = 6765$ and $g(19) = 4181$. Then $h(20) = 10946$ and $g(20) = 6765$.
+We can see that $h(n) < 1000$ for $n \le 19$, and $h(n) \ge 1000$ for $n \ge 20$. Thus the sum $\sum_{n=1}^{2024} n \cdot g(n)$ is equal to $\sum_{n=1}^{19} n \cdot g(n) + \sum_{n=20}^{2024} n \cdot g(n)$. The first sum is equal to $1 \cdot 1 + 2 \cdot 1 + 3 \cdot 2 + 4 \cdot 3 + 5 \cdot 5 + 6 \cdot 8 + 7 \cdot 13 + 8 \cdot 21 + 9 \cdot 34 + 10 \cdot 55 + 11 \cdot 89 + 12 \cdot 144 + 13 \cdot 233 + 14 \cdot 377 + 15 \cdot 610 + 16 \cdot 987 + 17 \cdot 1597 + 18 \cdot 2584 + 19 \cdot 4181 = 10946$. The second sum is equal to $\sum_{n=20}^{2024} n \cdot g(n) = \sum_{n=20}^{2024} n \cdot (h(n) - 2h(n-1)) = \sum_{n=20}^{2024} n \cdot h(n) - 2 \sum_{n=20}^{2024} n \cdot h(n-1) = \sum_{n=20}^{2024} n \cdot h(n) - 2 \sum_{n=19}^{2023} (n+1) \cdot h(n) = - \sum_{n=19}^{2023} h(n) - 2024 \cdot h(2024) = - \sum_{n=19}^{2023} h(n) - 2024 \cdot 6765 = - \sum_{n=19}^{2023} h(n) - 13685160$. Since $h(n) < 1000$ for $n \le 19$, we have $- \sum_{n=19}^{2023} h(n) - 13685160 < -19 \cdot 1000 - 13685160 = -13694160$. Thus the remainder when $\sum_{n=1}^{2024} n \cdot g(n)$ is divided by 1000 is $\boxed{946}$. ","[946, '946']",55,"[55, '55']",False
+"Let $N = 1000a + 100b + 10c + d$. Then $1000a + 100b + 10c + d + 1 = 1000a + 100b + 10c + d + 10^0$ is divisible by $7$. Thus, $1000a + 100b + 10c + d = 7k - 1$ for some integer $k$. Therefore, $Q + R = \frac{N}{1000} + \frac{N}{1000} \cdot \frac{1}{10} + \frac{N}{1000} \cdot \frac{1}{100} + \frac{N}{1000} \cdot \frac{1}{1000} = \frac{1111N}{1000000} = \frac{1111(7k - 1)}{1000000} = \frac{7777k - 1111}{1000000}$. Since $7777k - 1111$ is divisible by $7$, $Q + R$ is an integer. We can easily check that $Q + R = \boxed{8}$. ","[8, '8']",699,"[699, '699']",False
+"Let $O$ be the center of the sphere $S$ and $C$ be the center of the cylinder $T$. Let $P$ be a point of tangency of $T$ and $S$. Let $Q$ be the foot of the perpendicular from $C$ to the plane of $S$. Let $R$ be the foot of the perpendicular from $P$ to the plane of $S$. Let $OQ = x$. Then $OP = 6 - x$ and $OQ = 11$. By Pythagoras, $PQ = \sqrt{11^2 - x^2}$. By Pythagoras, $PC = \sqrt{11^2 - (6 - x)^2}$. By Pythagoras, $CP = \sqrt{(6 - x)^2 - x^2} = \sqrt{36 - 12x}$. Thus, $\sqrt{11^2 - x^2} = \sqrt{36 - 12x} + 6 - x$. Squaring both sides, we get $121 - x^2 = 36 - 12x + x^2 + 36 - 12x + x^2$. Simplifying, we get $3x^2 - 24x - 59 = 0$. By the quadratic formula, $x = \frac{24 \pm \sqrt{24^2 + 4 \cdot 3 \cdot 59}}{6} = \frac{24 \pm \sqrt{1404}}{6} = \frac{24 \pm 6\sqrt{39}}{6} = 4 \pm \sqrt{39}$. Since $x < 6$, $x = 4 - \sqrt{39}$. Thus, $r_i - r_o = \sqrt{11^2 - (4 - \sqrt{39})^2} - \sqrt{11^2 - 4^2} = \sqrt{120 - 8\sqrt{39}} - \sqrt{115} = \frac{120 - 8\sqrt{39} - 115 - 8\sqrt{39}}{\sqrt{120 - 8\sqrt{39}} + \sqrt{115}} = \frac{5 - 16\sqrt{39}}{2\sqrt{30 - 2\sqrt{39}} + \sqrt{115}}$. Rationalizing the denominator, we get $r_i - r_o = \frac{(5 - 16\sqrt{39})(2\sqrt{30 + 2\sqrt{39}} - \sqrt{115})}{(2\sqrt{30 - 2\sqrt{39}} + \sqrt{115})(2\sqrt{30 + 2\sqrt{39}} - \sqrt{115})} = \frac{10\sqrt{30 + 2\sqrt{39}} - 5\sqrt{115} - 32\sqrt{115} + 16\sqrt{495}}{120 - 4\sqrt{39} + 115} = \frac{10\sqrt{30 + 2\sqrt{39}} - 37\sqrt{115} + 16\sqrt{495}}{235 - 4\sqrt{39}}$. Thus, $m + n = \boxed{195}$. ","[195, '195']",127,"[127, '127']",False
+"Let $a_{i,j}$ be the color of the chip in the $i$th row and $j$th column.  We are given that $a_{i,j} = a_{i+1,j}$ and $a_{i,j} = a_{i,j+1}$ for all $1 \le i,j \le 4$.  Therefore, $a_{i,j} = a_{1,1}$ for all $1 \le i,j \le 5$.  This means that all the chips in the grid have the same color, so there is only $\boxed{1}$ way to arrange the chips. ","[1, '1']",902,"[902, '902']",False

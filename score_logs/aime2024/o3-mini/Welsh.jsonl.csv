@@ -1,0 +1,173 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+None,[],721,"[721, '721']",False
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809}
+
+I. Gan ddechrau, nodwyd y rheolau: mae pentwr o n tocyn; mae Alice a Bob yn cymryd trosi gyda Alice yn dechrau; ac ar bob tro, y gall chwaraewr dynnu naill ai 1 neu 4 tocyn. Y chwaraewr sy'n tynnu'r tocyn olaf yw'r ennillwr.
+
+II. Rhestrau safleoedd cam cyntaf:
+ – Nodwch n fel y nifer o dociadau o'r dechreuad, ac nid yw bn (presenoldeb o 0 tocyn) yn fuddiol wrth fod yw pwr.
+ – Defnyddiwch ddull dp ( chwarae defnyddiau pel) i bennu os yw safle arbennig yn ""enillol"" neu ""coll"".
+
+Ymhellach, gadewch i W(n) fod y posiwn yn enillol i'r chwaraewr sy'n symud o safle n, a L(n) os yw’n coll.
+
+1. Gwiriad sylfaenol:
+  – n = 0 (colledig gan nad yw symudiad ar gael).
+  – n = 1: mae tynnu 1 yn arwain i 0; felly W(1).
+  – n = 2: dim ond tynnu 1 (gan fod 4 yn rhy fawr), arwain i 1 (sy'n W); felly L(2).
+
+2. Paratoi rhestru:
+  – n = 3: tynnu 1 yn arwain i 2 (L) → W(3).
+  – n = 4: dychwelwch y posibiliadau:
+   • Tynnu 1 yn arwain i 3 (W).
+   • Tynnu 4 yn arwain i 0 (L).
+    Felly W(4) oherwydd dewis tynnu 4.
+  – n = 5: tynnu 1: mae’n mynd i 4 (W); tynnu 4: mynd i 1 (W); felly L(5).
+
+3. Paratoi’r patrwm yn y cychwyn:
+  – L(0), W(1), L(2), W(3), W(4), L(5), W(6), L(7), W(8), W(9), L(10), ...
+  -- Ar draws y gwerthusiad, sylwir ar farcio awtomatig: gwelwyd bod gwahaniaethau yn 2, 3, 2, 3, ... 
+
+F. Ar ôl astudio’r patrwm, dewir fod safleoedd coll yn digwydd yn union pan fydd n ≡ 0 neu 2 mod 5:
+  – Er enghraifft, n = 2 (2 mod 5), n = 5 (0 mod 5), n = 7 (2 mod 5), n = 10 (0 mod 5), ac ati.
+
+III. Gan y gêm ddechrau gyda Alice, mae Bob yn ennill os yw’r safle cychwynnol coll i Alice. Felly mae Bob strategaeth ennill pan fydd n yn fod yn L(n), sef pan fydd n ≡ 0 neu 2 mod 5.
+
+IV. Am y cwestiwn “n yn llai na neu'n hafal i 2024”, mae angen cyfrif y nifer o n ∈ ℕ, 1 ≤ n ≤ 2024, lle n ≡ 0 neu 2 mod 5.
+
+1. Nifer o n ≡ 0 (mod 5) rhwng 1 a 2024:
+  – Yn cyflawn: 5, 10, 15, …, 2020.
+  – Cyfrifwch nifer y termau: floor(2024/5) = 404.
+
+2. Nifer o n ≡ 2 (mod 5):
+  – Ar ffurf: 2, 7, 12, …, 2022.
+  – Gan yr un dull: ar gyfer n = 2 + 5k ≤ 2024, k ≤ (2024 - 2) / 5 = 2022/5, ac k cymryd gwerthoedd 0, 1, …, 404. Felly 405 term.
+
+V. Nifer cyffredinol = 404 + 405 = 809.
+
+Felly mae Bob â strategaeth ennill os a dderbyn ni n sy’n llai na neu’n hafal i 2024 er gwaetha beth a wna Alice. 
+
+F. Er enghraifft, y ateb yw:
+  \boxed{809}","[809, '809']",809,"[809, '809']",True
+"\boxed{116} 
+
+Er mwyn datrys y broblem, canlynwyd y camau hyn:
+
+1. Dewisir set o 4 rhifiau gan Mae Jen o S = {1, 2, …, 10}, a niferoedd 4 gwahanol o S sy'n cael eu dewis ar hap gan y system (cyfanswm = C(10, 4) = 210 nod).
+
+2. Mae hi'n ennill gwobr os yw o leiaf 2 o'i 4 rhif yn cuddio yn y 4 a ddewiswyd. Felly, y nifer o ganlyniadau lle mae gan ei dewis 2, 3 neu 4 rhifau cyffredin gyda’r dewis ar hap yw:
+  • 2 cyffredin: C(4, 2)·C(6, 2) = 6 · 15 = 90
+  • 3 cyffredin: C(4, 3)·C(6, 1) = 4 · 6 = 24
+  • 4 cyffredin (brif wobr): C(4, 4)·C(6, 0) = 1 · 1 = 1
+  Cyfanswm = 90 + 24 + 1 = 115.
+  Felly, P(gwobr) = 115/210.
+
+3. Mae’r brif wobr yn cael ei ennill os yw’r pedwar rhif o’i dewis yn y set o 4 a ddewiswyd (1 achos) felly, P(brif wobr) = 1/210.
+
+4. Yn y problem, mae’n ofynnol i gyfrifwg y tebygolrwydd o ennill y brif wobr o ystyried ei bod hi wedi ennill gwobr – sef P(brif wobr | gwobr):
+  P(brif wobr | gwobr) = (1/210) / (115/210) = 1/115.
+  Felly, m/n = 1/115 lle mae m = 1 a n = 115, felly m + n = 116.
+
+Felly, yr ateb yw \boxed{116}.","[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+"\boxed{98} 
+
+Iawn, gadewch i ni egluro’n gryno sut cyrhaeddom y canlyniad. Yn y grid 8×8, mae angen symud 8 gam i’r dde (R) ac 8 gam i fyny (U) er mwyn cyrraedd y gornel uchaf dde, felly mae’n ffurfio llinell o 16 camau. Yn benodol, rydym yn edrych am lwybrau sy’n newid cyfeiriad yn union 3 gwaith, sy’n golygu eu bod wedi torri’n 4 adran – er enghraifft, os daw’r llwybr yn dechrau gyda R, bydd y stepuoedd yn dilyn trefn: R^a, U^b, R^c, U^d, gyda a, b, c, d ≥ 1 a sydd â a + c = 8 a b + d = 8.
+
+Felly, os ddechreuwn gyda R:
+  • Gall y cyfanswm (a, c) gael 7 datrysiad (gan y ffaith fod a yn gallu bod rhwng 1 a 7, ac yn awtomatig c = 8–a).
+  • Yn yr un modd, mae (b, d) yn cynnig 7 datrysiad.
+  Yn ogystal, os ddechreuwn gyda U, bydd y sefyllfa yn union yr un fath, gan roi 7×7 = 49 datrysiad.
+
+Felly, y cyfanswm yw 49 (dechrau gyda R) + 49 (dechrau gyda U) = 98 llwybr.
+
+Felly y canlyniad yw \boxed{98}.","[98, '98']",294,"[294, '294']",False
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+\boxed{601},"[601, '601']",601,"[601, '601']",True
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Iffordia’r ateb fel a ganlyn:
+
+1. Ysgrifennwyd y term yn y cynnyrch fel
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2,
+sy’n cyfateb i (ωᵏ – 1)² + 1.
+
+2. Yn ychydig mwy, ystyrir y cynnyrch
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ)
+fel cynnyrch gwerthoedd yn ystod pob un o’r 13 gwraidd undod (gan gynnwys 1). Yn y gorau, i werthuso’r cynnyrch yn hawdd, edrychwn ar y “resultant” rhwng y polinomialau: x¹³ – 1 (sy’n chwilio am yr gwraidd undod) a Q(x) = x² – 2x + 2.
+
+3. Yn ddiffinio wrth y “resultant”, deallwn fod
+  Res(x¹³ – 1, Q(x)) = ∏ᵣ₍ᴜ Q₎ [f(r)]    (1)
+lle mae r yn y gwraidd Q: x² – 2x + 2 = 0. Gan ddefnyddio prif ddamcaniaeth arall, gallwn hefyd ysgrifennu’r “resultant” fel f(r₁)·f(r₂) lle r₁ a r₂ yw’r dwy gwraidd. 
+
+4. Dod â f(x) = x¹³ – 1. Gwiriwch y gwraidd o Q(x):
+  x² – 2x + 2 = 0 ⟹ x = 1 ± i.
+Gan ysgrifennu 1 ± i yn ffurf cisail (1 ± i = √2·e^(±iπ/4)), 
+  (1 + i)¹³ = (√2)¹³ · e^(13iπ/4) = 2^(6.5)·e^(13iπ/4).
+Gan sylwi fod e^(13iπ/4) = e^(3iπ + iπ/4) = –e^(iπ/4),
+  (1 + i)¹³ = –64√2·e^(iπ/4) = –64(1 + i)   (since √2·e^(iπ/4) = 1 + i).
+Felly,
+  (1 + i)¹³ – 1 = –64(1 + i) – 1 = –65 – 64i.
+A’i gwrthod, (1 – i)¹³ – 1 = –65 + 64i.
+
+5. Felly, y “resultant” yn unwaith yw
+  (–65 – 64i)(–65 + 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+6. Gan fod y cynnyrch gwreiddiol yn fyddebu’r un gwerth (y term gyda k = 0 hefyd yn rhoi 1), mae gan y cyflwyniad hyd yn 8321, ac felly y gweddill wrth rhannu gyda 1000 yw 8321 mod 1000 = 321.
+
+Felly, y ateb yw: \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+"\boxed{45}
+
+Rydym yn ymdrin â grid 2×3 lle'r cells yn cynnwys digidau a, b, c yn y rhes cyntaf ac d, e, f yn y rhes ail. Mae’r ddau rif a ffurfiwyd wrth ddarllen y rhesi o'r chwith i'r dde yn:
+
+  100a + 10b + c      (1)
+  100d + 10e + f      (2)
+
+ac mae eu hanfnod bod:
+  (1) + (2) = 999.
+
+Yn y broses ychwanegu rhifau, gallwn ystyried y dull ychwanegu traddodiadol gydag adferiadau (carries) mewn colofnau. Gan ddechrau ar y colofn unedau, gwelwn fod:
+  c + f = 9   (heb adferiad gan fod y maximum yw 18).
+Yna, ar gyfer y colofn degau:
+  b + e = 9   (heb adferiad, gan fod 9+0 still yn 9; pe baent ddogfennol 19 roedd hynny'n ormod).
+Ac ar gyfer y colofn cenni:
+  a + d = 9.
+
+Felly, mae ein coed osod yn sicrhau:
+  a + d = 9, b + e = 9, c + f = 9.
+
+Yn ogystal, rydym yn ffurfio tri rhif o'r grid wrth ddarllen o'r brig i'r gwaelod (colofnau):
+  10a + d, 10b + e, 10c + f.
+Eu hyfanswm yw:
+  (10a+d)+(10b+e)+(10c+f) = 10(a+b+c) + (d+e+f) = 99.
+
+Gan nodi S = a+b+c a T = d+e+f, ac gan ganolbwyntio ar y parthau a+d, b+e, c+f, rydym yn cael:
+  (d+e+f) = (9+9+9) – (a+b+c) = 27 – S.
+Felly:
+  10S + (27 – S) = 99 ⟹ 9S = 72 ⟹ S = 8.
+Felly mae ein cyfyngiad ychwanegol ar y rhes cyntaf yn:
+  a + b + c = 8.
+
+Er nad oes cyfyngiad penodol ar ansawdd dewis ar gyfer parthau colofnau oherwydd mae unrhyw dewis am a, b, c yn y parth (a+d)=9 yn cael ei sicrhau gan osod d = 9 – a, y broses hon yn llifo'n unig ar gyfer y rhes cyntaf.
+
+Felly, pertai i ginio nifer y datrysiadau o fewn a, b, c ∈ {0, …, 9} sydd â a+b+c = 8. Gan nad oes un o a, b","[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

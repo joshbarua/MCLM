@@ -1,0 +1,167 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+"\boxed{721}
+
+Para resumir a solução:
+
+Sejam as dimensões da caixa retangular x, y, z > 0 tais que
+
+  (1) Área de superfície: 2(xy + xz + yz) = 54 ⟹ xy + xz + yz = 27  
+  (2) Volume: xyz = 23
+
+A esfera que contém a caixa tem raio igual à metade da diagonal, isto é, r = (1/2)√(x² + y² + z²). Assim, para que uma única esfera contenha todas as caixas do conjunto, devemos tomar r como o maior valor possível de (1/2)√(x² + y² + z²) considerando (1) e (2).
+
+Observando que:
+  x² + y² + z² = (x + y + z)² − 2(xy + xz + yz) = (x + y + z)² − 54,
+maximizar x² + y² + z² equivale a maximizar s = x + y + z.
+
+Uma estratégia clássica (e que pode ser justificada pelo uso de Lagrange ou simetrização) é tomar duas dimensões iguais. Assim, seja x = y = a e z = b. A condição de volume dá:
+  a²b = 23 ⟹ b = 23/a².
+A condição de área de superfície fica:
+  a² + 2ab = 27 ⟹ a² + 2a(23/a²) = a² + 46/a = 27.
+Multiplicando por a, obtemos:
+  a³ − 27a + 46 = 0.
+Notando que a = 2 satisfaz a equação (pois 2³ − 27×2 + 46 = 8 − 54 + 46 = 0), temos:
+  a = 2 e b = 23/4.
+
+Assim, o somatório é:
+  s = 2 + 2 + 23/4 = 39/4.
+
+Usando a identidade:
+  x² + y² + z² = s² − 54, temos:
+  x² + y² + z² = (39/4)² − 54 = 1521/16 − 54 = (1521 − 864)/16 = 657/16.
+
+Logo, o raio necessário (ao quadrado) é:
+  r² = (1/4)(x²+y²+z²) = (657/16)/4 = 657/64.
+
+Como 657 e 64 são relativamente primos, tem-se p = 657 e q = 64, e p + q = 657 + 64 = 721.
+
+Portanto, a resposta final é \boxed{721}.","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809}
+
+Considere a posição com n fichas. Denomine uma posição vencedora (V) se o jogador que tem a vez tem estratégia vencedora, e uma posição perdedora (P) se, com uma jogada ótima do adversário, não há estratégia vencedora para o jogador em turno.
+
+Analisando casos pequenos:
+– n = 1: Alice remove 1 e vence; portanto, n = 1 é V.
+– n = 2: A única jogada possível é remover 1, deixando n = 1 (posição V); assim, n = 2 é P.
+– n = 3: Alice pode remover 1, deixando n = 2 (P). Logo, n = 3 é V.
+– n = 4: Pode remover 4 e ganhar imediatamente; logo, n = 4 é V.
+– n = 5: Se remover 1, sobra n = 4 (V); se remover 4, sobra n = 1 (V). Assim, n = 5 é P.
+
+Seguindo esta análise, nota-se um padrão nos P (posições perdedoras), pois:
+n = 2 (≡ 2 mod 5), n = 5 (≡ 0 mod 5), n = 7 (≡ 2 mod 5), n = 10 (≡ 0 mod 5), n = 12 (≡ 2 mod 5), n = 15 (≡ 0 mod 5) etc.
+
+Portanto, as posições perdedoras acontecem exatamente quando n ≡ 0 ou 2 (mod 5).
+
+Como Alice inicia, se a posição inicial é perdedora (P), Bob consegue ganhar com jogo perfeito. Assim, precisamos contar os inteiros n, 1 ≤ n ≤ 2024, tais que n ≡ 0 ou n ≡ 2 (mod 5).
+
+1) Para n ≡ 0 mod 5: n = 5, 10, 15, …, 2020.
+Como o maior múltiplo de 5 menor ou igual a 2024 é 2020, a quantidade é ⌊2024/5⌋ = 404.
+
+2) Para n ≡ 2 mod 5: n = 2, 7, 12, …, 2022.
+Escrevendo n = 5k + 2 ≤ 2024, temos k ≤ (2024 – 2)/5 = 2022/5 = 404,4; ou seja, k = 0, 1, 2, …, 404. Assim, o número de tais n é 405.
+
+Portanto, o número total de n tais que Bob tem estratégia vencedora é 404 + 405 = 809.","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+"\boxed{294}
+
+Para obter esse resultado, note que cada caminho deve ter exatamente 4 mudanças de direção, ou seja, o caminho é composto de 5 blocos de movimentos consecutivos (todos nas mesmas direções). Há, obviamente, duas possibilidades para o primeiro movimento: ou inicia com um passo para a direita (R) ou com um passo para cima (U).
+
+1. Se o caminho começa com R, a sequência terá a forma R, U, R, U, R. Nesse caso, o total de movimentos para a direita é dado pela soma dos 3 blocos (blocos 1, 3 e 5) e deve ser igual a 8, enquanto que os movimentos para cima vêm dos 2 blocos (blocos 2 e 4) e também somam 8. Como cada bloco deve ter pelo menos 1 movimento, o número de soluções para:
+  a) r₁ + r₃ + r₅ = 8 com rᵢ ≥ 1 é C(8–1, 3–1) = C(7,2) = 21;
+  b) u₂ + u₄ = 8 com uⱼ ≥ 1 é C(8–1, 2–1) = C(7,1) = 7.
+Multiplicando, obtemos 21×7 = 147 caminhos para essa situação.
+
+2. Se o caminho começa com U, a sequência terá a forma U, R, U, R, U, e uma análise similar mostra que teremos também 147 caminhos.
+
+Somando os dois casos, obtemos 147 + 147 = 294 caminhos que mudam de direção exatamente quatro vezes.","[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Para resolver, escrevemos z na forma polar: z = 4e^(it) (com t real). Assim, a expressão dada se transforma em
+
+  (75 + 117i)·4e^(it) + (96 + 144i)/(4e^(it))
+    = (300 + 468i)e^(it) + (24 + 36i)e^(-it).
+
+Calculando a parte real, notamos que
+
+  (300 + 468i)e^(it) = (300 cos t - 468 sin t) + i(300 sin t + 468 cos t)
+   e (24 + 36i)e^(-it) = (24 cos t + 36 sin t) + i(36 cos t - 24 sin t).
+
+Somando as partes reais obtemos:
+
+  300 cos t - 468 sin t + 24 cos t + 36 sin t = 324 cos t - 432 sin t.
+
+O valor máximo dessa função, que é da forma A cos t + B sin t, ocorre em
+  max = √(A² + B²) = √(324² + (-432)²) = √(104976 + 186624) = √291600 = 540. 
+
+Portanto, a maior parte real possível é 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Considere os seguintes passos:
+
+1. Como os quatro pontos A, B, C e D estão na hipérbole
+  x²/20 – y²/24 = 1
+e formam um losango com interseção das diagonais na origem O, podemos escrever, sem perda de generalidade, A = (x₁, y₁) e C = (–x₁, –y₁), e B = (x₂, y₂) e D = (–x₂, –y₂). Assim, ambos os pontos A e B satisfazem a equação da hipérbole:
+  x₁²/20 – y₁²/24 = 1         (1)
+  x₂²/20 – y₂²/24 = 1         (2)
+
+2. Sendo os vértices listados na ordem A, B, C, D, o quadrilátero é um paralelogramo com centro em O","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Para resumir a solução:
+
+1. Reescrevemos o fator como
+  2 – 2ω^k + ω^(2k) = ω^(2k) – 2ω^k + 2,
+e notamos que ele é quase um quadrado perfeito, pois (ω^k – 1)² = ω^(2k) – 2ω^k + 1; portanto, 2 – 2ω^k + ω^(2k) = (ω^k – 1)² + 1.
+
+2. Ao observar o polinômio subjacente, fazemos a substituição x = ω^k e reconhecemos que o fator pode ser escrito como
+  x² – 2x + 2 = (x – (1 + i))(x – (1 – i)).
+Então, o produto sobre todos os 13º raízes da unidade (incluindo k = 0) é dado por:
+  ∏₍zⁱ 13ª raiz de unidade₎ (z – (1 + i)) (z – (1 – i)).
+
+3. Usando o fato de que para a função f(x) = x^13 – 1 temos f(a) = ∏₍z₎ (a – z) e, por conseguinte,
+  ∏₍z₎ (z – a) = (–1)^(13) f(a) = 1 – a^13,
+obtemos
+  ∏₍z₎ (z – (1 + i)) = 1 – (1 + i)^13 e ∏₍z₎ (z – (1 – i)) = 1 – (1 – i)^13.
+
+4. Calculando (1 + i)^13:
+  (1 + i) = √2 · e^(iπ/4) ⟹ (1 + i)^13 = (√2)^13 · e^(i13π/4)
+  Como (√2)^13 = 2^(13/2) = 2^6 · √2 e o ângulo 13π/4 é congruente a 5π/4, temos:
+  (1 + i)^13 = 64√2 [cos(5π/4) + i sin(5π/4)] = 64√2 (–√2/2 – i√2/2) = –64(1 + i).
+Análogamente, (1 – i)^13 = –64(1 – i).
+
+5. Assim, o produto total é:
+  [1 – (–64(1 + i))] · [1 – (–64(1 – i))] = (1 + 64(1 + i))(1 + 64(1 – i))
+  = (65 + 64i)(65 – 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+6. O resto da divisão de 8321 por 1000 é 321.
+
+Logo, a resposta final é \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Explicação: Para cada inteiro positivo n, o número de conjuntos B não vazios com máximo n é 2^(n-1) (pois n está em B e os demais elementos de B podem ser quaisquer subconjuntos do conjunto {1,2,…,n−1}). Assim, se A é o conjunto escolhido por Alice, Bob lista ∑(n ∈ A) 2^(n-1) conjuntos. Como esse total é 2024, temos:
+
+  ∑(n ∈ A) 2^(n-1) = 2024.
+
+Observando que 2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3, associamos cada termo à contribuição de um elemento n ∈ A, isto é, cada 2^(n-1) com n-1 igual ao expoente correspondente. Assim, A = {11, 10, 9, 8, 7, 6, 4} e a soma dos seus elementos é 11+10+9+8+7+6+4 = 55.","[55, '55']",55,"[55, '55']",True
+\boxed{,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

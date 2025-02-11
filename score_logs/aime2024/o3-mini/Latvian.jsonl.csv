@@ -1,0 +1,187 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809} 
+
+Lai atrisinātu uzdevumu, vispirms definējam stāvokļus kā uzvarošus (W) un zaudējošus (L) pozīcijas, no kurām spēlētājs, kurš tieši gāpj, var garantēti uzvarēt. Ja ir n žetoni, un gājienā drīkst noņemt 1 vai 4 žetonus, tad:
+
+1. Nolsākumā definējam 0 kā L (jo, ja gājiens nāk no pozīcijas 0, spēle jau beigusies).
+2. Aprēķinām nedaudz sākuma stāvokļus:
+  • n = 1: var noņemt 1, atlikums 0 (L) ⟹ W.
+  • n = 2: vienīgais spēks – atņemt 1, atlikums 1 (W) ⟹ L.
+  • n = 3: ja noņem 1, atlikums 2 (L) ⟹ W.
+  • n = 4: var izvēlēties noņemt 4, atlikums 0 (L) ⟹ W.
+  • n = 5: atņemot 1 (rezultāts 4, W) vai 4 (rezultāts 1, W) ⟹ L.
+  • n = 6: atņemot 1 (rezultāts 5, L) ⟹ W.
+  • n = 7: atņemot 1 (rezultāts 6, W) vai 4 (rezultāts 3, W) ⟹ L.
+
+Analizējot tālāk, redzam, ka zaudējošas pozīcijas ir, kad n mod 5 = 0 vai n mod 5 = 2. Tas ir, ja pirms gājiena stāvoklis ir zaudējošs, tad Alise, kas sāk, neizbēgami atstās Bobam iespēju spēlēt no uzvarošas pozīcijas.
+
+Tātad Bobam ir uzvaras stratēģija gadījumos, kad sākotnējais n pieder pie daudzuma, kurš apmierina n mod 5 ∈ {0, 2}. 
+
+Lai atrastu, cik šādu pozitīvu veselu skaitļu n, kas nepārsniedz 2024, ir, sadalām skaitļu kopu pēc atlikumiem mod 5:
+  • Skaitļi ar n mod 5 = 0: tie sākas ar 5 un beidzas ar 2020. To skaits ir 2020/5 = 404.
+  • Skaitļi ar n mod 5 = 2: tie sākas ar 2, un, atrodot, pēdējais ir 2022 (jo 2022 − 2 = 2020, dalāms ar 5). To skaits ir ((2022 − 2)/5) + 1 = (2020/5) + 1 = 404 + 1 = 405.
+
+Kopā tādos gadījumos ir 404 + 405 = 809.
+
+Tādējādi Bobam ir garantēta uzvara, ja sākotnējais n pieder pie 809 skaitļiem, kas nepārsniedz 2024.
+
+Atbilde: \boxed{809}","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+\boxed{104},"[104, '104']",104,"[104, '104']",True
+"\boxed{294}
+
+Lai atrastu ceļu skaitu, kas no apakšējā kreisā stūra uz augšējo labo dod kustību pa 8×8 režģa, nepieciešams izdalīt ceļu 16 soli (8 soļi uz labo un 8 soļi uz augšu) tā, lai virziena maiņu skaits būtu tieši 4. Katru virziena maiņu gadījumā ceļš sadalās 5 nepārtrauktos soļu blokos, kur katrs bloks satur vienu un to pašu kustību – R (pa labi) vai U (uz augšu). 
+
+Šeit ir divi gadījumi atkarībā no tā, kāds ir pirmais solis:
+
+1. Ja ceļš sākas ar R, tad bloku secība būs: R, U, R, U, R.
+   - R kustību kopskaits: pirmajā, trešajā un piektajā blokā – kopā 8 soļi.
+     Tā kā katrā blokā ir vismaz viens solis, ir jāatrod pozitīvs skaitļu sadalījums: r₁ + r₃ + r₅ = 8, sākotnēji rᵢ ≥ 1. Šo vienādojumu risinājumu skaits ir C(8 - 1, 3 - 1) = C(7,2) = 21.
+   - U kustību kopskaits: otrajā un ceturtajā blokā – kopā 8 soļi.
+     Ar pozitīvām vērtībām u₂ + u₄ = 8, risinājumu skaits ir C(8 - 1, 2 - 1) = C(7,1) = 7.
+   - Tādējādi ceļu skaits sākot ar R ir 21 × 7 = 147.
+
+2. Ja ceļš sākas ar U, tad bloku secība būs: U, R, U, R, U.
+   - U kustību kopskaits (blokos 1, 3 un 5): jāatrod positīvs risinājums u₁ + u₃ + u₅ = 8; risinājumu skaits ir C(7,2) = 21.
+   - R kustību kopskaits (blokos 2 un 4): jāsadala 8 soļi, risinājumu skaits ir C(7,1) = 7.
+   - Tādējādi ceļu skaits sākot ar U ir arī 21 × 7 = 147.
+
+Kopā visu ceļu skaits ar tieši 4 virziena maiņām ir 147 + 147 = 294. 
+
+Atbilde: \boxed{294}","[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Lai iegūtu šo rezultātu, mēs varam uzrakstīt z polar koordinātās kā z = 4e^(iθ). Tad izteiksme kļūst
+
+  (75+117i)z + (96+144i)/z = 4(75+117i)e^(iθ) + (96+144i)/(4)e^(-iθ)
+               = (300+468i)e^(iθ) + (24+36i)e^(-iθ).
+
+Izsaiņojot e^(iθ) = cosθ + i sinθ un e^(-iθ) = cosθ - i sinθ, iegūstam
+
+  (300+468i)(cosθ + i sinθ) + (24+36i)(cosθ - i sinθ).
+
+Izvēršot un apvienojot daļu, realā daļa ir:
+
+  Re = 300 cosθ – 468 sinθ + 24 cosθ + 36 sinθ = 324 cosθ – 432 sinθ.
+
+Maksimālās vērtības noteikšanai pierakstām to kā vienu kosinusa funkciju:
+
+  324 cosθ – 432 sinθ = R cos(θ + φ),
+
+kur R = √(324² + 432²) = √(104976 + 186624) = √(291600) = 540.
+
+Tādējādi realās daļas maksimālā vērtība ir 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Lai atrisinātu uzdevumu, apsveram sekojošu situāciju:
+
+1. Pieņemsim, ka rombs vrakstiem A, B, C, D (norādīti secībā) ir attiecīgi A = (a, b), B = (c, d), C = (–a, –b) un D = (–c, –d). Tā kā romba diagonāles krustojas izcelsmes punktā, izmantojam simetriju.
+
+2. Katram punktam jāizpilda hiperbolas vienādojums
+  a²/20 – b²/24 = 1  un  c²/20 – d²/24 = 1.
+
+3. Tā kā rombs ir paralelogramma, un īpaši – rombs, tam ir raksturīga tas īpašums, ka diagonāles krustojas taisnās leņķ","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+"\boxed{23} 
+
+A short explanation follows:
+
+1. The family 𝒮 consists of all segments with endpoints P = (a, 0) and Q = (0, b) in the first quadrant satisfying a² + b² = 1, so that each segment has unit length.
+
+2. In particular, the segment connecting A = (½, 0) and B = (0, √3⁄2) is a member of 𝒮, since (½)² + (√3⁄2)² = ¼ + 3⁄4 = 1.
+
+3. A generic segment in 𝒮 (with a fixed a) is the line joining (a, 0) and (0,√(1–a²)). Its equation can be written as 
+  x/a + y/√(1–a²) = 1.
+
+4. Any point C on the segment AB can be written as
+  C = ((1–t)/2, t·(√3⁄2)),  with t ∈ (0,1).
+
+5. Since C lies on AB, it always satisfies x/(½) + y/(√3⁄2) = 1 (the case a = ½ corresponding to AB itself). We now require that for the unique C no other segment in 𝒮 passes through it – i.e. if we set
+  Fₜ(a) = (1–t)/(2a) + (t√3)/(2√(1–a²)),
+then besides the solution a = ½, the equation Fₜ(a) = 1 has no other solution. This forces a double root at a = ½ when viewed as an equation in a.
+
+6. Since Fₜ(½) = 1 always, we impose the tangency condition by setting the derivative Fₜ′(a) equal to zero at a = ½. Differentiating,
+  Fₜ′(a) = –(1–t)/(2a²) + (t√3·a)/(2(1–a²)^(3/2)),
+and evaluating at a = ½ yields
+  –2(1–t) + (2t)/3 = 0.
+Solving gives t = 3/4.
+
+7. Therefore, the unique point C on AB is at 
+  C = ((1–¾)/2, (¾·√3)/2) = (1/8, (3√3)/8).
+
+8. Its distance squared from the origin is
+  OC² = (1/8)² + (3√3/8)² = 1/64 + 27/64 = 28/64 = 7/16.
+With p = 7 and q = 16 (coprime), we have p + q = 23.
+
+Thus, the final answer is \boxed{23}.","[23, '23']",23,"[23, '23']",True
+"\boxed{321} 
+
+Piezīme: Mūsu sākotnējā izteiksme ir
+
+  ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+Nepilnajā pierādījumā izmantojam faktorizāciju, pierakstot 
+  2 – 2z + z² = (z – 1)² + 1 
+un novērojot, ka šī izteiksme var arī tikt pierakstīta kā
+  (z – (1 + i))(z – (1 – i)).
+Tādējādi,
+  ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ) = ∏ₖ₌₀¹² (ωᵏ – (1 + i)) · ∏ₖ₌₀¹² (ωᵏ – (1 – i)).
+
+Tā kā ω ir 13. sakne no vienības un ω≠1 (bet produkts ir pārdomāts arī ar k = 0), mēs izmantojam saknes vienādības īpašību:
+  ∏ₖ₌₀¹² (a – ωᵏ) = a¹³ – 1.
+Ņemot vērā zīmes, iegūstam
+  ∏ₖ₌₀¹² (ωᵏ – a) = –(a¹³ – 1).
+
+Ar a = 1 + i un a = 1 – i, attiecīgi, izteiksme kļūst
+  [(1 + i)¹³ – 1] · [(1 – i)¹³ – 1].
+
+Pārrakstot (1 + i) un (1 – i) polārais formā:
+  (1 + i) = √2·exp(iπ/4)
+un tādējādi
+  (1 + i)¹³ = (√2)¹³·exp(i·13π/4) = 2^(13/2)·exp(i(3π + π/4))
+            = –2^(13/2)·exp(iπ/4)
+            = –2^(13/2)(1 + i)/√2 = –2⁶(1 + i) = –64(1 + i).
+
+Līdzīgi,
+  (1 – i)¹³ = –64(1 – i).
+
+Tāpēc iegūstam:
+  [(–64(1 + i)) – 1] · [(–64(1 – i)) – 1]
+    = (–65 – 64i)(–65 + 64i)
+    = (–65)² + (64)² = 4225 + 4096 = 8321.
+
+Tā kā mums interesē atlikums dalot ar 1000, iegūstam:
+  8321 mod 1000 = 321.
+
+Tāpēc gala atbilde ir \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Paskaidrojums: Bob uzskaita visas ne-tukšās galīgās pozitīvo veselā skaitļu kopas B, kuru maksimālais elements pieder A. Ja maksimālais elements ir a ∈ A, tad kopā šādas kopas skaits ir 2^(a-1) (jo visām kopām no {1, 2, …, a} obligāti iekļauts a, un pārējie elementi var būt jebkuri no a-1 iespējamajiem, neatkarīgi izvēloties). Tā rezultātā kopējais skaits ir Σ (2^(a-1)), kur a iterē A pār elementiem. Mums dots, ka šī summa ir 2024.
+
+Pārvēršot 2024 binārā skaitā, mēs iegūstam:
+2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3,
+kas nozīmē, ka A satur elementus a, kuriem 2^(a-1) veido šo summu. Tādēļ
+a - 1 ∈ {10, 9, 8, 7, 6, 5, 3} ⟹ a ∈ {11, 10, 9, 8, 7, 6, 4}.
+
+Kopa A summējot iegūst:
+11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

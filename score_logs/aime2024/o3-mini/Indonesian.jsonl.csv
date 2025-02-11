@@ -1,0 +1,192 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+\boxed{104},"[104, '104']",104,"[104, '104']",True
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{809}
+
+Untuk menyelesaikan, kita analisis posisi permainan sebagai posisi menang atau kalah (dalam teori permainan, posisi kalah adalah posisi di mana pemain yang sedang giliran tidak dapat melakukan langkah yang memaksa kemenangan dengan permainan sempurna lawan). Karena di setiap giliran pemain dapat menghapus 1 atau 4 token, kita mulai dari posisi dasar:
+
+• n = 0 → Posisi kalah (tidak ada langkah).
+
+Kemudian kita hitung untuk beberapa n:
+
+• n = 1: Langkah yang mungkin: menghapus 1 token, meninggalkan n = 0 (kalah bagi lawan) → Jadi n = 1 adalah posisi menang.
+
+• n = 2: Hanya pilihan menghapus 1 token → n = 1 (menang bagi lawan) → Jadi n = 2 adalah posisi kalah.
+
+• n = 3: Menghapus 1 token → n = 2 (kalah) → n = 3 adalah menang.
+
+• n = 4: Pilihan langkah: 
+ – Hapus 1 token → n = 3 (menang)
+ – Hapus 4 token → n = 0 (kalah)
+ Karena ada opsi menuju posisi kalah dengan menghapus 4 token, n = 4 adalah menang.
+
+• n = 5:
+ – Hapus 1 token → n = 4 (menang)
+ – Hapus 4 token → n = 1 (menang)
+ Semua pilihan menghasilkan posisi menang bagi lawan, sehingga n = 5 adalah kalah.
+
+Melanjutkan perhitungan, didapatkan pola bahwa posisi kalah terjadi tepat pada n yang memenuhi n ≡ 0 (mod 5) atau n ≡ 2 (mod 5). Karena Alice memulai, jika n berada pada salah satu posisi kalah tersebut, maka Bob memiliki strategi menang (dengan memainkan langkah optimal).
+
+Untuk n positif dengan n ≤ 2024, kita hitung jumlah n dengan sifat tersebut.
+
+1. Posisi dengan n ≡ 0 (mod 5): 
+ Token positif: 5, 10, 15, …, 2020.
+ Jumlahnya = ⌊2024/5⌋ = 404.
+
+2. Posisi dengan n ≡ 2 (mod 5):
+ Token: 2, 7, 12, …, 2022 (karena 2022 = 5×404 + 2 ≤ 2024).
+ Jumlahnya = 404 + 1 = 405.
+
+Jumlah total posisi kalah dengan n ≤ 2024 adalah 404 + 405 = 809.
+
+Jadi, terdapat \boxed{809} bilangan bulat positif n ≤ 2024 untuk mana Bob memiliki strategi menang terlepas dari permainan Alice.","[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+\boxed{104},"[104, '104']",104,"[104, '104']",True
+"\boxed{294} 
+
+Untuk penjelasan singkatnya, perhatikan bahwa setiap jalur dari kiri bawah ke kanan atas sepanjang 16 langkah terdiri dari 8 langkah horizontal dan 8 langkah vertikal. Karena jalur tersebut harus mengalami tepat 4 perubahan arah, maka jalur tersebut terbagi menjadi 5 blok gerakan (jumlah blok = jumlah perubahan + 1). 
+
+Ada dua kasus yang perlu dipertimbangkan:
+1. Jika jalur dimulai dengan gerakan horizontal, polanya adalah H, V, H, V, H. Maka kita memiliki 3 blok horizontal (jumlahnya harus 8) dan 2 blok vertikal (jumlahnya harus 8). Banyak cara untuk membagi 8 gerakan ke dalam 3 blok positif adalah C(8 – 1, 3 – 1) = C(7,2) = 21, dan untuk 2 blok vertikal adalah C(8 – 1, 2 – 1) = C(7,1) = 7. Sehingga didapat 21×7 = 147 cara.
+
+2. Jika jalur dimulai dengan gerakan vertikal, polanya adalah V, H, V, H, V. Maka kita memiliki 3 blok vertikal dan 2 blok horizontal, sehingga jumlah cara juga 21×7 = 147 cara.
+
+Jumlah totalnya adalah 147 + 147 = 294.
+
+Jadi, jumlah jalur yang memenuhi syarat tersebut adalah \boxed{294}.","[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Untuk menyelesaikannya, kita tulis z dalam bentuk polar: z = 4e^{iθ} dengan |z| = 4. Substitusikan ke dalam ekspresi:
+
+  (75+117i)z + \(\frac{96+144i}{z}\)  
+  = (75+117i)·(4e^{iθ}) + \(\frac{96+144i}{4e^{iθ}}\)  
+  = 4(75+117i)e^{iθ} + (24+36i)e^{-iθ}.
+
+Kita mendapatkan:
+  (300+468i)e^{iθ} + (24+36i)e^{-iθ}.
+
+Menggunakan identitas e^{iθ} = cosθ + i sinθ dan e^{-iθ} = cosθ − i sinθ, peroleh:
+  Real part = (300 cosθ - 468 sinθ) + (24 cosθ + 36 sinθ)  
+        = (324 cosθ - 432 sinθ).
+
+Ekspresi tersebut berbentuk A cosθ + B sinθ (di mana B = -432). Nilai maksimum dari bentuk ini adalah:
+  \(\sqrt{324^2 + 432^2} = \sqrt{104976+186624} = \sqrt{291600} = 540.\)
+
+Jadi, bagian real terbesar dari ekspresi tersebut adalah \(\boxed{540}\).","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+"\boxed{468} 
+
+Untuk penjelasan, misalkan segitiga ABC memiliki pusat lingkaran luar O dan pusat lingkaran dalam I sedemikian sehingga IA ⟂ OI. Diketahui jari-jari lingkaran luar R = 13 dan jari‐jari","[468, '468']",468,"[468, '468']",True
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321}
+
+Kita diberikan ω≠1 sebagai akar ke-13 dari satuan, sehingga ω^13 = 1. Perhatikan produk
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω^(2k)).
+Langkah awal adalah menulis ulang setiap faktor. Perhatikan bahwa
+  2 – 2ωᵏ + ω^(2k) = ω^(2k) – 2ωᵏ + 2.
+Namun, cara yang lebih mudah adalah mengamati bahwa
+  ω^(2k) – 2ωᵏ + 2 = (ωᵏ – 1)² + 1,
+meskipun bentuk ini belum langsung memberi solusi.
+
+Cara yang lebih sistematis adalah menulis ulang faktor dengan memandangnya sebagai polinomial dalam ωᵏ. Kita perhatikan bahwa
+  x² – 2x + 2 = 0
+memiliki akar-akar
+  x = 1 + i dan x = 1 – i.
+Oleh karena itu, setiap faktor dapat difaktorkan:
+  ω^(2k) – 2ωᵏ + 2 = (ωᵏ – (1 + i))(ωᵏ – (1 – i)).
+Maka produk P menjadi
+  P = ∏ₖ₌₀¹² (ωᵏ – (1 + i)) · ∏ₖ₌₀¹² (ωᵏ – (1 – i)).
+Karena bilangan ωᵏ (untuk k = 0, 1, …, 12) menyusun himpunan lengkap akar-akar dari x^(13) – 1, kita punya
+  ∏ₖ₌₀¹² (x – ωᵏ) = x^(13) – 1.
+Dengan mengambil x = 1 + i, diperoleh
+  ∏ₖ₌₀¹² ((1 + i) – ωᵏ) = (1 + i)^(13) – 1.
+Demikian pula, dengan x = 1 – i:
+  ∏ₖ₌₀¹² ((1 – i) – ωᵏ) = (1 – i)^(13) – 1.
+Sehingga,
+  P = [(1 + i)^(13) – 1] · [(1 – i)^(13) – 1].
+
+Selanjutnya kita hitung (1 + i)^(13) – 1. Perhatikan bahwa
+  1 + i = √2 · exp(iπ/4).
+Sehingga
+  (1 + i)^(13) = (√2)^(13) · exp(i·13π/4) = 2^(6.5) · exp(i·13π/4).
+Perhatikan bahwa
+  exp(i·13π/4) = exp[i·(13π/4 – 2π)] = exp(i·5π/4) = –(√2/2) – i(√2/2)
+(menggunakan fakta bahwa cos 5π/4 = –√2/2 dan sin 5π/4 = –√2/2).
+Maka:
+  (1 + i)^(13) = 2^(6.5) · [–(√2/2) – i(√2/2)] = 64√2 · [–(√2/2) – i(√2/2)]
+         = 64 · [–1 – i] = –64 – 64i.
+Jadi,
+  (1 + i)^(13) – 1 = (–64 – 64i) – 1 = –65 – 64i.
+
+Karena (1 – i) adalah konjugat dari (1 + i), kita langsung peroleh
+  (1 – i)^(13) – 1 = –65 + 64i.
+
+Sehingga produk P menjadi:
+  P = (–65 – 64i)(–65 + 64i).
+Mengalikan kedua bilangan kompleks konjugat:
+  (–65 – 64i)(–65 + 64i) = (–65)² – (64i)² = 4225 – (4096·(–1)) = 4225 + 4096 = 8321.
+
+Diminta mencari sisa dari 8321 dibagi 1000. Karena
+  8321 = 8·1000 + 321,
+maka sisanya adalah 321.
+
+Jawabannya:
+\boxed{321}","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+"\boxed{15} 
+
+Untuk menyelesaikan persoalan, kita amati bahwa setiap persegi‐panjang yang berinskripsi pada lingkaran (yaitu, dengan simpul-simpul dodekagon) harus mempunyai titik pusat yang sama dengan pusat lingkaran tersebut. Hal ini ekuivalen dengan mensyaratkan bahwa simpul-simpulnya terbagi menjadi dua pasang titik yang saling berseberangan (diametrically opposite). 
+
+Pada dodekagon beraturan ada 12 simpul, sehingga terdapat 6 pasang titik yang berseberangan. Setiap persegi panjang yang mungkin dibangun dengan menggunakan simpul-simpul dodekagon akan dihasilkan dengan memilih 2 pasang dari 6 pasang tersebut. Banyaknya pilihan tersebut adalah
+
+  C(6, 2) = 15.
+
+Maka, jumlah persegi panjang yang dapat dibentuk sedemikian sehingga setiap sisi persegi panjang terletak pada sisi atau diagonal dodekagon adalah \boxed{15}.","[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+"\boxed{45} 
+
+Untuk menyelesaikan soal ini, pertama kita beri label tiap sel pada grid 2×3 sebagai berikut:
+
+  Baris pertama: a, b, c  
+  Baris kedua: d, e, f
+
+Diketahui dua kondisi:
+
+1. Jumlah dua angka yang dibentuk dari baris (membaca kiri ke kanan) adalah 999, yaitu:  
+  (100a + 10b + c) + (100d + 10e + f) = 999.
+
+2. Jumlah tiga angka yang dibentuk dari tiap kolom (membaca atas ke bawah) adalah 99, yaitu:  
+  (10a + d) + (10b + e) + (10c + f) = 99.
+
+Sederhanakan kondisi (2):
+  10(a+b+c) + (d+e+f) = 99.  
+Misal S₁ = a+b+c dan S₂ = d+e+f, maka  
+  10S₁ + S₂ = 99     (∗)
+
+Pada contoh yang diberikan:
+  Baris atas: 0 0 8 → S₁ = 8  
+  Baris bawah: 9 9 1 → S₂ = 19.  
+Memang, 10·8 + 19 = 99.
+
+Selanjutnya, perhatikan bagaimana angka-angka baris dijumlahkan untuk mendapat 999. Jika kita lakukan penjumlahan dengan metode kolom (dengan kemungkinan carry), digit hasil jumlah harus:
+  Digit satuan (sel dari c dan f): c + f = 10k₁ + 9  
+  Digit puluhan (sel dari b dan e dan carry dari satuan): b + e + k₁ = 10k₂ + 9  
+  Digit ratusan (sel dari a dan d dan carry dari puluhan): a + d + k₂ = 9
+
+Karena jumlah total grid adalah (a+b+c) + (d+e+f) = S₁ + S₂, maka:
+  (a+d) + (b+e) + (c+f) = (9 - k₂) + (10k₂ + 9 - k₁) +","[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{7},"[7, '7']",55,"[55, '55']",False
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

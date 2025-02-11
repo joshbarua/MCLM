@@ -1,0 +1,207 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+\boxed{11},"[11, '11']",104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Considerăm următoarele paşi:
+
+1. Se plasează dreptunghiul ABCD cu A=(0,0), B=(107,0), C=(107,16) şi D=(0,16) (deoarece AB=107 şi BC=16). Deoarece D, E, C, F sunt coliniare şi D şi C sunt punctele (0,16) respectiv (107,16), le putem nota pe E și F astfel: E=(e,16) și F=(e+184,16), deoarece EF=184.
+
+2. Dreptunghiul EFGH are FG=17, deci dacă se consideră ca EF să fie orizontal, atunci G=(e+184,33) (deoarece 16+17=33) şi H=(e,33).
+
+3. Se știe că punctele A, D, H, G sunt conciclice. Astfel, ele se află pe o anumită circumferință. Determinăm ecuația cercului care trece prin A=(0,0), D=(0,16) şi G=(e+184,33). Notăm centrul cercului cu (h, k) şi raza r. Din faptul că A şi D aparțin cercului:
+  • h²+k² = r²,
+  • h²+(16–k)² = r².
+Scăzând cele două ecuații obținem (16–k)²–k²=0, ceea ce duce la k=8. Astfel, r²=h²+64.
+
+4. Deoarece G=(e+184,33) aparține cercului, avem:
+  (e+184–h)²+(33–8)² = h²+64.
+Observând că 33–8=25, se obţine:
+  (e+184–h)²+625 = h²+64 ⟹ (e+184–h)² = h²–561.
+Expresând h:
+  (e+184–h)² = (e+184)²–2h(e+184)+h² = h²–561 ⟹ 2h(e+184)= (e+184)²+561,
+  de unde h = [(e+184)²+561]⁄[2(e+184)].
+
+5. Deoarece H=(e,33) aparţine cercului, avem:
+  (e–h)²+(33–8)² = h²+64 ⟹ (e–h)²+625 = h²+64 ⟹ (e–h)² = h²–561.
+Pornind de la (e–h)² = h²–561 se obține:
+  h²–2he+e² = h²–561 ⟹ –2he+e²=–561 ⟹ h = (e²+561)/(2e).
+
+6. Egalând expresiile pentru h:
+  [(e+184)²+561]⁄[2(e+184)] = (e²+561)/(2e).
+Înmulțind cu 2 şi rezolvând:
+  (e²+561)(e+184)= ( (e+184)²+561 ) e.
+Se dezvoltă și se simplifică, conducând la ecuația:
+  e²+184e–561=0.
+Calculând discriminantul:
+  Δ=184²+4×561=33856+2244=36100 ⇒ √Δ=190.
+Se obţine e=(-184+190)/2=3 (se ignoră soluţia negativă).
+
+7. Astfel, E=(3,16) iar distanţa CE este:
+  CE=107–3=104.
+
+Prin urmare, lungimea lui CE este \boxed{104}.","[104, '104']",104,"[104, '104']",True
+"\boxed{294} 
+
+Să explicăm pe scurt soluția:
+
+Avem drumuri din colțul din stânga jos până în colțul din dreapta sus pe o grilă 8×8. Fiecare drum are 16 pași: exact 8 pași spre dreapta (R) și 8 pași în sus (U). Drumurile care-și schimbă direcția exact de 4 ori se vor descompune în 5 segmente (unde fiecare segment este o succesiune de pași identici).
+
+Observați că un ""schimb de direcție"" are loc atunci când, de exemplu, trecem de la o succesiune de R la U sau invers. Într-un drum cu 5 segmente, schimbările de direcție vor fi între segmentul 1 și 2, 2 și 3, 3 și 4, respectiv 4 și 5 (deci 4 schimbări).
+
+Avem două cazuri:
+1. Drumurile care încep cu R: segmentele vor fi R, U, R, U, R.
+   - Numărul de pași R este a + c + e = 8, unde fiecare dintre a, c, e ≥ 1; numărul de soluții în numere naturale pozitive este C(8–1, 3–1) = C(7,2)=21.
+   - Numărul de pași U este b + d = 8, cu b, d ≥ 1; soluțiile sunt C(8–1, 2–1)= C(7,1)=7.
+   - Total: 21×7=147.
+
+2. Drumurile care încep cu U: segmentele vor fi U, R, U, R, U.
+   - Numărul de pași U: a + c + e = 8, cu soluții de număr 21.
+   - Numărul de pași R: b + d = 8, cu soluții de număr 7.
+   - Total: 21×7=147.
+
+Adunând cele două cazuri, se obține 147+147=294.
+
+Astfel, numărul drumurilor care își schimbă direcția exact de 4 ori este \boxed{294}.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Soluție:
+
+Fie punctele A, B, C, D date de A = (a, b), B = (c, d), C = (–a, –b) şi D = (–c, –d). Deoarece diagonalele rombului se intersectează în origine, A și C sunt simetrice faţă de origine (la fel B și D). În plus, într-un romb diagonalele sunt perpendiculari, deci produsul scalar al vectorilor A şi B trebuie să fie zero:
+  a·c + b·d = 0.                  (1)
+
+Condiţia ca punctele A şi B să se afle pe hiperbola dată este:
+  a²/20 – b²/24 = 1  şi  c²/20 – d²/24 = 1.     (2)
+
+Observaţi că, deoarece toate laturile rombului sunt egale, se poate construi un romb având laturile determinate de vectorii AB, BC etc. (se poate verifica ușor că egalitatea laturilor conduce la (1)).
+
+Observație importantă: în orice romb, formula legăturii dintre latură şi diagonale este:
+  l² = (AC² + BD²)/4.
+În configurația de mai sus, diagonalele sunt date de AC = 2A şi BD = 2B, deci:
+  l² = (4||A||² + 4||B||²)/4 = ||A||² + ||B||².
+
+În enunț, se cere să se găsească cel mai mare număr real L care este mai mic decât BD² pentru orice astfel de romb. Deoarece BD = 2B, avem:
+  BD² = 4(c² + d²).
+
+Astfel, problema se reduce la găsirea unei infime (valoare minimă, neatinsă) a expresiei 4(c² + d²), sub condițiile (2) și (1) (care permite existenţa celuilalt vârf A – derivat din faptul că dacă B este ales, A trebuie să se poată găsi astfel încât (1) să se satisfacă).
+
+Pentru a “controla” condiţia (1) găsim o alegere convenabilă. Observaţi că, pentru un punct B = (c, d) fixat (care satisface c²/20 – d²/24 = 1), putem alege A coliniar cu (d, –c) (un vector perpendicular lui B). De fapt, luaţi:
+  A = k·(d, –c),
+pentru un anumit k ≠ 0. Atunci ecuaţia (2) pentru A devine:
+  k²·(d²/20 – c²/24) = 1      (3)
+şi pentru ca k să fie real este necesar ca:
+  d²/20 – c²/24 > 0.       (4)
+Astfel, pentru ca a exista A, punctul B = (c,d) trebuie să fie ales astfel încât (4) să fie îndeplinit.
+
+Acum, determinăm o expresie pentru c² + d² în funcţie de d. Din condiţia hiperbolei pentru B:
+  c²/20 – d²/24 = 1   ","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+"\boxed{601} 
+
+Observaţi că soluţia se bazează pe observarea faptului că, pentru orice triple (a, b, c) cu a + b + c = 300 și
+
+  a²b + a²c + b²a + b²c + c²a + c²b = 6,000,000,
+
+se poate dovedi că ecuaţia se rescrie în termeni de simetricele elementare. 
+
+Pasul 1. Notaţi:
+  p = a + b + c = 300,
+  q = ab + ac + bc,
+  r = abc.
+Se verifică identitatea:
+  a²b + a²c + b²a + b²c + c²a + c²b = p·q – 3r.
+Astfel, ecuaţia devine:
+  300q –","[601, '601']",601,"[601, '601']",True
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Consider următoarea rezolvare. Fie ω o rădăcină primitivă a unității de ordin 13 și notați:
+
+  f(x) = x² – 2x + 2.
+
+Atunci produsul cerut se poate scrie ca
+  P = ∏ₖ₌₀¹² f(ωᵏ) = ∏₍ω¹³=1₎ (ω² – 2ω + 2).
+
+Observăm că f(x) se poate factora prin identificarea rădăcinilor sale. Calculând:
+  x² – 2x + 2 = 0 ⟹ x = 1 ± i.
+Deci
+  f(x) = (x – (1 + i))(x – (1 – i)).
+
+Astfel,
+  P = ∏₍ω¹³=1₎ (ω – (1 + i)) · ∏₍ω¹³=1₎ (ω – (1 – i)).
+Dar știm că, pentru orice număr a,
+  ∏₍ω¹³=1₎ (a – ω) = a¹³ – 1,
+deoarece ω variază prin toate rădăcinile unității pentru ordinul 13.
+Aplicând acest rezultat cu a = 1 + i și a = 1 – i, obținem:
+  P = [(1 + i)¹³ – 1] · [(1 – i)¹³ – 1].
+
+Calculăm (1 + i)¹³ și (1 – i)¹³ folosind relația (1 + i)² = 2i:
+  (1 + i)² = 2i ⟹ (1 + i)⁴ = (2i)² = –4.
+Observăm că
+  (1 + i)¹² = (1 + i)⁸ · (1 + i)⁴.
+Din (1 + i)⁴ = –4 și (1 + i)⁸ = [(1 + i)⁴]² = (–4)² = 16, deducem:
+  (1 + i)¹² = 16 · (–4) = –64.
+Deci,
+  (1 + i)¹³ = (1 + i)¹² · (1 + i) = –64(1 + i) = –64 – 64i.
+Similar, pentru (1 – i) avem:
+  (1 – i)² = 1 – 2i + i² = –2i ⟹ (1 – i)⁴ = (–2i)² = –4,
+  (1 – i)⁸ = (–4)² = 16, decât,
+  (1 – i)¹² = 16 · (–4) = –64,
+  (1 – i)¹³ = –64(1 – i) = –64 + 64i.
+Și astfel:
+  (1 + i)¹³ – 1 = –65 – 64i,
+  (1 – i)¹³ – 1 = –65 + 64i.
+
+Produsul devine:
+  P = (–65 – 64i)(–65 + 64i) = (–65)² – (64i)² = 4225 – (–4096) = 4225 + 4096 = 8321.
+
+Căutăm restul împărțirii lui 8321 la 1000:
+  8321 = 8·1000 + 321,
+deci restul este 321.
+
+Răspunsul final este, așadar, \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+\boxed{236},"[236, '236']",236,"[236, '236']",True
+"\boxed{45}
+
+Pentru a găsi numărul de aranjamente, notăm grila astfel:
+  rândul 1: a, b, c 
+  rândul 2: d, e, f
+
+Condițiile problemei sunt:
+1) Numerele formate pe rânduri (citite de la stânga la dreapta) se adună la 999:
+  100a + 10b + c + 100d + 10e + f = 999.
+2) Numerele formate pe coloane (citite de sus în jos, astfel obţinând numere de două cifre) se adună la 99:
+  (10a + d) + (10b + e) + (10c + f) = 10(a+b+c) + (d+e+f) = 99.
+
+Observăm mai întâi că, deoarece cele două numere (aflate pe rânduri) au trei cifre (în scrierea cu zerouri la stânga, dacă este cazul) şi suma lor este 999, produsul lor se obţine în mod clasic ca complement faţă de 999. Adică, dacă notaţi primul număr cu X = 100a+10b+c, atunci cel de-al doilea număr trebuie să fie 999 – X. Aceasta implică faptul că fiecare cifră din rândul 2 este complementul în raport cu 9 al cifrei corespunzătoare din rândul 1 (deci d = 9 – a, e = 9 – b, f = 9 – c). Verificaţi de exemplu:
+  999 – (100a+10b+c) = 100(9-a)+ 10(9-b)+ (9-c).
+
+Astfel, grila este complet determinată de alegerea celor trei cifre a, b, c (cu posibilitatea de a avea zerouri la început). Suma cifrelor de pe coloana 1, de exemplu, este:
+  10a + d = 10a + (9 – a) = 9a + 9.
+Similar, suma totală a numerelor formate pe coloane devine:
+  10(a+b+c) + [(9-a)+(9-b)+(9-c)] = 10(a+b+c) + [27 – (a+b+c)] = 9(a+b+c) + 27.
+Condiţia cerută este:
+  9(a+b+c) + 27 = 99 ⟹ 9(a+b+c) = 72 ⟹ a+b+c = 8.
+
+Deci, pentru orice alegere a numerelor a, b, c (cu cifre între 0 și 9) care satisfac a+b+c = 8, rândul 2 se determină automat ca fiind complementul: (9–a, 9–b, 9–c).
+
+Rămâne să contorizăm numărul de soluţii (în Z)","[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

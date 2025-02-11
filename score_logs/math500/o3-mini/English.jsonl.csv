@@ -1,0 +1,1532 @@
+response,response_answer,answer,parsed_answer,correctness
+"\boxed{(3, \pi/2)}","[(3, pi/2), '(3, \\pi/2)']","\left( 3, \frac{\pi}{2} \right)","[3, '3']",False
+\boxed{p - q},"[p - q, 'p - q']",p - q,[],True
+\boxed{\frac{14}{3}},"[14/3, '\\frac{14}{3}']",\frac{14}{3},"[14/3, '\\frac{14}{3}']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{Evelyn},"[E*E*l*n*v*y, 'Evelyn']",\text{Evelyn},[],True
+\boxed{42},"[42, '42']",42,"[42, '42']",True
+\boxed{27},"[27, '27']",27,"[27, '27']",True
+\boxed{90},"[90, '90']",90^\circ,"[90, '90']",True
+\boxed{3\sqrt{13}},"[3*sqrt(13), '3\\sqrt{13}']",3\sqrt{13},"[3, '3']",True
+None,[],4,"[4, '4']",False
+\boxed{2220},"[2220, '2220']",2220,"[2220, '2220']",True
+"\boxed{\frac{3}{56}} 
+
+We start by defining a new polynomial:
+  q(x) = (x² – 1)p(x) – x.
+Since p(x) is a degree 5 polynomial, (x² – 1)p(x) is degree 7 and so is q(x). Notice that for n = 2, 3, 4, 5, 6, 7, we have
+  q(n) = (n² – 1)p(n) – n = (n² – 1)·[n/(n² – 1)] – n = n – n = 0.
+Thus, q(x) has roots x = 2, 3, 4, 5, 6, and 7. Hence, we can write
+  q(x) = C(x – 2)(x – 3)(x – 4)(x – 5)(x – 6)(x – 7)(x – r),
+for some constant C and an additional root r.
+
+To determine C and r, we will evaluate q(x) at convenient points.
+
+Step 1. Evaluate at x = 1.
+ Since p(1) is unknown but (1² – 1) = 0, we have:
+  q(1) = (1² – 1)p(1) – 1 = 0 · p(1) – 1 = –1.
+On the product side:
+  q(1) = C(1 – 2)(1 – 3)(1 – 4)(1 – 5)(1 – 6)(1 – 7)(1 – r).
+Calculating the factors:
+  (1 – 2) = –1, (1 – 3) = –2, (1 – 4) = –3, (1 – 5) = –4, (1 – 6) = –5, (1 – 7) = –6.
+Their product is:
+  (–1)(–2)(–3)(–4)(–5)(–6) = (1·2·3·4·5·6) = 720  (since there are an even number of negatives).
+Thus,
+  q(1) = C · 720 · (1 – r) = –1,
+so
+  C(1 – r) = –1/720.                  (1)
+
+Step 2. Evaluate at x = –1.
+ Then,
+  q(–1) = ((–1)² – 1)p(–1) – (–1) = (1 – 1)p(–1) + 1 = 1.
+On the other side:
+  q(–1) = C(–1 – 2)(–1 – 3)(–1 – 4)(–1 – 5)(–1 – 6)(–1 – 7)(–1 – r).
+The factors:
+  (–1 – 2) = –3, (–1 – 3) = –4, (–1 – 4) = –5, (–1 – 5) = –6, (–1 – 6) = –7, (–1 – 7) = –8.
+Their product equals:
+  (–3)(–4)(–5)(–6)(–7)(–8) = 720 · (–1)⁶? 
+Actually, note there are 6 negative factors, so the product is positive:
+  Product = 3·4·5·6·7·8 = 20160.
+Thus,
+  q(–1) = C · 20160 · (–1 – r) = 1,
+so
+  C(–1 – r) = 1/20160.               (2)
+
+Step 3. Relate equations (1) and (2).
+From (1): C(1 – r) = –1/720  ⟹ C = –1/(720(1 – r)).
+Plug this into (2):
+  [ –1/(720(1 – r)) ] · (–1 – r) = 1/20160.
+Simplify the left side:
+  (1 + r)/(720(1 – r)) = 1/20160.
+Multiply both sides by 720(1 – r):
+  1 + r = (720(1 – r))/20160.
+Notice 20160/720 = 28, so:
+  1 + r = (1 – r)/28.
+Multiply both sides by 28:
+  28(1 + r) = 1 – r.
+That gives:
+  28 + 28r = 1 – r  ⟹ 29r = –27  ⟹ r = –27/29.
+Then, plug r back into (1) to find C:
+  C = –1/[720(1 – (–27/29))] = –1/[720(1 + 27/29)] = –1/[720(56/29)] = –29/(720·56) = –29/40320.
+
+Step 4. Find p(8).
+Recall that:
+  q(8) = (8² – 1)p(8) – 8 = (64 – 1)p(8) – 8 = 63p(8) – 8.
+Also, from the factorization:
+  q(8) = C(8 – 2)(8 – 3)(8 – 4)(8 – 5)(8 – 6)(8 – 7)(8 – r).
+Evaluate:
+  8 – 2 = 6, 8 – 3 = 5, 8 – 4 = 4, 8 – 5 = 3, 8 – 6 = 2, 8 – 7 = 1.
+Their product is: 6 × 5 × 4 × 3 × 2 × 1 = 720.
+Next, compute:
+  8 – r = 8 – (–27/29) = 8 + 27/29 = (232/29 + 27/29) = 259/29.
+Thus,
+  q(8) = C · 720 · (259/29) = (–29/40320) · 720 · (259/29).
+The factor 29 cancels:
+  q(8) = –(720 · 259)/40320.
+Since 40320/720 = 56, we have:
+  q(8) = –259/56.
+
+Now set this equal to the earlier expression for q(8):
+  63p(8) – 8 = –259/56.
+Solve for p(8):
+  63p(8) = 8 – 259/56 = (448/56 – 259/56) = 189/56,
+  p(8) = (189/56)/63 = ","[3/56, '\\frac{3}{56}']",\frac{3}{56},"[3/56, '\\frac{3}{56}']",True
+\boxed{284},"[284, '284']",284,"[284, '284']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{\sqrt{51}},"[sqrt(51), '\\sqrt{51}']",\sqrt{51},[],True
+\boxed{6 - 5i},"[-1*5*i + 6, '6 - 5i']",6 - 5i,"[5, '5']",True
+\boxed{-50},"[-50, '-50']",-50,"[-50, '-50']",True
+\boxed{\pi},"[pi, '\\pi']",\pi,[],True
+None,[],28,"[28, '28']",False
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{6+9i},"[9*i + 6, '6+9i']",6+9i,"[6, '6']",True
+"\boxed{13535} 
+
+To explain briefly, we first note that (√7 + √5)⁶ + (√7 − √5)⁶ is an integer because the irrational parts cancel. Since 0 < √7 − √5 < 1, raising it to the 6th power gives a number less than 1. Thus, the greatest integer less than (√7 + √5)⁶ is ( (√7 + √5)⁶ + (√7 − √5)⁶ ) − 1.
+
+Expanding using the binomial theorem, only even powers contribute:
+  (√7 + √5)⁶ + (√7 − √5)⁶ = 2[(6 choose 0)(√7)⁶ + (6 choose 2)(√7)⁴(√5)² + (6 choose 4)(√7)²(√5)⁴ + (6 choose 6)(√5)⁶].
+
+This becomes:
+  2[1·7³ + 15·7²·5 + 15·7·5² + 1·5³]
+  = 2[343 + 15·245 + 15·175 + 125]
+  = 2[343 + 3675 + 2625 + 125]
+  = 2[6768] = 13536.
+
+Thus, the greatest integer less than (√7 + √5)⁶ is 13536 − 1 = 13535.","[13535, '13535']",13535,"[13535, '13535']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{5},"[5, '5']",x=5,"[5, '5']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+"\boxed{-2, 1}","[{-2, 1}, '-2, 1']","1,-2","[1, '1']",False
+\boxed{144},"[144, '144']",144,"[144, '144']",True
+\boxed{78},"[78, '78']",78,"[78, '78']",True
+\boxed{-2 + 7i},"[7*i - 2, '-2 + 7i']",-2 + 7i,"[7, '7']",True
+\boxed{225},"[225, '225']",225,"[225, '225']",True
+\boxed{52_8},"[52, '52_8']",52_8,"[52, '52']",True
+\boxed{11\sqrt{2}},"[11*sqrt(2), '11\\sqrt{2}']",11\sqrt2,"[11, '11']",False
+\boxed{720},"[720, '720']",720,"[720, '720']",True
+\boxed{\frac{243}{625}},"[243/625, '\\frac{243}{625}']",\frac{243}{625},"[243/625, '\\frac{243}{625}']",True
+\boxed{-125},"[-125, '-125']",-125,"[-125, '-125']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+"\boxed{3,\,5,\,7}","[{3, 5, 7}, '3,\\,5,\\,7']","3, 5, 7","[7, '7']",True
+\boxed{72^\circ},"[72, '72^\\circ']",72,"[72, '72']",True
+\boxed{2000},"[2000, '2000']",2000,"[2000, '2000']",True
+\boxed{23},"[23, '23']",23,"[23, '23']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+"\boxed{70\sqrt{2}} 
+
+To explain briefly, we start by rewriting the expression as
+
+  √(x² + 400) + √(y² + 900) + √((x – 40)² + (y – 50)²).
+
+Notice that 400 = 20² and 900 = 30². Thus we can interpret the three terms as distances:
+ • The first term is the distance from (x, 0) to (0, 20),
+ • The second is the distance from (0, y) to (0, 30), and
+ • The third is the distance from (x, y) to (40, 50).
+
+Although the first two terms do not depend on both x and y, the third term couples them. In effect we wish to choose x and y (with 0 ≤ x ≤ 40 and 0 ≤ y ≤ 50) to minimize
+
+  F(x","[70*sqrt(2), '70\\sqrt{2}']",70 \sqrt{2},"[70, '70']",False
+\boxed{1.25},"[1.25000000000000, '1.25']",1.25,"[1.25000000000000, '1.25']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{\frac{3}{2}},"[3/2, '\\frac{3}{2}']",\frac{3}{2},"[3/2, '\\frac{3}{2}']",True
+\boxed{83},"[83, '83']",83,"[83, '83']",True
+\boxed{203},"[203, '203']",203,"[203, '203']",True
+\boxed{x^5 - x^4 + x^3 - x^2 + x - 1},"[x**5 - x**4 + x**3 - x**2 + x - 1, 'x^5 - x^4 + x^3 - x^2 + x - 1']",x^5 - x^4 + x^3 - x^2 + x - 1,"[1, '1']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{-\frac{\pi}{6}},"[-1*pi/6, '-\\frac{\\pi}{6}']",-\frac{\pi}{6},[],True
+\boxed{0.15},"[0.150000000000000, '0.15']",0.15,"[0.150000000000000, '0.15']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{11},"[11, '11']",11,"[11, '11']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{9901},"[9901, '9901']",9901,"[9901, '9901']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+"\boxed{(6, 31, -1)} 
+
+To explain briefly: Let R(x) = x⁶ + Ax⁵ + Bx⁴ + Cx³ + Dx² + Ex + F be the quotient when dividing x⁹ + p x⁶ + q x³ + r by x³ − 3x² + 4x − 1. Multiplying out
+
+  (x³ − 3x² + 4x − 1)(x⁶ + A x⁵ + B x⁴ + C x³ + D x² + E x + F)
+
+and equating the coefficients of like powers to those in x⁹ + p x⁶ + q x³ + r (noting that the coefficients for powers x⁸, x⁷, x⁵, x⁴, x², x must vanish) yields a system of equations. Solving step-by-step, we find A = 3, B = 5, C = 10, D = 3C − 17 = 13, E = 5C − 46 = 4, and F = 1. In particular, the coefficient of x⁶ becomes p = C − 3B + 4A − 1 = 6, that of x³ is q = F − 3E + 4D − C = 31, and the constant term is r = −F = −1.","[(6, 31, -1), '(6, 31, -1)']","(6,31,-1)",[],False
+\boxed{-256},"[-256, '-256']",-256,"[-256, '-256']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{\frac{35}{64}},"[35/64, '\\frac{35}{64}']",\frac{35}{64},"[35/64, '\\frac{35}{64}']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{x^3+3x-6},"[x**3 + 3*x - 6, 'x^3+3x-6']",x^3+3x-6,[],True
+\boxed{10\%},"[10*(1/100), '10\\%']",10,"[10, '10']",True
+\boxed{46},"[46, '46']",46,"[46, '46']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{40_9},"[40, '40_9']",40_9,"[40, '40']",True
+\boxed{2516_8},"[2516, '2516_8']",2516_8,"[2516, '2516']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{\frac{3\sqrt{3}}{4}},"[(3*sqrt(3))/4, '\\frac{3\\sqrt{3}}{4}']",\frac{3\sqrt{3}}{4},[],True
+\boxed{\cot x},"[cot(x), '\\cot x']",\cot x,[],True
+\boxed{\frac{11}{36}},"[11/36, '\\frac{11}{36}']",\frac{11}{36},"[11/36, '\\frac{11}{36}']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+"\boxed{(-2,1)}","[Interval.open(-2, 1), '(-2,1)']","(-2,1)",[],True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+"\boxed{501}
+
+We start with the equation log(kx) = 2 log(x+2). Using the logarithm property 2 log(x+2) = log((x+2)^2) (provided x + 2 > 0) and assuming all logarithm arguments are positive, we rewrite the equation as
+
+  log(kx) = log((x+2)^2).
+
+Since log is one‐to‐one on positive arguments, the equation becomes
+
+  kx = (x+2)^2,
+
+with the domain restrictions:
+  1. x + 2 > 0  ⟹ x > -2,
+  2. kx > 0.
+
+Expanding the right side we have
+
+  kx = x^2 + 4x + 4  ⟹ x^2 + (4 – k)x + 4 = 0.      (1)
+
+We are required to have exactly one real solution for this equation that also satisfies the domain conditions.
+
+Consider two cases:
+
+1. Case when the quadratic (1) has a double (repeated) root.
+  For a quadratic ax² + bx + c = 0 to have a double root, its discriminant must be zero. Here,
+   D = (4 – k)² – 4 · 1 · 4 = k² – 8k.
+  Setting D = 0 gives
+   k² – 8k = 0  ⟹ k(k – 8) = 0,
+  so k = 0 or k = 8.
+  • k = 0: Then the original equation becomes log(0·x) = log 0, which is undefined. So k = 0 is rejected.
+  • k = 8: The quadratic becomes
+   x² + (4 – 8)x + 4 = x² – 4x + 4 = (x – 2)² = 0,
+  with the unique solution x = 2. Check the domain:
+   x + 2 = 4 > 0, and 8·2 = 16 > 0.
+  Hence k = 8 yields exactly one valid solution.
+
+2. Case when the quadratic (1) has two distinct real roots (this happens when k² – 8k > 0). Notice that
+  k² – 8k = k(k – 8).
+  So the discriminant is nonnegative if k ≤ 0 or k ≥ 8.
+  • For k > 8: With k positive the domain conditions require x > 0 (since for k > 0, kx > 0 ⟹ x > 0). In this case the quadratic has two distinct positive solutions, so the equation has two valid solutions—not acceptable.
+  • For k in the interval k < 0: Here k is negative and the domain conditions become:
+   x + 2 > 0  ⟹ x > -2,
+   kx > 0. Since k is negative, kx > 0 forces x < 0.
+  So the valid x must satisfy -2 < x < 0.
+  Now, the quadratic x² + (4 – k)x + 4 = 0 has product of roots = 4 (which is positive) and sum = k – 4 (which is negative when k < 0). Hence, both roots are negative. Moreover, by evaluating the quadratic at x = -2,
+   f(-2) = (-2)² + (4 – k)(-2) + 4 = 4 – 2(4 – k","[501, '501']",501,"[501, '501']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{\frac{3}{2}},"[3/2, '\\frac{3}{2}']",\frac{3}{2},"[3/2, '\\frac{3}{2}']",True
+\boxed{x=2},"[Eq(x, 2), 'x=2']",2,"[2, '2']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{\sqrt{5}},"[sqrt(5), '\\sqrt{5}']",\sqrt{5},[],True
+\boxed{240},"[240, '240']",240,"[240, '240']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+None,[],2,"[2, '2']",False
+\boxed{21},"[21, '21']",21,"[21, '21']",True
+\boxed{15},"[15, '15']",\frac{3}{2},"[3/2, '\\frac{3}{2}']",False
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{\frac{448}{15625}},"[448/15625, '\\frac{448}{15625}']",\frac{448}{15625},"[448/15625, '\\frac{448}{15625}']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+\boxed{80},"[80, '80']",80,"[80, '80']",True
+\boxed{-4},"[-4, '-4']",-4,"[-4, '-4']",True
+"\boxed{1+\sqrt{19},\ 1-\sqrt{19}}
+
+We start with the equation
+
+  [(x+1)(x-3)]⁄[5(x+2)(x-4)] + [(x+3)(x-5)]⁄[9(x+4)(x-6)] − [2(x+5)(x-7)]⁄[13(x+6)(x-8)] = 92⁄585.
+
+A key observation is that the quadratic products in the numerators and denominators have a similar pattern. Notice that
+
+  (x+1)(x−3) = x² − 2x − 3  and  (x+2)(x−4) = x² − 2x − 8,
+  (x+3)(x−5) = x² − 2x − 15  and  (x+4)(x−6) = x² − 2x − 24,
+  (x+5)(x−7) = x² − 2x − 35  and  (x+6)(x−8) = x² − 2x − 48.
+
+Thus, if we let t = x² − 2x, the fractions rewrite neatly as
+  (t − 3)/(5(t − 8)),  (t − 15)/(9(t − 24)),  and  2(t − 35)/(13(t − 48)).
+It proves useful to “split” each fraction by writing the numerator in the form (denom + constant). For example, for the first fraction note that
+
+  t − 3 = (t − 8) + 5,
+so
+  (t − 3)/(5(t − 8)) = 1/5 + 5/[5(t − 8)] = 1/5 + 1/(t − 8).
+
+Similarly, for the second fraction:
+  t − 15 = (t − 24) + 9  ⇒  (t − 15)/(9(t − 24)) = 1/9 + 1/(t − 24),
+and for the third fraction:
+  t − 35 = (t − 48) + 13  ⇒  2(t − 35)/(13(t − 48)) = 2/13 + 2","[{1 - sqrt(19), 1 + sqrt(19)}, '1+\\sqrt{19}, 1-\\sqrt{19}']",1 \pm \sqrt{19},"[1, '1']",False
+\boxed{east},"[E*a*s*t, 'east']",\text{east},[],True
+\boxed{2k + 2},"[2*k + 2, '2k + 2']",2k+2,"[2, '2']",False
+"\boxed{\begin{pmatrix} -\frac{1}{3} \\ \frac{2}{3} \\ \frac{5}{3} \end{pmatrix}}
+
+We start by letting v = (x, y, z) so that the dot product condition is  
+  x + y + z = 2.
+
+The cross product a × v, where a = (1, 1, 1), is computed as  
+  a × v = (z - y, x - z, y - x).  
+We are given that  
+  (z - y, x - z, y - x) = (1, -2, 1),
+which gives us the system:
+  z - y = 1  (1)
+  x - z = -2  (2)
+  y - x = 1  (3)
+
+Solve equation (1):  
+  z = y + 1.
+
+Solve equation (3):  
+  y = x + 1  ⇒ x = y - 1.
+
+Plug these into equation (2):  
+  x - z = (y - 1) - (y + 1) = -2,  
+which holds true.
+
+Now substitute into the dot product condition:  
+  x + y + z = (y - 1) + y + (y + 1) = 3y = 2,  
+so  y = 2/3.  
+Thus,  x = y - 1 = -1/3  and  z = y + 1 = 5/3.
+
+Hence, the vector v is  
+  v = ( -1/3, 2/3, 5/3 ).","[Matrix([
+[-1/3],
+[ 2/3],
+[ 5/3]]), '\\begin{pmatrix} -\\frac{1}{3} \\\\ \\frac{2}{3} \\\\ \\frac{5}{3} \\end{pmatrix}']",\begin{pmatrix} -1/3 \\ 2/3 \\ 5/3 \end{pmatrix},"[5/3, '5/3']",False
+\boxed{145^\circ},"[145, '145^\\circ']",145^\circ,"[145, '145']",True
+\boxed{850},"[850, '850']",850,"[850, '850']",True
+\boxed{(a+5)(b+2)},"[(a + 5)*(b + 2), '(a+5)(b+2)']",(a+5)(b+2),[],True
+"\boxed{(3,4]}","[Interval.Lopen(3, 4), '(3,4]']","(3,4]",[],True
+\boxed{40},"[40, '40']",40,"[40, '40']",True
+\boxed{29},"[29, '29']",29,"[29, '29']",True
+\boxed{\frac{4}{3}},"[4/3, '\\frac{4}{3}']",\frac43,[],False
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+None,[],2,"[2, '2']",False
+\boxed{120^\circ},"[120, '120^\\circ']",120^\circ,"[120, '120']",True
+None,[],504,"[504, '504']",False
+\boxed{210},"[210, '210']",210,"[210, '210']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True
+\boxed{8000},"[8000, '8000']",8000,"[8000, '8000']",True
+\boxed{-5},"[-5, '-5']",-5,"[-5, '-5']",True
+\boxed{1260},"[1260, '1260']",1260,"[1260, '1260']",True
+\boxed{x = 2},"[Eq(x, 2), 'x = 2']",2,"[2, '2']",True
+\boxed{x = 3},"[Eq(x, 3), 'x = 3']",3,"[3, '3']",True
+\boxed{81},"[81, '81']",81,"[81, '81']",True
+\boxed{-9},"[-9, '-9']",-9,"[-9, '-9']",True
+\boxed{even},"[E*E*n*v, 'even']",\text{even},[],True
+\boxed{x = 6},"[Eq(x, 6), 'x = 6']",6,"[6, '6']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{\frac{11}{2}},"[11/2, '\\frac{11}{2}']",\frac{11}{2},"[11/2, '\\frac{11}{2}']",True
+\boxed{-3},"[-3, '-3']",-3,"[-3, '-3']",True
+\boxed{1+274i},"[274*i + 1, '1+274i']",1+274i,"[1, '1']",True
+\boxed{4210_5},"[4210, '4210_5']",4210_{5},"[4210, '4210']",True
+\boxed{36},"[36, '36']",36,"[36, '36']",True
+"\boxed{\frac{3840}{289}} 
+
+We begin by finding the area of triangle ABC using Heron’s formula. The semiperimeter s is
+
+  s = (17 + 15 + 8) / 2 = 20.
+
+Thus, the area of triangle ABC is
+
+  Area = √[20(20-17)(20-15)(20-8)] = √[20 × 3 × 5 × 12] = √3600 = 60.
+
+The altitude from C to side AB (of length 17) satisfies
+
+  60 = ½ · 17 · (altitude),
+  so the altitude CD = (60×2)/17 = 120/17.
+
+Now, let D be the foot of the altitude from C to AB, so D lies on AB. In triangle ACD, since CD ⊥ AB and AD is along AB, angle D is a right angle. With AC = 8 being the hypotenuse, we have
+
+  AD² + CD² = AC²,
+  AD² + (120/17)² = 64.
+
+Computing (120/17)² yields 14400/289, so
+
+  AD² = 64 - 14400/289 = (18496 - 14400)/289 = 4096/289,
+  thus, AD = 64/17.
+
+Finally, the area of triangle ACD is given by
+
+  Area = ½ · AD · CD = ½ · (64/17) · (120/17) = 3840/289.
+
+This completes the solution.","[3840/289, '\\frac{3840}{289}']",\frac{3840}{289},"[3840/289, '\\frac{3840}{289}']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{120},"[120, '120']",120,"[120, '120']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{64},"[64, '64']",64,"[64, '64']",True
+\boxed{204_5},"[204, '204_5']",204_5,"[204, '204']",True
+\boxed{\frac{1}{3}},"[1/3, '\\frac{1}{3}']",\frac{1}{3},"[1/3, '\\frac{1}{3}']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{28800},"[28800, '28800']",28800,"[28800, '28800']",True
+\boxed{3\sqrt{5}},"[3*sqrt(5), '3\\sqrt{5}']",3 \sqrt{5},"[3, '3']",False
+"\boxed{(15, -29)}","[(15, -29), '(15, -29)']","(15,-29)",[],False
+\boxed{-2},"[-2, '-2']",-2,"[-2, '-2']",True
+\boxed{\frac{\sqrt{3}}{3}},"[sqrt(3)/3, '\\frac{\\sqrt{3}}{3}']",\frac{\sqrt{3}}{3},[],True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{11},"[11, '11']",11,"[11, '11']",True
+\boxed{49},"[49, '49']",49,"[49, '49']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{144},"[144, '144']",144,"[144, '144']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{\frac{2}{21}},"[2/21, '\\frac{2}{21}']",\frac{2}{21},"[2/21, '\\frac{2}{21}']",True
+None,[],2\sqrt{113},"[2, '2']",False
+\boxed{\frac{1}{4}},"[1/4, '\\frac{1}{4}']",\frac{1}{4},"[1/4, '\\frac{1}{4}']",True
+\boxed{30},"[30, '30']",30^\circ,"[30, '30']",True
+\boxed{\frac{6}{5}},"[6/5, '\\frac{6}{5}']",\frac65,[],False
+\boxed{2107},"[2107, '2107']",2107,"[2107, '2107']",True
+\boxed{3.21},"[3.21000000000000, '3.21']",3.21,"[3.21000000000000, '3.21']",True
+\boxed{18},"[18, '18']",18,"[18, '18']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{\frac{17}{50}},"[17/50, '\\frac{17}{50}']",\dfrac{17}{50},[],False
+"\boxed{-\frac{35}{9}} 
+
+We start with the expression 
+  (a + 1/b)(1/b – a).
+
+Notice that this factors as a difference of squares:
+  (a + 1/b)(1/b – a) = (1/b)^2 – a^2.
+
+Our goal is to maximize 1/b² – a² under the constraints –6 ≤ a ≤ –2 and 3 ≤ b ≤ 5.
+
+Since 1/b² is a decreasing function in b (it is largest when b is smallest) and a² is minimized when |a| is smallest (i.e. when a = –2), we choose b = 3 and a = –2.
+
+Thus, we have:
+  1/(3²) – (–2)² = 1/9 – 4 = –35/9.
+
+Therefore, the greatest possible value is \boxed{-\frac{35}{9}}.","[-35/9, '-\\frac{35}{9}']",-\frac{35}{9},"[-35/9, '-\\frac{35}{9}']",True
+\boxed{-\sqrt{3}},"[-sqrt(3), '-\\sqrt{3}']",-\sqrt{3},[],True
+\boxed{\frac{4}{9}},"[4/9, '\\frac{4}{9}']",\frac{4}{9},"[4/9, '\\frac{4}{9}']",True
+None,[],\frac{270}7\text{ degrees},[],False
+\boxed{65},"[65, '65']",65,"[65, '65']",True
+\boxed{19},"[19, '19']",19,"[19, '19']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+"\boxed{1736}
+
+We start with the system
+
+  (1) y = x² – 8  
+  (2) y² = –5x + 44
+
+Substitute (1) into (2) so that y is eliminated:
+  (x² – 8)² = –5x + 44
+
+Expanding the left side:
+  x⁴ – 16x² + 64 = –5x + 44
+
+Bring all terms to one side:
+  x⁴ – 16x² + 5x + 20 = 0
+
+Denote the roots of this quartic (in x) by r₁, r₂, r₃, r₄. For each root rᵢ the corresponding y-coordinate, by equation (1), is
+  yᵢ = rᵢ² – 8.
+
+Thus, the product of the y-coordinates we seek is
+  ∏ (rᵢ² – 8).
+
+A neat trick allows us to express such a product as a product of two evaluations of the quartic. Notice that
+  rᵢ² – 8 = (rᵢ – √8)(rᵢ + √8);
+hence,
+  ∏ (rᵢ² – 8) = (∏ (rᵢ – √8)) · (∏ (rᵢ + √8)).
+
+Since the polynomial is monic, by the Factor Theorem the product ∏ (rᵢ – a) equals the polynomial evaluated at a. That gives:
+  ∏ (rᵢ – √8) = f(√8) and ∏ (rᵢ + √8) = f(–√8)
+where f(x) = x⁴ – 16x² + 5x + 20.
+
+Calculate f(√8):
+  (√8)² = 8  and (√8)⁴ = (8)² = 64.
+So,
+  f(√8) = 64 – 16(8) + 5√8 + 20 = 64 – 128 + 20 + 5√8 = –44 + 5√8.
+
+Similarly, f(–√8):
+  f(–√8) = 64 – 16(8) – 5√8 + 20 = 64 – 128 + 20 – 5√8 = –44 – 5√8.
+
+We now multiply these:
+  (–44 + 5√8)(–44 – 5√8) = (–44)² – (5√8)² = 1936 – 25·8 = 1936 – 200 = 1736.
+
+Thus, the product of the y-coordinates for all distinct solutions is 1736.","[1736, '1736']",1736,"[1736, '1736']",True
+\boxed{\frac{13}{15}},"[13/15, '\\frac{13}{15}']",\frac{13}{15},"[13/15, '\\frac{13}{15}']",True
+\boxed{350},"[350, '350']",350,"[350, '350']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{0.0000672},"[6.72000000000000e-5, '0.0000672']",.0000672,"[6.72000000000000e-5, '0.0000672']",True
+\boxed{30},"[30, '30']",30^\circ,"[30, '30']",True
+\boxed{60},"[60, '60']",60,"[60, '60']",True
+\boxed{5x - 7y + 11z + 4 = 0},"[Eq(5*x - 1*7*y + 11*z + 4, 0), '5x - 7y + 11z + 4 = 0']",5x - 7y + 11z + 4 = 0,"[0, '0']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{\frac{\sqrt{3}}{3}},"[sqrt(3)/3, '\\frac{\\sqrt{3}}{3}']",\frac{\sqrt{3}}{3},[],True
+\boxed{1251},"[1251, '1251']",1251,"[1251, '1251']",True
+\boxed{23},"[23, '23']",23,"[23, '23']",True
+"\boxed{(2,\infty)} 
+
+We start with the expression
+  E = (c/a) + (a/(b+c)) + (b/c).
+
+Introduce variables u and v by letting u = c/a and v = b/c (note: u > 0 and v > 0). Then a = c/u and b = v·c, and so
+
+  a/(b+c) = (c/u) / (v·c + c) = 1 / (u(1+v)).
+
+Thus, the expression becomes
+  E = u + v + 1/[u(1+v)].
+
+To find the minimum value of E, fix v and consider f(u) = u + v + 1/[u(1+v)] as a function of u. Differentiate with respect to u:
+  f '(u) = 1 - 1/[u²(1+v)].
+Setting f '(u) = 0 gives
+  1 = 1/[u²(1+v)], or u² = 1/(1+v),
+so the minimizing u is
+  u = 1/√(1+v).
+
+Plug this back into f(u) to obtain a function of v:
+  f = 1/√(1+v) + v + 1/[(1/√(1+v))(1+v)]
+    = 1/√(1+v) + v + √(1+v)/(1+v).
+
+Notice √(1+v)/(1+v) = 1/√(1+v). Thus,
+  f = v + 2/√(1+v).
+
+Now, consider g(v) = v + 2/√(1+v) for v > 0. Its derivative is
+  g '(v) = 1 - [1/(1+v)^(3/2)].
+Since (1+v)^(3/2) > 1 for v > 0, we have g '(v) > 0, so g is strictly increasing. This means its minimum occurs as v → 0⁺. In that limit,
+  g(v) → 0 + 2 = 2.
+However, since v must be positive, E can get arbitrarily close to 2 without actually being 2.
+
+Finally, by letting either u or v (or both) tend to infinity, E can be made arbitrarily large.
+
+Thus, the set of possible values is (2, ∞).","[Interval.open(2, oo), '(2,\\infty)']","(2,\infty)",[],True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+"\boxed{160} 
+
+We start by noting that originally two ropes of lengths 150 m (HC) and 130 m (HD) are used, for a total of 280 m. Replacing them with one rope HP (from H to a point P on line CD) saves an amount equal to
+
+  (150 + 130) – HP = 280 – HP.
+
+To maximize the rope saved, we must minimize HP. Since H is directly above O (the origin) and the points C and D lie on the ground, the length HP equals
+
+  HP = √[(OP)² + h²],
+    where h is the vertical distance HO and OP is the distance from O to the chosen point P on line CD.
+
+The minimum HP is achieved by choosing P so that OP is minimized. In other words, P must be the point on the line CD closest to O – the foot of the perpendicular from O onto the line through C and D.
+
+Let the coordinates be as follows:
+  O = (0, 0),
+  C = (0, –c)     (directly south),
+  D = (d, 0)     (directly east),
+  H = (0, 0, h).
+
+We are given:
+  HC = √(c² + h²) = 150   → c² + h² = 150²,
+  HD = √(d² + h²) = 130   → d² + h² = 130²,
+  CD = √(c² + d²) = 140   → c² + d² = 140².
+
+Subtracting the last two equations we find:
+  (150² + 130²) – 2h² = 140².
+Plugging in:
+  22500 + 16900 – 2h² = 19600  → 39400 – 2h² = 19600,
+  2h² = 39400 – 19600 = 19800  → h² = 9900, so h = 10√99.
+
+Then, c² = 22500 – 9900 = 12600  → c = √12600, and
+  d² = 16900 – 9900 = 7000    → d = √7000.
+
+The next step is to find the distance from O to the line through C and D. Writing:
+  C = (0, –30√14)   (since 30√14 is a simplified form of √12600) and D = (10√70, 0),
+the vector CD is
+  v = D – C = (10√70, 30√14).
+
+The distance from O to the line through C and D is given by:
+  distance = |(O – C) × v| / |v|.
+Since O – C = (0, 30√14),
+  |(O – C) × v| = |det((10√70, 30√14), (0, 30√14))| = |10√70·30√14 – 30√14·0| = 300√(70·14).
+Note that 70·14 = 980, and √980 = 7√20, so the numerator is 2100√20.
+The magnitude |v| is:
+  |v| = √[(10√70)² + (30√14)²] = √(7000 + 12600) = √19600 = 140.
+Thus, the distance from O to the line is:
+  OP = (2100√20)/140 = 15√20 = 30√5   (since √20 = 2√5).
+
+Now, the minimal rope length from H to P is:
+  HP = √[(30√5)² + (10√99)²] = √(4500 + 9900) = √14400 = 120.
+
+Thus, the greatest rope saving is:
+  280 – 120 = 160 m.
+
+So, the final answer is \boxed{160}.","[160, '160']",160,"[160, '160']",True
+\boxed{\frac{13}{18}},"[13/18, '\\frac{13}{18}']",\frac{13}{18},"[13/18, '\\frac{13}{18}']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{30},"[30, '30']",30,"[30, '30']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+"\boxed{\frac{1}{4}}
+
+To explain briefly, we want to maximize
+  f(x, y) = (x – y)/(x⁴ + y⁴ + 6)
+over all real x and y. One natural idea is to observe that the numerator depends only on the difference x – y. Thus, one might suspect that choosing x and y in a way that “concentrates” the difference while keeping the denominator as small as possible is promising. In fact, setting x + y = 0 (so that x = –y) tends to minimize the contribution of x⁴ + y⁴ for any fixed difference.
+
+Specifically, let x = t and y = –t. Then
+  x – y = 2t and x⁴ + y⁴ = t⁴ + t⁴ = 2t⁴.
+Thus the expression becomes
+  f(t) = (2t)/(2t⁴ + 6) = t/(t⁴ + 3).
+
+To maximize f(t) for t > 0, differentiate:
+  f(t) = t/(t⁴ + 3),
+and compute its derivative:
+  f'(t) = [(t⁴ + 3)·1 – t·(4t³)]/(t⁴ + 3)² 
+      = (t⁴ + 3 – 4t⁴)/(t⁴ + 3)² 
+      = (3 – 3t⁴)/(t⁴ + 3)².
+Setting f'(t) = 0 leads to 3 – 3t⁴ = 0, or t⁴ = 1, so t = 1 (choosing the positive root for a maximum).
+
+Thus, the optimal choice is x = 1 and y = –1, yielding
+  f(1, –1) = (1 – (–1))/(1⁴ + (–1)⁴ + 6) = 2/(1 + 1 + 6) = 2/8 = 1/4.
+
+Checking that no other choice of x and y can provide a greater value (and noting that if one makes a deviation from x + y = 0 for fixed x – y the denominator increases), we conclude that the maximum value of f(x, y) is indeed 1/4.","[1/4, '\\frac{1}{4}']",\frac{1}{4},"[1/4, '\\frac{1}{4}']",True
+\boxed{24},"[24, '24']",24,"[24, '24']",True
+\boxed{1600},"[1600, '1600']",1600,"[1600, '1600']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{10080},"[10080, '10080']","10,\!080","[10, '10']",False
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{40},"[40, '40']",40,"[40, '40']",True
+\boxed{66},"[66, '66']",66,"[66, '66']",True
+\boxed{\frac{2}{3}},"[2/3, '\\frac{2}{3}']",\frac{2}{3},"[2/3, '\\frac{2}{3}']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+None,[],0,"[0, '0']",False
+\boxed{\begin{pmatrix}-2 \\ -14 \\ -7\end{pmatrix}},"[Matrix([
+[ -2],
+[-14],
+[ -7]]), '\\begin{pmatrix}-2 \\\\ -14 \\\\ -7\\end{pmatrix}']",\begin{pmatrix} -2 \\ -14 \\ -7 \end{pmatrix},"[-7, '-7']",False
+"\boxed{\left(\frac{3}{2},\,-13\right)}","[(3/2, -13), '(\\frac{3}{2},\\,-13)']","\left( \frac{3}{2}, -13 \right)","[-13, '-13']",False
+\boxed{28},"[28, '28']",28,"[28, '28']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{56},"[56, '56']",56,"[56, '56']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{110},"[110, '110']",110,"[110, '110']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{11111111100},"[11111111100, '11111111100']","11,\! 111,\! 111,\! 100","[100, '100']",False
+"\boxed{(-1,6)}","[Interval.open(-1, 6), '(-1,6)']","(-1,6)",[],True
+"\boxed{\frac{1}{2}} 
+
+We are given a wheel with 6 equally likely numbers: 1, 2, 6, 9, 3, and 7. The wheel is spun twice. The first spin gives a number whose remainder when divided by 4 determines the column (with possible remainders 1, 2, or 3), and the second spin gives a number whose remainder when divided by 5 determines the row (with possible remainders 1, 2, 3, or 4).
+
+Step 1. Determine the column from the first spin.
+• For each number, find its remainder modulo 4:
+  1 mod 4 = 1,
+  2 mod 4 = 2,
+  6 mod 4 = 2,
+  9 mod 4 = 1,
+  3 mod 4 = 3,
+  7 mod 4 = 3.
+Thus, each column (1, 2, and 3) occurs in exactly 2 of the 6 equally likely outcomes, so:
+ Probability(column = 1) = 2/6 = 1/3,
+ Probability(column = 2) = 1/3,
+ Probability(column = 3) = 1/3.
+
+Step 2. Determine the row from the second spin.
+• Similarly, take each number modulo 5:
+  1 mod 5 = 1,
+  2 mod 5 = 2,
+  6 mod 5 = 1,
+  9 mod 5 = 4,
+  3 mod 5 = 3,
+  7 mod 5 = 2.
+Here the frequencies are:
+ Remainder 1 (row 1): 2 outcomes, so probability = 2/6 = 1/3,
+ Remainder 2 (row 2): 2 outcomes, so probability = 1/3,
+ Remainder 3 (row 3): 1 outcome, so probability = 1/6,
+ Remainder 4 (row 4): 1 outcome, so probability = 1/6.
+
+Step 3. Identify the shaded squares on the checkerboard.
+The board has 3 columns (labeled 1, 2, 3) and 4 rows (labeled 1, 2,","[1/2, '\\frac{1}{2}']",\frac{1}{2},"[1/2, '\\frac{1}{2}']",True
+\boxed{\frac{16}{27}},"[16/27, '\\frac{16}{27}']",\frac{16}{27},"[16/27, '\\frac{16}{27}']",True
+\boxed{900},"[900, '900']",900,"[900, '900']",True
+None,[],54,"[54, '54']",False
+\boxed{14},"[14, '14']",14,"[14, '14']",True
+\boxed{\frac{9}{256}},"[9/256, '\\frac{9}{256}']",\frac{9}{256},"[9/256, '\\frac{9}{256}']",True
+\boxed{11},"[11, '11']",11,"[11, '11']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{C},"[C, 'C']",\text{(C)},[],True
+\boxed{288\pi},"[288*pi, '288\\pi']",288 \pi,"[288, '288']",False
+\boxed{90},"[90, '90']",90,"[90, '90']",True
+\boxed{\frac{16}{5}},"[16/5, '\\frac{16}{5}']",\frac{16}{5},"[16/5, '\\frac{16}{5}']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{\frac{1997}{2}},"[1997/2, '\\frac{1997}{2}']",\frac{1997}{2},"[1997/2, '\\frac{1997}{2}']",True
+\boxed{30^\circ},"[30, '30^\\circ']",30^\circ,"[30, '30']",True
+\boxed{34},"[34, '34']",34,"[34, '34']",True
+\boxed{\frac{5}{9}},"[5/9, '\\frac{5}{9}']",\frac 59,"[59, '59']",False
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{22},"[22, '22']",22,"[22, '22']",True
+\boxed{-4},"[-4, '-4']",-4,"[-4, '-4']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+None,[],116,"[116, '116']",False
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{32348},"[32348, '32348']","\$32,\!348",[],False
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{-13x+3},"[-1*13*x + 3, '-13x+3']",-13x+3,"[-13, '-13']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{\frac{10}{11}},"[10/11, '\\frac{10}{11}']",\frac{10}{11},"[10/11, '\\frac{10}{11}']",True
+"\boxed{
+\begin{pmatrix}
+-1 & 0 \\
+0 & -1
+\end{pmatrix}
+}
+
+We start by finding a recurrence for A. Notice that
+  A = [3 7; -1 -2]
+has a trace of 1 and determinant 1, so its characteristic polynomial is
+  λ² - λ + 1 = 0.
+Thus, A satisfies
+  A² - A + I = 0 ⟹ A² = A - I.
+Multiplying by A gives:
+  A³ = A·A² = A(A - I) = A² - A = (A - I) - A = -I.
+It follows that:
+  A⁴ = A·A³ = -A,
+  A⁵ = A·A⁴ = -A² = -(A - I) = I - A,
+  and A⁶ = A·A⁵ = A(I - A) = A - A² = A - (A - I) = I.
+Therefore, A has order 6, meaning A⁶ = I.
+
+Now to compute A²⁷ + A³¹ + A⁴⁰, we reduce each exponent modulo 6:
+  27 ≡ 3 (mod 6) ⟹ A²⁷ = A³ = -I,
+  31 ≡ 1 (mod 6) ⟹ A³¹ = A,
+  40 ≡ 4 (mod 6) ⟹ A⁴⁰ = A⁴ = -A.
+Thus,
+  A²⁷ + A³¹ + A⁴⁰ = -I + A - A = -I.
+
+The final answer is, therefore:
+
+\boxed{
+\begin{pmatrix}
+-1 & 0 \\
+0 & -1
+\end{pmatrix}
+}","[Matrix([
+[-1,  0],
+[ 0, -1]]), '\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}']",\begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix},"[-1, '-1']",True
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+\boxed{81},"[81, '81']",81,"[81, '81']",True
+\boxed{\frac{1}{8}},"[1/8, '\\frac{1}{8}']",\frac{1}{8},"[1/8, '\\frac{1}{8}']",True
+\boxed{28},"[28, '28']",28,"[28, '28']",True
+\boxed{E},"[E, 'E']",\text{(E)},[],True
+\boxed{\frac{8}{21}},"[8/21, '\\frac{8}{21}']",\frac{8}{21},"[8/21, '\\frac{8}{21}']",True
+\boxed{864},"[864, '864']",864 \mbox{ inches}^2,"[864, '864']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{22},"[22, '22']",22,"[22, '22']",True
+\boxed{120^\circ},"[120, '120^\\circ']",120^\circ,"[120, '120']",True
+\boxed{76},"[76, '76']",76^\circ,"[76, '76']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{15},"[15, '15']",15,"[15, '15']",True
+None,[],1\frac{4}{5},"[4/5, '\\frac{4}{5}']",False
+\boxed{4005},"[4005, '4005']",4005,"[4005, '4005']",True
+\boxed{\frac{33}{100}},"[33/100, '\\frac{33}{100}']",\dfrac{33}{100},[],False
+"\boxed{180} 
+
+To explain briefly: Since HO and HN are tangents to circle J at O and N, the radii JO and JN are perpendicular to these tangents (i.e. JO ⟂ HO and JN ⟂ HN). This means that in quadrilateral JNHO, the angles at O and N are 90°. Since the total sum of interior angles of a quadrilateral is 360°, the remaining two angles (at vertices J and H) must sum to 360° − 90° − 90° = 180°.","[180, '180']",180^\circ,"[180, '180']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{333},"[333, '333']",333,"[333, '333']",True
+\boxed{1030},"[1030, '1030']",1030,"[1030, '1030']",True
+\boxed{1250},"[1250, '1250']",1250,"[1250, '1250']",True
+\boxed{18+2\pi},"[2*pi + 18, '18+2\\pi']",18+2\pi,"[18, '18']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{11},"[11, '11']",11,"[11, '11']",True
+\boxed{\sqrt{53}},"[sqrt(53), '\\sqrt{53}']",\sqrt{53},[],True
+\boxed{255},"[255, '255']",255,"[255, '255']",True
+\boxed{7\pi},"[7*pi, '7\\pi']",7\pi,"[7, '7']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{36^\circ},"[36, '36^\\circ']",36^\circ,"[36, '36']",True
+\boxed{129},"[129, '129']",129,"[129, '129']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+"\boxed{3+2\sqrt{2},\ 3-2\sqrt{2},\ -3+2\sqrt{2},\ -3-2\sqrt{2}}
+
+We start by letting
+  θ = tan⁻¹(x)
+and
+  φ = cot⁻¹(1/x).
+
+Recall that by definition, tan⁻¹(x) returns an angle in (–π/2, π/2) and cot⁻¹(1/x) returns an angle in (0, π).
+
+There are two cases to consider depending on the sign of x.
+
+Case 1. x > 0.
+ For x > 0, tan⁻¹(x) lies in (0, π/2). Since cot⁻¹(1/x) is the unique angle in (0, π) whose cotangent is 1/x and noting that cot(θ) = 1/x for θ = tan⁻¹(x) (because tan(θ)=x), we have
+  cot⁻¹(1/x) = tan⁻¹(x).
+Thus,
+  tan⁻¹(x) + cot⁻¹(1/x) = 2tan⁻¹(x).
+Using the double-angle formula for sine:
+  sin(2tan⁻¹(x)) = 2x/(1+x²),
+the given equation becomes:
+  2x/(1+x²) = 1/3.
+Multiplying both sides by 3(1+x²) gives:
+  6x = 1 + x² ⟹ x² – 6x + 1 = 0.
+Solving this quadratic,
+  x = [6 ± √(36−4)]/2 = (6 ± 4√2)/2 = 3 ± 2√2.
+Since x > 0, both 3 + 2√2 and 3 – 2√2 are acceptable (note that 3 – 2√2 ≈ 0.172 > 0).
+
+Case 2. x < 0.
+ Now tan⁻¹(x) is in (–π/2, 0), while for x < 0, 1/x is negative, so the unique angle φ in (0, π) satisfying cot(φ) = 1/x falls in (π/2, π). Since tan(φ) = x and tan⁻¹(x) also equals the unique angle in (–π/2, π/2) with tangent x, the two angles differ by π:
+  φ = tan⁻¹(x) + π.
+Thus,
+  tan⁻¹(x) + cot⁻¹(1/x) = 2tan⁻¹(x) + π.
+Then,
+  sin(2tan⁻¹(x) + π) = –sin(2tan⁻¹(x)),
+and the equation becomes:
+  –sin(2tan⁻¹(x)) = 1/3 ⟹ sin(2tan⁻¹(x)) = –1/3.
+Again using sin(2tan⁻¹(x)) = 2x/(1+x²), we have:
+  2x/(1+x²) = –1/3.
+Multiplying both sides by 3(1+x²) yields:
+  6x = –(1+x²) ⟹ x² + 6x + 1 = 0.
+Solving this quadratic,
+  x = [–6 ± √(36−4)]/2 = (–6 ± 4√2)/2 = –3 ± 2√2.
+Since we are in the case x < 0, both –3 + 2√2 (≈ –0.172) and –3 – 2√2 (≈ –5.83) are valid.
+
+Thus, combining both cases, the four solutions are:
+  3 + 2√2, 3 – 2√2, –3 + 2√2, –3 – 2√2.","[{-3 + 2*sqrt(2), -3 - 1*2*sqrt(2), 2*sqrt(2) + 3, -1*2*sqrt(2) + 3}, '3+2\\sqrt{2}, 3-2\\sqrt{2}, -3+2\\sqrt{2}, -3-2\\sqrt{2}']",3 \pm 2 \sqrt{2},"[2, '2']",False
+"\boxed{440} 
+
+We start by letting the three positive integer roots of the polynomial be r, s, and t so that
+
+  P(x) = 2(x – r)(x – s)(x – t) = 2x³ – 2(r+s+t)x² + 2(rs+rt+st)x – 2rst.
+
+Comparing with 
+  P(x) = 2x³ – 2ax² + (a² – 81)x – c,
+the coefficients must match. Thus:
+
+1. r + s + t = a.
+2. 2(rs + rt + st) = a² – 81, so rs + rt + st = (a² – 81)/2.
+3. 2rst = c.
+
+Using the identity (r+s+t)² = r²+s²+t² + 2(rs+rt+st), we can solve for r²+s²+t²:
+  a² = r²+s²+t² + (a² – 81)
+  ⟹ r²+s²+t² = 81.
+
+Thus, the squares of the roots always add up to 81.
+
+Now we look for triples of positive integers (in non-decreasing order) satisfying r² + s² + t² = 81. A short search yields three possibilities:
+  • (1, 4, 8), since 1² + 4² + 8² = 1 + 16 + 64 = 81.
+  • (3, 6, 6), since 9 + 36 + 36 = 81.
+  • (4, 4, 7), since 16 + 16 + 49 = 81.
+
+The sums of these triples are:
+  • 1+4+8 = 13, so a = 13.
+  • 3+6+6 = 15, so a = 15.
+  • 4+4+7 = 15, so a = 15.
+
+Since Steve later writes down a value for a and Jon still finds two possible values for c, the given a must be 15 (because a = 13 would give a unique triple). With a = 15, there are two distinct sets of roots:
+  – Either (3, 6, 6) or (4, 4, 7).
+
+Now, compute c from c = 2·(r·s·t):
+
+For (3, 6, 6):
+  rst = 3 × 6 × 6 = 108  ⟹ c = 2 × 108 = 216.
+
+For (4, 4, 7):
+  rst = 4 × 4 × 7 = 112  ⟹ c = 2 × 112 = 224.
+
+The sum of the two possible c values is 216 + 224 = 440.","[440, '440']",440,"[440, '440']",True
+None,[],\frac{17}{21},"[17/21, '\\frac{17}{21}']",False
+\boxed{36},"[36, '36']",36,"[36, '36']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{16},"[16, '16']",16,"[16, '16']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+"\boxed{63}
+
+We note that the x-coordinates in the interior are those strictly between -5 and 5, so x can be -4, -3, …, 4 (9 values). Similarly, the y-coordinates are those strictly between -4 and 4, so y can be -3, -2, …, 3 (7 values). Multiplying these gives 9 × 7 = 63 interior points with integer coordinates.","[63, '63']",63,"[63, '63']",True
+\boxed{898},"[898, '898']",898,"[898, '898']",True
+"\boxed{\left(\frac{3}{5},\frac{8}{3}\right]}","[Interval.Lopen(3/5, 8/3), '(\\frac{3}{5},\\frac{8}{3}]']","\left(\frac{3}{5},\frac{8}{3}\right]","[{3/5, 8/3}, '\\frac{3}{5} and \\frac{8}{3}']",False
+\boxed{58},"[58, '58']",58,"[58, '58']",True
+"\boxed{11} 
+
+We begin by rewriting the given equation
+  z⁴ + 4iz³ – 6z² – 4iz – i = 0.
+Notice that the expansion of (z + i)⁴ is
+  (z + i)⁴ = z⁴ + 4iz³ – 6z² – 4iz + 1.
+Thus, subtracting our equation from (z + i)⁴ gives
+  (z + i)⁴ – [z⁴ + 4iz³ – 6z² – 4iz – i] = 1 + i.
+So the given equation can be written as
+  (z + i)⁴ = 1 + i.
+
+Express 1 + i in polar form:
+  1 + i = √2 · e^(iπ/4).
+Taking fourth roots:
+  (z + i) = (√2)^(1/4) · e^(i(π/16 + kπ/2)) = 2^(1/8) · e^(i(π/16 + kπ/2)), for k = 0, 1, 2, 3.
+Thus,
+  z = 2^(1/8) · e^(i(π/16 + kπ/2)) – i.
+
+These four points lie on a circle of radius 2^(1/8) centered at –i. Since they are equally spaced (separated by π/2 in argument), they form the vertices of a square. For a square inscribed in a circle of radius r, the side length is s = √2·r and the area is A = s² = 2r².
+
+Here, r = 2^(1/8) so the area is:
+  A = 2·(2^(1/8))² = 2 · 2^(1/4) = 2^(5/4).
+
+Expressed in the form p^(a/b) with prime p and a, b relatively prime, we have p = 2, a = 5, and b = 4. Therefore, a + b + p = 5 + 4 + 2 = 11.
+
+Thus, the final answer is \boxed{11}.","[11, '11']",11,"[11, '11']",True
+\boxed{B},"[B, 'B']",\text{(B)},[],True
+\boxed{103},"[103, '103']",103,"[103, '103']",True
+"\boxed{(-18, -49, 96)}","[(-18, -49, 96), '(-18, -49, 96)']",\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix},"[96, '96']",False
+\boxed{63},"[63, '63']",63,"[63, '63']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{5.4},"[5.40000000000000, '5.4']",5.4 \text{ cents},"[5.40000000000000, '5.4']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{28},"[28, '28']",28,"[28, '28']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{\frac{9}{19}},"[9/19, '\\frac{9}{19}']",\frac9{19},[],False
+\boxed{4},"[4, '4']",6,"[6, '6']",False
+"\boxed{(-\infty, 0]}","[Interval(-oo, 0), '(-\\infty, 0]']","(-\infty, 0]","[0, '0']",True
+None,[],1+2\sqrt{3},"[1, '1']",False
+\boxed{15},"[15, '15']",14,"[14, '14']",False
+\boxed{49},"[49, '49']",49,"[49, '49']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+"\boxed{(5, \infty)}","[Interval.open(5, oo), '(5, \\infty)']","(5,\infty)",[],False
+\boxed{12\pi},"[12*pi, '12\\pi']",12\pi,"[12, '12']",True
+"\boxed{(2,4)}","[Interval.open(2, 4), '(2,4)']","(2,4)",[],True
+\boxed{41},"[41, '41']",41,"[41, '41']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{\frac{11+9a}{20}},"[(9*a + 11)/20, '\\frac{11+9a}{20}']",\frac{11+9a}{20},[],True
+\boxed{-128},"[-128, '-128']",-128,"[-128, '-128']",True
+\boxed{-\frac{24}{25}},"[-24/25, '-\\frac{24}{25}']",-\frac{24}{25},"[-24/25, '-\\frac{24}{25}']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{\frac{1}{3}},"[1/3, '\\frac{1}{3}']",\frac{1}{3},"[1/3, '\\frac{1}{3}']",True
+"\boxed{150} 
+
+We can explain briefly as follows. Let θ be the measure (in radians) of ∠ADC. Notice that the two shaded pieces combine to form exactly the sector of the larger circle (radius 2) subtended by θ.","[150, '150']",120,"[120, '120']",False
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{0.09},"[0.0900000000000000, '0.09']",\frac{9}{100},"[9/100, '\\frac{9}{100}']",True
+\boxed{15},"[15, '15']",15,"[15, '15']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{4 \text{ inches per second}},"[4, '4']",4,"[4, '4']",True
+\boxed{1940},"[1940, '1940']",1940,"[1940, '1940']",True
+\boxed{\frac{13}{6}},"[13/6, '\\frac{13}{6}']",\frac{13}{6},"[13/6, '\\frac{13}{6}']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{-120},"[-120, '-120']",-120,"[-120, '-120']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{26000},"[26000, '26000']",26000,"[26000, '26000']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{4343_6},"[4343, '4343_6']",4343_6,"[4343, '4343']",True
+\boxed{2k},"[2*k, '2k']",2k,"[2, '2']",True
+\boxed{55^\circ},"[55, '55^\\circ']",55^\circ,"[55, '55']",True
+\boxed{-2},"[-2, '-2']",-2,"[-2, '-2']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{58500},"[58500, '58500']","58,500","[58500, '58500']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{66},"[66, '66']",66,"[66, '66']",True
+\boxed{6r^2 - 4r - 24},"[6*r**2 - 1*4*r - 24, '6r^2 - 4r - 24']",6r^2-4r-24,"[6, '6']",False
+\boxed{4495},"[4495, '4495']",4495,"[4495, '4495']",True
+\boxed{10080},"[10080, '10080']",10080,"[10080, '10080']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+"\boxed{\frac{1}{16}} 
+
+To elaborate briefly: First, note that 
+  cos(16π/15) = cos(π + π/15) = -cos(π/15).
+
+Thus, the original product becomes
+  cos(2π/15) cos(4π/15) cos(8π/15) cos(16π/15)
+    = -cos(π/15) cos(2π/15) cos(4π/15) cos(8π/15).
+
+Let x = π/15. Then the product is -[cos x cos 2x cos 4x cos 8x]. 
+
+A standard trigonometric product identity states that
+  cos x cos 2x cos 4x cos 8x = sin(16x)/(16 sin x).
+
+Substituting x = π/15 gives
+  sin(16π/15)/(16 sin(π/15)).
+
+Since 16π/15 = π + π/15, we have sin(16π/15) = -sin(π/15). 
+
+Thus, the product becomes
+   -[ -sin(π/15)/(16 sin(π/15)) ] = 1/16.
+
+This confirms our answer above.","[1/16, '\\frac{1}{16}']",\frac{1}{16},"[1/16, '\\frac{1}{16}']",True
+None,[],11 \sqrt{5} + 11,"[11, '11']",False
+\boxed{480},"[480, '480']",480,"[480, '480']",True
+\boxed{81},"[81, '81']",81,"[81, '81']",True
+\boxed{100},"[100, '100']",100,"[100, '100']",True
+"\boxed{(-\sqrt{3}, \sqrt{3})}","[Interval.open(-sqrt(3), sqrt(3)), '(-\\sqrt{3}, \\sqrt{3})']","(-\sqrt{3}, \sqrt{3})",[],True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{\text{ellipse}},"[ellipse, '\\text{ellipse}']",\text{ellipse},[],True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{\frac{7}{4}},"[7/4, '\\frac{7}{4}']",\frac{7}{4},"[7/4, '\\frac{7}{4}']",True
+\boxed{16\sqrt{3}},"[16*sqrt(3), '16\\sqrt{3}']",16 \sqrt{3},"[16, '16']",False
+\boxed{\frac{1}{4}},"[1/4, '\\frac{1}{4}']",\frac14,[],False
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+"\boxed{(1, -16, -4, 43)}","[(1, -16, -4, 43), '(1, -16, -4, 43)']","(1,-16,-4,43)",[],False
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{31},"[31, '31']",31,"[31, '31']",True
+\boxed{21},"[21, '21']",21,"[21, '21']",True
+\boxed{-41},"[-41, '-41']",-41,"[-41, '-41']",True
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{1+2i},"[2*i + 1, '1+2i']",1+2i,"[1, '1']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{(8,-2)}","[(8, -2), '(8,-2)']","(8,-2)",[],True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{12\text{th grade}},"[12, '12']",12,"[12, '12']",True
+"\boxed{(0,9)\cup (9,36)} 
+
+To explain briefly:
+
+1. Since the numerator is |x² - 81|, it is always nonnegative and equals 0 when x² - 81 = 0, i.e. x = 9 or x = -9. For the overall expression to be negative, the numerator must be strictly greater than 0, so we must exclude x = 9 and x = -9.
+
+2. The expression is negative when the numerator is positive and the denominator is negative. The denominator is x² - 36x = x(x - 36). It is negative when x(x - 36) < 0, which occurs exactly when 0 < x < 36.
+
+3. Combining these conditions, we only need to consider x in (0, 36) and then exclude x = 9 (since x = -9 is not in (0,36)).
+
+Therefore, the solution is x in (0,9) ∪ (9,36).","[Union(Interval.open(0, 9), Interval.open(9, 36)), '(0,9)\\cup (9,36)']","(0,9) \cup (9,36)",[],False
+"\boxed{\frac{1}{2}}
+
+To explain briefly: For three segments of lengths 1, x, and y to form a triangle, they must satisfy the triangle inequalities:
+
+1 + x > y,
+1 + y > x, and
+x + y > 1.
+
+Rewriting the first two gives x - y < 1 and y - x < 1, or |x - y| < 1. Therefore, the conditions become:
+  x + y > 1  and  |x - y| < 1.
+
+Since x and y are chosen uniformly from (0, 3), the total valid area is the area of the square, which is 9.
+
+By analyzing the region defined by these inequalities or by setting up an appropriate integral, you find that the valid area is 4.5. Therefore, the probability is 4.5/9 = 1/2.","[1/2, '\\frac{1}{2}']",\frac{1}{2},"[1/2, '\\frac{1}{2}']",True
+\boxed{\frac{20000}{\pi}},"[20000/pi, '\\frac{20000}{\\pi}']",\frac{20000}{\pi},[],True
+"\boxed{[-2, 7]}","[Interval(-2, 7), '[-2, 7]']","x \in [-2,7]",[],False
+\boxed{15x - 80},"[15*x - 80, '15x - 80']",15x - 80,"[80, '80']",True
+\boxed{22},"[22, '22']",22,"[22, '22']",True
+\boxed{11},"[11, '11']",11,"[11, '11']",True
+\boxed{18},"[18, '18']",18,"[18, '18']",True
+\boxed{\frac{11}{2}},"[11/2, '\\frac{11}{2}']",\frac{11}{2},"[11/2, '\\frac{11}{2}']",True
+\boxed{\frac{\sqrt{21}}{5}},"[sqrt(21)/5, '\\frac{\\sqrt{21}}{5}']",\frac{\sqrt{21}}{5},[],True
+\boxed{\boxed{12}},"[12, '12']",12,"[12, '12']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+"\boxed{\sqrt{66}} 
+
+We begin by noting that in a regular octahedron the six vertices can be organized into three pairs of opposite vertices. When placed in standard coordinates—say, A = (1,0,0) and B = (-1,0,0), C = (0,1,0) and D = (0,-1,0), and E = (0,0,1) and F = (0,0,-1)—the distance from any point P = (x, y, z) to a vertex and its opposite pair satisfy
+
+  PA² + PB² = [(x-1)²+y²+z²] + [(x+1)²+y²+z²] = 2(x²+y²+z²+1).
+
+Thus, no matter which opposite pair we select, the sum of the squares of the distances from P to the two vertices is the same constant.
+
+Given that the distances from P to five of the vertices are 3, 7, 8, 9, and 11, we denote the unknown distance as x. Our strategy is to pair these six distances into three pairs so that in each pair the sum of squares is equal.
+
+Among the possible pairings, one working arrangement is to pair:
+ • 3 with 11  (since 3² + 11² = 9 + 121 = 130),
+ • 7 with 9  (since 7² + 9² = 49 + 81 = 130),
+ • 8 with x  (since 8² + x² = 64 + x²).
+
+Setting the sum for the pair (8, x) equal to 130 gives:
+  64 + x² = 130  ⟹ x² = 66  ⟹ x = √66.
+
+Thus, the distance from point P to the sixth vertex is √66, which completes the solution.","[sqrt(66), '\\sqrt{66}']",\sqrt{66},[],True
+\boxed{\frac{3}{4}},"[3/4, '\\frac{3}{4}']",\frac 34,"[34, '34']",False
+"\boxed{-\frac{3}{8}}
+
+We start with the given paraboloid:
+  z = (2x – y)² – 2y² – 3y.
+Expanding, we get:
+  z = 4x² – 4xy + y² – 2y² – 3y = 4x² – 4xy – y² – 3y.
+For any fixed x (chosen by Archimedes), Brahmagupta then picks y to maximize z. Treating z as a function of y:
+  z(y) = –y² – (4x + 3)y + 4x².
+Since the quadratic has a negative coefficient for y², its maximum occurs at the vertex. The vertex for a quadratic ay² + by + c is found at y = –b/(2a); here a = –1 and b = –(4x + 3), so:
+  y* = –[–(4x + 3)]/(2(–1)) = –(4x + 3)/2.
+Substituting y* back into z(x, y) gives a function in x alone, which after simplification becomes:
+  z(x) = (32x² + 24x + 9)/4.
+Archimedes now minimizes z(x) by choosing x. Since 
+  z(x) = 8x² + 6x + 9/4,
+its minimum is found by setting the derivative equal to zero:
+  d/dx z(x) = 16x + 6 = 0 ⟹ x = –6/16 = –3/8.
+Thus, Archimedes should choose x = –3/8.","[-3/8, '-\\frac{3}{8}']",-\frac{3}{8},"[-3/8, '-\\frac{3}{8}']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{23},"[23, '23']",23,"[23, '23']",True
+\boxed{\text{Navin from Mauritius would earn the most after an eight-hour day.}},"[NavinfromMauritiuswouldearnthemostafteraneight-hourday., '\\text{Navin from Mauritius would earn the most after an eight-hour day.}']",\text{Navin},[],False
+\boxed{326.5},"[326.500000000000, '326.5']",326.5,"[326.500000000000, '326.5']",True
+None,[],\frac{14}{3},"[14/3, '\\frac{14}{3}']",False
+"\boxed{\frac{13}{4}}
+
+We start by letting z = e^(iθ) so that |z| = 1. Then
+
+  |1 + z| = |1 + e^(iθ)| = 2|cos(θ/2)|.
+
+Next, write
+  1 - z + z^2 = 1 - e^(iθ) + e^(2iθ).
+
+Express z = cosθ + i sinθ and use double‐angle formulas:
+  cos2θ = 2cos^2θ - 1  and   sin2θ = 2 sinθ cosθ.
+A short computation shows that
+  1 - z + z^2 = (2cos^2θ - cosθ) + i sinθ(2cosθ - 1),
+so its modulus is
+  |1 - z + z^2| = √[(2cos^2θ - cosθ)^2 + (sinθ(2cosθ - 1))^2]
+          = |2cosθ - 1|.
+
+Thus the expression to maximize becomes
+  f(θ) = 2|cos(θ/2)| + |2cosθ - 1|.
+
+Introduce the variable x = |cos(θ/2)| with 0 ≤ x ≤ 1. Since cosθ = 2cos^2(θ/2) - 1 = 2x^2 - 1, we have
+  2cosθ - 1 = 4x^2 - 3.
+Then,
+  f(x) = 2x + |4x^2 - 3|.
+
+We now consider the two cases determined by the sign of 4x^2 - 3.
+
+Case 1: When 4x^2 - 3 < 0, i.e. x < √3/2.
+  Then |4x^2 - 3| = 3 - 4x^2 and
+    f(x) = 2x + 3 - 4x^2.
+Differentiate to find the maximum:
+  f'(x) = 2 - 8x.
+Setting f'(x) = 0 gives x = 1/4.
+Evaluating,
+  f(1/4) = 2(1/4) + 3 - 4(1/16) = 0.5 + 3 - 0.25 = 3.25.
+
+Case 2: When 4x^2 - 3 ≥ 0 (i.e. x ≥ √","[13/4, '\\frac{13}{4}']",\frac{13}{4},"[13/4, '\\frac{13}{4}']",True
+\boxed{1-12i},"[-1*12*i + 1, '1-12i']",1 - 12i,"[12, '12']",False
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{60},"[60, '60']",60,"[60, '60']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+"\boxed{\begin{pmatrix} \frac{1}{5} \\[4pt] -\frac{18}{5} \end{pmatrix}} 
+
+We begin by noting that under a reflection the image of a point is such that the line of reflection is the perpendicular bisector of the segment joining the original point and its reflection.
+
+Since the reflection takes 
+  (5, 0) to (4, 3),
+the midpoint of these two points,
+  M = ((5 + 4)/2, (0 + 3)/2) = (9/2, 3/2),
+lies on the line of reflection. Additionally, the segment joining (5, 0) and (4, 3) has direction
+  (4 − 5, 3 − 0) = (−1, 3).
+The reflection line is perpendicular to this segment. A vector perpendicular to (–1, 3) is (3, 1) (because (−1)(3) + (3)(1) = 0). Thus the line of reflection L passes through (9/2, 3/2) and has direction (3, 1). Its equation in point-slope form can be written as
+  y − 3/2 = (1/3)(x − 9/2).
+
+Now, to find the image of the vector (–2, 3) under this reflection, we first find its foot (projection) on the line L. Let the foot be (x, y) on L. The vector from (–2, 3) to (x, y) should be perpendicular to L’s direction (3, 1), so we require:
+  (x + 2, y − 3) · (3, 1) = 0 ⟹ 3(x + 2) + (y − 3) = 0 ⟹ 3x + y + 3 = 0  (1).
+
+Since (x, y) lies on L, we have:
+  y = 3/2 + (1/3)(x − 9/2).
+A little algebra shows this simplifies to y = x/3.  (2)
+
+Substitute (2) into (1):
+  3x + (x/3) + 3 = 0 ⟹ (9x + x)/3 + 3 = 0 ⟹ (10x)/3 = −3 ⟹ x = –9/10.
+Then, y = (–9/10)/3 = –3/10.
+Thus, the foot is (–9/10, –3/10).
+
+The reflection sends a point Q to Q' by “flipping” Q about the foot P. That is,
+  Q' = 2P − Q.
+Here, Q = (–2, 3) and P = (–9/10, –3/10). Therefore,
+  Q' = 2(–9/10, –3/10) − (–2, 3) = (–18/10, –6/10) + (2, –3).
+
+Express 2 and 3 in tenths:
+  2 = 20/10 and 3 = 30/10.
+Thus,
+  Q' = ((–18 + 20)/10, (–6 − 30)/10) = (2/10, –36/10) = (1/5, –18/5).
+
+This is the vector to which (–2, 3) is reflected.","[Matrix([
+[         1/5],
+[4*p*t - 18/5]]), '\\begin{pmatrix} \\frac{1}{5} \\\\[4pt] -\\frac{18}{5} \\end{pmatrix}']",\begin{pmatrix} 1/5 \\ -18/5 \end{pmatrix},"[-18/5, '-18/5']",False
+"\boxed{2\sqrt{5}} 
+
+To explain briefly: 
+
+1. The asymptotes of the hyperbola are y = 2x - 3 and y = 17 - 2x. Their intersection gives the center of the hyperbola:
+  2x - 3 = 17 - 2x ⟹ 4x = 20 ⟹ x = 5, and then y = 2(5) - 3 = 7. So, the center is (5, 7).
+
+2. Writing each asymptote in point–slope form centered at (5, 7), we get:
+  y - 7 = 2(x - 5) and y - 7 = -2(x - 5).
+  Thus, the slopes are ±2. 
+
+3. Comparing with the standard form of a horizontal hyperbola (x - h)²/a² - (y - k)²/b² = 1 whose asymptotes are given by y - k = ±(b/a)(x - h), we have b/a = 2, so b = 2a.
+
+4. Since the hyperbola passes through (4, 7), substitute into the equation:
+  (4 - 5)²/a² - (7 - 7)²/(4a²) = 1 ⟹ 1/a² = 1 ⟹ a = 1.
+  Thus, b = 2.
+
+5. The distance from the center to each focus is given by c, where c² = a² + b² = 1 + 4 = 5. Therefore, c = √5.
+
+6. The distance between the two foci is 2c = 2√5.","[2*sqrt(5), '2\\sqrt{5}']",2 \sqrt{5},"[2, '2']",False
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{60},"[60, '60']",60,"[60, '60']",True
+\boxed{406},"[406, '406']",406,"[406, '406']",True
+\boxed{5r^5},"[5*r**5, '5r^5']",5r^5,"[5, '5']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{\frac{1}{8}},"[1/8, '\\frac{1}{8}']",\frac{1}{8},"[1/8, '\\frac{1}{8}']",True
+\boxed{-2},"[-2, '-2']",-2,"[-2, '-2']",True
+\boxed{2\sqrt{5}},"[2*sqrt(5), '2\\sqrt{5}']",2\sqrt{5},"[2, '2']",True
+"\boxed{\begin{pmatrix}-7 \\ 16 \\ 5\end{pmatrix}} 
+
+To explain briefly: We are given
+  u = (1, 2, -5) and u × v = (90, 30, 30).
+
+Since any solution v can be written as v = v₀ + t·u and the minimum magnitude solution is the one perpendicular to u (i.e. v₀ · u = 0), we take the cross product of u with both sides of u × v₀ = (90, 30, 30) to get
+
+  u × (u × v₀) = u × (90, 30, 30).
+
+Using the vector triple product identity, u × (u × v₀) = u (u·v₀) - v₀|u|². Since u·v₀ = 0 by design, we have
+
+  -v₀|u|² = u × (90, 30, 30).
+
+Thus, the minimal v is
+  v₀ = - (u × (90, 30, 30))/|u|².
+
+A quick computation shows:
+  |u|² = 1² + 2² + (-5)² = 30,
+  u × (90, 30, 30) = (210, -480, -150),
+so that v₀ = -(210, -480, -150)/30 = (-7, 16, 5).
+
+This is the vector with the smallest magnitude among all possible solutions.","[Matrix([
+[-7],
+[16],
+[ 5]]), '\\begin{pmatrix}-7 \\\\ 16 \\\\ 5\\end{pmatrix}']",\begin{pmatrix} -7 \\ 16 \\ 5 \end{pmatrix},"[5, '5']",False
+\boxed{\begin{pmatrix} \frac{16}{49} \\[6pt] \frac{48}{49} \\[6pt] \frac{24}{49} \end{pmatrix}},"[Matrix([
+[        16/49],
+[6*p*t*(48/49)],
+[6*p*t*(24/49)]]), '\\begin{pmatrix} \\frac{16}{49} \\\\[6pt] \\frac{48}{49} \\\\[6pt] \\frac{24}{49} \\end{pmatrix}']",\begin{pmatrix} 16/49 \\ 48/49 \\ 24/49 \end{pmatrix},"[24/49, '24/49']",False
+\boxed{27},"[27, '27']",27,"[27, '27']",True
+None,[],"\{1\pm\sqrt{5},-2\}",[],False
+\boxed{1440},"[1440, '1440']",1440,"[1440, '1440']",True
+\boxed{600},"[600, '600']",600,"[600, '600']",True
+"\boxed{3R^2} 
+
+We outline one way to arrive at this result:
+
+1. Let G be the centroid of triangle ABC. A known fact is that for any point X, 
+  AX² + BX² + CX² = 3·(XG)² + (1/3)(a²+b²+c²).
+
+2. In our problem, choose X = F (the midpoint of GH). Since F is the midpoint, F – G = (H – G)/2, so
+  3·(GF)² = 3·[(H – G)²/4] = (3/4)(H – G)².
+
+3. The Euler line relation tells us that H, G, and the circumcenter O are collinear with H = 3G – 2O, hence
+  H – G = 2(G – O), so (H – G)² = 4·|G – O|².
+
+4. Also, a well‐known Euler formula gives OH² = 9·OG² = 9R² – (a²+b²+c²), so OG² = [9R² – (a²+b²+c²)]/9.
+
+5. Substituting these into the formula from step 1 yields:
+  AF² + BF² + CF² = (1/3)(a²+b²+c²) + (3/4)·(4·|G – O|²)
+                 = (1/3)(a²+b²+c²) + 3·OG²
+                 = (1/3)(a²+b²+c²) + 3·[9R² – (a²+b²+c²)]/9.
+  Simplifying, the (a²+b²+c²) terms cancel, and we obtain AF² + BF² + CF² = 3R².
+
+Thus, the answer is \boxed{3R^2}.","[3*R**2, '3R^2']",3R^2,"[3, '3']",True
+\boxed{6\sqrt{2}},"[6*sqrt(2), '6\\sqrt{2}']",6\sqrt{2},"[6, '6']",True
+\boxed{29},"[29, '29']",29,"[29, '29']",True
+\boxed{64},"[64, '64']",64,"[64, '64']",True
+\boxed{50},"[50, '50']",50,"[50, '50']",True
+\boxed{4.5},"[4.50000000000000, '4.5']",4.5,"[4.50000000000000, '4.5']",True
+"\boxed{\left[\frac{\pi^2}{8},\frac{5\pi^2}{4}\right]}
+
+We start with the function
+  f(x) = (arccos x)² + (arcsin x)²,
+where x is in the interval [–1, 1] (since both arcsin and arccos are defined for x in [–1, 1]). Recall that
+  arcsin x + arccos x = \frac{\pi}{2}
+for all x in [–1, 1]. This allows us to express the function in terms of a single variable. Let
+  θ = arccos x.
+Then
+  arcsin x = \frac{\pi}{2} - θ.
+Substitute these into f(x):
+  f(x) = θ² + \left(\frac{\pi}{2} - θ\right)².
+Expanding the square:
+  f(x) = θ² + \frac{\pi^2}{4} - πθ + θ² = 2θ² - πθ + \frac{\pi^2}{4}.
+This is a quadratic function of θ that opens upwards (since the coefficient of θ² is 2 > 0), so its minimum occurs at the vertex.
+
+The vertex of a quadratic function ax² + bx + c occurs at
+  θ = -\frac{b}{2a}.
+Here, a = 2 and b = -π, so
+  θ = \frac{π}{4}.
+Substituting θ = π/4 back into the function:
+  f(x) = 2\left(\frac{π}{4}\right)² - π\left(\frac{π}{4}\right) + \frac{π^2}{4}
+    = 2\left(\frac{π^2}{16}\right) - \frac{π^2}{4} + \frac{π^2}{4}
+    = \frac{π^2}{8}.
+Thus, the minimum value of f(x) is \(\frac{π^2}{8}\).
+
+Next, we check the endpoints of the domain for θ. Since θ = arccos x and x ∈ [–1, 1], θ ranges between 0 and π.
+
+At θ = 0:
+  f(x) = 2(0)² - π(0) + \(\frac{π^2}{4}\) = \(\frac{π^2}{4}\).
+
+At θ = π:
+  f(x) = 2π² - π² + \(\frac{π^2}{4}\) = π² + \(\frac{π^2}{4}\) = \(\frac{5π^2}{4}\).
+
+Thus, the maximum value of f(x) is \(\frac{5π^2}{4}\).
+
+Therefore, the range of f(x) is:
+  \boxed{\left[\frac{π^2}{8},\frac{5π^2}{4}\right]}.","[Interval(pi**2/8, (5*pi**2)/4), '[\\frac{π^2}{8},\\frac{5π^2}{4}]']","\left[ \frac{\pi^2}{8}, \frac{5 \pi^2}{4} \right]",[],False
+\boxed{331},"[331, '331']",331,"[331, '331']",True
+\boxed{0.35625},"[0.356250000000000, '0.35625']",.35625,"[0.356250000000000, '0.35625']",True
+\boxed{32},"[32, '32']",32,"[32, '32']",True
+"\boxed{(-\infty, 2) \cup (3, \infty)}","[Union(Interval.open(-oo, 2), Interval.open(3, oo)), '(-\\infty, 2) \\cup (3, \\infty)']","(-\infty, 2) \cup (3, \infty)","[2, '2']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{x^8+x^7+x^6+x^5+x^4+x^3+x^2+x+1},"[x**8 + x**7 + x**6 + x**5 + x**4 + x**3 + x**2 + x + 1, 'x^8+x^7+x^6+x^5+x^4+x^3+x^2+x+1']",x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1,"[1, '1']",False
+\boxed{14},"[14, '14']",14,"[14, '14']",True
+\boxed{550},"[550, '550']",550,"[550, '550']",True
+\boxed{256},"[256, '256']",256,"[256, '256']",True
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+None,[],\frac{1}{2},"[1/2, '\\frac{1}{2}']",False
+\boxed{15},"[15, '15']",15,"[15, '15']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{44},"[44, '44']",44,"[44, '44']",True
+\boxed{47},"[47, '47']",47,"[47, '47']",True
+\boxed{64},"[64, '64']",64,"[64, '64']",True
+\boxed{\frac{639}{40}},"[639/40, '\\frac{639}{40}']",\frac{639}{40},"[639/40, '\\frac{639}{40}']",True
+\boxed{143},"[143, '143']",143,"[143, '143']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{y = 2x + 3},"[Eq(y, 2*x + 3), 'y = 2x + 3']",y = 2x + 3,"[3, '3']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+"\boxed{1, -2}","[{-2, 1}, '1, -2']","-2,1","[-2.10000000000000, '-2.1']",False
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{41},"[41, '41']",41,"[41, '41']",True
+\boxed{\$18.90},"[18.9000000000000, '18.90']",\$18.90,[],True
+None,[],75^\circ,"[75, '75']",False
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{59},"[59, '59']",59,"[59, '59']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{121},"[121, '121']",121,"[121, '121']",True
+\boxed{8\pi},"[8*pi, '8\\pi']",8 \pi,"[8, '8']",False
+\boxed{15},"[15, '15']",15\mbox{ cm}^2,"[15, '15']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{27648} 
+
+To solve the problem, we maximize the function f(a, b, c, d) = ab²c³d⁴ under the constraint a + b + c + d = 10. Using logarithms, we consider:
+
+  ln f = ln a + 2 ln b + 3 ln c + 4 ln d.
+
+Using Lagrange multipliers, we set up the equations by differentiating with respect to a, b, c, and d and equate them to the same multiplier λ:
+
+  1/a = λ     (from ∂/∂a)
+  2/b = λ     (from ∂/∂b)
+  3/c = λ     (from ∂/∂c)
+  4/d = λ     (from ∂/∂d)
+
+These imply:
+  b = 2a,
+  c = 3a,
+  d = 4a.
+
+Substituting into the constraint:
+  a + 2a + 3a + 4a = 10 ⟹ 10a = 10 ⟹ a = 1.
+Then, b = 2, c = 3, and d = 4.
+
+Substituting these values into f:
+  f(1, 2, 3, 4) = 1 · (2)² · (3)³ · (4)⁴ = 1 · 4 · 27 · 256 = 27648.
+
+Thus, the maximum value is \boxed{27648}.","[27648, '27648']",27648,"[27648, '27648']",True
+\boxed{84},"[84, '84']",84,"[84, '84']",True
+\boxed{137\frac{1}{2}},"[275/2, '137\\frac{1}{2}']",137 \frac{1}{2},"[1/2, '\\frac{1}{2}']",False
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{29},"[29, '29']",29,"[29, '29']",True
+\boxed{200},"[200, '200']",200,"[200, '200']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+"\boxed{\frac{2}{1005}}
+
+To explain briefly: We start with
+
+  1/(x²–1) + 2/(x²–2) + 3/(x²–3) + 4/(x²–4) = 2010x – 4.
+
+Multiplying both sides by the common denominator D = (x²–1)(x²–2)(x²–3)(x²–4) (noting that x cannot make any factor zero) gives
+
+  (2010x–4)·D – [1·(x²–2)(x²–3)(x²–4) + 2·(x²–1)(x²–3)(x²–4) + 3·(x²–1)(x²–2)(x²–4) + 4·(x²–1)(x²–2)(x²–3)] = 0.
+
+Denote this polynomial by P(x) = 0. Notice that D is an even polynomial of degree 8 (with leading term x⁸), so (2010x–4)·D is degree 9 with leading term 2010x⁹. Meanwhile, the sum in brackets is of degree 6. Thus, the highest degree of P(x) is 9, and its leading coefficient is 2010.
+
+The sum of the roots (by Vieta’s formula) is –(coefficient of x⁸)/(leading coefficient). Because D is even the x⁸-term appears only from –4·D (i.e. –4x⁸ plus lower even powers) yielding a coefficient of –4 for x⁸, and the other part has no x⁸-term. Hence the sum is –(–4)/2010 = 4/2010, which simplifies to 2/1005.
+
+Thus, the sum of all complex solutions is \boxed{\frac{2}{1005}}.","[2/1005, '\\frac{2}{1005}']",\frac{2}{1005},"[2/1005, '\\frac{2}{1005}']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+"\boxed{8n^2+4n+1}
+
+We start with the given product
+
+  [(2⁴ + 1/4)(4⁴ + 1/4)…((2n)⁴ + 1/4)] ⁄ [(1⁴ + 1/4)(3⁴ + 1/4)…((2n–1)⁴ + 1/4)].
+
+A key observation is that for any real x, we can factor
+  x⁴ + 1/4 = (x² + 1/2)² – x² = (x² + 1/2 – x)(x² + 1/2 + x).
+
+Thus, for the even terms (numerator) with x = 2k we have:
+  (2k)⁴ + 1/4 = ((2k)² + 1/2 – 2k)((2k)² + 1/2 + 2k)
+     = (4k² – 2k + 1/2)(4k² + 2k + 1/2).
+
+And for the odd terms (denominator) with x = 2k – 1:
+  (2k – 1)⁴ + 1/4 = (((2k–1)² + 1/2 – (2k–1))(((2k–1)² + 1/2 + (2k–1)).
+
+Calculate first the two factors for x = 2k – 1. Since
+  (2k–1)² = 4k² – 4k + 1,
+the factors are:
+  Factor 1 = (4k² – 4k + 1 + 1/2 – (2k–1))
+       = 4k² – 4k + 1 + 1/2 – 2k + 1
+       = 4k² – 6k + 5/2,
+and
+  Factor 2 = (4k² – 4k + 1 + 1/2 + (2k–1))
+       = 4k² – 4k + 1 + 1/2 + 2k – 1
+       = 4k² – 2k + 1/2.
+
+Thus the kth term in the product becomes:
+  Numerator kth term: (4k² – 2k + 1/2)(4k² + 2k + 1/2).
+  Denominator kth term: (4k² – 6k + 5/2)(4k² – 2k + 1/2).
+
+Notice that (4k² – 2k + 1/2) cancels between numerator and denominator, leaving
+  [4k² + 2k + 1/2] ⁄ [4k² – 6k + 5/2].
+
+Now, define T(m) = 4m² + 2m + 1/2. Then for the kth term of the product in the simplified form, the numerator is T(k) and the denominator is T(k–1) because:
+  T(k–1) = 4(k–1)² + 2(k–1) + 1/2
+      = 4k² – 8k + 4 + 2k – 2 + 1/2
+      = 4k² – 6k + 5/2.
+
+Thus the entire product telescopes:
+  ∏ₖ₌₁ⁿ [T(k) / T(k–1)] = T(n) / T(0).
+
+Since T(0) = 1/2, we obtain:
+  T(n) / (1/2) = (4n² + 2n + 1/2) / (1/2) = 8n² + 4n + 1.
+
+Hence, the simplified expression is \boxed{8n^2+4n+1}.","[8*n**2 + 4*n + 1, '8n^2+4n+1']",8n^2 + 4n + 1,"[1, '1']",False
+\boxed{202},"[202, '202']",202,"[202, '202']",True
+"\boxed{\frac{8}{15}} 
+
+To explain briefly:
+
+The area of triangle ABC is given by (1/2)bc·sin A. Equate this to the given expression:
+
+  (1/2) b c sin A = a² – (b – c)².
+
+Using the Law of Cosines, a² can be written as b² + c² – 2bc·cos A, so that
+
+  a² – (b – c)² = [b² + c² – 2bc·cos A] – [b² – 2bc + c²] 
+          = –2bc·cos A + 2bc 
+          = 2bc (1 – cos A).
+
+Thus the area becomes:
+
+  (1/2) b c sin A = 2bc (1 – cos A).
+
+Cancelling the common factor (b c > 0) gives:
+
+  (1/2) sin A = 2(1 – cos A)  ⟹  sin A = 4(1 – cos A).
+
+Now, using the Law of Cosines, we can also express cos A as:
+
+  cos A = (b² + c² – a²)/(2bc).
+
+But since we already have sin A in terms of cos A, we can deduce tan A from sin A = 4(1 – cos A) and the identity tan A = sin A/cos A. A rearrangement shows that this relation forces a unique value of A. In fact, rewriting sin A = 4 – 4cos A and recognizing that sin A = 8/17 and cos A = 15/17 gives:
+
+  tan A = (8/17)/(15/17) = 8/15.
+
+Thus, the answer is \boxed{\frac{8}{15}}.","[8/15, '\\frac{8}{15}']",\frac{8}{15},"[8/15, '\\frac{8}{15}']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True
+\boxed{216},"[216, '216']",216,"[216, '216']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{36},"[36, '36']",\$36,[],True
+\boxed{15},"[15, '15']",15,"[15, '15']",True
+\boxed{14},"[14, '14']",14,"[14, '14']",True
+\boxed{64},"[64, '64']",64,"[64, '64']",True
+\boxed{y = -2x},"[Eq(y, -1*2*x), 'y = -2x']",y = -2x,"[-2, '-2']",True
+\boxed{20},"[20, '20']",20,"[20, '20']",True
+"\boxed{\frac{1}{4}}
+
+We start with the quartic
+  x⁴ + a x³ – b x² + a x + 1 = 0,
+where (a, b) ∈ [0, 1]×[0, 1]. Notice that the polynomial is palindromic (its coefficients read the same forward and backward), so if r is a root then 1/r is also a root. In particular, if there is any real root r ≠ 0 then 1/r is also a (real) root. (Also, x = 0 is not a root since the constant term is 1.)
+
+A standard method to deal with reciprocal polynomials is to divide by x² (where x ≠ 0) and introduce the substitution
+  y = x + 1/x.
+Dividing by x², we have
+  x² + a x – b + (a/x) + 1/x² = 0.
+Because
+  x² + 1/x² = (x + 1/x)² – 2 = y² – 2,
+the equation becomes
+  y² + a y – (b + 2) = 0.
+This quadratic in y has discriminant
+  D = a² + 4(b + 2),
+so its two roots are
+  y₁, y₂ = (–a ± √(a² + 4(b + 2)))/2.
+
+For a real number x ≠ 0, the quantity y = x + 1/x satisfies |y| ≥ 2 (with y ≥ 2 for positive x and y ≤ –2 for negative x). Thus, in order for the original quartic to have a real root, at least one of the roots y₁ or y₂ must lie in the interval (–∞, –2] ∪ [2, ∞).
+
+It turns out that checking the smaller root suffices. Consider
+  y₂ = (–a – √(a² + 4(b + 2)))/2.
+For y₂ to be ≤ –2 we require:
+  (–a – √(a² + 4(b + 2)))/2 ≤ –2.
+Multiplying both sides by 2 (and reversing the inequality if needed, but here all terms are straightforward) gives:
+  –a – √(a² + 4(b + 2)) ≤ –4.
+Rearrange to obtain:
+  √(a² + 4(b + 2)) ≥ 4 – a.
+Squaring both sides (which is valid because both sides are nonnegative) yields:
+  a² + 4(b + 2) ≥ (4 – a)².
+Expanding the right side:
+  a² + 4b + 8 ≥ 16 – 8a + a².
+Cancelling a² from both sides and simplifying:
+  4b + 8 ≥ 16 – 8a ⟹ 4b ≥ 8 – 8a ⟹ b ≥ 2 – 2a.
+
+Thus, for a given a in [0, 1], a necessary and sufficient condition for the existence of a real root is b ≥ 2 – 2a. However, since b is also in [0, 1], the inequality b ≥ 2 – 2a provides nonempty possible values only when 2 – 2a ≤ 1. This happens when a ≥ 0.5.
+
+In summary, the set S is
+  { (a, b) ∈ [0, 1]×[0, 1] : a ∈ [0.5, 1] and b ∈ [2 – 2a, 1] }.
+
+The area of S is calculated by integrating with respect to a:
+  Area = ∫₍ₐ₌₀.₅₎¹ [upper bound on b – lower bound on b] da 
+      = ∫₍ₐ₌₀.₅₎¹ [1 – (2 – 2a)] da 
+      = ∫₍ₐ₌₀.₅₎¹ (2a – 1) da.
+Evaluating the integral:
+  ∫ (2a – 1) da = a² – a.
+Compute from a = 0.5 to a = 1:
+  [(1)² – 1] – [(0.5)² – 0.5] = (1 – 1) – (0.25 – 0.5) = 0 – (–0.25) = 0.25.
+
+Thus, the area of S is 1/4.","[1/4, '\\frac{1}{4}']",\frac{1}{4},"[1/4, '\\frac{1}{4}']",True
+"\boxed{(2,12) \cup (12,102)}","[Union(Interval.open(2, 12), Interval.open(12, 102)), '(2,12) \\cup (12,102)']","(2,12) \cup (12,102)",[],True
+\boxed{\frac{5}{13}},"[5/13, '\\frac{5}{13}']",\frac{5}{13},"[5/13, '\\frac{5}{13}']",True
+"\boxed{\frac{7}{2}} 
+
+We can explain briefly: An equiangular octagon has interior angles of 135° (since the sum of interior angles is 1080°). The successive exterior angles are 45°, so when drawing the octagon with edges of lengths alternating 1 and (√2)/2 (with no two equal lengths consecutive), we can set the first edge along the positive x‐axis. Then the sides have directions 0°, 45°, 90°, …, 315°. Setting up coordinates accordingly:
+
+• Start at (0,0).  
+• Edge 0: Length 1, direction 0° → (1,0).  
+• Edge 1: Length (√2)/2, direction 45° → displacement (1/2, 1/2) so vertex (3/2, 1/2).  
+• Edge 2: Length 1, direction 90° → displacement (0,1) to vertex (3/2, 3/2).  
+• Edge 3: Length (√2)/2, direction 135° → displacement (–1/2, 1/2) to (1,2).  
+• Edge 4: Length 1, direction 180° → (–1,0) to (0,2).  
+• Edge 5: Length (√2)/2, direction 225° → (–1/2, –1/2) to (–1/2,3/2).  
+• Edge 6: Length 1, direction 270° → (0,–1) to (–1/2,1/2).  
+• Edge 7: Length (√2)/2, direction 315° → (1/2, –1/2) back to (0,0).  
+
+Applying the shoelace formula to these vertices gives an area of 7/2.
+
+Thus, the area of the octagon is \boxed{\frac{7}{2}}.","[7/2, '\\frac{7}{2}']",\frac{7}{2},"[7/2, '\\frac{7}{2}']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{106^\circ},"[106, '106^\\circ']",106^\circ,"[106, '106']",True

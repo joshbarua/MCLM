@@ -1,0 +1,309 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{30},"[30, '30']",204,"[204, '204']",False
+\boxed{13},"[13, '13']",113,"[113, '113']",True
+\boxed{11},"[11, '11']",371,"[371, '371']",False
+"To determine the number of intersection points of the graphs of the functions \( y = 4 g(f(\sin(2 \pi x))) \) and \( x = 4 g(f(\cos(3 \pi y))) \), we need to analyze the behavior of the functions \( f(x) \) and \( g(x) \) and then find the points where the two equations intersect.
+
+First, let's define the functions \( f(x) \) and \( g(x) \):
+\[ f(x) = \left| \left| x \right| - \frac{1}{2} \right| \]
+\[ g(x) = \left| \left| x \right| - \frac{1}{4} \right| \]
+
+The function \( f(x) \) is a piecewise function that can be written as:
+\[ f(x) = \begin{cases} 
+\left| x \right| - \frac{1}{2} & \text{if } \left| x \right| \geq \frac{1}{2} \\
+\frac{1}{2} - \left| x \right| & \text{if } \left| x \right| < \frac{1}{2} 
+\end{cases} \]
+
+Similarly, the function \( g(x) \) is a piecewise function that can be written as:
+\[ g(x) = \begin{cases} 
+\left| x \right| - \frac{1}{4} & \text{if } \left| x \right| \geq \frac{1}{4} \\
+\frac{1}{4} - \left| x \right| & \text{if } \left| x \right| < \frac{1}{4} 
+\end{cases} \]
+
+Now, let's consider the function \( y = 4 g(f(\sin(2 \pi x))) \). Since \( \sin(2 \pi x) \) is a periodic function with period 1 and ranges from -1 to 1, we need to evaluate \( f(\sin(2 \pi x)) \) and then \( g(f(\sin(2 \pi x))) \).
+
+The function \( f(\sin(2 \pi x)) \) will range from 0 to \(\frac{1}{2}\) because the maximum value of \( \left| \sin(2 \pi x) \right| \) is 1, and \( f(1) = \left| 1 - \frac{1}{2} \right| = \frac{1}{2} \), and the minimum value of \( \left| \sin(2 \pi x) \right| \) is 0, and \( f(0) = \left| 0 - \frac{1}{2} \right| = \frac{1}{2} \).
+
+Therefore, \( g(f(\sin(2 \pi x))) \) will range from 0 to \(\frac{1}{4}\) because the maximum value of \( f(\sin(2 \pi x)) \) is \(\frac{1}{2}\), and \( g\left(\frac{1}{2}\right) = \left| \frac{1}{2} - \frac{1}{4} \right| = \frac{1}{4} \), and the minimum value of \( f(\sin(2 \pi x)) \) is 0, and \( g(0) = \left| 0 - \frac{1}{4} \right| = \frac{1}{4} \).
+
+Thus, \( y = 4 g(f(\sin(2 \pi x))) \) will range from 0 to 1.
+
+Similarly, the function \( x = 4 g(f(\cos(3 \pi y))) \) will also range from 0 to 1.
+
+To find the number of intersection points, we need to solve the system of equations:
+\[ y = 4 g(f(\sin(2 \pi x))) \]
+\[ x = 4 g(f(\cos(3 \pi y))) \]
+
+Since both functions are periodic and symmetric, and they both range from 0 to 1, we can expect that they will intersect at multiple points. By analyzing the behavior of the functions, we can see that they will intersect at 4 points in the interval \([0, 1]\).
+
+Therefore, the number of intersection points of the graphs of the functions \( y = 4 g(f(\sin(2 \pi x))) \) and \( x = 4 g(f(\cos(3 \pi y))) \) is \(\boxed{4}\).","[4, '4']",385,"[385, '385']",False
+\boxed{1},"[1, '1']",110,"[110, '110']",True
+\boxed{14},"[14, '14']",104,"[104, '104']",False
+\boxed{11},"[11, '11']",721,"[721, '721']",False
+"\[
+\boxed{100}
+\]","[100, '100']",25,"[25, '25']",False
+\boxed{2023},"[2023, '2023']",809,"[809, '809']",False
+\boxed{11},"[11, '11']",116,"[116, '116']",True
+\boxed{100},"[100, '100']",104,"[104, '104']",False
+\boxed{140},"[140, '140']",294,"[294, '294']",False
+"\[
+\boxed{120}
+\]","[120, '120']",540,"[540, '540']",False
+\boxed{101},"[101, '101']",197,"[197, '197']",False
+\boxed{16},"[16, '16']",480,"[480, '480']",False
+\boxed{130},"[130, '130']",73,"[73, '73']",False
+"\[
+\boxed{169}
+\]","[169, '169']",468,"[468, '468']",False
+"To find the number of non-negative integer triples \((a, b, c)\) that satisfy the equations \(a + b + c = 300\) and \(a^2b + a^2c + b^2a + b^2c + c^2a + c^2b = 6,000,000\), we start by analyzing the given conditions.
+
+First, let's rewrite the second equation in a more symmetric form:
+\[
+a^2b + a^2c + b^2a + b^2c + c^2a + c^2b = (a+b+c)(ab+bc+ca).
+\]
+Given that \(a + b + c = 300\), we substitute this into the equation:
+\[
+300(ab + bc + ca) = 6,000,000.
+\]
+Solving for \(ab + bc + ca\), we get:
+\[
+ab + bc + ca = 20,000.
+\]
+
+Now we have the system of equations:
+1. \(a + b + c = 300\),
+2. \(ab + bc + ca = 20,000\).
+
+We need to find non-negative integer solutions to this system. Let's consider the polynomial whose roots are \(a\), \(b\), and \(c\):
+\[
+t^3 - (a+b+c)t^2 + (ab+bc+ca)t - abc = 0.
+\]
+Substituting the known values, we get:
+\[
+t^3 - 300t^2 + 20,000t - abc = 0.
+\]
+
+To find possible values for \(a\), \(b\), and \(c\), we can use the fact that \(a\), \(b\), and \(c\) must be integers that satisfy both equations. Let's test some possible values. Suppose \(a = 100\). Then the equations become:
+\[
+b + c = 200,
+\]
+\[
+100b + 100c + bc = 20,000.
+\]
+Substituting \(c = 200 - b\) into the second equation, we get:
+\[
+100b + 100(200 - b) + b(200 - b) = 20,000,
+\]
+\[
+20,000 + 200b - b^2 = 20,000,
+\]
+\[
+200b - b^2 = 0,
+\]
+\[
+b(200 - b) = 0.
+\]
+So, \(b = 0\) or \(b = 200\). If \(b = 0\), then \(c = 200\), and if \(b = 200\), then \(c = 0\). Therefore, the solutions are \((100, 0, 200)\), \((100, 200, 0)\), and \((0, 100, 200)\).
+
+By symmetry, we can see that the only other possible solutions are permutations of \((100, 100, 100)\). Substituting \(a = b = c = 100\) into the equations, we get:
+\[
+a + b + c = 300,
+\]
+\[
+a^2b + a^2c + b^2a + b^2c + c^2a + c^2b = 6(100^3) = 6,000,000.
+\]
+So, \((100, 100, 100)\) is also a solution.
+
+Therefore, the non-negative integer triples \((a, b, c)\) that satisfy the given conditions are \((100, 0, 200)\), \((100, 200, 0)\), \((0, 100, 200)\), and \((100, 100, 100)\). There are 4 such triples.
+
+The final answer is:
+\[
+\boxed{4}.
+\]","[4, '4']",601,"[601, '601']",False
+"\[
+\boxed{7}
+\]","[7, '7']",23,"[23, '23']",False
+"\[
+\boxed{0}
+\]","[0, '0']",321,"[321, '321']",False
+\boxed{10},"[10, '10']",211,"[211, '211']",False
+"To determine the number of rectangles that can be formed in a regular dodecagon (12-sided polygon) where each side or diagonal of the rectangle is a side or diagonal of the dodecagon, we need to consider the properties of the dodecagon and the possible configurations of the rectangles.
+
+A regular dodecagon has 12 vertices. A rectangle is defined by choosing two pairs of opposite vertices. In a dodecagon, the vertices can be labeled as \(A_1, A_2, A_3, \ldots, A_{12}\) in a clockwise manner.
+
+For a rectangle to be formed, the vertices must be chosen such that the sides of the rectangle are either sides or diagonals of the dodecagon. This means that the vertices must be chosen in such a way that the distances between them (in terms of the number of vertices skipped) are symmetric.
+
+Let's consider the possible configurations:
+1. The vertices are chosen such that they form a rectangle with sides equal to the sides of the dodecagon. This is not possible because the dodecagon does not have a pair of opposite sides that are equal in length to the sides of the dodecagon.
+2. The vertices are chosen such that they form a rectangle with sides equal to the diagonals of the dodecagon. The diagonals of a dodecagon can be of different lengths, but the key is that the diagonals must be equal in length to form a rectangle.
+
+The possible diagonals that can form the sides of the rectangle are:
+- The diagonals that skip 1 vertex (i.e., \(A_iA_{i+2}\))
+- The diagonals that skip 2 vertices (i.e., \(A_iA_{i+3}\))
+- The diagonals that skip 3 vertices (i.e., \(A_iA_{i+4}\))
+- The diagonals that skip 4 vertices (i.e., \(A_iA_{i+5}\))
+
+However, the diagonals that skip 5 vertices (i.e., \(A_iA_{i+6}\)) are actually the diameters of the dodecagon, and they cannot form the sides of a rectangle.
+
+Now, let's count the number of rectangles that can be formed:
+- For the diagonals that skip 1 vertex, we can form a rectangle by choosing any pair of opposite vertices and the vertices that are 2 vertices away from them. There are 12 such pairs of opposite vertices, and each pair forms 2 rectangles. Therefore, there are \(12 \times 2 = 24\) rectangles.
+- For the diagonals that skip 2 vertices, we can form a rectangle by choosing any pair of opposite vertices and the vertices that are 3 vertices away from them. There are 12 such pairs of opposite vertices, and each pair forms 2 rectangles. Therefore, there are \(12 \times 2 = 24\) rectangles.
+- For the diagonals that skip 3 vertices, we can form a rectangle by choosing any pair of opposite vertices and the vertices that are 4 vertices away from them. There are 12 such pairs of opposite vertices, and each pair forms 2 rectangles. Therefore, there are \(12 \times 2 = 24\) rectangles.
+- For the diagonals that skip 4 vertices, we can form a rectangle by choosing any pair of opposite vertices and the vertices that are 5 vertices away from them. There are 12 such pairs of opposite vertices, and each pair forms 2 rectangles. Therefore, there are \(12 \times 2 = 24\) rectangles.
+
+Adding up all the rectangles, we get:
+\[24 + 24 + 24 + 24 = 96\]
+
+Therefore, the number of rectangles that can be formed is \(\boxed{96}\).","[96, '96']",315,"[315, '315']",False
+\boxed{100},"[100, '100']",236,"[236, '236']",False
+\boxed{6},"[6, '6']",45,"[45, '45']",False
+"\[
+\boxed{11}
+\]","[11, '11']",33,"[33, '33']",False
+\boxed{200},"[200, '200']",80,"[80, '80']",False
+\boxed{2024},"[2024, '2024']",55,"[55, '55']",False
+"To solve the problem, we need to find the largest four-digit positive integer \( N \) such that when any one of its digits is replaced by 1, the resulting number is divisible by 7. Let's denote \( N \) as \( abcd \), where \( a, b, c, \) and \( d \) are its digits.
+
+First, we need to check the divisibility condition for each digit being replaced by 1. The resulting numbers are:
+1. \( 1bcd \)
+2. \( a1cd \)
+3. \( ab1d \)
+4. \( abc1 \)
+
+Each of these numbers must be divisible by 7. We will start by considering the largest possible value for \( N \) and check the conditions step by step.
+
+### Step 1: Check the largest possible value for \( N \)
+The largest four-digit number is 9999. Let's check the divisibility conditions for each digit being replaced by 1:
+- \( 1999 \div 7 = 285.5714 \) (not divisible)
+- \( 9199 \div 7 = 1314.1429 \) (not divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9999 does not satisfy all the conditions, we need to check the next largest number.
+
+### Step 2: Check the next largest possible value for \( N \)
+The next largest number is 9998. Let's check the divisibility conditions:
+- \( 1998 \div 7 = 285.4286 \) (not divisible)
+- \( 9198 \div 7 = 1314 \) (divisible)
+- \( 9918 \div 7 = 1416.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9998 does not satisfy all the conditions, we need to check the next largest number.
+
+### Step 3: Continue checking until we find the largest \( N \)
+We continue this process until we find the largest \( N \) that satisfies all the conditions. After checking several numbers, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307 \) (divisible)
+- \( 9919 \div 7 = 1417 \) (divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9949 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9943. Let's verify:
+- \( 1943 \div 7 = 277.5714 \) (not divisible)
+- \( 9143 \div 7 = 1306.1429 \) (not divisible)
+- \( 9913 \div 7 = 1416.1429 \) (not divisible)
+- \( 9993 \div 7 = 1427.5714 \) (not divisible)
+
+Since 9943 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9941. Let's verify:
+- \( 1941 \div 7 = 277.2857 \) (not divisible)
+- \( 9141 \div 7 = 1305.8571 \) (not divisible)
+- \( 9911 \div 7 = 1415.8571 \) (not divisible)
+- \( 9991 \div 7 = 1427.2857 \) (not divisible)
+
+Since 9941 does not satisfy all the conditions, we continue checking. After further checking, we find that the largest \( N \) is 9949. Let's verify:
+- \( 1949 \div 7 = 278.4286 \) (not divisible)
+- \( 9149 \div 7 = 1307","[1307, '1307']",699,"[699, '699']",False
+"\[
+\boxed{11}
+\]","[11, '11']",127,"[127, '127']",False
+\boxed{12},"[12, '12']",902,"[902, '902']",False

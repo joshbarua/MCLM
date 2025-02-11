@@ -1,0 +1,142 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+"\boxed{155}
+
+Shpjegim:
+
+Ne kërkojmë një numër prim p të tillë që ekziston n i plotë pozitive për të cilin p² ndan n⁴ + 1. Në rastin modulo një numër impare p, nëse n⁴ ≡ –1 (mod p²), atëherë veçanërisht n⁴ ≡ –1 (mod p). Ekzistonici e zgjidhjes së
+  x⁴ ≡ –1 (mod p)
+vërtetohet se ndodh vetëm nëse grupi multiplikativ modulo p ka elementë me rendin që pjesëtojnë 8, pra nëse 8 ndan p – 1. Kështu, p ≡ 1 (mod 8).
+
+Të kontrollojmë p = 2, 3, 5. Për p = 2 nuk mund të ndodhë që 2² = 4 të ndajë n⁴ + 1 (domosdoshmërisht për se p^2 duhet të ndajë). Për p = 3 dhe p = 5, mund të kontrollohen rastet – por nuk gjenden zgjidhje të nështuara.
+
+Prandaj, kryesisht i vetëm kandidati i vogël është p = 17 (sepse 17 ≡ 1 (mod 8)). Në fakt, modulo 17 kemi:
+
+  2⁴ + 1 = 16 + 1 = 17, 
+pra n ≡ 2 (mod 17) është zgjidhje për n⁴ + 1 ≡ 0 (mod 17).
+
+Me Hensel lifting, ne i kërkojmë zgjidhje modulo 17² = 289. Me vendosjen:
+  m = 2 + 17k  (për një k të plotë)
+mësojmë se
+
+  (2 + 17k)⁴ + 1 ≡ 16 + 4·2³·(17k) + 1 (mod 289).
+
+Përderisa terma që përmbajnë (17k)² kanë faktor 289 dhe bien (mod 289), kemi:
+  (2 + 17k)⁴","[155, '155']",110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{\boxed{721}},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104}
+
+Le përshkruar:
+1. Përsgjellëjmë dy drejtkëndëshat ABCD dhe EFGH. Për drejtkëndëshin ABCD kemi AB = 107 dhe BC = 16, pra ED = 16 dhe CD = 107. Për drejtkëndëshin EFGH kemi EF = 184 dhe FG = 17.
+2. Duke vendosur një sistem koordinatash, zgjedhim A = (0, 0), B = (107, 0), C = (107, 16) dhe D = (0, 16). Së bashku, D, E, C, F janë pikërisht pikë në vijën në drejtim horizontal y = 16.
+3. Zgjidhim vendosjen e drejtkëndëshit EFGH në mënyrë që pikët E dhe F të bien në vijën y = 16. Vendosim E = (xₑ, 16) (me 0 < xₑ < 107) dhe F = (xₑ + 184, 16). Më pas, duke vendosur drejtkëndëshin me lartësinë 17, kemi H = (xₑ, 33) dhe G = (xₑ + 184, 33).
+4. Shtojmë kushtin se A, D, H, G janë të përbashkët në një rreth. Me A = (0,0), D = (0,16) dhe H = (xₑ,33), analizojmë rrethin me qendër (h, k). Duke përdorur A dhe D, dallojmë se k = 8.
+5. Duke përdorur pikën H, gjejmë një lidhëzim midis h dhe xₑ: (xₑ - h)² + (33 - 8)² = (xₑ - h)² + 625 = h² + 64. Nga kjo, arrijmë në (xₑ - h)² = h² - 561.
+6. Për pikën G = (xₑ + 184, 33) kërkojmë që (xₑ + 184 - h)² + 625 = h² + 64, pra (xₑ + 184 - h)² = h² - 561. Duke krahasuar me rezultatin për H, arrijmë që (xₑ + 184 - h)² = (xₑ - h)², nga e cila ndjekim h = xₑ + 92.
+7. Nga krahasimi tjetër, përmjet formulës h = (xₑ² + 561)/(2xₑ) dhe h = xₑ + 92, zgjidhim për xₑ, gjendet xₑ = 3.
+8. Pra, E = (3, 16), dhe C = (107, 16) nga drejtkëndëshe ABCD. Përgjigjja kërkohet te gjatësia e segmentit CE, e cila është 107 – 3 = 104.
+
+Kështu, gadishmëria e CE është:
+
+\boxed{104}","[104, '104']",104,"[104, '104']",True
+"\boxed{294}
+
+Le të shpjegojmë shkurtimisht:
+
+Ne kemi rrjetë 8×8, ku çdo rrugë nga këndi i poshtëm i majtë deri te këndi i sipërm i djathtë përbëhet nga 8 lëvizje djathtas (R) dhe 8 lëvizje lart (U), pra gjithsej 16 lëvizje. Në çdo rrugë, një “ndryshim drejtimi” ndodh sa herë që kalojmë nga një lëvizje në tjetrën (nga R në U ose nga U në R). Kështu, nëse rruga ndryshon drejtim saktësisht 4 herë, atëherë rruga ndahet në 5 blloqe të lëvizjeve të njëjta.
+
+Këto 5 blloqe do të ndahen në dy raste sipas se në cilën drejtim fillon rruga:
+
+1. Nëse rruga fillon me R, atëherë struktura e blloqeve është: R, U, R, U, R. Në këtë rast, numri total i lëvizjeve R duhet të jetë 8 dhe numri total i lëvizjeve U duhet të jetë 8. Le të jenë:
+   - Blloqet R: a, c, e, ku a + c + e = 8 me a, c, e ≥ 1.
+   - Blloqët U: b, d, ku b + d = 8 me b, d ≥ 1.
+   
+   Numri i mënyrave për të ndarë 8 në tre shifra pozitive është C(8–1, 3–1) = C(7, 2) = 21, dhe për të ndarë 8 në dy shifra pozitive është C(8–1, 2–1) = C(7, 1) = 7. Pra, në rastin R fillimi kemi 21 × 7 = 147 rrugë.
+
+2. Nëse rruga fillon me U, strukturat janë thjesht simetrike: U, R, U, R, U, ku blloqët U (tre blloqe) duhet të japin shumën 8 dhe blloqët R (dy blloqe) duhet të japin gjithashtu 8. Pra gjithashtu kemi 21 mënyra për U dhe 7 për R, duke dhënë edhe 147 rrugë.
+
+Shtojmë të dy rastet: 147 + 147 = 294.
+
+Kështu, numri i rrugëve që ndryshojnë drejtim saktësisht katër herë është \boxed{294}.","[294, '294']",294,"[294, '294']",True
+"\boxed{540} 
+
+Le të zbërthejmë shkurtimisht procesin e zgjidhjes: 
+
+Jemi duke kërkuar pjesën reale maksimale të shprehjes 
+  (75 + 117i)z + (96 + 144i)/z 
+në kushtin që |z| = 4. 
+
+Vendosim z = 4e^(iθ). Atëherë kemi:
+  (75 + 117i)z = 4(75 + 117i)e^(iθ),
+  (96 + 144i)/z = (96 + 144i)/(4e^(iθ)) = (24 + 36i)e^(–iθ).
+
+Pra shprehja bëhet:
+  E = 4(75 + 117i)e^(iθ) + (24 + 36i)e^(–iθ).
+
+Shkruajmë pjesën reale:
+  Re(E) = Re[4(75 + 117i)e^(iθ)] + Re[(24 + 36i)e^(–iθ)]
+      = 300 cosθ – 468 sinθ + 24 cosθ + 36 sinθ
+      = 324 cosθ – 432 sinθ.
+
+Pjesa reale maksimale e një shprehjeje të tipit A cosθ + B sinθ jepet nga:
+  Max = √(A² + B²). 
+Kështu
+  Max = √(324² + (432)²) = √(104976 + 186624) = √(291600) = 540.
+
+Prandaj, pjesa reale maksimale e shprehjes është 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480} 
+
+Shpjegim:
+
+Supozoni se vertetimet e pikave të rombit janë A = (a, b), B = (c, d), C = (–a, –b) dhe D = (–c, –d). Qendër e rombit është origjina (","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+\boxed{321},"[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Le të shpjegojmë shkurt:
+
+Për çdo numër m në A, numri i bashkësive B të fundme jo-bosh ku max(B)=m është 2^(m–1) (për shkak se çdo bashkësi me maksimum m formohet nga m bashkë me një nënbashkësi të ndonjëherë bosh të {1,2,…,m–1}). Pra, numri total i bashkësive është
+
+  Σ (për m në A) 2^(m–1) = 2024.
+
+Shkruhet 2024 në formën binare si shumë unikësisht e fuqive të dy:
+
+  2024 = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+
+Nga termi 2^k vjen se m = k + 1, pra
+
+  A = {11, 10, 9, 8, 7, 6, 4}.
+
+Shuma e elementeve të A është: 11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.
+
+Kështu, përgjigjja kërkohet: \boxed{55}.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+"\boxed{902}
+
+Le zgjidhje është si më poshtë:
+
+Vendosim ngjyrat e rreshtave dhe kolonave (të gjitha duhet të mos jenë bosh, përndryshe do të kishte mundësi për të shtuar një çip pa shkelur kushtet). Të lejojmë se për çdo rresht i mëshirshëm, nëse vendoset një çip, të gjitha çipat e tij duhet të kenë të njëjtën ngjyrë (bardhë ose zezë) dhe, ngjashëm, çdo kolonë e jo-bosh duhet të jetë homogjene me ngjyrën e caktuar.
+
+Për një vendosje maksimale (në kuptimin se çdo shtesë do ta thyejë një nga kushte), vërejmë se nëse rreshti i i vendosur me një ngjyrë r (bardhë ose zezë) dhe kolona j me një ngjyrë c marrin çip, atëherë në qelizen (i,j) shtimi i një çipi nuk është i lejuar vetëm nëse r = c. Pra, për të shpëtuar nga mundësia e shtesës së çipave, në çdo qelizë ku rreshti dhe kolona kenë të njëjtën ngjyrë, çipi duhet të jetë vendosur.
+
+Pra, konfigurimi i valid është i përshkruar në mënyrë të njëanshme nga caktimi i ngjyrave në rreshta dhe kolona, i cili duhet të plotësojë kushtin se: 
+  – çdo rresht (ose kolonë) nuk është bosh,
+  ","[902, '902']",902,"[902, '902']",True

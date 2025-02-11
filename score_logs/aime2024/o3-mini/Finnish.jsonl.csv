@@ -1,0 +1,141 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+"\boxed{25} 
+
+Selitetään lyhyesti:
+
+Annetut yhtälöt ovat  
+  logₓ(yˣ) = 10  ja  logᵧ(x^(4y)) = 10.
+
+Kirjoitetaan ne eksponenttimuotoon:
+  yˣ = x¹⁰  (1)
+  x^(4y) = y¹⁰  (2)
+
+Otetaan luonnolliset logaritmit:
+  (1): x ln(y) = 10 ln(x)
+  (2): 4y ln(x) = 10 ln(y)
+
+Ratkaistaan (1): ln(y) = (10 ln x)/x. Sijoitetaan se (2):  
+  4y ln(x) = 10(10 ln(x)/x)  
+  4y ln(x) = (100 ln(x))/x.  
+Oletamme ln(x) ≠ 0 (koska x > 1) ja jaetaan ln(x):  
+  4y = 100/x, eli y = 25/x.
+
+Siispä xy = x(25/x) = 25.","[25, '25']",25,"[25, '25']",True
+"\boxed{\text{Bobilla on voittostrategia, jos } n \equiv 0 \text{ tai } 2 \pmod{5}. \text{ Näin } n \in \{5,10,15,\dots,2020\} \cup \{2,7,12,\dots,2022\}, \text{ mikä antaa yhteensä } 809 \text{ lukua.}}","[809, '\\text{Bobilla on voittostrategia, jos } n \\equiv 0 \\text{ tai } 2 \\pmod{5}. \\text{ Näin } n \\in \\{5,10,15,\\dots,2020\\} \\cup \\{2,7,12,\\dots,2022\\}, \\text{ mikä antaa yhteensä } 809 \\text{ lukua.}']",809,"[809, '809']",True
+"\boxed{116} 
+
+Selitys: Jen valitsee itse 4 numeroa joukon S = {1, 2, …, 10} sisältä. Arpajaisissa arvotaan 4 numeroa joukon S alkiosta. Palkinnon saa, jos arvotuista luvuista ainakin 2 ovat hänen valitsemistaan, ja pääpalkinnon, jos kaikki 4 hänen paikkaansa pitävää numeroaan ovat arvotuissa. 
+
+Merkitään seuraavasti:
+• Kokonaisarvontojen lukumäärä on C(10, 4) = 210.
+• Pääpalkinnon tapahtuma esiintyy täsmälleen 1 tavalla (ennen kuin Jenin 4 lukua ovat täysin sama joukko kuin arvotuissa).
+• Palkintaa saa, kun arvotuista luvuista on vähintään 2 Jenin valitsemista; tämä lasketaan k:n mukaan:
+  – k = 2: C(4, 2) · C(6, 2) = 6 · 15 = 90,
+  – k = 3: C(4, 3) · C(6, 1) = 4 · 6 = 24,
+  – k = 4: C(4, 4) · C(6, 0) = 1 · 1 = 1.
+  Yhteensä: 90 + 24 + 1 = 115.
+
+Ehtoarvona saadaan:
+  P(pääpalkinto | palkinto) = (1/210) / (115/210) = 1/115.
+
+Murtoluvun m ja n suhdeluvut ovat 1 ja 115, joten m + n = 1 + 115 = 116.","[116, '116']",116,"[116, '116']",True
+\boxed{104},"[104, '104']",104,"[104, '104']",True
+\boxed{294},"[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Selitys:
+
+Merkitään tietyissä vaiheissa funktiota
+  f(x)=x^2–2x+2.
+Huomataan, että kertolasku voidaan kirjoittaa muodossa
+  ∏ₖ₌₀¹² (2–2ωᵏ+ω^(2k)) = ∏ₖ₌₀¹² f(ωᵏ).
+Kirjoitetaan f(x) = (x–(1+i))(x–(1–i)). Siten
+
+  ∏ₖ₌₀¹² f(ωᵏ) = ∏ₖ₌₀¹² (ωᵏ–(1+i)) · ∏ₖ₌₀¹² (ωᵏ–(1–i)).
+
+Koska ωᵏ (k=0,…,12) ovat 13. juuret yhtälöstä x¹³–1=0, saadaan käyttämällä seuraavaa seikan havaintoa:
+  x¹³–1 = ∏ₖ₌₀¹² (x–ωᵏ),
+ jolloin sijoittamalla x = 1+i saadaan
+  (1+i)¹³–1 = ∏ₖ₌₀¹² ((1+i)–ωᵏ).
+Muistetaan, että
+  ∏ₖ₌₀¹² (ωᵏ–(1+i)) = (–1)¹³ ∏ₖ₌₀¹² ((1+i)–ωᵏ) = –((1+i)¹³–1).
+Vastaavasti
+  ∏ₖ₌₀¹² (ωᵏ–(1–i)) = –((1–i)¹³–1).
+
+Täten kertolaskuksi saadaan
+
+  ∏ₖ₌₀¹² f(ωᵏ) = ((1+i)¹³–1)·((1–i)¹³–1).
+
+Seuraavaksi lasketaan (1+i)¹³ ja (1–i)¹³. Kirjoitetaan lukut 1±i polaarimuodossa:
+  1+i = √2 · e^(iπ/4), 1–i = √2 · e^(–iπ/4).
+
+Näin saadaan
+  (1+i)¹³ = (√2)¹³ · e^(i13π/4) = 2^(13/2) · e^(i13π/4).
+Huomataan, että 2^(13/2) = 2^6 · √2 = 64√2 ja kun 13π/4 = (8π/4 + 5π/4) = 2π + 5π/4, niin e^(i13π/4) = e^(i5π/4). Näin
+
+  (1+i)¹³ = 64√2 (cos(5π/4) + i sin(5π/4)) = 64√2 (–√2/2 – i√2/2)
+       = –64 – 64i.
+Samalla tavalla
+
+  (1–i)¹³ = 64√2 · e^(–i13π/4) = 64√2 · e^(–i5π/4)
+       = 64√2 (cos(5π/4) – i sin(5π/4)) = 64√2 (–√2/2 + i√2/2)
+       = –64 + 64i.
+
+Siten
+
+  (1+i)¹³–1 = (–64–64i)–1 = –65–64i,
+  (1–i)¹³–1 = (–64+64i)–1 = –65+64i.
+
+Kertolaskun tulos on
+
+  (–65–64i)(–65+64i) = (–65)² – (64i)² = 4225 – (–4096) = 4225+4096 = 8321.
+
+Jakojäännös lasketaan jakamalla 8321 luvulla 1000:
+  8321 mod 1000 = 321.
+
+Siispä jakojäännös on
+
+\boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Selitys: Olkoon A ⊆ ℕ valittu joukko. Bobin lista sisältää kaikki äärelliset, epätyhjät joukot B ⊆ ℕ, joiden suurin alkio m kuuluu joukkoon A. Kun B:n maksimi on m, niin B ⊆ {1, 2, …, m} ja koska m on oltava mukana, on B:n muodostamiseen vapautta valita mikä tahansa alipohjajoukko joukosta {1, 2, …, m − 1}. Tällöin kyseisiä joukkoja on 2^(m−1).
+
+Bobin tekemä lista sisältää siis yhteensä ∑_(m∈A) 2^(m−1) joukkoa. Tehtävässä tämä summa on 2024:
+  ∑_(m∈A) 2^(m−1) = 2024.
+
+Koska 2^k ovat eri potensseja ja ne esittävät binaarilukujärjestelmässä lukuja yksikäsitteisesti, voimme kirjoittaa 2024 sen binääriesityksenä:
+  2024 = 1024 + 512 + 256 + 128 + 64 + 32 + 8 
+     = 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^3.
+
+Jotta summa saadaan, joukossa A tulee olla juuri ne m, joille m − 1 ovat nämä eksponentit. Eli
+  m − 1 ∈ {10, 9, 8, 7, 6, 5, 3},
+mistä saadaan
+  m ∈ {11, 10, 9, 8, 7, 6, 4} = A.
+
+Lopuksi joukon A alkioiden summa on:
+  11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.
+
+Näin saadaan vastaukseksi \boxed{55}.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

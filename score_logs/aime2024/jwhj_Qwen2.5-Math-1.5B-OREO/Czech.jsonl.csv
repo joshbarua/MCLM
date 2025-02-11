@@ -1,0 +1,1068 @@
+response,response_answer,answer,parsed_answer,correctness
+"Nech $x$ je čas, který Aya byl v kavárně, když jistě jistě jde rychlostí $s+2$ km/h. Pak platí $x + 4 = \frac{9}{s}$ a $x + 6 = \frac{9}{s+2}$. Získáme tedy $x = \frac{9}{s} - 4 = \frac{9}{s+2} - 6$. Z rovnosti plyne $9(s+2) - 6s(s+2) = 9s - 6s^2$, tedy $6s^2 - 12s - 18 = 0$. Druhá rovnice má kořeny $s = 3$ a $s = -1$. Rychlost musí být kladná, tedy $s = 3$. Tedy $x = 1$ a $t = 18$. Abychom zjistili, kolik minut byla procházka, musíme vypočítat $\frac{9}{3} + \frac{9}{3+1} + 18 = 3 + \frac{9}{2} + 18 = \frac{51}{2} = \boxed{25\frac{1}{2}}$. ","[51/2, '25\\frac{1}{2}']",204,"[204, '204']",False
+"Nechť $O$ je střed kružnice $\omega$. Nechť $E$ je střed kružnice $OBCD$. Nechť $F$ je střed kružnice $OACD$. Nechť $G$ je střed kružnice $ABCD$. Nechť $H$ je střed kružnice $ABP$. Nechť $I$ je střed kružnice $BCP$. Nechť $J$ je střed kružnice $ACP$. Nechť $K$ je střed kružnice $ABCDP$. Nechť $L$ je střed kružnice $BCDP$. Nechť $M$ je střed kružnice $ACDP$. Nechť $N$ je střed kružnice $ABCDP$. Nechť $Q$ je střed kružnice $ABCDP$.
+
+[asy]
+unitsize(0.3 cm);
+
+pair A, B, C, D, P, O, E, F, G, H, I, J, K, L, M, N, Q;
+
+A = (0,0);
+B = (5,0);
+C = intersectionpoints(Circle(A,10),Circle(B,9))[0];
+D = extension(B,C,angpoint(C,180),angpoint(C,0));
+O = circumcenter(A,B,C);
+E = circumcenter(B,C,D);
+F = circumcenter(A,C,D);
+G = circumcenter(A,B,D);
+H = circumcenter(B,C,P);
+I = circumcenter(A,C,P);
+J = circumcenter(A,B,P);
+K = circumcenter(B,C,D);
+L = circumcenter(A,D,P);
+M = circumcenter(B,D,P);
+N = circumcenter(A,C,P);
+Q = circumcenter(A,B,C,D,P);
+
+draw(A--B--C--cycle);
+draw(circumcircle(A,B,C));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,C,D));
+draw(circumcircle(A,B,D));
+draw(circumcircle(B,C,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(A,B,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D,P));
+draw(circumcircle(B,D,P));
+draw(circumcircle(A,C,P));
+draw(circumcircle(B,C,D));
+draw(circumcircle(A,D","[a*s*y, 'asy']",113,"[113, '113']",False
+"Označme červené body $A_1,A_3,A_5,A_7$ a modré body $A_2,A_4,A_6,A_8$. V pravděpodobnosti, že body $A_2,A_4,A_6,A_8$ skončí v tomto po řadě, že body $A_1,A_3,A_5,A_7$ skončí v tomto po řadě, je rovná pravděpodobnosti, že body $A_1,A_3,A_5,A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_1,A_3,A_5,A_7$ skončí v tomto po řadě. Nech $A_1$ je červené. Tedy musíme vypočítat pravděpodobnost, že body $A_3,A_5,A_7$ skončí v tomto po řadě. Nech $A_3$ je červené. Tedy musíme vypočítat pravděpodobnost, že body $A_5,A_7$ skončí v tomto po řadě. Nech $A_5$ je červené. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí v tomto po řadě. Tedy musíme vypočítat pravděpodobnost, že body $A_7$ skončí","[A_7, 'A_7']",371,"[371, '371']",False
+"Zavedeme výsledky výrazů $a=f(\sin (2 \pi x))$ a $b=g(\cos (3 \pi y))$. Pak můžeme zapsat soustavu
+\begin{align*}
+y &= 4 g(a) \\
+x &= 4 g(b)
+\end{align*}
+a získáme
+\begin{align*}
+y &= 4 \left| \left| a \right| - \frac{1}{4} \right| \\
+x &= 4 \left| \left| b \right| - \frac{1}{4} \right|
+\end{align*}
+Nech $a$ a $b$ mají hodnoty v intervalu $[0,1]$. Pak platí
+\begin{align*}
+y &= 4 \left| \left| a \right| - \frac{1}{4} \right| = \begin{cases}
+4 \left( a - \frac{1}{4} \right) = 4a - 1, & \text{ pro } a \ge \frac{1}{4} \\
+4 \left( \frac{1}{4} - a \right) = 1 - 4a, & \text{ pro } a < \frac{1}{4}
+\end{cases} \\
+x &= 4 \left| \left| b \right| - \frac{1}{4} \right| = \begin{cases}
+4 \left( b - \frac{1}{4} \right) = 4b - 1, & \text{ pro } b \ge \frac{1}{4} \\
+4 \left( \frac{1}{4} - b \right) = 1 - 4b, & \text{ pro } b < \frac{1}{4}
+\end{cases}
+\end{align*}
+V první barudu platí $y = 4a - 1$ pro $a \ge \frac{1}{4}$ a $y = 1 - 4a$ pro $a < \frac{1}{4}$. V druhé barudu platí $x = 4b - 1$ pro $b \ge \frac{1}{4}$ a $x = 1 - 4b$ pro $b < \frac{1}{4}$. V první barudu platí $y = 4a - 1 \ge -1$ a $y = 1 - 4a \le 1$, a v druhé barudu $x = 4b - 1 \ge -1$ a $x = 1 - 4b \le 1$. Vzhledem na intervaly hodnot $a$ a $b$ platí $-1 \le y \le 1$ a $-1 \le x \le 1$. Vzhledem na vlastnosti průsečíků grafů $y = 4a - 1$ a $x = 4b - 1$ a $y = 1 - 4a$ a $x = 1 - 4b$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na intervaly hodnot $a$ a $b$ platí $0 \le a \le 1$ a $0 \le b \le 1$. Vzhledem na vlastnosti průsečíků grafů $y = 4a - 1$ a $x = 4b - 1$ a $y = 1 - 4a$ a $x = 1 - 4b$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 4a - 1$ a $x = 1 - 4b$ a $y = 1 - 4a$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 4a - 1$ a $x = 1 - 4b$ a $y = 1 - 4a$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 4b - 1$ a $y = 4a - 1$ a $x = 1 - 4b$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 4b - 1$ a $y = 4a - 1$ a $x = 1 - 4b$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$. Vzhledem na vlastnosti průsečíků grafů $y = 1 - 4a$ a $x = 1 - 4b$ a $y = 4a - 1$ a $x = 4b - 1$ můžeme zvolit body $(0,0)$, $(0,1)$, $(1,0)$ a $(1,1)$.
+Vzhledem na vlastnosti průsečíků grafů $y = ","[(1, 1), '(1,1)']",385,"[385, '385']",False
+"Nechť $p$ je nejmenší prvočíslo, pro které existuje kladné celé číslo $n$ takové, že $n^{4}+1$ je dělitelné $p^{2}$. Nechť $n$ je nejmenší takové číslo. Nechť $m$ je nejmenší kladné celé číslo, že $m^{4}+1$ je dělitelné $p^{2}$. Nechť $m<n$. Nechť $m$ lze zapsat v tvaru $m=ap+b$, kde $0\leq b<p$. Nechť $b\neq 0$. Pak $m^{4}+1=(ap+b)^{4}+1=a^{4}p^{4}+4a^{3}p^{3}b+6a^{2}p^{2}b^{2}+4ab^{3}p+b^{4}+1$. Protože $p^{2}|m^{4}+1$ a $p^{2}|a^{4}p^{4}+4a^{3}p^{3}b+6a^{2}p^{2}b^{2}+4ab^{3}p$, plyne, že $p^{2}|b^{4}+1$. Protože $b<p$, pak $b^{4}+1<b^{4}+p^{2}<p^{4}+p^{2}<p^{4}+2p^{2}$. Protože $p$ je prvočíslo, pak $p^{2}$ nebo $p$ nebo $p^{2}$ nebo $2p$ je nejmenší prvočíslo, které je menší než $b^{4}+1$. Protože $p^{2}$ je dělitelné $b^{4}+1$, pak $p$ je dělitelné $b^{4}+1$. Protože $b<p$, pak $b^{4}+1<p^{2}+1<p^{2}+2p<p^{2}+2p^{2}$. Protože $p$ je prvočíslo, pak $p$ je dělitelné $b^{4}+1$. Protože $p$ je dělitelné $b^{4}+1$, pak $p^{2}$ je dělitelné $b^{4}+1$. Protože $p^{2}$ je dělitelné $b^{4}+1$, pak $p^{2}$ je dělitelné $m^{4}+1$. Protože $p^{2}$ je dělitelné $m^{4}+1$ a $p^{2}|m^{4}+1$, pak $p^{2}=m^{4}+1$. Protože $m<n$, pak $m^{4}+1<n^{4}+1$. Protože $p^{2}=m^{4}+1$ a $p^{2}|n^{4}+1$, pak $p^{2}|n^{4}+1-p^{2}=n^{4}-p^{2}+1=n^{4}-m^{4}+1$. Protože $p^{2}|n^{4}-m^{4}+1$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-m^{4}+1-m^{4}-1=n^{4}-2m^{4}$. Protože $p^{2}|n^{4}-2m^{4}$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-2m^{4}-m^{4}-1=n^{4}-3m^{4}-1$. Protože $p^{2}|n^{4}-3m^{4}-1$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-3m^{4}-1-m^{4}-1=n^{4}-4m^{4}-2$. Protože $p^{2}|n^{4}-4m^{4}-2$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-4m^{4}-2-m^{4}-1=n^{4}-5m^{4}-3$. Protože $p^{2}|n^{4}-5m^{4}-3$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-5m^{4}-3-m^{4}-1=n^{4}-6m^{4}-4$. Protože $p^{2}|n^{4}-6m^{4}-4$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-6m^{4}-4-m^{4}-1=n^{4}-7m^{4}-5$. Protože $p^{2}|n^{4}-7m^{4}-5$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-7m^{4}-5-m^{4}-1=n^{4}-8m^{4}-6$. Protože $p^{2}|n^{4}-8m^{4}-6$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-8m^{4}-6-m^{4}-1=n^{4}-9m^{4}-7$. Protože $p^{2}|n^{4}-9m^{4}-7$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-9m^{4}-7-m^{4}-1=n^{4}-10m^{4}-8$. Protože $p^{2}|n^{4}-10m^{4}-8$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-10m^{4}-8-m^{4}-1=n^{4}-11m^{4}-9$. Protože $p^{2}|n^{4}-11m^{4}-9$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-11m^{4}-9-m^{4}-1=n^{4}-12m^{4}-10$. Protože $p^{2}|n^{4}-12m^{4}-10$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-12m^{4}-10-m^{4}-1=n^{4}-13m^{4}-11$. Protože $p^{2}|n^{4}-13m^{4}-11$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-13m^{4}-11-m^{4}-1=n^{4}-14m^{4}-12$. Protože $p^{2}|n^{4}-14m^{4}-12$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-14m^{4}-12-m^{4}-1=n^{4}-15m^{4}-13$. Protože $p^{2}|n^{4}-15m^{4}-13$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-15m^{4}-13-m^{4}-1=n^{4}-16m^{4}-14$. Protože $p^{2}|n^{4}-16m^{4}-14$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-16m^{4}-14-m^{4}-1=n^{4}-17m^{4}-15$. Protože $p^{2}|n^{4}-17m^{4}-15$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-17m^{4}-15-m^{4}-1=n^{4}-18m^{4}-16$. Protože $p^{2}|n^{4}-18m^{4}-16$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-18m^{4}-16-m^{4}-1=n^{4}-19m^{4}-17$. Protože $p^{2}|n^{4}-19m^{4}-17$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-19m^{4}-17-m^{4}-1=n^{4}-20m^{4}-18$. Protože $p^{2}|n^{4}-20m^{4}-18$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-20m^{4}-18-m^{4}-1=n^{4}-21m^{4}-19$. Protože $p^{2}|n^{4}-21m^{4}-19$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-21m^{4}-19-m^{4}-1=n^{4}-22m^{4}-20$. Protože $p^{2}|n^{4}-22m^{4}-20$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-22m^{4}-20-m^{4}-1=n^{4}-23m^{4}-21$. Protože $p^{2}|n^{4}-23m^{4}-21$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-23m^{4}-21-m^{4}-1=n^{4}-24m^{4}-22$. Protože $p^{2}|n^{4}-24m^{4}-22$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-24m^{4}-22-m^{4}-1=n^{4}-25m^{4}-23$. Protože $p^{2}|n^{4}-25m^{4}-23$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-25m^{4}-23-m^{4}-1=n^{4}-26m^{4}-24$. Protože $p^{2}|n^{4}-26m^{4}-24$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-26m^{4}-24-m^{4}-1=n^{4}-27m^{4}-25$. Protože $p^{2}|n^{4}-27m^{4}-25$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-27m^{4}-25-m^{4}-1=n^{4}-28m^{4}-26$. Protože $p^{2}|n^{4}-28m^{4}-26$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-28m^{4}-26-m^{4}-1=n^{4}-29m^{4}-27$. Protože $p^{2}|n^{4}-29m^{4}-27$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-29m^{4}-27-m^{4}-1=n^{4}-30m^{4}-28$. Protože $p^{2}|n^{4}-30m^{4}-28$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-30m^{4}-28-m^{4}-1=n^{4}-31m^{4}-29$. Protože $p^{2}|n^{4}-31m^{4}-29$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-31m^{4}-29-m^{4}-1=n^{4}-32m^{4}-30$. Protože $p^{2}|n^{4}-32m^{4}-30$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-32m^{4}-30-m^{4}-1=n^{4}-33m^{4}-31$. Protože $p^{2}|n^{4}-33m^{4}-31$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-33m^{4}-31-m^{4}-1=n^{4}-34m^{4}-32$. Protože $p^{2}|n^{4}-34m^{4}-32$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-34m^{4}-32-m^{4}-1=n^{4}-35m^{4}-33$. Protože $p^{2}|n^{4}-35m^{4}-33$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-35m^{4}-33-m^{4}-1=n^{4}-36m^{4}-34$. Protože $p^{2}|n^{4}-36m^{4}-34$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-36m^{4}-34-m^{4}-1=n^{4}-37m^{4}-35$. Protože $p^{2}|n^{4}-37m^{4}-35$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-37m^{4}-35-m^{4}-1=n^{4}-38m^{4}-36$. Protože $p^{2}|n^{4}-38m^{4}-36$ a $p^{2}|m^{4}+1$, pak $p^{2}|n^{4}-38m^{4}-36-m^{4","[-m**4 + n**4 + 1, 'p^{2}|m^{4}+1']",110,"[110, '110']",False
+"Však $ABCD$ je čtyřstěn, protože $AB^2+BC^2=AC^2$, $BC^2+CD^2=BD^2$, $CD^2+DA^2=AC^2$ a $DA^2+AB^2=BD^2$. Tedy $ABCD$ je pravouhly čtyřstěn. Však $AC=BD$, protože $AC^2=AB^2+BC^2=CD^2+DA^2=BD^2$. Tedy $ABCD$ je pravidelný čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn. Však $AB=CD=\sqrt{41}$, protože $AB^2=AC^2-BC^2=BD^2-AD^2=CD^2$. Tedy $ABCD$ je čtyřstěn","[A*B*C*D, 'ABCD']",104,"[104, '104']",False
+"Nechť $a,b,c$ jsou strany obdélníku. Platí $ab=54$ a $abc=23$. Tedy $c=\frac{23}{ab}=\frac{23}{54}$. Platí $a^2+b^2+c^2=r^2$. Z rovnice $ab=54$ plyne, že $a=\frac{54}{b}$. Z rovnice $c=\frac{23}{54}$ plyne, že $c^2=\frac{529}{2916}$. Vzorec $a^2+b^2+c^2=r^2$ získáme tedy $\frac{54^2}{b^2}+b^2+\frac{529}{2916}=r^2$. Vzorec $\frac{54^2}{b^2}+b^2$ lze zjednodušit na $\frac{b^4+54^2}{b^2}$. Vzorec $\frac{b^4+54^2}{b^2}+\frac{529}{2916}$ lze zjednodušit na $\frac{2916b^4+54^2\cdot 2916+529b^2}{2916b^2}$. Vzorec $\frac{2916b^4+54^2\cdot 2916+529b^2}{2916b^2}$ lze zjednodušit na $\frac{b^2(2916b^2+54^2\cdot 2916+529)}{2916b^2}$. Vzorec $\frac{b^2(2916b^2+54^2\cdot 2916+529)}{2916b^2}$ lze zjednodušit na $\frac{2916b^2+54^2\cdot 2916+529}{2916}$. Vzorec $\frac{2916b^2+54^2\cdot 2916+529}{2916}$ lze zjednodušit na $\frac{2916b^2+2916\cdot 54^2+529}{2916}$. Vzorec $\frac{2916b^2+2916\cdot 54^2+529}{2916}$ lze zjednodušit na $\frac{2916(b^2+54^2)+529}{2916}$. Vzorec $\frac{2916(b^2+54^2)+529}{2916}$ lze zjednodušit na $\frac{2916(b^2+2916)+529}{2916}$. Vzorec $\frac{2916(b^2+2916)+529}{2916}$ lze zjednodušit na $\frac{2916b^2+2916^2+529}{2916}$. Vzorec $\frac{2916b^2+2916^2+529}{2916}$ lze zjednodušit na $\frac{2916b^2+8503132+529}{2916}$. Vzorec $\frac{2916b^2+8503132+529}{2916}$ lze zjednodušit na $\frac{2916b^2+8503661}{2916}$. Vzorec $\frac{2916b^2+8503661}{2916}$ lze zjednodušit na $\frac{b^2+2916\cdot 2916+2916\cdot 2916\cdot 2916+529}{2916}$. Vzorec $\frac{b^2+2916\cdot 2916+2916\cdot 2916\cdot 2916+529}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^2\cdot 2916+529}{2916}$. Vzorec $\frac{b^2+2916^2+2916^2\cdot 2916+529}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+529}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+529}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+2916^2+2916^3+23^2}{2916}$ lze zjednodušit na $\frac{b^2+2916^2+2916^3+23^2}{2916}$. Vzorec $\frac{b^2+29","[(b**2 + 23**2 + 2916**2 + 2916**3)/2916, '\\frac{b^2+2916^2+2916^3+23^2}{2916}']",721,"[721, '721']",False
+"Z rovnosti $\log_x\left(y^x\right)=10$ plyne, že $x^{10}=y^x$. Z rovnosti $\log_y\left(x^{4y}\right)=10$ plyne, že $y^{10}=x^{4y}$. Vynásobme obě rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti. Vynásobme tedy exponenty na levé a exponenty na pravé stranu rovnosti.","[Eq(y**10, x**(4*y)), 'y^{10}=x^{4y}']",25,"[25, '25']",False
+"Nech $n$ je počet žetanů, když Alice začne. Pokud $n$ bylo někdy násobnou číslem $4$, mohl by Alice zpět zpět zpátky, protože v každém tahu mohou být pouze $1$ nebo $4$žetana. Tedy mohou být pouze $1$, $4$, $5$ nebo $8$žetanů. Protože $2024$ je násobnou číslem $4$, mohou být pouze $1$, $4$, $5$ nebo $8$žetanů, když Alice začne. Takové $n$ existujou $4$.
+Nech $n$ je násobnou číslem $4$ plus $1$. Tedy mohou být pouze $5$, $9$, $13$ nebo $17$žetanů, když Alice začne. Takové $n$ existujou $4$.
+Nech $n$ je násobnou číslem $4$ plus $2$. Tedy mohou být pouze $6$, $10$, $14$ nebo $18$žetanů, když Alice začne. Takové $n$ existujou $4$.
+Nech $n$ je násobnou číslem $4$ plus $3$. Tedy mohou být pouze $7$, $11$, $15$ nebo $19$žetanů, když Alice začne. Takové $n$ existujou $4$.
+Takto provedeme pro všechny $n$ a zjistili, že existuje $4 \cdot 506 = \boxed{2024}$ kladných celých čísel $n$ menších nebo rovných $2024$, pro která existuje strategie pro Boba, která zaručuje, že Bob vyhraje hru bez ohledu na Alicinu hru. ","[2024, '2024']",809,"[809, '809']",False
+"Je dán množina $S=\{1,2,3,\cdots,9,10\}$ a z ní vybranou část $A=\{a_1,a_2,a_3,a_4\}$. Je zřadeno, že $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i,a_j\in\{a_1,a_2,a_3,a_4\}$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1=a_2=a_3=a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i=a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1=a_2<a_3=a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3=a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $A$ vyhraje cenu, pokud existuje $i<j$ takové, že $a_i<a_j<a_i<a_j$. Je zřadeno, že $A$ vyhraje hlavní cenu, pokud $a_1<a_2<a_3<a_4$. Je zřadeno, že $","[(a_1 < a_2) & (a_2 < a_3) & (a_3 < a_4), 'a_1<a_2<a_3<a_4']",116,"[116, '116']",False
+Nech $AD=x$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme obě strany rovnice $EF\cdot FG=DC\cdot CE$ nebyloby $184\cdot 17=x\cdot CE$. Vynásobme obě strany rovnice $AB\cdot BC=AD\cdot DE$ nebyloby $x\cdot (x+16)=107\cdot 16$. Vynásobme,"[Eq(x*(x + 16), 107*16), 'x\\cdot (x+16)=107\\cdot 16']",104,"[104, '104']",False
+"Nech $a$ bude počet cest, které se vystupují na první barvě, $b$ počet cest na druhou barvě, $c$ na třetí a $d$ na čtvrtou. Viz následující diagram:
+
+[asy]
+size(100);
+int i;
+for (i=0; i<=8; ++i) {
+  draw((i,0)--(i,8));
+  draw((0,i)--(8,i));
+}
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,0)--(8,8),dotted);
+draw((0,","[8, '8']",294,"[294, '294']",False
+"Nech $z = x + yi$, kde $x$ a $y$ jsou reálná část a imaginární část čísla $z$, znamenáme tedy $|z| = \sqrt{x^2 + y^2} = 4$. Vynásobíme obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 - y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 - y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 - 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z| = 4$ na levou a na pravou stranu výrazem $x^2 + y^2 + 2xyi$, aby měl výraz $x^2 + y^2$. Vynásobíme tedy obě strany rovnice $|z","[x**2 + y**2, 'x^2 + y^2']",540,"[540, '540']",False
+"Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je střed kruhu o poloměru $1$, $O_2$ je střed kruhu o poloměru $2$, $O_3$ je střed kruhu o poloměru $3$, $\ldots$, $O_{2024}$ je střed kruhu o poloměru $2024$. Nech $A_1$ je střed kruhu o poloměru $1$, $A_2$ je střed kruhu o poloměru $2$, $A_3$ je střed kruhu o poloměru $3$, $\ldots$, $A_{2024}$ je střed kruhu o poloměru $2024$. Nech $O$ je střed kruhu o poloměru $34$, $O_1$ je st","[{34, O_1}, '34 and O_1']",197,"[197, '197']",False
+"Nechť body $A$ a $B$ leží na hyperbole v rovině $xOy$. Nechť body $A$ a $B$ mají souřadnice $(x_1,y_1)$ a $(x_2,y_2)$, vlastně $A(x_1,y_1)$ a $B(-x_1,-y_1)$. Však body $A$ a $B$ leží na hyperbole, tedy platí $\frac{x_1^2}{20}- \frac{y_1^2}{24} = 1$ a $\frac{x_2^2}{20}- \frac{y_2^2}{24} = 1$. Vynásobme první rovnici na $-24$ a druhou rovnici na $20$, abychom měl $y_1^2$ a $y_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot 20$, abychom měl $x_1^2$ a $x_2^2$ v rovnici. Vynásobme tedy obě rovnice na $-24 \cdot","[-24, '-24']",480,"[480, '480']",False
+"Nech $a$ je počet obyvatel, kteří vlastní všechny čtyři věci. Použijeme větu o zbytku. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci. Oběžky mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci, protože mají vlastní věci","[a, 'a']",73,"[73, '73']",False
+"Označme $R$ obvodový poloměr, $r$ vnitřní poloměr, $a=BC$, $b=AC$, $c=AB$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z věty cosinusů: $AI^2=AB^2+AC^2-2\cdot AB\cdot AC\cdot\cos A=b^2+c^2-2bc\cdot\frac{b^2+c^2-a^2}{2bc}=b^2+c^2-a^2$. Získáme tedy $b^2+c^2-a^2=4Rr-4r^2$. Vzorec pro výraz $AI^2$ získáme z Pythagorovy věty: $AI^2=AO^2-OI^2=R^2-(R-2r)^2=4Rr","[4, '4']",468,"[468, '468']",True
+"Zjednodušme první rovnici:
+\begin{align*}
+a^2b + a^2c + b^2a + b^2c + c^2a + c^2b &= 6,000,000 \\
+ab(a + b) + ac(a + c) + bc(b + c) &= 6,000,000 \\
+ab(300 - c) + ac(300 - b) + bc(300 - a) &= 6,000,000 \\
+300(ab + ac + bc) - (abc + abc + abc) &= 6,000,000 \\
+300(ab + ac + bc) - 3abc &= 6,000,000 \\
+100(ab + ac + bc) - abc &= 2,000,000.
+\end{align*}
+Získali sme rovnici
+\begin{equation*}
+100(ab + ac + bc) - abc = 2,000,000.
+\end{equation*}
+Získali jsme zjednodušenou rovnici, protože
+\begin{align*}
+a + b + c &= 300 \\
+a + b &= 300 - c \\
+ab &= \frac{1}{2}[(300 - c)^2 - (90000 - 200c)] \\
+&= \frac{1}{2}[-c^2 + 600c - 30000] \\
+&= -\frac{1}{2}c^2 + 300c - 150000.
+\end{align*}
+Substitučníme do rovnice:
+\begin{align*}
+100(ab + ac + bc) - abc &= 2,000,000 \\
+100(-\frac{1}{2}c^2 + 300c - 150000 + ac + bc) - abc &= 2,000,000 \\
+-50c^2 + 30000c - 15000000 + 100ac + 100bc - abc &= 2,000,000 \\
+-50c^2 + 30000c - 15000000 + 100c(a + b) - abc &= 2,000,000 \\
+-50c^2 + 30000c - 15000000 + 100c(300 - c) - abc &= 2,000,000 \\
+-50c^2 + 30000c - 15000000 + 30000c - 100c^2 - abc &= 2,000,000 \\
+-150c^2 + 60000c - 17000000 - abc &= 0 \\
+abc - 60000c + 150c^2 + 17000000 &= 0.
+\end{align*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 17000000 = 0.
+\end{equation*}
+Získali jsme rovnici
+\begin{equation*}
+abc - 60000c + 150c^2 + 1700000","[1700000, '1700000']",601,"[601, '601']",False
+"Nechť \(C=(x,y)\). Platí \(0<x<\tfrac{1}{2}\) a \(0<y<\tfrac{\sqrt{3}}{2}\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\) leží na úsečce \(\overline{PQ}\), platí \(x^2+y^2=1\). Obecně platí, že pro každou úsečku \(\overline{PQ}\) délky jedna, kde \(P=(a,0)\) a \(Q=(0,b)\), platí \(a^2+b^2=1\). Protože \(C\)","[C, 'C']",23,"[23, '23']",False
+"Zjistme, že $\omega^{13}=1$ a $\omega^{12}+...+\omega+1=0$. Vynásobíme výraz
+\[\prod_{k=0}^{12}(2-2\omega^k+\omega^{2k})\]
+s
+\[\prod_{k=0}^{12}(\omega^k).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{2k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{3k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{4k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{5k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{6k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{7k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{8k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{9k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{10k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{11k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{12k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{13k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{14k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{15k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{16k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{17k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{18k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{19k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{20k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{21k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{22k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{23k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{24k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{25k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{26k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{27k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{28k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{29k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{30k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{31k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{32k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{33k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{34k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{35k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{36k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{37k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{38k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{39k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{40k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{41k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{42k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{43k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{44k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{45k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{46k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{47k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{48k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{49k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{50k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{51k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{52k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{53k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{54k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{55k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{56k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{57k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{58k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{59k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{60k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{61k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{62k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{63k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{64k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{65k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{66k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{67k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{68k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{69k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{70k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{71k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{72k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{73k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{74k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{75k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{76k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{77k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{78k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{79k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{80k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{81k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{82k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{83k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{84k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{85k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{86k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{87k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{88k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{89k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{90k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{91k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{92k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{93k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{94k}).\]
+Obdobně provedeme vynásobení s
+\[\prod_{k=0}^{12}(\omega^{95k}).\]
+Ob","[0, '\\prod_{k=0}^{12}(\\omega^{95k}).']",321,"[321, '321']",False
+"Nechť \(n = \overline{ab}_b\), kde \(a, b < b\). Pak \(n = a\cdot b + b = b(a+1)\). Protože \(n\) je \(b\text-\textit{eautiful}\), můžeme považovat, že \(a+b = \sqrt n\). Tedy \(a+b = \sqrt{b(a+1)}\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a+b)^2 = b(a+1)\). Tedy \(a^2 + 2ab + b^2 = ab + b\). Tedy \(a^2 + ab + b^2 - b = 0\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a^2 + ab + b^2 - b)^2 = 0\). Tedy \(a^4 + 2a^3b + 3a^2b^2 - 2ab^3 + b^4 - 2ab^2 + b^2 = 0\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a^4 + 2a^3b + 3a^2b^2 - 2ab^3 + b^4 - 2ab^2 + b^2)^2 = 0\). Tedy \(a^8 + 4a^7b + 10a^6b^2 + 16a^5b^3 + 19a^4b^4 - 20a^3b^5 + 10a^2b^6 + 4ab^7 + b^8 - 4ab^6 + 6b^6 - 4ab^4 + b^4 = 0\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a^8 + 4a^7b + 10a^6b^2 + 16a^5b^3 + 19a^4b^4 - 20a^3b^5 + 10a^2b^6 + 4ab^7 + b^8 - 4ab^6 + 6b^6 - 4ab^4 + b^4)^2 = 0\). Tedy \(a^{16} + 8a^{15}b + 44a^{14}b^2 + 160a^{13}b^3 + 440a^{12}b^4 + 880a^{11}b^5 + 1234a^{10}b^6 + 1360a^9b^7 + 1160a^8b^8 + 760a^7b^9 + 340a^6b^{10} + 100a^5b^{11} + 16a^4b^{12} + 4a^3b^{13} + a^2b^{14} + 8a^{15}b^2 + 44a^{14}b^3 + 160a^{13}b^4 + 440a^{12}b^5 + 880a^{11}b^6 + 1234a^{10}b^7 + 1360a^9b^8 + 1160a^8b^9 + 760a^7b^{10} + 340a^6b^{11} + 100a^5b^{12} + 16a^4b^{13} + 4a^3b^{14} + a^2b^{15} + 8a^{14}b^3 + 44a^{13}b^4 + 160a^{12}b^5 + 440a^{11}b^6 + 880a^{10}b^7 + 1234a^9b^8 + 1360a^8b^9 + 1160a^7b^{10} + 760a^6b^{11} + 340a^5b^{12} + 100a^4b^{13} + 16a^3b^{14} + 4a^2b^{15} + a^2b^{16} + 8a^{13}b^4 + 44a^{12}b^5 + 160a^{11}b^6 + 440a^{10}b^7 + 880a^9b^8 + 1234a^8b^9 + 1360a^7b^{10} + 1160a^6b^{11} + 760a^5b^{12} + 340a^4b^{13} + 100a^3b^{14} + 16a^2b^{15} + 4ab^{16} + a^2b^{17} + 8a^{12}b^5 + 44a^{11}b^6 + 160a^{10}b^7 + 440a^9b^8 + 880a^8b^9 + 1234a^7b^{10} + 1360a^6b^{11} + 1160a^5b^{12} + 760a^4b^{13} + 340a^3b^{14} + 100a^2b^{15} + 16ab^{16} + 4b^{17} + a^2b^{18} + 8a^{11}b^6 + 44a^{10}b^7 + 160a^9b^8 + 440a^8b^9 + 880a^7b^{10} + 1234a^6b^{11} + 1360a^5b^{12} + 1160a^4b^{13} + 760a^3b^{14} + 340a^2b^{15} + 100ab^{16} + 16b^{17} + 4b^{18} + b^{19} = 0\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a^{16} + 8a^{15}b + 44a^{14}b^2 + 160a^{13}b^3 + 440a^{12}b^4 + 880a^{11}b^5 + 1234a^{10}b^6 + 1360a^9b^7 + 1160a^8b^8 + 760a^7b^9 + 340a^6b^{10} + 100a^5b^{11} + 16a^4b^{12} + 4a^3b^{13} + a^2b^{14} + 8a^{15}b^2 + 44a^{14}b^3 + 160a^{13}b^4 + 440a^{12}b^5 + 880a^{11}b^6 + 1234a^{10}b^7 + 1360a^9b^8 + 1160a^8b^9 + 760a^7b^{10} + 340a^6b^{11} + 100a^5b^{12} + 16a^4b^{13} + 4a^3b^{14} + a^2b^{15} + 8a^{14}b^3 + 44a^{13}b^4 + 160a^{12}b^5 + 440a^{11}b^6 + 880a^{10}b^7 + 1234a^9b^8 + 1360a^8b^9 + 1160a^7b^{10} + 760a^6b^{11} + 340a^5b^{12} + 100a^4b^{13} + 16a^3b^{14} + 4a^2b^{15} + a^2b^{16} + 8a^{13}b^4 + 44a^{12}b^5 + 160a^{11}b^6 + 440a^{10}b^7 + 880a^9b^8 + 1234a^8b^9 + 1360a^7b^{10} + 1160a^6b^{11} + 760a^5b^{12} + 340a^4b^{13} + 100a^3b^{14} + 16a^2b^{15} + 4ab^{16} + a^2b^{17} + 8a^{12}b^5 + 44a^{11}b^6 + 160a^{10}b^7 + 440a^9b^8 + 880a^8b^9 + 1234a^7b^{10} + 1360a^6b^{11} + 1160a^5b^{12} + 760a^4b^{13} + 340a^3b^{14} + 100a^2b^{15} + 16ab^{16} + 4b^{17} + a^2b^{18} + 8a^{11}b^6 + 44a^{10}b^7 + 160a^9b^8 + 440a^8b^9 + 880a^7b^{10} + 1234a^6b^{11} + 1360a^5b^{12} + 1160a^4b^{13} + 760a^3b^{14} + 340a^2b^{15} + 100ab^{16} + 16b^{17} + 4b^{18} + b^{19} = 0\). Vynásobme obě strany rovnice dvakrát, aby měl kvadratickou tvar. Tedy \((a^{16} + 8a^{15}b + 44a^{14}b^2 + 160a^{13}b^3 + 440a^{12}b^4 + 880a^{11}b^5 + 1234a^{10}b^6 + 1360a^9b^7 + 1160a^8b^8 + 760a^7b^9 + 340a^6b^{10} + 100a^5b^{11} + 16a^4b^{12} + 4a^3b^{13} + a^2b^{14} + 8a^{15}b^2 + 44a^{14}b^3 + 160a^{13}b^4 + 440a^{12}b^5 + 880a^{11}b^6 + 1234a^{10}b^7 + 1360a^9b^8 + 1160a^8b^9 + 760a^7b^{10} + 340a^6b^{11} + 100a^5b^{12} + 16a^4b^{13} + 4a^3b^{14} + a^2b^{15} + 8a^{14}b^3 + 44a^{13}b^4 + 160a^{12}b^5 + 440a^{11}b^6 + 880a^{10}b^7 + 1234a^9b^8 + 1360a^8b^9 + 1160a^7b^{10} + 760a^6b^{11} + 340a^5b^{12} + 100a^4b^{13} + 16a^3b^{14} + 4a^2b^{15} + a^2b^{16} + 8a^{13}b^4 + 44a^{12}b^5 + 160a^{11}b^6 + 440a^{10}b^7 + 880a^9b^8 + 1234a^8b^9 + 1360a^7b^{10} + 1","[1, '1']",211,"[211, '211']",True
+"Nech $A_1A_2A_3\ldots A_{12}$ je dvanáctiúhelník. Obdélník $A_1A_2A_3A_4$ lze vytvořit, když však $A_5$ leží na úhlopříčce $A_1A_2$ nebo $A_3A_4$. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v $2$ způsady. Obdélník $A_1A_2A_3A_4$ lze vytvořit na témel obdélníku $A_5A_6A_7A_8$ v","[A_5*A_6*A_7*A_8, 'A_5A_6A_7A_8']",315,"[315, '315']",False
+"Nech $n$ je počet položek v seznamu. Vzhledem na vlastnosti $\text{(B)}$ plyne, že $n$ je liché. Vzhledem na vlastnosti $\text{(C)}$ plyne, že $n\geq 5$. Vzhledem na vlastnosti $\text{(A)}$ plyne, že $n\leq 30$. Vzhledem na vlastnosti $\text{(B)}$ a $\text{(C)}$ plyne, že $5\leq n\leq 29$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ plyne, že $n\leq 10$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(C)}$ plyne, že $n\geq 5$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ plyne, že $n=10$.
+Vzhledem na vlastnosti $\text{(B)}$ plyne, že $9$ je číslem v seznamu. Vzhledem na vlastnosti $\text{(C)}$ plyne, že v seznamu existuje nejčastější číslo, které se v seznamu nevyskytuje. Vzhledem na vlastnosti $\text{(A)}$ plyne, že v seznamu existuje číslo $x$ takové, že $x+9+9+9+9+9+9+9+9+9=30$, tedy $x=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ plyne, že v seznamu existuje číslo $y$ takové, že $y+9+9+9+9+9+9+9+9+9=30$, tedy $y=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ plyne, že v seznamu existuje číslo $z$ takové, že $z+9+9+9+9+9+9+9+9+9=30$, tedy $z=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ plyne, že v seznamu existuje číslo $w$ takové, že $w+9+9+9+9+9+9+9+9+9=30$, tedy $w=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ plyne, že v seznamu existuje číslo $v$ takové, že $v+9+9+9+9+9+9+9+9+9=30$, tedy $v=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ plyne, že v seznamu existuje číslo $u$ takové, že $u+9+9+9+9+9+9+9+9+9=30$, tedy $u=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ plyne, že v seznamu existuje číslo $t$ takové, že $t+9+9+9+9+9+9+9+9+9=30$, tedy $t=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ plyne, že v seznamu existuje číslo $s$ takové, že $s+9+9+9+9+9+9+9+9+9=30$, tedy $s=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ plyne, že v seznamu existuje číslo $r$ takové, že $r+9+9+9+9+9+9+9+9+9=30$, tedy $r=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ plyne, že v seznamu existuje číslo $q$ takové, že $q+9+9+9+9+9+9+9+9+9=30$, tedy $q=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ plyne, že v seznamu existuje číslo $p$ takové, že $p+9+9+9+9+9+9+9+9+9=30$, tedy $p=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ plyne, že v seznamu existuje číslo $j$ takové, že $j+9+9+9+9+9+9+9+9+9=30$, tedy $j=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ plyne, že v seznamu existuje číslo $i$ takové, že $i+9+9+9+9+9+9+9+9+9=30$, tedy $i=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ plyne, že v seznamu existuje číslo $l$ takové, že $l+9+9+9+9+9+9+9+9+9=30$, tedy $l=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ plyne, že v seznamu existuje číslo $m$ takové, že $m+9+9+9+9+9+9+9+9+9=30$, tedy $m=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ plyne, že v seznamu existuje číslo $n$ takové, že $n+9+9+9+9+9+9+9+9+9=30$, tedy $n=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ plyne, že v seznamu existuje číslo $o$ takové, že $o+9+9+9+9+9+9+9+9+9=30$, tedy $o=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ plyne, že v seznamu existuje číslo $p$ takové, že $p+9+9+9+9+9+9+9+9+9=30$, tedy $p=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ a $\text{(Q)}$ plyne, že v seznamu existuje číslo $q$ takové, že $q+9+9+9+9+9+9+9+9+9=30$, tedy $q=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ a $\text{(Q)}$ a $\text{(R)}$ plyne, že v seznamu existuje číslo $r$ takové, že $r+9+9+9+9+9+9+9+9+9=30$, tedy $r=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ a $\text{(Q)}$ a $\text{(R)}$ a $\text{(S)}$ plyne, že v seznamu existuje číslo $s$ takové, že $s+9+9+9+9+9+9+9+9+9=30$, tedy $s=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ a $\text{(Q)}$ a $\text{(R)}$ a $\text{(S)}$ a $\text{(T)}$ plyne, že v seznamu existuje číslo $t$ takové, že $t+9+9+9+9+9+9+9+9+9=30$, tedy $t=-15$. Vzhledem na vlastnosti $\text{(A)}$ a $\text{(B)}$ a $\text{(C)}$ a $\text{(D)}$ a $\text{(E)}$ a $\text{(F)}$ a $\text{(G)}$ a $\text{(H)}$ a $\text{(I)}$ a $\text{(J)}$ a $\text{(K)}$ a $\text{(L)}$ a $\text{(M)}$ a $\text{(N)}$ a $\text{(O)}$ a $\text{(P)}$ a $\text{(Q)}$ a $\text{(","[Q, '\\text{(Q)}']",236,"[236, '236']",False
+"Nech $a$, $b$, $c$, $d$, $e$, $f$ jsou čísla v mřížce. Pak z podmínek získáváme rovnice $a+b+c=999$ a $d+e+f=99$. Z rovnice $a+b+c=999$ plyne, že $a$, $b$ a $c$ musou být vždy jednociferná čísla, protože $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$ a $100a+10b+c=999$. Z rovnice $d+e+f=99$ plyne, že $d$, $e$ a $f$ musou být jednociferná čísla, protože $d$, $e$ a $f$ mají výraz $10d$, $e$ a $10f+1$ a $10d+e+10f+1=99$. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f$ je jednociferné číslo. Vzhledem na to, že $a$, $b$ a $c$ mají výraz $100a$, $10b$ a $c$, můžeme z rovnice $a+b+c=999$ vyplývat, že $a$ je jednociferné číslo, $b$ je jednociferné číslo a $c$ je jednociferné číslo. Podobně z rovnice $d+e+f=99$ můžeme získat, že $d$ je jednociferné číslo, $e$ je jednociferné číslo a $f","[E, 'e']",45,"[45, '45']",False
+"Z první rovnice plyne, že $x=2yz$. Z druhé rovnice plyne, že $y=2^{\frac{4}{3}}xz$. Z těchto dvou rovnic plyne, že $x=2^{\frac{11}{3}}y^2z^3$. Z těchto dvou rovnic plyne, že $x=2^{\frac{11}{3}}(2^{\frac{4}{3}}xz)^2z^3=2^{\frac{11}{3}+\frac{8}{3}+3}x^2z^5$. Tedy $x=2^{14}x^2z^5$. Protože $x$ je kladná, plyne, že $z^5=\frac{1}{2^{13}}$. Protože $z$ je kladná, plyne, že $z=2^{-\frac{13}{5}}$. Protože $x=2^{\frac{11}{3}}y^2z^3$, plyne, že $y=\frac{x}{2^{\frac{11}{3}}z^3}=2^{\frac{11}{3}}\cdot2^{\frac{13}{5}}\cdot y^{-2}$. Protože $y$ je kladná, plyne, že $y=2^{\frac{89}{15}}$. Protože $x=2^{\frac{11}{3}}y^2z^3$, plyne, že $x=2^{\frac{11}{3}}\cdot2^{\frac{178}{15}}\cdot2^{-\frac{52}{5}}=2^{\frac{11}{3}+\frac{178}{15}-\frac{52}{5}}=2^{14}$. Protože $x=2^{14}$, plyne, že $\left|\log_2(x^4y^3z^2)\right|=\left|56+3\cdot\frac{89}{15}+2\cdot\frac{13}{5}\right|=\frac{2411}{15}$. Tedy $m+n=2411+15=\boxed{2426}$. ","[2426, '2426']",33,"[33, '33']",False
+"Nechť $G$ je středem úsečky $CD$. Však protože $ABCD$ je rovnoběžník, můžeme zvolit body $A$ a $B$ tak, aby $AB$ byl rovnoběžný s úsečkou $FG$. Však protože $ABCD$ je rovnoběžník, můžeme zvolit body $C$ a $D$ tak, aby $CD$ byl rovnoběžný s úsečkou $EG$. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou konstrukci, že $ABCD$ je rovnoběžník. Všemto je tedy zvolenou kon","[A*B*C*D, 'ABCD']",80,"[80, '80']",False
+"Nech $a_1<a_2<\ldots<a_n$ jsou prvek množiny $A$. Však každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\}$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$. Tedy můžeme získat všech množin $B$ s maximálním prvkem $a_i$ vzhledem k množinám $B$ s maximálním prvkem $a_{i+1}$, $a_{i+2}$, $\ldots$, $a_n$.
+Tedy každá množina $B$ může obsat maximální prvek $a_i$ pro nějakou $i\in\{1,2,\ldots,n\","[a_i, 'a_i']",55,"[55, '55']",False
+"Let $N = 1000a + 100b + 10c + d$. If we change the units digit to $1$, we get $1000a + 100b + 10c + 1$, which is divisible by $7$. If we change the tens digit to $1$, we get $1000a + 100b + 1 + 10c$, which is also divisible by $7$. If we change the hundreds digit to $1$, we get $1000a + 1 + 10b + 10c + d$, which is also divisible by $7$. If we change the thousands digit to $1$, we get $1 + 100a + 10b + 10c + d$, which is also divisible by $7$. Thus, $1000a + 100b + 10c + d \equiv 0 \pmod{7}$. Since $1000 \equiv 6 \pmod{1000}$, $100 \equiv 100 \pmod{1000}$, and $10 \equiv 10 \pmod{1000}$, we have $6a + 100b + 10c + d \equiv 0 \pmod{1000}$. Thus, $Q = \frac{6}{1000} = \frac{3}{500}$ and $R = \frac{100b + 10c}{1000} = \frac{b}{10} + \frac{c}{100}$. Thus, $Q + R = \frac{3}{500} + \frac{b}{10} + \frac{c}{100} = \frac{3 + 50b + 5c}{500}$. Since $N$ is a four-digit number, $a \ge 1$. Since $6a + 100b + 10c + d \equiv 0 \pmod{1000}$, $6a \equiv 0 \pmod{1000}$. Thus, $a = 1$ and $6 + 100b + 10c + d \equiv 0 \pmod{1000}$. Thus, $100b + 10c + d \equiv 994 \pmod{1000}$. Thus, $b = 9$, $c = 9$, and $d = 4$. Thus, $Q + R = \frac{3 + 50 \cdot 9 + 5 \cdot 9}{500} = \frac{498}{500} = \boxed{\frac{249}{250}}$. ","[249/250, '\\frac{249}{250}']",699,"[699, '699']",False
+"Kružnici $T$ a $S$ se procházejí v rovině, kde se kružnica $T$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypočítá v rovině kružnice $S$. Kružnici $T$ se v rovině kružnice $S$ vypo","[S, 'S']",127,"[127, '127']",False
+"Nech $a_{i,j}$ bude množina všech mřížek, kde v řádu $i$ a sloupci $j$ je jednoželká buňka. Vzhledem k podmínkám můžeme zvolit jednu buňku z každé mřížky ze množiny $a_{i,j}$ a zvolit barvu, kde bude totoželka. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $b_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $c_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $d_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $e_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $f_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $g_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $h_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $i_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $j_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $k_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $l_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $m_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $n_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $o_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $p_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $q_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $r_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $s_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $t_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $u_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $v_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $w_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $x_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $y_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $z_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $a_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $b_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $c_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $d_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $e_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $f_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $g_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $h_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $i_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $j_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $k_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $l_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $m_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $n_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $o_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $p_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $q_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $r_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $s_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $t_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $u_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $v_{i,j}$. Vzhledem k tomu, že buňky musí být nerozlišitelné, můžeme zvolit barvou buňky v řádu $i$ a sloupci $j$ v množině $w_{i","[j, 'j']",902,"[902, '902']",False

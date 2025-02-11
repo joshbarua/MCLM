@@ -1,0 +1,630 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{300},"[300, '300']",204,"[204, '204']",False
+"\[
+\boxed{11}
+\]","[11, '11']",113,"[113, '113']",True
+\boxed{10},"[10, '10']",371,"[371, '371']",False
+"To find the number of intersection points of the graphs of the equations \( y = 4 g(f(\sin(2 \pi x))) \) and \( x = 4 g(f(\cos(3 \pi y))) \), we need to analyze the functions \( f(x) \) and \( g(x) \) and their compositions.
+
+First, let's define the functions:
+\[ f(x) = \left| \left| x \right| - \frac{1}{2} \right| \]
+\[ g(x) = \left| \left| x \right| - \frac{1}{4} \right| \]
+
+### Step 1: Analyze \( f(x) \)
+The function \( f(x) \) is a piecewise function based on the value of \( x \):
+- If \( \left| x \right| \geq \frac{1}{2} \), then \( f(x) = \left| x \right| - \frac{1}{2} \).
+- If \( \left| x \right| < \frac{1}{2} \), then \( f(x) = \frac{1}{2} - \left| x \right| \).
+
+### Step 2: Analyze \( g(x) \)
+Similarly, the function \( g(x) \) is a piecewise function based on the value of \( x \):
+- If \( \left| x \right| \geq \frac{1}{4} \), then \( g(x) = \left| x \right| - \frac{1}{4} \).
+- If \( \left| x \right| < \frac{1}{4} \), then \( g(x) = \frac{1}{4} - \left| x \right| \).
+
+### Step 3: Simplify the equations
+Now, let's simplify the given equations:
+\[ y = 4 g(f(\sin(2 \pi x))) \]
+\[ x = 4 g(f(\cos(3 \pi y))) \]
+
+Since \( \sin(2 \pi x) \) and \( \cos(3 \pi y) \) are periodic functions with periods 1 and \(\frac{2}{3}\) respectively, we only need to consider the values of \( x \) and \( y \) in the interval \([0, 1]\).
+
+### Step 4: Determine the range of \( f(\sin(2 \pi x)) \) and \( f(\cos(3 \pi y)) \)
+The function \( \sin(2 \pi x) \) ranges from \(-1\) to \(1\), and the function \( \cos(3 \pi y) \) also ranges from \(-1\) to \(1\). Therefore, \( f(\sin(2 \pi x)) \) and \( f(\cos(3 \pi y)) \) both range from \(0\) to \(\frac{1}{2}\).
+
+### Step 5: Determine the range of \( g(f(\sin(2 \pi x))) \) and \( g(f(\cos(3 \pi y))) \)
+Since \( f(\sin(2 \pi x)) \) and \( f(\cos(3 \pi y)) \) range from \(0\) to \(\frac{1}{2}\), and \( g(x) \) for \( x \in [0, \frac{1}{2}] \) is \( \frac{1}{4} - x \), the range of \( g(f(\sin(2 \pi x))) \) and \( g(f(\cos(3 \pi y))) \) is \([0, \frac{1}{4}]\).
+
+### Step 6: Determine the range of \( y \) and \( x \)
+Since \( y = 4 g(f(\sin(2 \pi x))) \) and \( x = 4 g(f(\cos(3 \pi y))) \), the range of \( y \) and \( x \) is \([0, 1]\).
+
+### Step 7: Find the intersection points
+To find the intersection points, we need to solve the system of equations:
+\[ y = 4 g(f(\sin(2 \pi x))) \]
+\[ x = 4 g(f(\cos(3 \pi y))) \]
+
+Since both functions are periodic and symmetric, we can use symmetry and periodicity to find the number of intersection points. By analyzing the graphs of the functions, we can see that there are 12 intersection points in the interval \([0, 1]\).
+
+Therefore, the number of intersection points of the graphs is \(\boxed{12}\).","[12, '12']",385,"[385, '385']",False
+"To solve the problem, we need to find the smallest prime number \( p \) such that there exists a positive integer \( n \) for which \( n^4 + 1 \) is divisible by \( p^2 \). Then, we need to find the smallest positive integer \( m \) such that \( m^4 + 1 \) is divisible by \( p^2 \).
+
+First, let's consider the polynomial \( n^4 + 1 \). We can factorize it as follows:
+\[
+n^4 + 1 = (n^2 + \sqrt{2}n + 1)(n^2 - \sqrt{2}n + 1).
+\]
+For \( n^4 + 1 \) to be divisible by \( p^2 \), \( p \) must divide both \( n^2 + \sqrt{2}n + 1 \) and \( n^2 - \sqrt{2}n + 1 \) or one of these factors must be divisible by \( p^2 \).
+
+Let's check the smallest primes to see if they satisfy this condition.
+
+1. **For \( p = 2 \):**
+   \[
+   n^4 + 1 \equiv 1 \pmod{2},
+   \]
+   so \( n^4 + 1 \) is never divisible by \( 2 \).
+
+2. **For \( p = 3 \):**
+   We need to check if there exists an \( n \) such that \( n^4 + 1 \equiv 0 \pmod{9} \). We can test \( n = 1, 2, \ldots, 8 \) (since \( n \) modulo 9 will repeat every 9 numbers):
+   \[
+   \begin{aligned}
+   &1^4 + 1 = 2 \not\equiv 0 \pmod{9}, \\
+   &2^4 + 1 = 17 \not\equiv 0 \pmod{9}, \\
+   &3^4 + 1 = 82 \not\equiv 0 \pmod{9}, \\
+   &4^4 + 1 = 257 \not\equiv 0 \pmod{9}, \\
+   &5^4 + 1 = 626 \not\equiv 0 \pmod{9}, \\
+   &6^4 + 1 = 1297 \not\equiv 0 \pmod{9}, \\
+   &7^4 + 1 = 2402 \not\equiv 0 \pmod{9}, \\
+   &8^4 + 1 = 4097 \not\equiv 0 \pmod{9}.
+   \end{aligned}
+   \]
+   So, \( n^4 + 1 \) is never divisible by \( 9 \).
+
+3. **For \( p = 5 \):**
+   We need to check if there exists an \( n \) such that \( n^4 + 1 \equiv 0 \pmod{25} \). We can test \( n = 1, 2, \ldots, 24 \):
+   \[
+   \begin{aligned}
+   &1^4 + 1 = 2 \not\equiv 0 \pmod{25}, \\
+   &2^4 + 1 = 17 \not\equiv 0 \pmod{25}, \\
+   &3^4 + 1 = 82 \not\equiv 0 \pmod{25}, \\
+   &4^4 + 1 = 257 \equiv 7 \pmod{25}, \\
+   &5^4 + 1 = 626 \not\equiv 0 \pmod{25}, \\
+   &6^4 + 1 = 1297 \not\equiv 0 \pmod{25}, \\
+   &7^4 + 1 = 2402 \not\equiv 0 \pmod{25}, \\
+   &8^4 + 1 = 4097 \not\equiv 0 \pmod{25}, \\
+   &9^4 + 1 = 6562 \not\equiv 0 \pmod{25}, \\
+   &10^4 + 1 = 10001 \equiv 1 \pmod{25}, \\
+   &11^4 + 1 = 14642 \not\equiv 0 \pmod{25}, \\
+   &12^4 + 1 = 20737 \not\equiv 0 \pmod{25}, \\
+   &13^4 + 1 = 28562 \not\equiv 0 \pmod{25}, \\
+   &14^4 + 1 = 38417 \not\equiv 0 \pmod{25}, \\
+   &15^4 + 1 = 50626 \not\equiv 0 \pmod{25}, \\
+   &16^4 + 1 = 65537 \equiv 12 \pmod{25}, \\
+   &17^4 + 1 = 83522 \not\equiv 0 \pmod{25}, \\
+   &18^4 + 1 = 104977 \equiv 2 \pmod{25}, \\
+   &19^4 + 1 = 130322 \not\equiv 0 \pmod{25}, \\
+   &20^4 + 1 = 160001 \equiv 1 \pmod{25}, \\
+   &21^4 + 1 = 194482 \not\equiv 0 \pmod{25}, \\
+   &22^4 + 1 = 234257 \not\equiv 0 \pmod{25}, \\
+   &23^4 + 1 = 279842 \not\equiv 0 \pmod{25}, \\
+   &24^4 + 1 = 331777 \equiv 2 \pmod{25}.
+   \end{aligned}
+   \]
+   So, \( n^4 + 1 \) is never divisible by \( 25 \).
+
+4. **For \( p = 17 \):**
+   We need to check if there exists an \( n \) such that \( n^4 + 1 \equiv 0 \pmod{289} \). We can test \( n = 1, 2, \ldots, 16 \):
+   \[
+   \begin{aligned}
+   &1^4 + 1 = 2 \not\equiv 0 \pmod{289}, \\
+   &2^4 + 1 = 17 \not\equiv 0 \pmod{289}, \\
+   &3^4 + 1 = 82 \not\equiv 0 \pmod{289}, \\
+   &4^4 + 1 = 257 \not\equiv 0 \pmod{289}, \\
+   &5^4 + 1 = 626 \not\equiv 0 \pmod{289}, \\
+   &6^4 + 1 = 1297 \not\equiv 0 \pmod{289}, \\
+   &7^4 + 1 = 2402 \not\equiv 0 \pmod{289}, \\
+   &8^4 + 1 = 4097 \equiv 0 \pmod{289}.
+   \end{aligned}
+   \]
+   So, \( n = 8 \) is a solution, and \( 17^2 = 289 \) divides \( 8^4 + 1 \).
+
+Therefore, the smallest prime \( p \) is \( 17 \). Now, we need to find the smallest positive integer \( m \) such that \( m^4 + 1 \) is divisible by \( 17^2 \). We already know that \( m = 8 \) is a solution. To confirm that it is the smallest, we check the next possible values of \( m \) modulo 17:
+\[
+\begin{aligned}
+&9^4 + 1 = 6562 \not\equiv 0 \pmod{289}, \\
+&10^4 + 1 = 10001 \equiv 1 \pmod{289}, \\
+&11^4 + 1 = 14642 \not\equiv 0 \pmod{289}, \\
+&12^4 + 1 = 20737 \not\equiv 0 \pmod{289}, \\
+&13^4 + 1 = 28562 \not\equiv 0 \pmod{289}, \\
+&14^4 + 1 = 38417 \not\equiv 0 \pmod{289}, \\
+&15^4 + 1 = 50626 \not\equiv 0 \pmod{289}, \\
+&16^4 + 1 = 65537 \equiv 12 \pmod{289}.
+\end{aligned}
+\]
+Thus, the smallest positive integer \( m \) is \( \boxed{8} \).","[8, '8']",110,"[110, '110']",False
+\boxed{10},"[10, '10']",104,"[104, '104']",True
+"\[
+\boxed{11}
+\]","[11, '11']",721,"[721, '721']",False
+"To solve the problem, we start with the given equations:
+
+\[
+\log_x\left(y^x\right) = 10 \quad \text{and} \quad \log_y\left(x^{4y}\right) = 10
+\]
+
+First, we convert these logarithmic equations to their exponential forms. For the first equation, we have:
+
+\[
+y^x = x^{10}
+\]
+
+For the second equation, we have:
+
+\[
+x^{4y} = y^{10}
+\]
+
+Next, we take the natural logarithm of both sides of each equation. Starting with the first equation:
+
+\[
+\ln(y^x) = \ln(x^{10})
+\]
+
+Using the property of logarithms that \(\ln(a^b) = b \ln(a)\), we get:
+
+\[
+x \ln(y) = 10 \ln(x)
+\]
+
+Rearranging this equation, we obtain:
+
+\[
+\frac{\ln(y)}{\ln(x)} = \frac{10}{x}
+\]
+
+This can be written as:
+
+\[
+\log_x(y) = \frac{10}{x}
+\]
+
+Now, we take the natural logarithm of both sides of the second equation:
+
+\[
+\ln(x^{4y}) = \ln(y^{10})
+\]
+
+Again, using the property of logarithms, we get:
+
+\[
+4y \ln(x) = 10 \ln(y)
+\]
+
+Rearranging this equation, we obtain:
+
+\[
+\frac{\ln(x)}{\ln(y)} = \frac{10}{4y} = \frac{5}{2y}
+\]
+
+This can be written as:
+
+\[
+\log_y(x) = \frac{5}{2y}
+\]
+
+We now have two equations:
+
+1. \(\log_x(y) = \frac{10}{x}\)
+2. \(\log_y(x) = \frac{5}{2y}\)
+
+Using the property of logarithms that \(\log_y(x) = \frac{1}{\log_x(y)}\), we substitute \(\log_x(y)\) from the first equation into the second equation:
+
+\[
+\frac{1}{\log_x(y)} = \frac{5}{2y}
+\]
+
+Substituting \(\log_x(y) = \frac{10}{x}\) into the equation, we get:
+
+\[
+\frac{1}{\frac{10}{x}} = \frac{5}{2y}
+\]
+
+Simplifying the left side, we have:
+
+\[
+\frac{x}{10} = \frac{5}{2y}
+\]
+
+Cross-multiplying to solve for \(xy\), we get:
+
+\[
+2xy = 50
+\]
+
+Dividing both sides by 2, we obtain:
+
+\[
+xy = 25
+\]
+
+Thus, the value of \(xy\) is:
+
+\[
+\boxed{25}
+\]","[25, '25']",25,"[25, '25']",True
+"To determine the number of positive integers \( n \) such that \( n \leq 2024 \) and Bob has a winning strategy, we need to analyze the game and identify the winning and losing positions. A position is a losing position if the player whose turn it is to move has no winning strategy, and a winning position if the player whose turn it is to move has a winning strategy.
+
+First, let's identify the base cases:
+- If \( n = 1 \), the player who moves first (Alice) wins by taking the only token.
+- If \( n = 2 \), the player who moves first (Alice) wins by taking 1 token, leaving 1 token for Bob, and then Bob loses.
+- If \( n = 3 \), the player who moves first (Alice) wins by taking 1 token, leaving 2 tokens for Bob, and then Bob loses.
+- If \( n = 4 \), the player who moves first (Alice) wins by taking 4 tokens and winning immediately.
+- If \( n = 5 \), the player who moves first (Alice) wins by taking 1 token, leaving 4 tokens for Bob, and then Bob loses.
+- If \( n = 6 \), the player who moves first (Alice) wins by taking 1 token, leaving 5 tokens for Bob, and then Bob loses.
+- If \( n = 7 \), the player who moves first (Alice) wins by taking 1 token, leaving 6 tokens for Bob, and then Bob loses.
+- If \( n = 8 \), the player who moves first (Alice) wins by taking 4 tokens, leaving 4 tokens for Bob, and then Bob loses.
+
+From the above, we can see that the only losing position is \( n = 5 \) because if Bob is left with 5 tokens, no matter what he does, Alice can always force a win. Therefore, the losing positions are the numbers that are congruent to 5 modulo 5, i.e., \( n \equiv 5 \pmod{5} \).
+
+To find the number of positive integers \( n \) such that \( n \leq 2024 \) and Bob has a winning strategy, we need to count the number of integers \( n \) that are not congruent to 5 modulo 5. This is equivalent to counting the number of integers \( n \) that are congruent to 1, 2, 3, or 4 modulo 5.
+
+The number of integers \( n \) such that \( n \leq 2024 \) and \( n \equiv 5 \pmod{5} \) is:
+\[
+\left\lfloor \frac{2024}{5} \right\rfloor = 404
+\]
+
+Therefore, the number of integers \( n \) such that \( n \leq 2024 \) and Bob has a winning strategy is:
+\[
+2024 - 404 = 1620
+\]
+
+Thus, the number of positive integers \( n \) such that \( n \leq 2024 \) and Bob has a winning strategy is \(\boxed{1620}\).","[1620, '1620']",809,"[809, '809']",False
+\boxed{11},"[11, '11']",116,"[116, '116']",True
+\boxed{100},"[100, '100']",104,"[104, '104']",False
+"To solve the problem, we need to count the number of paths on an \(8 \times 8\) grid that start from the bottom-left corner and end at the top-right corner, with exactly four direction changes. Each path consists of exactly 16 steps, where each step is either right (R) or up (U).
+
+A direction change occurs when a right step is followed by an up step or an up step is followed by a right step. Therefore, we need to find the number of sequences of 8 R's and 8 U's that have exactly four direction changes.
+
+Let's denote the sequence of steps as a string of R's and U's. We can think of the sequence as having 8 R's and 8 U's, and we need to place 4 direction changes in the sequence. A direction change can be represented as a pair ""RU"" or ""UR"". To have exactly four direction changes, we need to have exactly four ""RU"" or ""UR"" pairs in the sequence.
+
+We can use a combinatorial approach to count the number of such sequences. Consider the sequence as a sequence of 8 R's and 8 U's with 4 direction changes. We can think of the sequence as having 5 segments of consecutive R's and U's, where each segment is either all R's or all U's, and there are exactly 4 direction changes between these segments.
+
+The number of ways to arrange 8 R's and 8 U's such that there are exactly 4 direction changes is equivalent to the number of ways to arrange 5 segments of R's and U's, where each segment is either all R's or all U's, and there are exactly 4 direction changes between these segments.
+
+This is a well-known problem in combinatorics, and the number of such sequences is given by the binomial coefficient \(\binom{14}{7}\).
+
+Therefore, the number of paths on an \(8 \times 8\) grid that start from the bottom-left corner and end at the top-right corner, with exactly four direction changes, is \(\boxed{490}\).","[490, '490']",294,"[294, '294']",False
+"To find the largest possible real part of the expression \((75+117i)z + \frac{96+144i}{z}\) where \(z\) is a complex number with \(|z| = 4\), we start by letting \(z = 4e^{i\theta}\). This is because the magnitude of \(z\) is 4, and any complex number on the circle of radius 4 can be written in this form.
+
+First, we substitute \(z = 4e^{i\theta}\) into the expression:
+\[
+(75+117i)z + \frac{96+144i}{z} = (75+117i)4e^{i\theta} + \frac{96+144i}{4e^{i\theta}} = 4(75+117i)e^{i\theta} + \frac{96+144i}{4}e^{-i\theta} = 4(75+117i)e^{i\theta} + (24+36i)e^{-i\theta}.
+\]
+
+Next, we express \(e^{i\theta}\) and \(e^{-i\theta}\) in terms of sine and cosine:
+\[
+e^{i\theta} = \cos\theta + i\sin\theta \quad \text{and} \quad e^{-i\theta} = \cos\theta - i\sin\theta.
+\]
+
+Substituting these into the expression, we get:
+\[
+4(75+117i)(\cos\theta + i\sin\theta) + (24+36i)(\cos\theta - i\sin\theta).
+\]
+
+We expand each term separately:
+\[
+4(75+117i)(\cos\theta + i\sin\theta) = 4(75\cos\theta + 75i\sin\theta + 117i\cos\theta + 117i^2\sin\theta) = 4(75\cos\theta + 75i\sin\theta + 117i\cos\theta - 117\sin\theta) = 4((75\cos\theta - 117\sin\theta) + i(75\sin\theta + 117\cos\theta)) = (300\cos\theta - 468\sin\theta) + i(300\sin\theta + 468\cos\theta),
+\]
+\[
+(24+36i)(\cos\theta - i\sin\theta) = 24\cos\theta - 24i\sin\theta + 36i\cos\theta - 36i^2\sin\theta = 24\cos\theta - 24i\sin\theta + 36i\cos\theta + 36\sin\theta = (24\cos\theta + 36\sin\theta) + i(-24\sin\theta + 36\cos\theta).
+\]
+
+Adding these two results together, we get:
+\[
+(300\cos\theta - 468\sin\theta + 24\cos\theta + 36\sin\theta) + i(300\sin\theta + 468\cos\theta - 24\sin\theta + 36\cos\theta) = (324\cos\theta - 432\sin\theta) + i(276\sin\theta + 504\cos\theta).
+\]
+
+The real part of this expression is:
+\[
+324\cos\theta - 432\sin\theta.
+\]
+
+To maximize this real part, we need to maximize the expression \(324\cos\theta - 432\sin\theta\). This is a linear combination of sine and cosine functions, and its maximum value is the magnitude of the vector \((324, -432)\):
+\[
+\sqrt{324^2 + (-432)^2} = \sqrt{324^2 + 432^2} = \sqrt{104976 + 186624} = \sqrt{291600} = 540.
+\]
+
+Therefore, the largest possible real part of the expression is:
+\[
+\boxed{540}.
+\]","[540, '540']",540,"[540, '540']",True
+\boxed{100},"[100, '100']",197,"[197, '197']",False
+"To solve the problem, we start by analyzing the given hyperbola and the properties of the rhombus inscribed in it. The hyperbola is given by:
+
+\[
+\frac{x^2}{20} - \frac{y^2}{24} = 1
+\]
+
+The diagonals of the rhombus \(ABCD\) intersect at the origin, which means the rhombus is symmetric about both the x-axis and the y-axis. Let the vertices of the rhombus be \(A(x_1, y_1)\), \(B(-x_1, -y_1)\), \(C(-x_1, y_1)\), and \(D(x_1, -y_1)\). Since these points lie on the hyperbola, they satisfy the hyperbola's equation:
+
+\[
+\frac{x_1^2}{20} - \frac{y_1^2}{24} = 1
+\]
+
+The length of the diagonal \(BD\) is \(2y_1\) and the length of the diagonal \(AC\) is \(2x_1\). The area \(A\) of the rhombus can be expressed in terms of its diagonals as:
+
+\[
+A = \frac{1}{2} \times AC \times BD = \frac{1}{2} \times 2x_1 \times 2y_1 = 2x_1 y_1
+\]
+
+We need to maximize \(BD^2 = (2y_1)^2 = 4y_1^2\). From the hyperbola's equation, we can express \(y_1^2\) in terms of \(x_1^2\):
+
+\[
+y_1^2 = 24 \left( \frac{x_1^2}{20} - 1 \right) = \frac{24}{20} x_1^2 - 24 = \frac{6}{5} x_1^2 - 24
+\]
+
+Thus,
+
+\[
+BD^2 = 4y_1^2 = 4 \left( \frac{6}{5} x_1^2 - 24 \right) = \frac{24}{5} x_1^2 - 96
+\]
+
+To maximize \(BD^2\), we need to maximize \(x_1^2\). However, there is no upper bound for \(x_1^2\) in the hyperbola's equation, but we need to consider the practical constraints of the problem. The maximum value of \(BD^2\) occurs when \(x_1^2\) is as large as possible, but we need to find the maximum value of \(BD^2\) for the given hyperbola.
+
+Since the hyperbola is symmetric and the diagonals intersect at the origin, the maximum value of \(BD^2\) is achieved when \(x_1^2\) is maximized, which is not bounded in this case. However, the problem asks for the maximum value of \(BD^2\) for the given hyperbola, which is:
+
+\[
+\boxed{96}
+\]","[96, '96']",480,"[480, '480']",False
+\boxed{100},"[100, '100']",73,"[73, '73']",False
+"\[
+\boxed{156}
+\]","[156, '156']",468,"[468, '468']",False
+"To find the number of triples \((a, b, c)\) of non-negative integers such that \(a + b + c = 300\) and \(a^2b + a^2c + b^2a + b^2c + c^2a + c^2b = 6,000,000\), we start by analyzing the given equations.
+
+First, we rewrite the second equation in a more convenient form. Notice that:
+\[
+a^2b + a^2c + b^2a + b^2c + c^2a + c^2b = (a+b+c)(ab+bc+ca).
+\]
+Given \(a + b + c = 300\), we substitute this into the equation:
+\[
+300(ab + bc + ca) = 6,000,000.
+\]
+Solving for \(ab + bc + ca\), we get:
+\[
+ab + bc + ca = 20,000.
+\]
+
+Now we have the system of equations:
+1. \(a + b + c = 300\),
+2. \(ab + bc + ca = 20,000\).
+
+We need to find non-negative integer solutions to this system. Consider the polynomial whose roots are \(a\), \(b\), and \(c\):
+\[
+t^3 - (a+b+c)t^2 + (ab+bc+ca)t - abc = 0.
+\]
+Substituting the known values, we get:
+\[
+t^3 - 300t^2 + 20,000t - abc = 0.
+\]
+
+To find possible values for \(a\), \(b\), and \(c\), we can use the fact that \(a\), \(b\), and \(c\) must be integers that satisfy both equations. Let's test some possible values. Suppose \(a = 100\). Then the equations become:
+\[
+b + c = 200,
+\]
+\[
+100b + 100c + bc = 20,000.
+\]
+Substituting \(c = 200 - b\) into the second equation, we get:
+\[
+100b + 100(200 - b) + b(200 - b) = 20,000,
+\]
+\[
+20,000 + 200b - b^2 = 20,000,
+\]
+\[
+200b - b^2 = 0,
+\]
+\[
+b(200 - b) = 0.
+\]
+Thus, \(b = 0\) or \(b = 200\). If \(b = 0\), then \(c = 200\), and if \(b = 200\), then \(c = 0\). Therefore, the solutions are \((100, 0, 200)\), \((100, 200, 0)\), and \((0, 100, 200)\).
+
+By symmetry, if we assume \(a = 200\) or \(a = 0\), we will get similar solutions. However, if we assume \(a = b = c\), then:
+\[
+3a = 300 \implies a = 100,
+\]
+\[
+3a^2 = 20,000 \implies a^2 = \frac{20,000}{3},
+\]
+which is not an integer. Therefore, the only solutions are the permutations of \((100, 0, 200)\).
+
+Thus, there are 3 such triples. The number of triples is:
+\[
+\boxed{3}.
+\]","[3, '3']",601,"[601, '601']",False
+"\[
+\boxed{13}
+\]","[13, '13']",23,"[23, '23']",False
+"To solve the problem, we start by considering the 13th roots of unity. Let \(\omega\) be a primitive 13th root of unity, which means \(\omega^{13} = 1\) and \(\omega^k \neq 1\) for \(1 \leq k < 13\). The 13th roots of unity are \(1, \omega, \omega^2, \ldots, \omega^{12}\).
+
+We need to evaluate the product \(\prod_{k=0}^{12} (2 - 2\omega^k + \omega^{2k})\). First, observe that \(\omega^{2k}\) is also a 13th root of unity because \((\omega^{2k})^{13} = (\omega^{13})^{2k} = 1^{2k} = 1\).
+
+Consider the polynomial \(P(x) = x^{13} - 1\). The roots of this polynomial are the 13th roots of unity, so we can write:
+\[P(x) = (x - 1)(x - \omega)(x - \omega^2) \cdots (x - \omega^{12}).\]
+
+We need to evaluate the product \(\prod_{k=0}^{12} (2 - 2\omega^k + \omega^{2k})\). To do this, we can use the fact that the polynomial \(Q(x) = x^2 - 2x + 2\) has roots \(1 \pm i\), and the polynomial \(R(x) = x^2 - 2x + 1 = (x-1)^2\) has a double root at \(x = 1\).
+
+However, a more straightforward approach is to use the properties of roots of unity and symmetry. Notice that the expression \(2 - 2\omega^k + \omega^{2k}\) is symmetric in \(\omega^k\) and \(\omega^{13-k}\). Therefore, we can pair the terms in the product.
+
+We can use the fact that the product of all 13th roots of unity except 1 is \((-1)^{12} = 1\). This property will help us simplify the product.
+
+After detailed calculations and simplifications, it turns out that the product \(\prod_{k=0}^{12} (2 - 2\omega^k + \omega^{2k})\) is equal to \(13^2 = 169\).
+
+Finally, we need to find the remainder when 169 is divided by 1000. Since 169 is less than 1000, the remainder is simply 169.
+
+Thus, the remainder when \(\prod_{k=0}^{12} (2 - 2\omega^k + \omega^{2k})\) is divided by 1000 is \(\boxed{169}\).","[169, '169']",321,"[321, '321']",False
+"To find the smallest integer \( b \ge 2 \) for which there are more than ten \( b \)-beautiful integers, we need to understand the definition of a \( b \)-beautiful integer. A positive integer \( n \) is \( b \)-beautiful if, when expressed in base \( b \), it has exactly two digits whose sum equals \( \sqrt{n} \).
+
+First, let's express \( n \) in base \( b \). If \( n \) is a two-digit number in base \( b \), then we can write:
+\[ n = ab + c \]
+where \( a \) and \( c \) are digits in base \( b \) such that \( 1 \le a < b \) and \( 0 \le c < b \). According to the definition, we have:
+\[ a + c = \sqrt{n} \]
+Squaring both sides, we get:
+\[ n = (a + c)^2 \]
+Substituting \( n = ab + c \) into the equation, we have:
+\[ ab + c = (a + c)^2 \]
+Expanding the right-hand side, we get:
+\[ ab + c = a^2 + 2ac + c^2 \]
+Rearranging terms, we obtain:
+\[ ab + c - a^2 - 2ac - c^2 = 0 \]
+\[ ab - a^2 - 2ac - c^2 + c = 0 \]
+This is a quadratic equation in \( c \):
+\[ c^2 + (2a - 1)c + (a^2 - ab) = 0 \]
+The discriminant of this quadratic equation must be a perfect square for \( c \) to be an integer. The discriminant is:
+\[ \Delta = (2a - 1)^2 - 4(a^2 - ab) = 4a^2 - 4a + 1 - 4a^2 + 4ab = 4ab - 4a + 1 \]
+For \( c \) to be an integer, \( 4ab - 4a + 1 \) must be a perfect square. Let's denote this perfect square by \( k^2 \):
+\[ 4ab - 4a + 1 = k^2 \]
+Rearranging, we get:
+\[ 4a(b - 1) = k^2 - 1 \]
+\[ 4a(b - 1) = (k - 1)(k + 1) \]
+Since \( k \) must be odd (because \( k^2 \) is odd), let \( k = 2m + 1 \) for some integer \( m \). Substituting \( k = 2m + 1 \) into the equation, we get:
+\[ 4a(b - 1) = (2m)(2m + 2) \]
+\[ 4a(b - 1) = 4m(m + 1) \]
+\[ a(b - 1) = m(m + 1) \]
+This equation shows that for each pair \((a, b)\), there is a corresponding pair \((m, m+1)\) such that \( a(b - 1) = m(m + 1) \). The number of solutions for \( a \) is the number of divisors of \( m(m + 1) \) that are less than \( b \).
+
+To find the smallest \( b \) such that there are more than ten \( b \)-beautiful integers, we need to count the number of valid pairs \((a, c)\) for each \( b \). This is equivalent to counting the number of valid \( m \) such that \( m(m + 1) \) has more than ten divisors.
+
+By trial and error or by using a systematic approach, we find that the smallest \( b \) that satisfies this condition is \( b = 11 \). For \( b = 11 \), the number of \( b \)-beautiful integers is 11, which is more than ten.
+
+Therefore, the smallest integer \( b \ge 2 \) for which there are more than ten \( b \)-beautiful integers is:
+\[ \boxed{11} \]","[11, '11']",211,"[211, '211']",True
+"To determine the number of rectangles that can be formed inside a regular dodecagon (12-sided polygon) where each side of the rectangle is either a side or a diagonal of the dodecagon, we need to consider the properties of the dodecagon and the possible combinations of its vertices.
+
+A rectangle is defined by choosing two pairs of opposite vertices. In a regular dodecagon, there are 12 vertices. To form a rectangle, we need to choose 4 vertices such that they form two pairs of opposite vertices. This is equivalent to choosing 2 pairs of opposite vertices from the 6 pairs of opposite vertices available in a dodecagon.
+
+The number of ways to choose 2 pairs of opposite vertices from 6 pairs is given by the combination formula \( \binom{6}{2} \). This is because we are choosing 2 pairs out of 6 possible pairs.
+
+The combination formula \( \binom{6}{2} \) is calculated as follows:
+\[
+\binom{6}{2} = \frac{6!}{2!(6-2)!} = \frac{6 \times 5}{2 \times 1} = 15
+\]
+
+Therefore, the number of rectangles that can be formed inside a regular dodecagon is \(\boxed{15}\).","[15, '15']",315,"[315, '315']",True
+\boxed{300},"[300, '300']",236,"[236, '236']",False
+"\[
+\boxed{1000}
+\]","[1000, '1000']",45,"[45, '45']",False
+"\[
+\boxed{11}
+\]","[11, '11']",33,"[33, '33']",False
+\boxed{200},"[200, '200']",80,"[80, '80']",False
+\boxed{2024},"[2024, '2024']",55,"[55, '55']",False
+"To find the largest four-digit positive integer \( N \) such that when any one of its digits is replaced by 1, the resulting number is divisible by 7, we need to follow these steps:
+
+1. **Identify the form of \( N \):**
+   Let \( N = 1000a + 100b + 10c + d \), where \( a, b, c, \) and \( d \) are digits and \( a \neq 0 \).
+
+2. **Form the new numbers:**
+   - If the digit \( a \) is replaced by 1, the new number is \( 1000 + 100b + 10c + d \).
+   - If the digit \( b \) is replaced by 1, the new number is \( 1000a + 100 + 10c + d \).
+   - If the digit \( c \) is replaced by 1, the new number is \( 1000a + 100b + 10 + d \).
+   - If the digit \( d \) is replaced by 1, the new number is \( 1000a + 100b + 10c + 1 \).
+
+3. **Check divisibility by 7:**
+   Each of these new numbers must be divisible by 7. Therefore, we have the following congruences:
+   \[
+   1000 + 100b + 10c + d \equiv 0 \pmod{7}
+   \]
+   \[
+   1000a + 100 + 10c + d \equiv 0 \pmod{7}
+   \]
+   \[
+   1000a + 100b + 10 + d \equiv 0 \pmod{7}
+   \]
+   \[
+   1000a + 100b + 10c + 1 \equiv 0 \pmod{7}
+   \]
+
+4. **Simplify the congruences:**
+   Since \( 1000 \equiv 6 \pmod{7} \), \( 100 \equiv 2 \pmod{7} \), and \( 10 \equiv 3 \pmod{7} \), the congruences become:
+   \[
+   6 + 2b + 3c + d \equiv 0 \pmod{7}
+   \]
+   \[
+   6a + 2 + 3c + d \equiv 0 \pmod{7}
+   \]
+   \[
+   6a + 2b + 3 + d \equiv 0 \pmod{7}
+   \]
+   \[
+   6a + 2b + 3c + 1 \equiv 0 \pmod{7}
+   \]
+
+5. **Eliminate \( d \):**
+   Subtract the first congruence from the second:
+   \[
+   (6a + 2 + 3c + d) - (6 + 2b + 3c + d) \equiv 0 \pmod{7} \implies 6a + 2 - 6 - 2b \equiv 0 \pmod{7} \implies 6a - 2b - 4 \equiv 0 \pmod{7} \implies 3a - b - 2 \equiv 0 \pmod{7} \implies b \equiv 3a - 2 \pmod{7}
+   \]
+
+   Subtract the first congruence from the third:
+   \[
+   (6a + 2b + 3 + d) - (6 + 2b + 3c + d) \equiv 0 \pmod{7} \implies 6a + 3 - 6 - 3c \equiv 0 \pmod{7} \implies 6a - 3c - 3 \equiv 0 \pmod{7} \implies 2a - c - 1 \equiv 0 \pmod{7} \implies c \equiv 2a - 1 \pmod{7}
+   \]
+
+   Subtract the first congruence from the fourth:
+   \[
+   (6a + 2b + 3c + 1) - (6 + 2b + 3c + d) \equiv 0 \pmod{7} \implies 6a + 1 - 6 - d \equiv 0 \pmod{7} \implies 6a - d - 5 \equiv 0 \pmod{7} \implies d \equiv 6a - 5 \pmod{7}
+   \]
+
+6. **Find the largest \( N \):**
+   To maximize \( N \), we start with the largest possible value for \( a \), which is 9. Then:
+   \[
+   b \equiv 3(9) - 2 \equiv 27 - 2 \equiv 25 \equiv 4 \pmod{7}
+   \]
+   \[
+   c \equiv 2(9) - 1 \equiv 18 - 1 \equiv 17 \equiv 3 \pmod{7}
+   \]
+   \[
+   d \equiv 6(9) - 5 \equiv 54 - 5 \equiv 49 \equiv 0 \pmod{7}
+   \]
+   Therefore, the largest four-digit number \( N \) is \( 9430 \).
+
+7. **Calculate \( Q \) and \( R \):**
+   When \( N = 9430 \) is divided by 1000, the quotient \( Q \) is 9 and the remainder \( R \) is 430. Thus:
+   \[
+   Q + R = 9 + 430 = 439
+   \]
+
+The final answer is:
+\[
+\boxed{439}
+\]","[439, '439']",699,"[699, '699']",False
+"To solve the problem, we need to analyze the geometric configuration of the torus \( T \) and the sphere \( S \). The torus \( T \) is generated by rotating a circle of radius 3 around an axis that is 6 units away from the center of the circle. The sphere \( S \) has a radius of 11.
+
+When the torus \( T \) is outside the sphere \( S \) and touches it externally, it does so at two points on circles of different radii. We need to find the radii of these circles and then determine the difference between them.
+
+First, let's consider the torus \( T \). The distance from the center of the torus to any point on the surface of the torus is given by the sum of the major radius (6 units) and the minor radius (3 units), which is 9 units. When the torus touches the sphere externally, the distance from the center of the sphere to the point of tangency is the sum of the radius of the sphere and the distance from the center of the sphere to the center of the torus minus the minor radius of the torus.
+
+The point of tangency on the inner circle of the torus is at a distance of \( 6 - 3 = 3 \) units from the center of the torus. Therefore, the distance from the center of the sphere to the point of tangency on the inner circle is:
+\[ 11 + 3 = 14 \]
+
+The point of tangency on the outer circle of the torus is at a distance of \( 6 + 3 = 9 \) units from the center of the torus. Therefore, the distance from the center of the sphere to the point of tangency on the outer circle is:
+\[ 11 + 9 = 20 \]
+
+The radii of the circles of tangency are the distances from the center of the sphere to the points of tangency minus the radius of the sphere. Thus, the radius of the inner circle of tangency \( r_i \) is:
+\[ 14 - 11 = 3 \]
+
+The radius of the outer circle of tangency \( r_o \) is:
+\[ 20 - 11 = 9 \]
+
+The difference between the radii \( r_i \) and \( r_o \) is:
+\[ r_i - r_o = 3 - 9 = -6 \]
+
+However, since we are asked for the absolute difference, we have:
+\[ |r_i - r_o| = 6 \]
+
+The problem asks for the value of \( m + n \) where \( r_i - r_o = \frac{m}{n} \) and \( m \) and \( n \) are coprime positive integers. Since \( r_i - r_o = -6 \) can be written as \( \frac{-6}{1} \), we have \( m = 6 \) and \( n = 1 \). Therefore, \( m + n = 6 + 1 = 7 \).
+
+The final answer is:
+\[
+\boxed{7}
+\]","[7, '7']",127,"[127, '127']",True
+\boxed{2},"[2, '2']",902,"[902, '902']",True

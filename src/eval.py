@@ -62,7 +62,7 @@ def message_generate(model, query, tokenizer):
 def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model_path, output_path, dataset):
     # Determine the column name for the current language.
     # For English, assume the original column "problem" is used.
-    col_name = lang_detect(language)
+    col_name = lang_detect(language) if "MMO" not in dataset else "question"
         
     if col_name not in df.columns:
         print(f"Error: Language column '{col_name}' not found in dataset for language '{language}'. Skipping...")

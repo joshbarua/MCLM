@@ -1,0 +1,303 @@
+response,response_answer,answer,parsed_answer,correctness
+"\boxed{\sqrt{51}} 
+
+Giải thích: Trong tam giác DEF vuông tại E, ta có sin D = đối/hypotenuse = EF/DF. Vì sin D = 0.7 và EF = 7 nên DF = 7/0.7 = 10. Áp dụng định lý Pythagoras với DE là cạnh kề của góc D ta có: DE² = DF² – EF² = 10² – 7² = 100 – 49 = 51, suy ra DE = √51.","[sqrt(51), '\\sqrt{51}']",\sqrt{51},[],True
+\boxed{6-5i},"[-1*5*i + 6, '6-5i']",6 - 5i,"[5, '5']",False
+\boxed{11\sqrt{2}},"[11*sqrt(2), '11\\sqrt{2}']",11\sqrt2,"[11, '11']",False
+"\boxed{720}
+
+Giải thích: Khi bắt nhóm 3 người (Pierre, Rosa và Thomas) lại thành một “khối”, ta có tổng cộng 6 thực thể (khối nhóm + 5 người còn lại). Vì sắp xếp vòng với n đối tượng có (n–1)! cách sắp xếp nên có (6–1)! = 5! = 120 cách sắp xếp các thực thể quanh bàn. Bên cạnh đó, bên trong khối nhóm, 3 người có thể sắp xếp theo 3! = 6 cách. Nhân lại ta có tổng số cách sắp xếp là 120 × 6 = 720 cách.","[720, '720']",720,"[720, '720']",True
+\boxed{-125},"[-125, '-125']",-125,"[-125, '-125']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{72^\circ},"[72, '72^\\circ']",72,"[72, '72']",True
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{2},"[2, '2']",2,"[2, '2']",True
+\boxed{5},"[5, '5']",5,"[5, '5']",True
+\boxed{9901},"[9901, '9901']",9901,"[9901, '9901']",True
+"\boxed{4}
+
+Ta xét ma trận A = [[2, 3], [0, -2]]. Để tìm số thực dương nhỏ nhất C thỏa mãn
+  ||A v|| ≤ C ||v||
+với mọi vector hai chiều v, ta cần tính chuẩn của phép biến đổi tuyến tính được cho bởi A (chuẩn này được định nghĩa là độ dài riêng lớn nhất của A, hay giá trị riêng lớn nhất của A^T A sau đó lấy căn bậc hai).
+
+Bước 1: Tính A^T.
+  A^T = [[2, 0], [3, -2]].
+
+Bước 2: Tính A^T A.
+  A^T A = [[2, 0], [3, -2]] [[2, 3], [0, -2]]
+      = [[2×2 + 0×0, 2×3 + 0×(–2)], [3×2 + (–2)×0, 3×3 + (–2)×(–2)]]
+      = [[4, 6], [6, 9+4]]
+      = [[4, 6], [6, 13]].
+
+Bước 3: Tìm các giá trị riêng của A^T A, tức là giải phương trình
+  det(A^T A – λI) = 0, tức:
+  det([[4 – λ, 6], [6, 13 – λ]]) = (4 – λ)(13 – λ) – 36 = 0.
+  Tính (4 – λ)(13 – λ) = 52 – 17λ + λ^2.
+  Khi đó:
+  52 – 17λ + λ^2 – 36 = λ^2 – 17λ + 16 = 0.
+  Phương trình này có thể được phân tích thành (λ – 1)(λ – 16) = 0, nên các giá trị riêng là λ = 1 và λ = 16.
+
+Bước 4: Giá trị riêng lớn nhất của A^T A là 16, do đó chuẩn của A là:
+  ||A|| = √(16) = 4.
+
+Vậy số thực dương nhỏ nhất C cần tìm là 4.","[4, '4']",4,"[4, '4']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{40_9},"[40, '40_9']",40_9,"[40, '40']",True
+\boxed{\cot x},"[cot(x), '\\cot x']",\cot x,[],True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{-1},"[-1, '-1']",-1,"[-1, '-1']",True
+\boxed{\sqrt{5}},"[sqrt(5), '\\sqrt{5}']",\sqrt{5},[],True
+None,[],2,"[2, '2']",False
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+"\boxed{(3,4]} 
+
+Chúng ta xét hàm số logistic f(x)=λx(1−x) trên [0,1]. Các điểm bất biến của f được tìm bằng cách giải phương trình f(x)=x, tức là
+
+  λx(1−x)=x.
+
+Nếu x≠0 thì chia cho x ta được
+  λ(1−x)=1 ⟹ x=1−1/λ.
+
+Vậy các điểm bất biến trên [0,1] là x=0 và x=1−1/λ (với λ≥1).
+
+Bây giờ, ta khảo sát phương trình f²(x)=x dưới điều kiện f(x)≠x, tức là ta tìm chu kỳ hai không cố định. Trong lý thuyết hệ thống động, kỳ lân chuyển (period-doubling bifurcation) xảy ra khi điểm bất biến thứ hai mất độ ổn định. Ta có đạo hàm của f tại điểm bất biến x=1−1/λ:
+
+  f′(x)=λ(1−2x) ⟹ f′(1−1/λ)=λ(1−2(1−1/λ))=λ(1−2+2/λ)=2−λ.
+
+Điểm bất biến ổn định khi |f′(x)|<1, tức là
+  |2−λ|<1 ⟹ 1<λ<3.
+
+Khi λ vượt qua 3, tức với λ>3 điểm bất biến x=1−1/λ trở nên kém ổn định (|2−λ|>1) và chu kỳ hai (nontrivial period‐2 orbit) xuất hiện. Điều này có nghĩa là tồn tại x∈[0,1] sao cho f(f(x))=x nhưng f(x)≠x khi và chỉ khi
+
+  λ∈(3,4].
+
+Vậy, đáp án là
+\boxed{(3,4]}","[Interval.Lopen(3, 4), '(3,4]']","(3,4]",[],True
+\boxed{120^\circ},"[120, '120^\\circ']",120^\circ,"[120, '120']",True
+"\boxed{1260} 
+
+Để giải bài toán, ta nhận thấy từ ELLIPSE có 7 chữ cái với một số chữ xuất hiện lặp lại: chữ E và L đều xuất hiện 2 lần. Số cách sắp xếp các chữ cái là:
+
+  7! / (2! · 2!) = 5040 / 4 = 1260.","[1260, '1260']",1260,"[1260, '1260']",True
+\boxed{9},"[9, '9']",9,"[9, '9']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+"\boxed{3\sqrt{5}} 
+
+Giải thích: Diện tích của tam giác OAB được tính bằng nửa độ dài của tích có hướng của hai vectơ OA và OB. Tính tích có hướng:
+
+  OA × OB = 
+    = (8, -10, 4)
+
+Độ dài của tích có hướng là:
+  ||OA × OB|| = √(8² + (−10)² + 4²) = √(64 + 100 + 16) = √180 = 6√5
+
+Vậy diện tích tam giác OAB là:
+  (1/2) × 6√5 = 3√5.","[3*sqrt(5), '3\\sqrt{5}']",3 \sqrt{5},"[3, '3']",False
+\boxed{-2},"[-2, '-2']",-2,"[-2, '-2']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{\frac{4}{9}},"[4/9, '\\frac{4}{9}']",\frac{4}{9},"[4/9, '\\frac{4}{9}']",True
+\boxed{65},"[65, '65']",65,"[65, '65']",True
+\boxed{350},"[350, '350']",350,"[350, '350']",True
+\boxed{0.0000672},"[6.72000000000000e-5, '0.0000672']",.0000672,"[6.72000000000000e-5, '0.0000672']",True
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{\frac{13}{18}},"[13/18, '\\frac{13}{18}']",\frac{13}{18},"[13/18, '\\frac{13}{18}']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{10},"[10, '10']",10,"[10, '10']",True
+"\boxed{11111111100} 
+
+Giải thích: 
+
+Do số cần tìm chỉ chứa chữ số 0 và 1 và là bội số của 450, nó phải thỏa các điều kiện dưới đây:  
+1. 450 = 2 × 3² × 5². Vì số chỉ chứa 0 và 1 nên để chia hết cho 2, số đó phải kết thúc bằng 0.  
+2. Để chia hết cho 5² (tức 25) thì số đó phải có hai chữ số cuối là 00, 25, 50 hoặc 75; với các chữ số chỉ là 0 và 1, lựa chọn duy nhất là “00”.  
+3. Để chia hết cho 3² (9) thì tổng các chữ số của số đó phải chia hết cho 9. Vì các chữ số chỉ là 0 hoặc 1, tổng các chữ số chính là số lượng chữ số 1.  
+
+Vì số phải kết thúc bằng “00” nên các chữ số 1 chỉ có thể nằm bên trái “00”. Giả sử số đó có n chữ số, thì trong n–2 chữ số đầu tiên ta cần có tổng là 9 (do 9 là số nhỏ nhất chia hết cho 9 mà vẫn đảm bảo số lượng chữ số 1 ít nhất). Vậy n – 2 = 9, hay n = 11. Trong n–2 = 9 chữ số đầu, để tổng các chữ số bằng 9, tất cả chúng đều phải là 1.  
+
+Như vậy số cần tìm là “11111111100”.  
+ 
+Do đó, đáp án là \boxed{11111111100}.","[11111111100, '11111111100']","11,\! 111,\! 111,\! 100","[100, '100']",False
+\boxed{\frac{1}{2}},"[1/2, '\\frac{1}{2}']",\frac{1}{2},"[1/2, '\\frac{1}{2}']",True
+\boxed{14},"[14, '14']",14,"[14, '14']",True
+\boxed{\frac{9}{256}},"[9/256, '\\frac{9}{256}']",\frac{9}{256},"[9/256, '\\frac{9}{256}']",True
+\boxed{C},"[C, 'C']",\text{(C)},[],True
+\boxed{30^\circ},"[30, '30^\\circ']",30^\circ,"[30, '30']",True
+\boxed{34},"[34, '34']",34,"[34, '34']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{8},"[8, '8']",8,"[8, '8']",True
+\boxed{17},"[17, '17']",17,"[17, '17']",True
+\boxed{864},"[864, '864']",864 \mbox{ inches}^2,"[864, '864']",True
+\boxed{22},"[22, '22']",22,"[22, '22']",True
+\boxed{4005},"[4005, '4005']",4005,"[4005, '4005']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+None,[],3 \pm 2 \sqrt{2},"[2, '2']",False
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{63},"[63, '63']",63,"[63, '63']",True
+"\boxed{\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix}}
+
+Để chi tiết, ta có:
+(2b - a) × (3c + a) = 2b × 3c + 2b × a - a × 3c - a × a.
+Chú ý rằng a × a = 0, và sử dụng tính chất giao hoán bất đối xứng của phép nhân vectơ, tức b × a = - (a × b), ta có:
+= 6 (b × c) - 2 (a × b) - 3 (a × c).
+
+Thay các giá trị đã cho:
+a × b = (6, -7, 3), a × c = (4, 7, 2), b × c = (1, -7, 18),
+ta được:
+= 6(1, -7, 18) - 2(6, -7, 3) - 3(4, 7, 2)
+= (6, -42, 108) - (12, -14, 6) - (12, 21, 6)
+= (6 - 12 - 12, -42 + 14 - 21, 108 - 6 - 6)
+= (-18, -49, 96).
+
+Vậy kết quả cần tính là \boxed{\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix}}.","[Matrix([
+[-18],
+[-49],
+[ 96]]), '\\begin{pmatrix} -18 \\\\ -49 \\\\ 96 \\end{pmatrix}']",\begin{pmatrix} -18 \\ -49 \\ 96 \end{pmatrix},"[96, '96']",True
+\boxed{5.4},"[5.40000000000000, '5.4']",5.4 \text{ cents},"[5.40000000000000, '5.4']",True
+"\boxed{28} 
+
+Chúng ta xét hình thang ABCD với các đỉnh được sắp theo thứ tự và giả sử AD ∥ BC, AC vuông góc với CD, AC là tia phân giác của ∠BAD, và diện tích hình thang [ABCD] = 42.
+
+Để giải bài này, ta thực hiện các bước sau:
+
+───────────────────────────────  
+1. Chọn hệ tọa độ thuận tiện
+
+Giả sử ta đặt A = (0, 0). Ta chọn sao cho AC nằm trên trục hoành và là tia phân giác của ∠BAD, nghĩa là hai tia AB và AD đối xứng qua trục hoành.  
+  
+Đặt:  
+  AC nằm trên trục hoành, với C = (1, 0)  
+  Chọn góc lệch = θ > 0.  
+  Vì đối xứng qua trục hoành, ta có:  
+    AD hướng xuống dưới: D = (d cosθ, – d sinθ), với d > 0  
+    AB hướng lên trên: B = (b cosθ, b sinθ), với b > 0
+
+───────────────────────────────  
+2. Điều kiện AD ∥ BC
+
+Với AD đã biết, để BC song song AD, đường BC phải có cùng phương – tức cùng góc, bằng −tanθ.  
+Ta có B = (b cosθ, b sinθ) và C = (1, 0).  
+Tọa độ đoạn BC:  
+  BC","[28, '28']",28,"[28, '28']",True
+\boxed{\frac{9}{19}},"[9/19, '\\frac{9}{19}']",\frac9{19},[],False
+\boxed{49},"[49, '49']",49,"[49, '49']",True
+"\boxed{\frac{1}{3}} 
+
+Giải thích: Bốn điểm được chọn ngẫu nhiên trên đường tròn có thể sắp xếp theo thứ tự trên mặt tròn. Hai đoạn thẳng AB và CD cắt nhau khi các điểm A, B, C, D có thứ tự xen kẽ (ví dụ: A, C, B, D). Có thể chứng minh rằng trong số tất cả các thứ tự sắp xếp có thể có của bốn điểm, xác suất để chúng được xen kẽ theo cách cần thiết là 1/3.","[1/3, '\\frac{1}{3}']",\frac{1}{3},"[1/3, '\\frac{1}{3}']",True
+None,[],120,"[120, '120']",False
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{0.09},"[0.0900000000000000, '0.09']",\frac{9}{100},"[9/100, '\\frac{9}{100}']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+\boxed{1940},"[1940, '1940']",1940,"[1940, '1940']",True
+\boxed{26000},"[26000, '26000']",26000,"[26000, '26000']",True
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{66},"[66, '66']",66,"[66, '66']",True
+"\boxed{\frac{1}{16}}
+
+Để giải bài toán này, ta bắt đầu với biểu thức ban đầu:
+  cos(2π/15) cos(4π/15) cos(8π/15) cos(16π/15).
+
+Chú ý rằng 16π/15 = π + π/15, nên theo công thức cos(π + θ) = -cos θ, ta có:
+  cos(16π/15) = -cos(π/15).
+
+Như vậy biểu thức ban đầu trở thành:
+  -cos(π/15) cos(2π/15) cos(4π/15) cos(8π/15).
+
+Áp dụng công thức tích cho các hàm cos với cấp số nhân về các góc: với A = π/15, ta có công thức:
+  cos A · cos(2A) · cos(4A) · cos(8A) = sin(16A) / (16 sin A).
+
+Thay A = π/15, ta được:
+  cos(π/15) cos(2π/15) cos(4π/15) cos(8π/15) = sin(16π/15) / (16 sin(π/15)).
+
+Lưu ý rằng sin(16π/15) = sin(π + π/15) = - sin(π/15). Khi đó:
+  sin(16π/15) / (16 sin(π/15)) = - sin(π/15) / (16 sin(π/15)) = -1/16.
+
+Cuối cùng, khi nhân với hệ số ngoài là -1, ta có:
+  - ( -1/16 ) = 1/16.
+
+Vậy giá trị của biểu thức cần đơn giản hóa là:
+  \boxed{\frac{1}{16}}.","[1/16, '\\frac{1}{16}']",\frac{1}{16},"[1/16, '\\frac{1}{16}']",True
+\boxed{11(\sqrt{5}+1)},"[11*(1 + sqrt(5)), '11(\\sqrt{5}+1)']",11 \sqrt{5} + 11,"[11, '11']",False
+\boxed{81},"[81, '81']",81,"[81, '81']",True
+"\boxed{(-\sqrt{3},\sqrt{3})} 
+
+Để giải bất phương trình -4 < x⁴ + 4x² < 21, ta nhận thấy rằng x⁴ + 4x² luôn không âm với mọi x ∈ ℝ, vì vậy bất phương trình -4 < x⁴ + 4x² luôn đúng. Do đó chỉ cần giải x⁴ + 4x² < 21.
+
+Đặt y = x², ta có:
+
+  y² + 4y - 21 < 0.
+
+Giải phương trình y² + 4y - 21 = 0 ta có:
+
+  y = [-4 ± √(16 + 84)]/2 = (-4 ± 10)/2,
+  => y = 3 hoặc y = -7.
+
+Với y = x² ≥ 0, nghiệm y = -7 loại trừ, nên bất phương trình trở thành: 0 ≤ x² < 3, tương đương với:
+
+  -√3 < x < √3.","[Interval.open(-sqrt(3), sqrt(3)), '(-\\sqrt{3},\\sqrt{3})']","(-\sqrt{3}, \sqrt{3})",[],False
+\boxed{6},"[6, '6']",6,"[6, '6']",True
+\boxed{Lớp\ 12^\text{th}},"[12, 'Lớp 12^']",12,"[12, '12']",True
+"\boxed{(0,9)\cup(9,36)}
+
+Đầu tiên, ta xét bất phương trình
+  |x² - 81|/(x² - 36x) < 0.
+
+Chú ý rằng |x² - 81| luôn không âm. Để phân thức nhỏ hơn 0, mẫu số phải âm và tử số phải dương (không được bằng 0 vì khi đó phân thức = 0).
+
+1. Tử số: |x² - 81| > 0 ⟹ x² - 81 ≠ 0 ⟹ x ≠ 9 và x ≠ -9.
+
+2. Mẫu số: x² - 36x = x(x - 36). Ta cần x(x - 36) < 0. Phân tích dấu:
+   - Nếu x < 0: cả x và x - 36 đều âm ⟹ tích dương.
+   - Nếu 0 < x < 36: x dương và x - 36 âm ⟹ tích âm.
+   - Nếu x > 36: cả x và x - 36 đều dương ⟹ tích dương.
+
+Như vậy, điều kiện để mẫu số âm là x ∈ (0,36). Lưu ý x không thể bằng 0 hoặc 36 vì mẫu số bằng 0.
+
+Kết hợp các điều kiện:
+   - x ∈ (0,36)
+   - x ≠ 9 (vì khi x = 9, tử số bằng 0).
+   
+Vậy nghiệm của bất phương trình là x ∈ (0,9) ∪ (9,36).","[Union(Interval.open(0, 9), Interval.open(9, 36)), '(0,9)\\cup(9,36)']","(0,9) \cup (9,36)",[],False
+\boxed{\frac{20000}{\pi}},"[20000/pi, '\\frac{20000}{\\pi}']",\frac{20000}{\pi},[],True
+\boxed{\frac{\sqrt{21}}{5}},"[sqrt(21)/5, '\\frac{\\sqrt{21}}{5}']",\frac{\sqrt{21}}{5},[],True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+"\boxed{\sqrt{66}}
+
+Giải thích: Giả sử khối bát diện đều có đỉnh (±a,0,0), (0,±a,0), (0,0,±a) và cho điểm P = (x,y,z). Khi đó khoảng cách từ P đến các đỉnh được viết dưới dạng
+
+  PA² = (x – a)² + y² + z² = (x²+y²+z²) + a² – 2ax,
+  PB² = (x + a)² + y² + z² = (x²+y²+z²) + a² + 2ax,
+  PC² = (x²)+(y – a)²+z² = (x²+y²+z²) + a² – 2ay,
+  PD² = (x²)+(y + a)²+z² = (x²+y²+z²) + a² + 2ay,
+  PE² = (x²)+(y²)+(z – a)² = (x²+y²+z²) + a² – 2az,
+  PF² = (x²)+(y²)+(z + a)² = (x²+y²+z²) + a² + 2az.
+
+Nhận thấy rằng mỗi cặp đỉnh đối nhau có tổng bình phương khoảng cách bằng 2(x²+y²+z²+a²) không phụ thuộc vào tọa độ. Vì vậy, nếu các khoảng cách từ P đến 6 đỉnh (theo thứ tự nào đó) là d₁, d₂, d₃, d₄, d₅, d₆, thì có thể sắp thành 3 cặp sao cho bình phương của các khoảng cách theo từng cặp có tổng không đổi.
+
+Giả sử các khoảng cách cho biết là 3, 7, 8, 9, 11 và khoảng cách cần tìm là d. Quan sát bình phương của các số này là 9, 49, 64, 81, 121. Ta nhận ra rằng:
+  3² + 11² = 9 + 121 = 130,
+  7² + 9² = 49 + 81 = 130.
+Câu hỏi đặt ra làm cho cặp còn lại phải thoả: 8² + d² = 64 + d² = 130, suy ra
+  d² = 130 – 64 = 66 ⟹ d = √66.
+
+Vậy khoảng cách từ P đến đỉnh thứ sáu là √66.","[sqrt(66), '\\sqrt{66}']",\sqrt{66},[],True
+\boxed{\frac{3}{4}},"[3/4, '\\frac{3}{4}']",\frac 34,"[34, '34']",False
+\boxed{3},"[3, '3']",3,"[3, '3']",True
+\boxed{60},"[60, '60']",60,"[60, '60']",True
+\boxed{-2},"[-2, '-2']",-2,"[-2, '-2']",True
+\boxed{2\sqrt{5}},"[2*sqrt(5), '2\\sqrt{5}']",2\sqrt{5},"[2, '2']",True
+"\boxed{\{-2,\,1+\sqrt{5},\,1-\sqrt{5}\}}","[{-2, 1 - sqrt(5), 1 + sqrt(5)}, '\\{-2,\\,1+\\sqrt{5},\\,1-\\sqrt{5}\\}']","\{1\pm\sqrt{5},-2\}",[],False
+\boxed{29},"[29, '29']",29,"[29, '29']",True
+\boxed{4},"[4, '4']",4,"[4, '4']",True
+None,[],\frac{1}{2},"[1/2, '\\frac{1}{2}']",False
+\boxed{0},"[0, '0']",0,"[0, '0']",True
+\boxed{12},"[12, '12']",12,"[12, '12']",True
+\boxed{59},"[59, '59']",59,"[59, '59']",True
+\boxed{84},"[84, '84']",84,"[84, '84']",True
+\boxed{7},"[7, '7']",7,"[7, '7']",True
+\boxed{200},"[200, '200']",200,"[200, '200']",True
+\boxed{1},"[1, '1']",1,"[1, '1']",True
+\boxed{13},"[13, '13']",13,"[13, '13']",True

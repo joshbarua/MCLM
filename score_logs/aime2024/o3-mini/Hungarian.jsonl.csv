@@ -1,0 +1,99 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+\boxed{11},"[11, '11']",104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+"\boxed{n\equiv0\text{ or }2\pmod5,\text{ és 809 szám esetén, ha }1\le n\le2024.}
+
+A feladatban egy olyan játékot vizsgálunk, ahol a játékosok felváltva távolítanak el 1 vagy 4 zsetont egy halomból, és az a játékos nyer, aki az utolsó zsetont veszi el. Alice kezd, így ha a kiinduló helyzet nyertes (W-position) az első játékos számára, akkor Alice tudja majd nyerni jó stratégiával, míg ha veszteséges (P-position) a helyzet, akkor Bob számára létezik nyerő stratégia.
+
+A megoldáshoz rekurzívan határoztuk meg az n-edik helyzetet, ahol n a megmaradt zsetonok száma:
+
+– A 0 zsetonos helyzet (n=0) veszteséges, mert nincs lépési lehetőség (P-position).  
+– n=1: Az egy zseton eltávolításával a következő helyzet n=0 lesz, ami P-position, így n=1 W-position.  
+– n=2: Egyetlen lépéssel 2–1=1 állapotba jutunk (W-position), ezért n=2 P-position.  
+– n=3: Az eltávolítással 3–1=2 (P), így n=3 W.  
+– n=4: Két lehetőség is van: levonva 1, n=3 (W), vagy levonva 4, n=0 (P); mivel van olyan lépés, ami P állapotba visz, n=4 W.  
+– n=5: Esetenként, 5–1=4 (W) vagy 5–4=1 (W). Mindkét esetben a következő játékos profitálhat, tehát n=5 P.
+
+A kis számokból kiderült a szabályszerűség:
+  n = 0, 2, 5, 7, 10, 12, … P-pozíciók,
+amelyekből látszik, hogy az n-es helyzet veszteséges akkor, ha n ≡ 0 vagy n ≡ 2 (mod 5).
+
+Mivel Alice kezd, ha a játék kiindulási száma n ilyen P-position (n ≡ 0 vagy 2 mod 5), akkor Bobnak létezik olyan válaszlépése, amivel (függetlenül attól, hogy Alice hogyan játszik) mindig átválthatja a játék állását P-pozícióba, így Bob végül nyerni fog.
+
+Végül meg kell határoznunk azon pozitív egészek számát, n ≤ 2024 közül, amelyekre n ≡ 0 vagy n ≡ 2 (mod 5).
+
+• Az 5-tel osztható számok (n ≡ 0 mod 5): A legnagyobb ilyen n ≤ 2024 az 2020, és ennek a darabszáma 2020/5 = 404.  
+• Az n ≡ 2 mod 5 esetén: A legkisebb ilyen pozitív n=2, a legnagyobb pedig 2022, és a sorozat elemszáma: ((2022 - 2)/5)+1 = (2020/5)+1 = 404+1 = 405.
+
+Összesen tehát 404 + 405 = 809 olyan n van, amelyekre Bobnak létezik nyerő stratégiája.
+
+A végső válasz tehát: Bob számára nyerő stratégia létezik, ha a zsetonok számát kielégítő n ≡ 0 vagy 2 (mod 5), és n ≤ 2024 esetén ezeknek a számoknak a száma 809.","[809, 'n\\equiv0;2\\pmod5,\\text{ és 809 szám esetén, ha }1\\le n\\le2024.']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+None,[],104,"[104, '104']",False
+\boxed{294},"[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+A rövid megoldás: Először írjuk az együttható kifejezést átrendezve:
+  2-2ω^k+ω^(2k) = ω^(2k) - 2ω^k +2 = (ω^k-(1+i))(ω^k-(1-i)),
+hiszen ugyanis (ω^k-(1+i))(ω^k-(1-i)) = ω^(2k) - ω^k[(1+i)+(1-i)] + (1+i)(1-i) = ω^(2k) - 2ω^k +2,
+mivel (1+i)+(1-i)=2 és (1+i)(1-i)=1+1=2.
+
+Ezért az egész szorzat
+  ∏ₖ₌₀¹² (2-2ω^k+ω^(2k))
+felbontható két szorzatra:
+  ∏ₖ₌₀¹² (ω^k-(1+i)) · ∏ₖ₌₀¹² (ω^k-(1-i)).
+
+A 13-adik egységgyökök tulajdonságából ismerjük, hogy ha a z^(13)=1 összes gyökén végigszorzunk x–gy = ∏₍ω^(13)=1₎(x-ω)= x^(13)-1, akkor különösen:
+  ∏ₖ₌₀¹² ((1+i)-ω^k) = (1+i)^(13)-1,
+illetve
+  ∏ₖ₌₀¹² ((1-i)-ω^k) = (1-i)^(13)-1.
+Mivel a szorzatainkban a tényezők sorrendje jelentéktelen, így
+  ∏ₖ₌₀¹² (ω^k-(1+i)) = (-1)^(13) · ∏ₖ₌₀¹² ((1+i)-ω^k) = (1+i)^(13)-1,
+hiszen (-1)^(13) = -1, de ugyanez mindkét tényezőnél, és a szorzatukban ez a mínuszjel kiesik.
+
+Most számoljuk ki (1+i)^(13) és (1-i)^(13) értékeit. Kiszámolásunk legegyszerűbb módja a komplex számok polárkoordinátás alakja:
+
+1+i = √2 · e^(iπ/4), így
+  (1+i)^(13) = (√2)^(13) · e^(i 13π/4) = 2^(6.5) · e^(i (12π/4 + π/4))
+           = 2^6 · √2 · e^(i3π)·e^(iπ/4)
+           = 64 · √2 · (–1) · e^(iπ/4)
+           = –64 · (√2 · e^(iπ/4))
+           = –64(1+i),
+hiszen √2·e^(iπ/4) = 1+i.
+
+Hasonlóan,
+1-i = √2 · e^(–iπ/4)  ⇒  (1-i)^(13) = –64(1-i).
+
+Ezután:
+  (1+i)^(13)–1 = –64(1+i) – 1 = –65 – 64i,
+  (1–i)^(13)–1 = –64(1–i) – 1 = –65 + 64i.
+
+A teljes szorzat tehát:
+  (–65–64i)(–65+64i) = (65)² + (64)² = 4225 + 4096 = 8321.
+
+Végül, mivel 8321 mod 1000 = 321, a keresett maradék:
+
+\boxed{321}","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

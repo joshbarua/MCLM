@@ -1,0 +1,388 @@
+response,response_answer,answer,parsed_answer,correctness
+"\boxed{204}
+
+Najprej označimo s t (v minutah) čas, ki ga Aya preživi v kavarni, in s hitrost hoje (v km/h). Za pot dolgo 9 km potem velja:
+
+1) Pri hitrosti s km/h ima celotna pot trajanje 4 ure, vključno s t minutami prostega časa. Čas hoje v urah je torej 4 – t/60 in enačba je:  
+  9 = s·(4 – t/60).
+
+2) Pri hitrosti s + 2 km/h je celoten čas 2 uri in 24 minut, kar je 2.4 ure. Čas hoje je 2.4 – t/60, torej:  
+  9 = (s + 2)·(2.4 – t/60).
+
+Če zpostavimo A = t/60, dobimo:  
+  9 = s·(4 – A)  (1)  
+  9 = (s + 2)·(2.4 – A)  (2)
+
+Iz (1) s izrekemo kot:  
+  s = 9/(4 – A).
+
+Vstavimo v (2):  
+  9 = (9/(4 – A) + 2)·(2.4 – A).
+
+Pomnožimo z (4 – A):  
+  9(4 – A) = [9 + 2(4 – A)]·(2.4 – A).  
+Opazimo, da je 2(4 – A) = 8 – 2A in seštevek v oglatih oklepajih je 17 – 2A, torej:  
+  9(4 – A) = (17 – 2A)(2.4 – A).
+
+Računajmo obe strani:  
+  LHS = 36 – 9A.  
+  RHS = 17·2.4 – 17A – 2A·2.4 + 2A^2 = 40.8 – 17A – 4.8A + 2A^2 = 40.8 – 21.8A + 2A^2.
+
+Dobimo enačbo:  
+  36 – 9A = 40.8 – 21.8A + 2A^2.  
+Preuredimo:  
+  2A^2 – 12.8A + 4.8 = 0,  
+delimo z 2:  
+  A^2 – 6.4A + 2.4 = 0.
+
+Rešimo kvadratno enačbo:  
+  A = [6.4 ± √(6.4² – 4·2.4)]/2 = [6.4 ± √(40.96 – 9.6)]/2 = [6.4 ± √31.36]/2.  
+Ker √31.36 = 5.6, dobimo:  
+  A = (6.4 + 5.6)/2 = 6  ali  A = (6.4 – 5.6)/2 = 0.4.
+
+A = 6 pomeni t = 360 minut, kar ni smiselno saj bi bilo preveč časa v kavarni. Zato vzamemo A = 0.4, od koder:  
+  t = 0.4·60 = 24 minut.
+
+Iz (1) sedaj s preštejemo:  
+  s = 9/(4 – 0.4) = 9/3.6 = 2.5 km/h.
+
+Sedaj najdemo skupni čas poti, če Aya hodi s hitrostjo s + 1/2 = 2.5 + 0.5 = 3 km/h. Čas hoje bo:  
+  9/3 = 3 ure.  
+Skupni čas, vključno s kavarno, je torej 3 ure + 24 minut = 180 + 24 = 204 minut.
+
+Tako je odgovor:
+
+\boxed{204}","[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+"\boxed{104} 
+
+Za rešitev smo izkoristili naslednje korake:
+
+1. Opazili smo, da imajo vsi štirje trikotni ploskvi tetraedra stranice √41, √80 in √89, zato je vsak trikotnik enak. Izračunali smo njegovo površino s formulo 
+  A² = [2a²b² + 2a²c² + 2b²c² – a⁴ – b⁴ – c⁴]⁄16,
+kjer a²=41, b²=80, c²=89. Dobimo:
+  2·41·80 + 2·41·89 + 2·80·89 = 6560 + 7298 + 14240 = 28098,
+  a⁴+b⁴+c⁴ = 41²+80²+89² = 1681+6400+7921 = 16002,
+  razlika = 28098 – 16002 = 12096.
+Torej je A² = 12096/16 = 756, kar pomeni A = 6√21. Celotna površina tetraedra je S = 4A = 24√21.
+
+2. Ko ugotovimo, da tetraeder izpolnjuje pogoje, smo ga postavili v koordinatni sistem:
+  A = (0,0","[104, '104']",104,"[104, '104']",True
+"\boxed{721} 
+
+Naj bo stranski dolžine pravokotne škatle a, b, c > 0, ki izpolnjujejo:
+
+  (1) Prostornina: abc = 23,  
+  (2) Površina: 2(ab + ac + bc) = 54, torej ab + ac + bc = 27.
+
+Vsaka pravokotna škatla se lahko včrpa v kroglo, ki ima polmer enak polovici dolžine njene prostorske diagonale, torej r_box = ½√(a² + b² + c²).
+
+Ker želimo najmanjšo kroglo, ki vsebuje vse škatle iz množice ℬ, mora biti njen polmer vsaj enak največji možni polovici diagonale med vsemi škatlami. Označimo:
+
+  r = ½·max{√(a² + b² + c²)}.
+
+Torej r² = ¼·max{a² + b² + c²}.
+
+Opazimo, da se a² + b² + c² poveže s seštevkom stranic s = a + b + c preko identitete
+
+  (a + b + c)² = a² + b² + c² + 2(ab + ac + bc).
+
+Ker je ab + ac + bc = 27, dobimo
+
+  a² + b² + c² = s² − 54.
+
+Tako je maksimizacija a² + b² + c² enakovredna maksimizaciji s² oziroma s.
+
+Ker sta ab + ac + bc in abc fiksni, se ekstremum za s pojavi, ko sta vsaj dve stranicen enaki (simetrijski primer). Predpostavimo torej, da sta a in b enaki: naj bo a = b = x, ter c = y.
+
+Pogoj za volumen:  
+  x² y = 23  ⇒  y = 23/x².
+
+Pogoj za površino:  
+  ab + ac + bc = x² + 2xy = 27,  
+  x² + 2x·(23/x²) = x² + 46/x = 27.
+
+Pomnožimo enačbo z x (x > 0):  
+  x³ + 46 = 27x,  
+  x³ − 27x + 46 = 0.
+
+Preverimo, če lahko ugotovimo koren; opazimo, da x = 2 zadostuje:  
+  2³ − 27·2 + 46 = 8 − 54 + 46 = 0.
+
+Torej je x = 2. Tedaj je  
+  y = 23/(2²) = 23/4.
+
+Seštevek s = a + b + c = 2 + 2 + 23/4 = 4 + 23/4 = (16 + 23)/4 = 39/4.
+
+S tem je maksimalna vrednost a² + b² + c²:  
+  a² + b² + c² = s² − 54 = (39/4)² − 54 = (1521/16) − 54 = (1521 − 864)/16 = 657/16.
+
+Največji kvadrat prostorske diagonale je torej 657/16 in polmer krogle mora biti vsaj
+
+  r = ½√(657/16)  ⇒  r² = (1/4)(657/16) = 657/64.
+
+Zapišemo kot r² = p/q, kjer sta p = 657 in q = 64. Ker sta 657 in 64 tuji (največji skupni delitelj je 1), je iskana vrednost
+
+  p + q = 657 + 64 = 721.
+
+Zato je odgovor:
+
+\boxed{721}","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+None,[],116,"[116, '116']",False
+"\boxed{104} 
+
+Najprej postavimo koordinatni sistem tako, da je pravokotnik ABCD dan z A(0,0), B(107,0), C(107,16) in D(0,16) – ker je AB = 107 in BC = 16. Položaj točk E in F določimo na isti horizontalni premici, na kateri ležita D in C. Naj bo E = (x, 16), zaradi kolinearosti pa bo F = (x + 184, 16), ker je EF = 184. 
+
+Oba pravokotnika sta običajna, zato velja za rectangle EFGH: stranica EF = 184 in stranica FG = 17. Izberemo konstrukcijo, kjer pravokotnik “gori navzgor”: torej bomo imeli
+  H = (x, 16 + 17) = (x, 33)  in  G = (x + 184, 33).
+
+Pogoju, da točke A, D, H in G ležijo na isti krožnici, postavimo splošno enačbo krožnice. Ker sta A(0,0) in D(0,16) na krožnici, hitro ugotovimo (s primerjavo v enačbah) njeno središčno y-koordinate: 
+
+Naj bo k = y-koord. centra, h pa x-koord. centra, potem ima točka A:
+  h² + k² = r²,
+in","[104, '104']",104,"[104, '104']",True
+"\boxed{294} 
+
+Najprej opazimo, da za pot od spodnjega levega do zgornjega desnega kota moramo iti 8-krat desno (R) in 8-krat gor (U), kar skupaj da 16 premikov. Če pot spremeni smer natanko štirikrat, to pomeni, da ima pot pet zaporednih nepraznih skupin ( „runov“ ) premikov, saj je število sprememb smeri vedno za eno manjše od števila skupin.
+
+Razmislimo o dveh primerih glede na začetno smer:
+ 
+1. Začetek z R: pot ima obliko R–U–R–U–R. V tej uri se morajo število premikov v treh R skupinah sešteti na 8, število premikov v dveh U skupinah pa na 8. Ker mora biti v vsaki skupini vsaj en premik, imamo:
+   • Število pozitivnih rešitev enačbe r₁ + r₂ + r₃ = 8 je (8–1 nad 3–1) = C(7,2) = 21.
+   • Število pozitivnih rešitev enačbe u₁ + u₂ = 8 je (8–1 nad 2–1) = C(7,1) = 7.
+   Skupaj je to 21 · 7 = 147 možnosti.
+ 
+2. Začetek z U: pot ima obliko U–R–U–R–U. Podobno kot prej velja:
+   • Za U skupine (tri skupine): 21 možnosti.
+   • Za R skupine (dve skupini): 7 možnosti.
+   Skupaj spet 21 · 7 = 147 možnosti.
+  
+Ker sta primera medsebojno izključujoča, je skupno število poti, ki imajo natanko 4 spremembe smeri, enako 147 + 147 = 294.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+"\boxed{480}
+
+Naj bo A = (a, b) in B = (c, d) točki na hiperboli
+  x²/20 - y²/24 = 1,
+ter potem imata nasprotni točki C = (–a, –b) in D = (–c, –d). Ker se diagonale romba prečkajo v izhodišču, jima pripada simetrija skozi 0, in ker je ABCD romb (v rhombusu so diagonale pravokotne in se medsebojno bisekcirajo), velja:
+  AC ⟂ BD     (1)
+kjer je AC = (2a, 2b) in BD = (2c, 2d); torej
+  a·c + b·d = 0.     (2)
+
+Opazimo, da dana hiperbola vsebuje vse premice, ki gredo skozi izhodišče – to so namreč prečni (diagonali) narišemo preko izhodišča. Torej lahko diagonalama romba pripišemo izraza, kjer sta njuni smeri poljubni, vendar se med seboj razlikujeta za 90°.
+
+Parameterizirajmo eno diagonalo s smerjo pod kotom θ:
+  x = r cosθ,  y = r sinθ.
+V ravnini sta točki A in C presečišča te premice s hiperbolo. Vstavimo v enačbo hiperbole y = r sinθ, x = r cosθ:
+  (r cosθ)²/20 – (r sinθ)²/24 = 1 ⟹ r² (cos²θ/20 – sin²θ/24) = 1.
+Torej bomo imeli dva nasprotna rešišča ±(r cosθ, r sinθ).
+
+Drugo diagonalo izberemo pravokotno na prvo, torej pod smerjo θ + π/2 oziroma, kar je enako, s smernim faktorjem –cotθ. Vstavimo parameterizacijo:
+  x = s cosθ,  y = –s sinθ.
+Pri tem (glej spodaj za natančnejšo parameterizacijo) se poda podobna enačba za s.
+
+Lahko uporabimo dejstvo, da sta diagonali prečni, in kar velja za vsako par conoizbranih premic skozi 0, ki se sekajo s pravokotno smerjo, se njuni presečni točki postavita na hiperbolo, če je dano prirejanje. Natančen postopek—s parametričnim zapisom in iskanjem pogoja enakih stranic—vabi k nekoliko obsežnim računom, vendar je op","[480, '480']",480,"[480, '480']",True
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+"\boxed{601} 
+
+Rešitev: Naj bo (a, b, c) trojica nenegativnih celih števil s seštevkom a + b + c = 300 in zadoščajo:
+
+  a²b + a²c + b²a + b²c + c²a + c²b = 6,000,000.
+
+Opazimo, da velja identiteta
+
+  a²b + a²c + b²a + b²c + c²a + c²b = (a + b + c)(ab + ac + bc) – 3abc.
+
+Ker je a + b + c = 300, dobimo:
+  300(ab + ac + bc) – 3abc = 6,000,000
+  ⟹ 100(ab + ac + bc) – abc = 2,000,000    (1)
+
+Sedaj razmislimo o simetričnem polinomu s koreni a, b in c:
+  x³ – (a + b + c)x² + (ab + ac + bc)x – abc = 0,
+torej:
+  x³ – 300x² + (ab + ac + bc)x – abc = 0.
+
+Ker enačba (1) povezuje ab + ac + bc in abc, se po nekaj preoblikovanj lahko pokaže, da je x = 100 vedno koren. Dejansko, po delitvi ali z operatorsko metodo ugotovimo, da se ta kubična enačba razcepi v:
+  (x – 100)(x² – 200x + k) = 0,
+kjer je k ustrezno parameter, ki ga določimo. Namreč, z delitvijo dobimo:
+  abc = 100k  in  ab + ac + bc = 20,000 + k.
+S tem so pogoji vedno izpolnjeni, če so a, b in c števila v trojici:
+  100, 100 + u, 100 – u  , kjer je u tak, da sta 100 + u in 100 – u nenegativni.
+Ker mora 100 – u ≥ 0, sledi u ≤ 100 in u ≥ 0.
+
+Torej za vsak u ∈ {0, 1, 2, …, 100} dobimo rešitev trojice:
+  (100, 100 + u, 100 – u).
+
+Opazimo, da je pri u = 0 trojica enolična (vse vrednosti so enake: (100, 100, 100)), medtem, ko so za u > 0 vsi trije elementi med seboj različni. Ker so enačbe simetrične, kateri koli premiks vrednosti med a, b in c predstavlja novo urejeno trojico.
+
+Število urejenih permutacij (a, b, c) je torej:
+  • za u = 0: 1 način,
+  • za vsak u ∈ {1, 2, ..., 100}: 3! = 6 načinov.
+
+Skupno število rešitev je:
+  1 + 6·100 = 601.
+
+Zato je število trojic nenegativnih celih števil, ki zadoščajo danima enačbama, enako \boxed{601}.","[601, '601']",601,"[601, '601']",True
+None,[],23,"[23, '23']",False
+"\boxed{321} 
+
+Najprej opazimo, da števec ima izraz
+  2 – 2ω^k + ω^(2k) = ω^(2k) – 2ω^k + 2,
+ki ga lahko zapišemo kot
+  (ω^k – (1+i))(ω^k – (1-i)),
+saj velja
+  (ω^k – (1+i))(ω^k – (1-i)) = ω^(2k) – ω^k[(1+i)+(1-i)] + (1+i)(1-i)
+          = ω^(2k) – 2ω^k + ((1)^2+1) = ω^(2k) – 2ω^k + 2.
+
+Ker so ω^k, k = 0, 1, …, 12, vsi 13. enoti kompleksne enote, uporabimo znano formulo:
+  ∏_(k=0)^(n–1) (a – ω^k) = a^n – 1.
+V našem primeru, n = 13, zato dobimo:
+  ∏_(k=0)^(12)(ω^k – a) = 1 – a^13.
+Uporabimo to za a = 1+i in a = 1-i:
+  ∏_(k=0)^(12)(ω^k – (1+i)) = 1 – (1+i)^13,
+  ∏_(k=0)^(12)(ω^k – (1-i)) = 1 – (1-i)^13.
+
+Tako se naš produkt razcepi na:
+  P = [1 – (1+i)^13]·[1 – (1-i)^13].
+
+Izračunajmo (1+i)^13 in (1-i)^13. Zapišemo:
+  1+i = √2·e^(iπ/4)  in  1-i = √2·e^(-iπ/4).
+Potem:
+  (1+i)^13 = (√2)^13 e^(i·13π/4) = 2^(6.5) e^(i·13π/4).
+Opazimo, da je
+  13π/4 = 2π + 5π/4,
+torej
+  (1+i)^13 = 2^(6.5) e^(i·5π/4) = 64√2 (cos(5π/4)+ i sin(5π/4)).
+Ker je cos(5π/4) = –√2/2 in sin(5π/4) = –√2/2, dobimo:
+  (1+i)^13 = 64√2·[–√2/2 – i (√2/2)] = 64 (–1 – i) = –64 – 64i.
+Podobno je
+  (1-i)^13 = –64 + 64i.
+
+Sedaj je:
+  P = [1 – (–64 – 64i)]·[1 – (–64 + 64i)] = (65 + 64i)(65 – 64i)
+        = 65^2 + 64^2 = 4225 + 4096 = 8321.
+
+Želimo ostanek pri deljenju s 1000, saj je 8321 mod 1000 = 321.
+
+Tako je končni odgovor:
+\boxed{321}","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+"\boxed{45} 
+
+Najprej označimo celice z:
+  a  b  c
+  d  e  f
+
+Ker branje od leve proti desni daje števili R₁ = 100a + 10b + c in R₂ = 100d + 10e + f, pogoj R₁ + R₂ = 999 lahko zapišemo kot:
+  100(a + d) + 10(b + e) + (c + f) = 999.
+Ker je 999 = 100·9 + 10·9 + 9, sledi, da morajo biti:
+  a + d = 9,  b + e = 9,  c + f = 9.
+
+Na branju od zgoraj navzdol dobimo stolpčni števili:
+  C₁ = 10a + d,  C₂ = 10b + e,  C₃ = 10c + f,
+in pogoj C₁ + C₂ + C₃ = 99 postane:
+  (10a + d) + (10b + e) + (10c + f) = 10(a + b + c) + (d + e + f) = 99.
+
+Naj bo T = a + b + c (vsota številk prve vrstice) in S = d + e + f.
+Z zgornjimi pogoji dobimo:
+  (1)  10T + S = 99,
+  (2)  ker d = 9 – a, e = 9 – b, f = 9 – c, sledi S = (9 – a) + (9 – b) + (9 – c) = 27 – T.
+Vstavimo S = 27 – T v enačbo (1):
+  10T + (27 – T) = 9T + 27 = 99  ⟹  9T = 72  ⟹  T = 8.
+Torej je pogoj a + b + c = 8.
+
+Ker lahko v vsako celico vstavimo katerokoli števko med 0 in 9 (vključno z 0, kar je dovoljeno, npr. v zgornjem primeru), je potrebno poiskati število rešitev enačbe
+  a + b + c = 8 , kjer so a, b, c ∈ {0, 1, …, 9}.
+
+Število netrivialnih rešitev te enačbe (s pomočjo zvezdic in palic) je:
+  C(8 + 3 – 1, 3 – 1) = C(10, 2) = 45.
+
+Ko so izbrane števke a, b, c, so d, e, f določene z d = 9 – a, e = 9 – b, f = 9 – c, kar zagotavlja pravište pogoje.
+
+Tako obstaja točno 45 načinov postavitve števk, ki ustrezajo danim pogojem.
+
+Odgovor je torej 
+  \boxed{45}.","[45, '45']",45,"[45, '45']",True
+"\boxed{\frac{25}{8} \text{ and } 33} 
+
+Najdemo rešitev sistema z vpeljavo spremenljivk a = log₂x, b = log₂y in c = log₂z. Sistem se prevede v
+
+  a - b - c = ½,  b - a - c = ⅓,  c - a - b = ¼.
+
+Odštejemo prvo enačbo od druge:
+  (a - b - c) - (b - a - c) = ½ - ⅓ ⟹ 2(a - b) = 1/6 ⟹ a - b = 1/12.
+Podobno odštejemo prvo od tretje:
+  (a - b - c) - (c - a - b) = ½ - ¼ ⟹ 2(a - c) = 1/4 ⟹ a - c = 1/8.
+
+Iz prve enačbe dobimo a = b + c + ½. Vendar pa lažje združimo vse tri enačbe. Seštejemo jih:
+  (a - b - c) + (b - a - c) + (c - a - b) = ½ + ⅓ + ¼.
+Leva stran se poenostavi:
+  a + b + c - 2(a + b + c) = - (a+b+c),
+torej
+  -(a + b + c) = (6/12 + 4/12 + 3/12) = 13/12,
+torej
+  a + b + c = -13/12.
+
+Sedaj izrazimo b in c v odvisnosti od a:
+  b = a - 1/12,  c = a - 1/8.
+Vstavimo v vsoto:
+  a + (a - 1/12) + (a - 1/8) = 3a - (1/12 + 1/8) = -13/12.
+Opazimo, da je 1/12 + 1/8 = (2+3)/24 = 5/24, torej
+  3a - 5/24 = -13/12 ⟹ 3a = -13/12 + 5/24 = (-26 + 5)/24 = -21/24 ⟹ a = -7/24.
+Zato je
+  b = -7/24 - 1/12 = -7/24 - 2/24 = -9/24 = -3/8,
+  c = -7/24 - 1/8 = -7/24 - 3/24 = -10/24 = -5/12.
+
+Iščemo |log₂(x⁴y³z²)| = |4a + 3b + 2c|:
+  4a = 4(-7/24) = -28/24,
+  3b = 3(-3/8) = -9/8 = -27/24,
+  2c = 2(-5/12) = -10/12 = -20/24.
+Skupaj:
+  4a + 3b + 2c = -28/24 - 27/24 - 20/24 = -75/24 = -25/8.
+Absolute vrednost je 25/8, kjer sta 25 in 8 relativno praštevili.
+
+Tako je iskana vsota m + n = 25 + 8 = 33.","[{25/8, 33}, '\\frac{25}{8} ; 33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Naša logika je sledeča: Bobov seznam vsebuje vse končne neprazne množice B pozitivnih celih števil, pri katerih je največji element v A. Če za poljuben pozitivni integer m razmislimo o vseh množicah B s tremi pogoji, je m največji element in je v B, potem je preostalih elementov poljubno izbrati iz {1, 2, …, m-1}. Število takih množic je torej 2^(m-1).
+
+Ker mora biti največji element množice B vedno element A, je skupno število množic:
+
+  ∑(m∈A) 2^(m-1) = 2024.
+
+Ker predstavljeni vsota različnih potenc dvojke je edinstvena, poiščemo zapis števila 2024 kot vsoto potenc dvojke. Največja potenca dvojke, ki ne presega 2024, je 2^(10)=1024. Izračunamo:
+  2024 - 1024 = 1000.
+Nato 2^(9)=512 pripada,
+  1000 - 512 = 488.
+Nato 2^(8)=256 pripada,
+  488 - 256 = 232.
+Nato 2^(7)=128 pripada,
+  232 - 128 = 104.
+Nato 2^(6)=64 pripada,
+  104 - 64 = 40.
+Nato 2^(5)=32 pripada,
+  40 - 32 = 8.
+Na koncu 2^(3)=8 pripada,
+  8 - 8 = 0.
+
+Tako je 2024 = 2^(10) + 2^(9) + 2^(8) + 2^(7) + 2^(6) + 2^(5) + 2^(3), kar pomeni, da mora biti
+
+  A = {m ∈ ℕ | m − 1 ∈ {3, 5, 6, 7, 8, 9, 10}} = {4, 6, 7, 8, 9, 10, 11}.
+
+Vsota elementov množice A je torej: 4 + 6 + 7 + 8 + 9 + 10 + 11 = 55.
+
+Tako je končni odgovor:
+
+\boxed{55}","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

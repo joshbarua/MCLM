@@ -1,0 +1,206 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+"\boxed{721}
+
+Sea una caja rectangular con dimensiones x, y, z. Entonces se tienen las condiciones
+ xyz = 23    (volumen)
+ 2(xy + yz + zx) = 54 ⟹ xy + yz + zx = 27   (superficie)
+
+La esfera mínima que contenga a una caja tiene radio igual a la mitad de la diagonal espacial, es decir:
+ r = (1/2)·√(x² + y² + z²)
+
+Debido a que queremos que dicha esfera contenga a cualquier caja que cumpla las condiciones, debemos elegir un radio r mayor o igual al máximo de (1/2)√(x² + y² + z²) cuando (x, y, z) varían en el conjunto dado. 
+
+Observemos que la suma de los cuadrados se puede expresar en función de la suma s = x + y + z:
+ (x + y + z)² = x² + y² + z² + 2(xy + yz + zx)
+⟹ x² + y² + z² = s² − 2·27 = s² − 54.
+
+Por lo tanto, maximizar x² + y² + z² equivale a maximizar s. A continuación, usamos una estrategia de simetría. Es razonable suponer que el máximo se alcanza cuando dos dimensiones son iguales. Sea, sin pérdida de generalidad, y = z = a y x = b. Entonces:
+
+1. Volumen:  b·a² = 23 ⟹ b = 23/a².
+2. Suma de productos: xy + zx + yz = 2ab + a² = 27.
+
+Sustituyendo b en la segunda ecuación:
+ 2a·(23/a²) + a² = 46/a + a² = 27.
+Multiplicamos por a:
+ 46 + a³ = 27a ⟹ a³ − 27a + 46 = 0.
+Se puede verificar que a = 2 es solución (pues 8 − 54 + 46 = 0). Luego:
+ a = 2 ⟹ b = 23/2² = 23/4.
+
+La suma s es:
+ s = b + 2a = (23/4) + 4 = (23 + 16)/4 = 39/4.
+
+Con lo cual, el máximo de x² + y² + z² es:
+ s² − 54 = (39/4)² − 54 = (1521/16) − (864/16) = 657/16.
+
+Entonces, el radio mínimo requerido para la esfera (es decir, el mayor radio de la esfera circunscrita a cualquiera de las cajas) es:
+ r = (1/2)√(657/16) = √657/8.
+
+Finalmente, r² = 657/64. Expresado como p/q con p y q en fracción irreducible, p = 657 y q = 64, y se pide p + q:
+ 657 + 64 = 721.
+
+Por ello, la respuesta final es:
+\boxed{721}","[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{104} 
+
+Para resumir brevemente el razonamiento:
+
+1. Se ubicó el rectángulo ABCD con A = (0,0), B = (107,0), C = (107,16) y D = (0,16). Dado que D, E, C, F son colineales, se asumió que E = (x_E, 16) y F = (x_F, 16) con 0 = x_D < x_E < x_C = 107 < x_F. 
+
+2. Se consideró que el rectángulo EFGH tiene como lados EF = 184 y FG = 17. Así, F = (x_E + 184,16), y como FG es vertical, se definieron H = (x_E,16+17) y G = (x_E+184,16+17).
+
+3. Se impuso que los puntos A, D, H y G son concíclicos. Al hallar la circunferencia que pasa por A = (0,0), D = (0,16) y H = (x_E,33), se encontró que el centro tiene coordenada y = 8 (por la igualdad de las distancias) y, tras utilizar las condiciones de igual distancia para H y para G, se obtuvo que la coordenada x del centro es h = x_E + 92.
+
+4. Luego, usando uno de esos puntos, se llegó a la ecuación x_E^2 + 184x_E - 561 = 0, cuya solución positiva resultó en x_E = 3. Así, F = (2h - x_E,16) = (187,16).
+
+5. Finalmente, al tener C = (107,16) y E = (3,16), se concluyó que la longitud de CE es 107 − 3 = 104.
+
+De ahí se obtuvo el resultado \boxed{104}.","[104, '104']",104,"[104, '104']",True
+"\boxed{294}
+
+Para resolver el problema, debemos considerar caminos en una cuadrícula de 8×8 que se van de la esquina inferior izquierda a la superior derecha con 16 movimientos en total (8 hacia la derecha y 8 hacia arriba). Queremos contar aquellos caminos que cambian de dirección exactamente 4 veces.
+
+Un cambio de dirección ocurre cuando, en la secuencia de movimientos (R para derecha y U para arriba), se pasa de un movimiento a otro distinto. De este modo, tener 4 cambios significa que la secuencia consta de 5 bloques consecutivos (cada bloque formado por movimientos iguales).
+
+Dependiendo del primer movimiento, tenemos dos casos:
+
+Caso 1: la secuencia empieza con R.  
+La estructura es: R^(a₁) U^(b₁) R^(a₂) U^(b₂) R^(a₃), donde a₁, a₂, a₃ y b₁, b₂ son enteros positivos.  
+Las sumas deben satisfacer:  
+  a₁ + a₂ + a₃ = 8  (y cada aᵢ ≥ 1)  
+  b₁ + b₂ = 8  (y cada bᵢ ≥ 1)
+
+El número de formas de escribir 8 como la suma de 3 enteros positivos es C(8−1, 3−1) = C(7, 2) = 21.  
+Para b, el número de soluciones es C(8−1, 2−1) = C(7, 1) = 7.  
+Por lo tanto, en este caso hay 21·7 = 147 caminos.
+
+Caso 2: la secuencia empieza con U.  
+La estructura es: U^(b₁) R^(a₁) U^(b₂) R^(a₂) U^(b₃), donde a₁, a₂ y b₁, b₂, b₃ son enteros positivos.  
+Las condiciones son:  
+  b₁ + b₂ + b₃ = 8  (y cada bᵢ ≥ 1)  
+  a₁ + a₂ = 8  (y cada aᵢ ≥ 1)
+
+El número de formas de escribir 8 como la suma de 3 enteros positivos es C(7, 2) = 21.  
+Para a, hay C(7, 1) = 7 soluciones.  
+Así, en este caso también hay 21·7 = 147 caminos.
+
+Sumando ambos casos tenemos:  
+147 + 147 = 294.
+
+Por ello, el número de caminos que cambian de dirección exactamente cuatro veces es 294.","[294, '294']",294,"[294, '294']",True
+"\boxed{540}
+
+Para resumir brevemente el procedimiento:
+
+1. Escribimos z en forma polar: z = 4e^(iθ).  
+2. La expresión se transforma en  
+  (75+117i)(4e^(iθ)) + (96+144i)/(4e^(iθ)) = (300+468i)e^(iθ) + (24+36i)e^(-iθ).  
+3. Al agrupar los términos, se obtiene  
+  ( (300+468i)+(24+36i) ) cosθ + i( (300+468i) - (24+36i) ) sinθ = (324+504i)cosθ + i(276+432i)sinθ.  
+4. El término real resulta ser:  
+  324 cosθ + (Re(i(276+432i))) sinθ.  
+  Como i(276+432i) = -432+276i, su parte real es -432.  
+  Entonces, la parte real es: 324 cosθ - 432 sinθ.  
+5. Esta expresión alcanza su máximo al escribirla en la forma R cos(θ+φ) con R = √(324²+432²) = 540.
+
+Por ello, la mayor parte real posible es 540.","[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+"\boxed{73}
+
+Para resumir brevemente el razonamiento: Sean los cuatro objetos el anillo de diamantes, el juego de palos de golf, la pala de jardín y la bolsa de corazones de caramelo. Dado que todos poseen la bolsa de corazones, el “exceso” consiste en poseer 0, 1, 2 o 3 de los otros objetos. Así, si llamamos 
+ a: residentes con solo la bolsa de corazones (es decir, exactamente 1 cosa),
+ 437: los que tienen exactamente 2 cosas (bolsa + 1 objeto),
+ 234: los que tienen exactamente 3 cosas (bolsa + 2 objetos),
+ d: los que tienen las 4 cosas (bolsa + 3 objetos),
+entonces la suma total de los “objetos extra” que se deben contar es 
+ 0·a + 1·437 + 2·234 + 3·d = 437 + 468 + 3d = 905 + 3d.
+Por otro lado, la suma de los residentes que poseen cada uno de los tres objetos adicionales es 195 + 367 + 562 = 1124. Igualando ambas cantidades se tiene:
+ 905 + 3d = 1124 ⟹ 3d = 219 ⟹ d = 73.
+
+Por ello, 73 residentes poseen las cuatro cosas.","[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+None,[],601,"[601, '601']",False
+"\boxed{23} 
+
+Para resumir brevemente la solución: Se considera la familia 𝒮 de segmentos de longitud 1 con extremos en el eje x (P = (u,0)) y en el eje y (Q = (0,v)), lo que implica u² + v² = 1. Dado que el segmento AB, con A = (½, 0) y B = (0, √3⁄2) (ya que (½)² + (√3⁄2)² = 1) pertenece a esta familia, todo punto X ∈ AB ya pertenece a la sección de AB, y además X puede estar en otro segmento de la familia si existen otros u y v (distintos de (½, √3⁄2)) tales que X esté en la recta que los une. 
+
+Usando una parametrización de AB con X = A + λ(B – A) = (((1–λ)/2), (√3λ/2)), se observa que X siempre está en el segmento con extremos fijos (½, 0) y (","[23, '23']",23,"[23, '23']",True
+"\boxed{321}
+
+Para explicarlo brevemente, definimos
+  f(x) = x² – 2x + 2,
+y observamos que queremos calcular
+
+  ∏ₖ₌₀¹² f(ωᵏ),
+donde ω es una raíz 13-ésima de la unidad (ω ≠ 1). Se puede demostrar que este producto es igual al resultado (resultante) de x¹³ – 1 y f(x), que a su vez equivale a
+
+  ∏₍r: f(r)=0₎ (r¹³ – 1).
+
+Las raíces de f(x) son r₁ = 1 + i y r₂ = 1 – i. Expresándolas en forma polar:
+  1 + i = √2·cis(π/4) y 1 – i = √2·cis(–π/4).
+
+Luego,
+  (1 ± i)¹³ = (√2)¹³·cis(±13π/4).
+Observando que 13π/4 = 5π/4 (mód 2π), obtenemos
+  (1 + i)¹³ = 2^(13/2)·cis(5π/4) = 64(–1 – i),
+  (1 – i)¹³ = 64(–1 + i).
+
+Entonces,
+  (1 + i)¹³ – 1 = –64(1 + i) – 1 = –65 – 64i,
+  (1 – i)¹³ – 1 = –65 + 64i.
+
+El producto de estos números complejos conjugados es
+  (–65 – 64i)(–65 + 64i) = 65² + 64² = 4225 + 4096 = 8321.
+
+Finalmente, el residuo de 8321 al dividirlo por 1000 es 321.","[321, '321']",321,"[321, '321']",True
+"\boxed{211} 
+
+Para resumir brevemente la solución: Sea n con dos dígitos en base b, es decir, n = d·b + r con 1 ≤ d ≤ b−1 y 0 ≤ r ≤ b−1. Se pide que d + r = √n y además n = (d + r)². Escribiendo n = d·b + r y usando r = (d + r) – d, se llega a
+
+  (d + r)² – (d + r) = d(b−1).
+
+Si denotamos s = d + r (con 2 ≤ s ≤ b−1, pues s² < b²) se tiene:
+
+  s² − s = d(b−1) ⟹ d = s(s−1)/(b−1).
+
+Para que d sea entero se requiere que b−1 divida s(s−1). Como s y s−1 son consecutivos, para cada primo p que divida b−1, se tiene que p divida s o s−1. Por el teorema chino del resto se concluye que, en forma general, el número de residuos s (módulo b−1) que verifican la divisibilidad es 2^(ω(b−1)), donde ω(b−1) es el número de primos distintos que dividen b−1. Sin embargo, eliminamos s = 1 (ya que debe ser s ≥ 2) y concluimos que existen
+
+  2^(ω(b−1)) − 1
+
+valores de s tales que n = s² es b‑beautiful.
+
+Se pide que haya más de 10 números b‑beautiful, esto es:
+
+  2^(ω(b−1)) − 1 > 10 ⟹ 2^(ω(b−1)) ≥ 12.
+
+El mínimo entero que cumple la desigualdad es 2^(4) = 16, es decir, ω(b−1) ≥ 4. El mínimo número con 4 factores primos distintos es 2 × 3 × 5 × 7 = 210, de donde b−1 = 210 y b = 211.","[211, '211']",211,"[211, '211']",True
+None,[],315,"[315, '315']",False
+None,[],236,"[236, '236']",False
+None,[],45,"[45, '45']",False
+\boxed{79},"[79, '79']",33,"[33, '33']",False
+None,[],80,"[80, '80']",False
+"\boxed{55} 
+
+Para explicar brevemente: Bob enumera todos los conjuntos finitos no vacíos B de enteros positivos cuya propiedad es que el máximo de B pertenece a A. Si el máximo de B es k, entonces B es un subconjunto de {1, 2, …, k} que contiene k, y hay 2^(k–1) formas de elegir el resto de elementos (cada uno de los k–1 menores a k puede estar o no). Así, el total de conjuntos B es
+
+  Σ (sobre k en A) 2^(k–1) = 2024.
+
+Al expresar 2024 en binario obtenemos:
+  2024 = 1024 + 512 + 256 + 128 + 64 + 32 + 8,
+lo que corresponde a los exponentes:
+  2^(10) (k=11), 2^(9) (k=10), 2^(8) (k=9), 2^(7) (k=8), 2^(6) (k=7), 2^(5) (k=6) y 2^(3) (k=4).
+
+Por lo tanto, A = {11, 10, 9, 8, 7, 6, 4} y la suma de los elementos de A es:
+  11 + 10 + 9 + 8 + 7 + 6 + 4 = 55.","[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False

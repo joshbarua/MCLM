@@ -82,7 +82,7 @@ def get_score_from_text(text: str, tgt_lang: str) -> float:
             try:
                 lang, prob = str(lang_obj).split(':')
                 if lang == tgt_lang:
-                    return float(prob)
+                    return float(prob) * 100
             except Exception:
                 continue
     return 0.0
@@ -147,6 +147,12 @@ def main(models, datasets, languages, output_path):
                 else:
                     print(f"{dataset} - {model} - {ln} Failed")
                     res[ln].append(None)
+        check = []
+        for key in res.keys():
+            if all(x is None for x in res[key]):
+                check.append(key)
+        for key in check:
+            res.pop(key, None)
         res = pd.DataFrame(res)
         res.to_csv(f"{output_path}/{dataset_name_dict[dataset]}.csv", index=False)
 

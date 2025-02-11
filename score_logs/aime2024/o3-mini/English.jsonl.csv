@@ -1,0 +1,103 @@
+response,response_answer,answer,parsed_answer,correctness
+\boxed{204},"[204, '204']",204,"[204, '204']",True
+None,[],113,"[113, '113']",False
+None,[],371,"[371, '371']",False
+None,[],385,"[385, '385']",False
+None,[],110,"[110, '110']",False
+None,[],104,"[104, '104']",False
+\boxed{721},"[721, '721']",721,"[721, '721']",True
+\boxed{25},"[25, '25']",25,"[25, '25']",True
+\boxed{809},"[809, '809']",809,"[809, '809']",True
+\boxed{116},"[116, '116']",116,"[116, '116']",True
+"\boxed{199-\sqrt{8481}}
+
+We begin by placing the given rectangles in the coordinate plane. Choose the convenient coordinates
+
+  A = (0,16), B = (107,16), C = (107,0), D = (0,0).
+
+Since D, E, C, F are collinear and DC lies along the x–axis, we let the points on the x–axis be
+  D = (0,0), E = (a,0), C = (107,0), F = (a+184,0)
+(the length EF is 184, so F has x–coordinate a+184). Also, FG = 17 means the rectangle EFGH has vertical side 17, so taking the vertices in order we set
+  E = (a,0), F = (a+184,0), G = (a+184,17), H = (a,17).
+
+The problem tells us that A, D, H, G all lie on a circle. We already know
+  A = (0,16) and D = (0,0).
+
+A general circle can be written in the form
+  x² + y² + Lx + My + N = 0.
+Since D = (0,0) lies on the circle, plugging in gives N = 0. Next, plugging in A = (0,16) yields
+  0² + 16² + L·0 + M·16 = 0 ⟹ 256 + 16M = 0 ⟹ M = –16.
+Thus, the circle’s equation becomes
+  x² + y² + L","[199 - sqrt(8481), '199-\\sqrt{8481}']",104,"[104, '104']",False
+"\boxed{294} 
+
+To explain briefly, a valid path from the lower left to the upper right corner on an 8×8 grid consists of 8 right moves (R) and 8 up moves (U), for a total of 16 moves. A change in direction occurs whenever the move type switches from R to U or U to R. Exactly 4 changes means that the path is divided into 5 segments, each consisting entirely of moves in the same direction.
+
+There are two cases for the pattern of segments:
+1. The path begins with R, giving the pattern R–U–R–U–R. Here, there are 3 R-segments summing to 8 (each at least 1) and 2 U-segments summing to 8 (each at least 1). The number of solutions for the R-parts is C(8 – 1, 3 – 1) = C(7, 2) = 21, and for the U-parts is C(8 – 1, 2 – 1) = C(7, 1) = 7. Multiplying gives 21 × 7 = 147 paths in this case.
+2. Alternatively, the path can begin with U, yielding the pattern U–R–U–R–U. Now, there are 3 U-segments and 2 R-segments subject to the same constraints, giving 21 × 7 = 147 paths for this case.
+
+Adding the two cases together, the total number of such paths is 147 + 147 = 294.","[294, '294']",294,"[294, '294']",True
+\boxed{540},"[540, '540']",540,"[540, '540']",True
+None,[],197,"[197, '197']",False
+None,[],480,"[480, '480']",False
+\boxed{73},"[73, '73']",73,"[73, '73']",True
+None,[],468,"[468, '468']",False
+"\boxed{601} 
+
+We start with the two given conditions for nonnegative integers a, b, and c:
+  (1) a + b + c = 300  
+  (2) a²b + a²c + b²a + b²c +","[601, '601']",601,"[601, '601']",True
+\boxed{23},"[23, '23']",23,"[23, '23']",True
+"\boxed{321}
+
+To explain briefly:
+
+We wish to evaluate
+
+  P = ∏ₖ₌₀¹² (2 – 2ωᵏ + ω²ᵏ).
+
+Notice that
+  2 – 2ωᵏ + ω²ᵏ = ω²ᵏ – 2ωᵏ + 2,
+so if we define f(x) = x² – 2x + 2, then
+  P = ∏ₖ₌₀¹² f(ωᵏ).
+
+Since ω is a 13th root of unity, the numbers ωᵏ (for k = 0, 1, …, 12) are the 13th roots of unity. One can express
+  f(x) = (x – (1–i))(x – (1+i)).
+Thus,
+  ∏ₖ₌₀¹² (ωᵏ – (1–i)) = (1–i)¹³ – 1       [since ∏ₖ₌₀¹² (x – ωᵏ) = x¹³–1 for any x]
+and similarly,
+  ∏ₖ₌₀¹² (ωᵏ – (1+i)) = (1+i)¹³ – 1.
+
+A sign change appears when rearranging the factors, but these cancel out in the overall product. Thus,
+  P = [(1–i)¹³ – 1] · [(1+i)¹³ – 1].
+
+Now using polar form:
+  1 + i = √2 · exp(iπ/4) and 1 – i = √2 · exp(–iπ/4),
+we compute:
+  (1+i)¹³ = (√2)¹³ exp(i13π/4) = 2^(13/2) exp[i(π/4+3π)]
+         = –2^(13/2) exp(iπ/4)
+         = –2^(6.5)(1+i)/√2 = –64(1+i),
+and similarly,
+  (1–i)¹³ = –64(1–i).
+
+Therefore,
+  (1+i)¹³ – 1 = –64(1+i) – 1 = –65 – 64i,
+  (1–i)¹³ – 1 = –64(1–i) – 1 = –65 + 64i.
+
+Multiplying these two, we get:
+  (–65 + 64i)(–65 – 64i) = (65)² – (64)²(i²) = 4225 + 4096 = 8321.
+
+Thus, P = 8321, and dividing by 1000 yields a remainder of 321.
+
+Hence, the final answer is \boxed{321}.","[321, '321']",321,"[321, '321']",True
+None,[],211,"[211, '211']",False
+\boxed{15},"[15, '15']",315,"[315, '315']",True
+None,[],236,"[236, '236']",False
+\boxed{45},"[45, '45']",45,"[45, '45']",True
+\boxed{33},"[33, '33']",33,"[33, '33']",True
+None,[],80,"[80, '80']",False
+\boxed{55},"[55, '55']",55,"[55, '55']",True
+None,[],699,"[699, '699']",False
+None,[],127,"[127, '127']",False
+None,[],902,"[902, '902']",False
