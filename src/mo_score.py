@@ -1,10 +1,11 @@
 import pandas as pd
-from prompts import judge_template
+from prompts import judge_template, language_dict
 from math_verify import parse, verify
 from collections import Counter
 from langdetect import detect
 from openai import OpenAI
 from tqdm.auto import tqdm
+from datasets import load_dataset
 import argparse
 import json
 import re
@@ -79,7 +80,8 @@ def receive_batch(file_ids, save_path="batch_result"):
     os.makedirs(save_path, exist_ok=True)
     client = OpenAI()
     for key, val in file_ids.items():
-        file_response = client.files.content(val).content
+        output_file_id = client.batches.retrieve(val).output_file_id
+        file_response = client.files.content(output_file_id).content
     
         with open(os.path.join(save_path, f"{key}_judge.jsonl"), 'wb') as file:
             file.write(file_response)
@@ -107,7 +109,7 @@ def mo_get_score(root_path, save_path="score_result"):
                 subsub.reset_index(inplace=True, drop=True)
                 for i,row in subsub.iterrows():
                     if "IMO" in file:
-                        if not dataset.loc[i, lang]:
+                        if not dataset.loc[i, get_keys_by_value(language_dict, lang)]:
                             continue
                     if row.judge == "[[TRUE]]":
                         true += 1
