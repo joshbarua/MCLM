@@ -68,7 +68,7 @@ def main(datasets, languages, output_dir="score_result", log_dir="score_logs"):
                     print(f"{model} - {lang} Scoring...")
                     score, outputs = get_score(os.path.join(root_path, dataset, model, lang))
                     res[lang.replace(".jsonl", "")].append(score)
-                    outputs.to_csv(os.path.join(log_dir, data, model, f"{lang}.csv"), index=False)
+                    outputs.to_csv(os.path.join(log_dir, data, model, f"{lang.replace('.jsonl', '')}.csv"), index=False)
                 else:
                     res[lang.replace(".jsonl", "")].append(None)
             res["model"].append(model)
