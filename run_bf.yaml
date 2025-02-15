@@ -1,13 +1,13 @@
 # Datasets to evaluate on.datasets:
 datasets:
   # - OLAIR/mt-math-500
-  # - OLAIR/mt-math-extended
+  - OLAIR/mt-math-extended
   - OLAIR/mt-aime-extended
-  # - OLAIR/M-IMO-extended
-  # - OLAIR/MMO
+  - OLAIR/M-IMO-extended
+  - OLAIR/MMO
 
 # Language type can be specified as a key from your language dictionaries.
-language_type: ['English'] # e.g., 55 or "en" (fill in appropriate value)
+language_type: #14 # e.g., 55 or "en" (fill in appropriate value)
 
 # Whether to sample a subset of the data for evaluation.
 samples: false
@@ -20,24 +20,19 @@ openai_token: sk-proj-DiV7IA4jphKnHfKc1qDpNDb6dmLvBe5r3ZHRB1cW4oA1UAojSumyP7gqGp
 
 # Models for generation (list your candidate generation models).
 models:
-  - text-completion-openai/Qwen/Qwen2.5-Math-7B-Instruct
-tokenizer: Qwen/Qwen2.5-Math-7B-Instruct
+  - text-completion-openai/OLAIR/open-r1-sft-1.5B
+tokenizer: OLAIR/open-r1-sft-1.5B
 # Output directory (can be a list if multiple output paths are desired).
 output_path:
-  - prm_7_4  # Directory to save results
+  - bf_r1_2048  # Directory to save results
 
-# Iterative PRM parameters
-S: 7        # Number of iterative steps
-C: 4        # Number of candidates to generate per step
+max_budget: 2048
 num_workers: 16  # Number of processes for parallel evaluation
 
 # Generation API settings
-gen_model: text-completion-openai/Qwen/Qwen2.5-Math-7B-Instruct  # Generation model identifier
+gen_model: text-completion-openai/OLAIR/open-r1-sft-1.5B
 gen_api_key: token-abc123  # Your API key for the generation service (replace as needed)
-gen_api_base: http://80.188.223.202:15588/v1  # Base URL for generation API
+gen_api_base:  http://0.0.0.0:1210/v1  # Base URL for generation API
 
-# Reward (pooling) API settings
-reward_model: Qwen/Qwen2.5-Math-PRM-72B  # Reward model identifier (for scoring)
-  
 # Additional options
 verbose: false  # Set to true to enable detailed logging

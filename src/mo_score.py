@@ -17,6 +17,11 @@ def contains_any(string, imo_ignore):
 def get_keys_by_value(d, target_value):
     return [key for key, value in d.items() if value == target_value][0]
 
+def parse_bf_mr1(text):
+    if "the original prompt is written in" in text:
+        text = text.split('the original prompt is written in')[0]
+    return text
+
 def data_collect(models, data_path, root_path, judge="gpt-4o-mini"):
     data = []
     for mod in models:

@@ -15,7 +15,8 @@ import numpy as np
 import concurrent.futures
 import time
 import random
-from prm import multiprocess_prompts  # process_prompt is used inside multiprocess_prompts
+from prm import format_prompt
+from bf import multiprocess_prompts  # multiprocess_prompts now uses budget forcing
 from transformers import AutoTokenizer
 
 def get_keys_by_value(d, target_value):
@@ -43,12 +44,12 @@ def dataset_language_detect(dataset, lang_type):
         return lang_dict[lang_type]
 
 # ---------------------------------------------------------------------------
-# Evaluate model for language using iterative PRM over each question
+# Evaluate model for language using budget forcing over each question
 # ---------------------------------------------------------------------------
 def evaluate_model_for_language(df, language, model_path, tokenizer, output_path, dataset,
-                                S=1, C=4, num_workers=4,
+                                max_budget, num_workers=4,
                                 gen_model=None, gen_api_key=None, gen_api_base=None,
-                                reward_model=None, verbose=False):
+                                verbose=False):
     col_name = lang_detect(language) if "MMO" not in dataset else "question"
     if col_name not in df.columns:
         print(f"Error: Language column '{col_name}' not found in dataset for language '{language}'. Skipping...")
@@ -56,20 +57,20 @@ def evaluate_model_for_language(df, language, model_path, tokenizer, output_path
 
     # Create a list of prompts from the dataframe.
     prompts = list(df[col_name].values)
-    print(f"Running iterative PRM for {len(prompts)} prompts (S={S}, C={C}) on language: {language}")
+    print(f"Running budget forcing for {len(prompts)} prompts on language: {language}")
 
-    # Process prompts in parallel using our multiprocess_prompts wrapper.
-    iterative_results = multiprocess_prompts(
-        prompts, S, C,
+    # Process prompts in parallel using our multiprocess_prompts wrapper for budget forcing.
+    bf_results = multiprocess_prompts(
+        prompts, max_budget,
         gen_model=gen_model,
         tokenizer=tokenizer,
         gen_api_key=gen_api_key,
         gen_api_base=gen_api_base,
-        reward_model=reward_model,
         verbose=verbose,
         num_workers=num_workers
     )
-    responses = [' '.join(res.get("steps", [])) if res.get("steps") else "" for res in iterative_results]
+    # Assume each result is a list of generated steps; join them into one response string.
+    responses = [ ' '.join(res) if isinstance(res, list) else str(res) for res in bf_results ]
 
     # Prepare output directory and filename.
     model_name = model_path.replace('/', '_')
@@ -83,24 +84,25 @@ def evaluate_model_for_language(df, language, model_path, tokenizer, output_path
             record = {
                 "original_question": df[col_name].iloc[i],
                 "question": df[col_name].iloc[i],
-                "response": str(responses[i]),
+                "response": responses[i],
                 "answer": str(df["answer"].iloc[i]) if "answer" in df.columns else ""
             }
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     print(f"Results for language '{language}' saved to {output_file}")
 
-def main(models, datasets, tokenizer, lang_type, sample, output_dir, S=1, C=4, num_workers=4, max_model_len=4096,
-         gen_model=None, gen_api_key=None, gen_api_base=None, reward_model=None, verbose=False):
+def main(models, datasets, tokenizer_name, lang_type, sample, output_dir,
+         max_budget, num_workers=4, max_model_len=4096,
+         gen_model=None, gen_api_key=None, gen_api_base=None, verbose=False):
     client = OpenAI()
     openai_models = [m.id for m in client.models.list().data]
-    tokenizer= AutoTokenizer.from_pretrained(tokenizer)
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
     print(f"Loading model: {models[0]}")
     
     for output_path in output_dir:
         for data in datasets:
             if "MMO" in data:
                 ds = load_dataset(data)
-                df = ds['train'].to_pandas()  # assuming language splits exist inside 'train'
+                df = ds.to_pandas()  # assuming language splits exist inside 'train'
             else:
                 df = load_dataset(data, split="train").to_pandas()
             if sample:
@@ -114,11 +116,11 @@ def main(models, datasets, tokenizer, lang_type, sample, output_dir, S=1, C=4, n
                 print(f"Running model: {models[0]} for language: {language}")
                 evaluate_model_for_language(
                     df, language, models[0], tokenizer, output_path, data,
-                    S=S, C=C, num_workers=num_workers,
+                    max_budget,
+                    num_workers=num_workers,
                     gen_model=gen_model,
                     gen_api_key=gen_api_key,
                     gen_api_base=gen_api_base,
-                    reward_model=reward_model,
                     verbose=verbose
                 )
 
@@ -136,16 +138,14 @@ if __name__ == "__main__":
     main(
         models=config["models"],
         datasets=config["datasets"],
-        tokenizer=config["tokenizer"],
+        tokenizer_name=config["tokenizer"],
         lang_type=config["language_type"],
         sample=config["samples"],
         output_dir=config["output_path"],
-        S=config.get("S", 1),
-        C=config.get("C", 4),
+        max_budget=config["max_budget"],
         num_workers=config.get("num_workers", 4),
         gen_model=config["gen_model"],
         gen_api_key=config["gen_api_key"],
         gen_api_base=config["gen_api_base"],
-        reward_model=config["reward_model"],
         verbose=config.get("verbose", False)
     )
