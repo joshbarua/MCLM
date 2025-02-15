@@ -16,7 +16,7 @@ def get_keys_by_value(d, target_value):
     return [key for key, value in d.items() if value == target_value][0]
 
 def lang_detect(l):
-    if len(l) in language_dict.keys():
+    if l in language_dict.keys():
         return l
     else:
         return get_keys_by_value(language_dict, l)
@@ -146,6 +146,8 @@ def main(models, datasets, lang_type, sample, output_path, max_model_len=4096):
                     continue
                 print(f"Running model: {model_name} - {revision} for language: {language}")
                 evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model.split("***")[0], output_path, data)
+        del llm
+        torch.cuda.empty_cache()
 
 if __name__ == "__main__":
     with open("eval.yaml", "r", encoding="utf-8") as file:

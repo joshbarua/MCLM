@@ -15,7 +15,8 @@ import numpy as np
 import concurrent.futures
 import time
 import random
-from prm import multiprocess_prompts
+from prm import multiprocess_prompts  # process_prompt is used inside multiprocess_prompts
+from transformers import AutoTokenizer
 
 def get_keys_by_value(d, target_value):
     return [key for key, value in d.items() if value == target_value][0]
@@ -35,7 +36,7 @@ def dataset_language_detect(dataset, lang_type):
         elif dataset in ["OLAIR/MMO"]:
             return lang_dict["MMO"]
         else:
-            raise TypeError(f"Sorry! {dataset} does not suppoorted yet.")
+            raise TypeError(f"Sorry! {dataset} is not supported yet.")
     elif type(lang_type) == list:
         return lang_type
     else:
@@ -44,7 +45,10 @@ def dataset_language_detect(dataset, lang_type):
 # ---------------------------------------------------------------------------
 # Evaluate model for language using iterative PRM over each question
 # ---------------------------------------------------------------------------
-def evaluate_model_for_language( df, language, model_path, output_path, dataset, S=1, C=4, num_workers=4):
+def evaluate_model_for_language(df, language, model_path, tokenizer, output_path, dataset,
+                                S=1, C=4, num_workers=4,
+                                gen_model=None, gen_api_key=None, gen_api_base=None,
+                                reward_model=None, verbose=False):
     col_name = lang_detect(language) if "MMO" not in dataset else "question"
     if col_name not in df.columns:
         print(f"Error: Language column '{col_name}' not found in dataset for language '{language}'. Skipping...")
@@ -54,9 +58,18 @@ def evaluate_model_for_language( df, language, model_path, output_path, dataset,
     prompts = list(df[col_name].values)
     print(f"Running iterative PRM for {len(prompts)} prompts (S={S}, C={C}) on language: {language}")
 
-    # Process prompts in parallel.
-    iterative_results = multiprocess_prompts(prompts, S, C, num_workers=num_workers)
-    responses = [' '.join(res.get("steps", [])) if "steps" in res and res.get("steps") else "" for res in iterative_results]
+    # Process prompts in parallel using our multiprocess_prompts wrapper.
+    iterative_results = multiprocess_prompts(
+        prompts, S, C,
+        gen_model=gen_model,
+        tokenizer=tokenizer,
+        gen_api_key=gen_api_key,
+        gen_api_base=gen_api_base,
+        reward_model=reward_model,
+        verbose=verbose,
+        num_workers=num_workers
+    )
+    responses = [' '.join(res.get("steps", [])) if res.get("steps") else "" for res in iterative_results]
 
     # Prepare output directory and filename.
     model_name = model_path.replace('/', '_')
@@ -76,17 +89,17 @@ def evaluate_model_for_language( df, language, model_path, output_path, dataset,
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     print(f"Results for language '{language}' saved to {output_file}")
 
-def main(models, datasets, lang_type, sample, output_dir, S=1, C=4, num_workers=4, max_model_len=4096):
+def main(models, datasets, tokenizer, lang_type, sample, output_dir, S=1, C=4, num_workers=4, max_model_len=4096,
+         gen_model=None, gen_api_key=None, gen_api_base=None, reward_model=None, verbose=False):
     client = OpenAI()
     openai_models = [m.id for m in client.models.list().data]
+    tokenizer= AutoTokenizer.from_pretrained(tokenizer)
     print(f"Loading model: {models[0]}")
     
-
     for output_path in output_dir:
         for data in datasets:
             if "MMO" in data:
                 ds = load_dataset(data)
-                df = ds['train'].to_pandas()  # assuming language splits exist inside 'train'
             else:
                 df = load_dataset(data, split="train").to_pandas()
             if sample:
@@ -98,18 +111,40 @@ def main(models, datasets, lang_type, sample, output_dir, S=1, C=4, num_workers=
                 if os.path.exists(out_file):
                     continue
                 print(f"Running model: {models[0]} for language: {language}")
-                evaluate_model_for_language(df, language,  models[0], output_path, data, S=S, C=C, num_workers=num_workers)
+                evaluate_model_for_language(
+                    df, language, models[0], tokenizer, output_path, data,
+                    S=S, C=C, num_workers=num_workers,
+                    gen_model=gen_model,
+                    gen_api_key=gen_api_key,
+                    gen_api_base=gen_api_base,
+                    reward_model=reward_model,
+                    verbose=verbose
+                )
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str, default="eval.yaml")
     args = parser.parse_args()
     with open(args.config, "r", encoding="utf-8") as file:
-        args = yaml.safe_load(file)
+        config = yaml.safe_load(file)
 
-    huggingface_hub.login(args["hf_token"])
-    os.environ["OPENAI_API_KEY"] = args["openai_token"]
-    
-    # You can add S and C to your YAML config as needed.
-    main(args["models"], args["datasets"], args["language_type"], args["samples"], args["output_path"],
-         S=args.get("S", 1), C=args.get("C", 4), num_workers=args.get("num_workers", 4))
+    huggingface_hub.login(config["hf_token"])
+    os.environ["OPENAI_API_KEY"] = config["openai_token"]
+
+    # Call main() with parameters loaded from the YAML config.
+    main(
+        models=config["models"],
+        datasets=config["datasets"],
+        tokenizer=config["tokenizer"],
+        lang_type=config["language_type"],
+        sample=config["samples"],
+        output_dir=config["output_path"],
+        S=config.get("S", 1),
+        C=config.get("C", 4),
+        num_workers=config.get("num_workers", 4),
+        gen_model=config["gen_model"],
+        gen_api_key=config["gen_api_key"],
+        gen_api_base=config["gen_api_base"],
+        reward_model=config["reward_model"],
+        verbose=config.get("verbose", False)
+    )
