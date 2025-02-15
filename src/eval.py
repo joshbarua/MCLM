@@ -79,7 +79,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
         outputs = batch_completion(
             model=llm,
             messages=qrys,
-            temperature=1,
+            temperature=0,
             max_tokens=int(4096*0.8)
         )
         responses = [output.choices[0].message.content for output in outputs]
