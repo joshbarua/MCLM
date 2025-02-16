@@ -56,9 +56,18 @@ def budget_forcing(prompt, max_budget, gen_model, tokenizer,gen_api_key, gen_api
         response = response.choices[0].text
         steps_history.append(response)
         token_count+=len(tokenizer(response)['input_ids'])
-        steps_history.append("Wait..")
+        steps_history.append("Wait..let me try reconfirming")
         step+=1
         log_info(f"\nGenerated Response: {response}", verbose)
+
+        if " ".join(steps_history).count("the original prompt is written in")>2:
+            break
+        if " ".join(steps_history).count("boxed")>3:
+            break
+        if " ".join(steps_history).count("Afrikaans")>3:
+            break
+        if " ".join(steps_history).lower().count("wait")>10:
+            break
     steps_history.append("</think>\nTo summarize the final answer is")    
     response = single_completion(
             message=gen_message,  # generate C copies of the prompt
