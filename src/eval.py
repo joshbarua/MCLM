@@ -6,7 +6,6 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
-import huggingface_hub
 from litellm import batch_completion
 from prompts import lang_dict, language_dict, dataset_name_dict, system_prompt_dict
 from openai import OpenAI
@@ -153,7 +152,7 @@ if __name__ == "__main__":
     with open("eval.yaml", "r", encoding="utf-8") as file:
         args = yaml.safe_load(file)
 
-    huggingface_hub.login(args["hf_token"])
+    os.environ["HF_TOKEN"] = args["hf_token"]
     os.environ["OPENAI_API_KEY"] = args["openai_token"]
     
     main(args["models"], args["datasets"], args["language_type"], args["samples"], args["output_path"])

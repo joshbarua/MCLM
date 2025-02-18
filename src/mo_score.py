@@ -127,8 +127,7 @@ def mo_get_score(root_path, save_path="score_result"):
         pd.DataFrame(result_dict).to_csv(os.path.join(save_path, f"{file.split('_')[0]}.csv"), index=False)
         print(f"The score file for {file.split('_')[0]} was saved.")
 
-def main(models, datasets, score_type):
-    root_path = "results"
+def main(root_path, models, datasets, languages, judge, score_type):
     if score_type == "data_collect":
         data_list = datasets if datasets else ["IMO", "MMO"]
         for data in data_list:
@@ -147,9 +146,12 @@ def main(models, datasets, score_type):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--models", nargs="*", default=None)
-    parser.add_argument("--datasets", nargs="*", default=["IMO", "MMO"])
+    parser.add_argument("--root_path", type=str, default="results", help="Root path the model response results are saved.")
+    parser.add_argument("--models", nargs="*", default=None, help="Model list to evaluate.")
+    parser.add_argument("--datasets", nargs="*", default=["IMO", "MMO"], help="Dataset list to evaluate.")
+    parser.add_argument("--languages", nargs="*", help="Language list to evaluate.")
+    parser.add_argument("--judge", type=str, default="gpt-4o-mini", help="Model list to evaluate.")
     parser.add_argument("--score_type", type=str, required=True, help="""["data_collect", "send_batch", "receive_batch", "score"]""")
     args = parser.parse_args()
 
-    main(args.models, args.datasets, args.score_type)
+    main(args.models, args.datasets, args.languages, args.judge, args.score_type)

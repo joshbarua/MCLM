@@ -42,23 +42,22 @@ def get_score(input_path):
             
     return correct / len(df) * 100, pd.DataFrame(output)
 
-def main(datasets, languages, output_dir="score_result", log_dir="score_logs"):
-    root_path = "results"
-    if not datasets:
-        datasets = [d for d in os.listdir(root_path) if (".DS" not in d) and ("ipynb" not in d)]
+def main(root_path, models, datasets, languages, output_dir="score_result", log_dir="score_logs"):
+    datasets = datasets if datasets else [d for d in os.listdir(root_path) if (".DS" not in d) and ("ipynb" not in d)]
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(log_dir, exist_ok=True)
     for data in datasets:
+        models = models if models else [m for m in os.listdir(root_path, data) if (".DS" not in m) and ("ipynb" not in m)]
         os.makedirs(os.path.join(log_dir, data), exist_ok=True)
         dataset = dataset_name_dict[data] if data in dataset_name_dict.keys() else data
         if ("IMO" in dataset) or ("MMO" in dataset):
-            print(f"{dataset} scoring does not supported. Please use mo_score.py!")
+            print(f"{dataset} scoring does not supported. Please use mo_score.py or mo_score_lite_llm.py!")
             continue
         else:
             print(f"{dataset} scoring is started.")
-        model_list = [m for m in os.listdir(os.path.join(root_path, dataset)) if (".DS" not in m) and ("ipynb" not in m)]
+            
         res = {"model": []}
-        for model in model_list:
+        for model in models:
             os.makedirs(os.path.join(log_dir, data, model), exist_ok=True)
             lang_list = [f"{la}.jsonl" if la not in language_dict.keys() else f"{language_dict[la]}.jsonl" for la in languages] if languages else [l for l in os.listdir(os.path.join(root_path, dataset, model)) if (".DS" not in l) and ("ipynb" not in l)]
             if not is_sublist([la.replace(".jsonl", "") for la in lang_list], list(res.keys())):
@@ -78,7 +77,9 @@ def main(datasets, languages, output_dir="score_result", log_dir="score_logs"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--datasets", nargs="*", default=None, help="Dataset list to evaluate.")
+    parser.add_argument("--root_path", type=str, default="results", help="Root path the model responses results are saved.")
+    parser.add_argument("--models", nargs="*", default=None, help="Model list to evlauate.")
+    parser.add_argument("--datasets", nargs="*", default=["math100", "aime2024"], help="Dataset list to evaluate.")
     parser.add_argument("--languages", nargs="*", default=None, help="Language list to evaluate.")
     args = parser.parse_args()
-    main(args.datasets, args.languages)
+    main(args.root_path, args.models, args.datasets, args.languages)
