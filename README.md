@@ -1,4 +1,4 @@
-# euler-math
+# MCLM
 
 This repository is the official implementation of "Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning".
 - 📝 Paper: *Coming Soon*
