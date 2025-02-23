@@ -1,13 +1,18 @@
-# MCLM
+# MCLM: Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning
+
+<div align="center">
+  <img src="assets/main_result.png" alt="로고" width="900" height="300">
+</div>
 
 This repository is the official implementation of "Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning".
 - 📝 Paper: *Coming Soon*
-- 🖥️ Dataset: https://huggingface.co/datasets/amphora/MCLM
+- 🖥️ MCLM: https://huggingface.co/datasets/amphora/MCLM
+- 🖥️ MR-1 SFT Dataset: https://huggingface.co/datasets/amphora/Open-R1-Mulitlingual-SFT
 
 ## 1. Evaluation
 You can customize own evaluation configuration on `eval.yaml`.
 - `models(list)`: Model list to evaluate.
-- `datasets(list)`: Dataset list to evaluate. Default value is `["OLAIR/mt-math-500", "OLAIR/mt-math-extended", "OLAIR/mt-aime-extended", "OLAIR/M-IMO-extended", "OLAIR/MMO"]`.
+- `datasets(list)`: Dataset list to evaluate. Default value is `["math100", "aime2024", "IMO", "MMO"]`.
 - `language_type(str, int, or list)`: Language type to evaluate. Entire languaes will be wevaluated if `None` was given.
 - `output_path(str)`: Output directory path to save the results.
 ※ You need to provide `OPENAI_API_KEY` and `HF_TOKEN` in `eval.yaml`.

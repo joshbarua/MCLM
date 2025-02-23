@@ -96,7 +96,7 @@ def receive_batch(file_ids, save_path="batch_result"):
 def mo_get_score(root_path, save_path="score_result"):
     for file in [f for f in os.listdir(root_path) if ".jsonl" in f]:
         if "IMO" in file:
-            dataset = load_dataset("OLAIR/M-IMO-extended", split="train").to_pandas()
+            dataset = load_dataset("amphora/MCLM", "MT-IMO", split="train").to_pandas()
         df = pd.read_json(os.path.join(root_path, file), lines=True)
         df["judge"] = [df.loc[i, "response"]["body"]["choices"][0]["message"]["content"] for i in range(len(df))]
         df["model"] = ["-".join(row.custom_id.split("-")[1:-2]) for _,row in df.iterrows()]

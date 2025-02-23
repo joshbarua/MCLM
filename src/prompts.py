@@ -169,11 +169,9 @@ language_dict = {
 }
 
 dataset_name_dict = {
-   "OLAIR/mt-math-500": "math500",
-   "OLAIR/mt-math-extended": "math100",
-   "OLAIR/mt-aime-extended": "aime2024",
-   "OLAIR/M-IMO-extended": "IMO",
-   "OLAIR/MMO": "MMO"
+   "math100": "MT-MATH100",
+   "aime2024": "MT-AIME2024",
+   "IMO": "M-IMO"
 }
 
 lang_dict = {

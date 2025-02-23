@@ -22,11 +22,9 @@ def lang_detect(l):
 
 def dataset_language_detect(dataset, lang_type):
     if not lang_type:
-        if dataset in ["OLAIR/mt-math-extended", "OLAIR/mt-aime-extended", "OLAIR/M-IMO-extended"]:
+        if dataset in ["math100", "aime2024", "IMO"]:
             return lang_dict[55]
-        elif dataset in ["OLAIR/mt-math-500"]:
-            return lang_dict[14]
-        elif dataset in ["OLAIR/MMO"]:
+        elif dataset in ["MMO"]:
             return lang_dict["MMO"]
         else:
             raise TypeError(f"Sorry! {dataset} does not suppoorted yet.")
@@ -96,7 +94,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, m
     model_name = model_path.replace('/', '_')
     # Replace spaces in language with underscores for the filename.
     lang_clean = language.replace(" ", "_")
-    out_dir = os.path.join(output_path, dataset_name_dict[dataset], model_name)
+    out_dir = os.path.join(output_path, dataset, model_name)
     os.makedirs(out_dir, exist_ok=True)
     output_file = os.path.join(out_dir, f"{lang_clean}.jsonl")
 
@@ -131,9 +129,9 @@ def main(models, datasets, lang_type, sample, output_path, max_model_len=4096):
         for data in datasets:
             # Load dataset (assuming the split "train" exists)
             if "MMO" in data:
-                ds = load_dataset(data)
+                ds = load_dataset("OLAIR/MMO")
             else:
-                df = load_dataset(data, split="train").to_pandas()
+                df = load_dataset("amphora/MCLM", dataset_name_dict[data], split="train").to_pandas()
             if sample:
                 df = df.sample(100,random_state=1210)  # Sample 100 example if dataset is large
 
@@ -141,7 +139,7 @@ def main(models, datasets, lang_type, sample, output_path, max_model_len=4096):
             for language in dataset_language_detect(data, lang_type):
                 if "MMO" in data:
                     df = ds[language].to_pandas()
-                if os.path.exists(os.path.join(output_path, dataset_name_dict[data], model.replace("/", "_"), f"{language}.jsonl")):
+                if os.path.exists(os.path.join(output_path, data, model.replace("/", "_"), f"{language}.jsonl")):
                     continue
                 print(f"Running model: {model_name} - {revision} for language: {language}")
                 evaluate_model_for_language(llm, tokenizer, df, language, sampling_params, model.split("***")[0], output_path, data)
