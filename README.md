@@ -1,7 +1,7 @@
 # MCLM: Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning
 
 <div align="center">
-  <img src="assets/main_result.png" alt="로고" width="900" height="300">
+  <img src="assets/main_result.png" alt="로고" width="900" height="250">
 </div>
 
 This repository is the official implementation of "Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning".
