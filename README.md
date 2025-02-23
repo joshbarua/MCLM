@@ -1,5 +1,9 @@
 # euler-math
 
+This repository is the official implementation of "Linguistic Generalizability of Test-Time Scaling in Mathematical Reasoning".
+- 📝 Paper: *Coming Soon*
+- 🖥️ Dataset: https://huggingface.co/datasets/amphora/MCLM
+
 ## 1. Evaluation
 You can customize own evaluation configuration on `eval.yaml`.
 - `models(list)`: Model list to evaluate.
