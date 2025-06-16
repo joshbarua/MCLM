@@ -15,6 +15,9 @@ from dotenv import load_dotenv
 from prompt import *
 from tqdm import tqdm
 
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API_KEY')
+hf_token = os.getenv('HF_TOKEN')
 
 sft_dict = {"English": "english", "Chinese_(Simplified)": "chinese", "Bulgarian": "bulgarian", "Swahili": "swahili", "Somali": "somali", "Japanese": "japanese", "French": "french", "Latvian": "latvian"}
 boxed_dict = {"English": "Return your final response within \\boxed{{}}.", "Chinese_(Simplified)": "请在\\boxed{{}}内返回你的最终回答。"}
@@ -216,8 +219,8 @@ if __name__ == "__main__":
     with open("eval.yaml", "r", encoding="utf-8") as file:
         args = yaml.safe_load(file)
 
-    os.environ["HF_TOKEN"] = args["hf_token"]
-    os.environ["OPENAI_API_KEY"] = args["openai_token"]
+    os.environ["HF_TOKEN"] = hf_token
+    os.environ["OPENAI_API_KEY"] = openai_api_key
 
     if not args["system_language"]:
         args["system_language"] = args["language_type"]
