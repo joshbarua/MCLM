@@ -47,14 +47,20 @@ def dataset_language_detect(dataset, lang_type):
 def system_prompt_select(model, system_prompt_dict=system_prompt_dict):
     return system_prompt_dict[model] if model in list(system_prompt_dict.keys()) else 'Return your response in \\boxed{} format.'
 
-def message_generate(model, query, tokenizer, system_lang):
-    message = [
-        {'role': 'system', 'content': system_prompt_select(sft_dict[system_lang])},
-        {'role': 'user', 'content': query if query else ""},
-    ]
+def message_generate(model, query, tokenizer, system_lang, prefix=None):
+    if prefix:
+        message = [
+            {'role': 'system', 'content': prefix},
+            {'role': 'user', 'content': query if query else ""},
+        ]
+    else:
+        message = [
+            {'role': 'system', 'content': system_prompt_select(sft_dict[system_lang])},
+            {'role': 'user', 'content': query if query else ""},
+        ]
     return tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
 
-def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampling_params, model_path, output_path, dataset):
+def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampling_params, model_path, output_path, dataset, language_forcing):
     # Determine the column name for the current language.
     # For English, assume the original column "problem" is used.
     col_name = lang_detect(language) if "MMO" not in dataset else "question"
@@ -82,7 +88,13 @@ def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampl
     else:
         # Prepare prompts for each question
         questions = df[col_name].values
-        qrys = [message_generate(model_path, p, tokenizer, system_lang) for p in df[col_name].values]
+        if language_forcing:
+            force_prefix = distill_prefix_template.format(language=system_lang)
+            prompt = translate_template.format(source_text=force_prefix, language=system_lang)
+            translated_prefix = generate_response_with_retries([prompt], "gemini-2.5-flash-preview-05-20", "<translation>", "</translation>")[0]
+            qrys = [message_generate(model_path, p, tokenizer, system_lang, translated_prefix) for p in df[col_name].values]
+        else:
+            qrys = [message_generate(model_path, p, tokenizer, system_lang) for p in df[col_name].values]
         print(qrys[0])
         # Generate responses for all questions
         outputs = llm.generate(qrys, sampling_params)
@@ -170,7 +182,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampl
                     f.write(json.dumps(record, ensure_ascii=False) + "\n")
     print(f"Results for language '{language}' saved to {output_file}")
 
-def main(models, datasets, lang_type, system_lang, sample, output_path, max_model_len=16384, n_samples=1):
+def main(models, datasets, lang_type, system_lang, sample, output_path, max_model_len=16384, n_samples=1, language_forcing=False):
 
     # Set sampling parameters (note: ensure max_tokens is an integer)
     client = OpenAI()
@@ -211,7 +223,7 @@ def main(models, datasets, lang_type, system_lang, sample, output_path, max_mode
                 if os.path.exists(os.path.join(output_path, data, model.replace("/", "_"), f"{language}.jsonl")):
                     continue
                 print(f"Running model: {model_name} - {revision} for language: {language}")
-                evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampling_params, model.split("***")[0], output_path, data)
+                evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampling_params, model.split("***")[0], output_path, data, language_forcing)
         del llm
         torch.cuda.empty_cache()
 
@@ -224,5 +236,8 @@ if __name__ == "__main__":
 
     if not args["system_language"]:
         args["system_language"] = args["language_type"]
+
+    if not args["language_forcing"]:
+        args["language_forcing"] = False
     
-    main(args["models"], args["datasets"], args["language_type"], args["system_language"], args["samples"], args["output_path"], args["max_model_len"], args["n_samples"])
+    main(args["models"], args["datasets"], args["language_type"], args["system_language"], args["samples"], args["output_path"], args["max_model_len"], args["n_samples"], args["language_forcing"])
