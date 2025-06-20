@@ -87,9 +87,10 @@ def generate_response(prompts, model, max_completion_tokens=4096, temperature=0.
         else:
             raise ValueError(f"Invalid model: {model}")
         if reasoning_model:
-            reasoning_content = [out["choices"][i]["message"]["reasoning_content"] for i in range(len(prompts))]
-            content = [out["choices"][i]["message"]["content"] for i in range(len(prompts))]
-            return reasoning_content, content
+            reasoning_content = [out[i]["choices"][0]["message"]["reasoning_content"] for i in range(len(prompts))]
+            content = [out[i]["choices"][0]["message"]["content"] for i in range(len(prompts))]
+            total_tokens = [out[i]["total_tokens"] for i in range(len(prompts))]
+            return reasoning_content, content, total_tokens
         return outputs
     except Exception as e:
         print(f"Error: {e}")
@@ -147,9 +148,10 @@ def generate_response_with_retries(prompts, model, start_tag=None, end_tag=None,
             if start_tag and end_tag and not reasoning_model:
                 outputs = [output.split(start_tag)[1].split(end_tag)[0].strip() for output in outputs]
             if reasoning_model:
-                reasoning_content = [out["choices"][i]["message"]["reasoning_content"] for i in range(len(prompts))]
-                content = [out["choices"][i]["message"]["content"] for i in range(len(prompts))]
-                return reasoning_content, content
+                reasoning_content = [out[i]["choices"][0]["message"]["reasoning_content"] for i in range(len(prompts))]
+                content = [out[i]["choices"][0]["message"]["content"] for i in range(len(prompts))]
+                total_tokens = [out[i]["total_tokens"] for i in range(len(prompts))]
+                return reasoning_content, content, total_tokens
             return outputs
         except Exception as e:
             print(f"Error on attempt {attempt+1}: {e}")
