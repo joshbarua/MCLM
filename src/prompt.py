@@ -6,6 +6,7 @@ from google.genai.types import HttpOptions
 from google.genai import types
 import litellm
 from litellm import batch_completion
+from together import Together
 _VLLM_ENGINES: dict[str, "LLM"] = {} # global engine cache
 
 load_dotenv()
@@ -15,9 +16,11 @@ gemini_api_key = os.getenv('GEMINI_API_KEY')
 
 # Set OpenAI API key
 openai_client = OpenAI(api_key=openai_api_key)
+client = Together()
 
 openai_models = {"gpt-4o-mini", "gpt-4o", "o1", "o3", "o3-mini", "o4", "o4-mini", "gpt-4.1", "gpt-4.1-mini", "gpt-4.1.nano"}
 gemini_models = {"gemini-1.5-flash", "gemini-1.5-pro", "gemini-2.0-flash", "gemini-2.0-pro", "gemini-2.5-pro-preview-06-05", "gemini-2.5-flash-preview-05-20"}
+together_models = {"deepseek-ai/DeepSeek-R1", "deepseek-ai/DeepSeek-R1-0528-tput"}
 
 def _get_vllm_engine(model: str, tp: int | None = None, max_ctx: int = 16384) -> "LLM":
     """
@@ -89,7 +92,7 @@ def generate_response(prompts, model, max_completion_tokens=4096, temperature=0.
         if reasoning_model:
             reasoning_content = [out[i]["choices"][0]["message"]["reasoning_content"] for i in range(len(prompts))]
             content = [out[i]["choices"][0]["message"]["content"] for i in range(len(prompts))]
-            total_tokens = [out[i]["total_tokens"] for i in range(len(prompts))]
+            total_tokens = [out[i]["usage"]["total_tokens"] for i in range(len(prompts))]
             return reasoning_content, content, total_tokens
         return outputs
     except Exception as e:
@@ -143,15 +146,43 @@ def generate_response_with_retries(prompts, model, start_tag=None, end_tag=None,
                     max_completion_tokens=max_completion_tokens,
                     temperature=temperature)
                 outputs = [out[i]["choices"][0]["message"]["content"] for i in range(len(prompts))]
+            elif model in together_models:
+                out = []
+                for prompt in prompts:
+                    messages = [{"role": "system", "content": "Start your response with a <think> tag."}, {"role": "user", "content": prompt}]
+                    response = client.chat.completions.create(
+                        model=model,
+                        messages=messages,
+                        max_tokens=max_completion_tokens,
+                        temperature=temperature)
+                    out.append(response)
+                outputs = [out[i].choices[0].message.content for i in range(len(prompts))]
             else:
                 raise ValueError(f"Invalid model: {model}")
             if start_tag and end_tag and not reasoning_model:
                 outputs = [output.split(start_tag)[1].split(end_tag)[0].strip() for output in outputs]
             if reasoning_model:
-                reasoning_content = [out[i]["choices"][0]["message"]["reasoning_content"] for i in range(len(prompts))]
-                content = [out[i]["choices"][0]["message"]["content"] for i in range(len(prompts))]
-                total_tokens = [out[i]["total_tokens"] for i in range(len(prompts))]
-                return reasoning_content, content, total_tokens
+                reasoning_content = []
+                solutions = []
+                total_tokens = []
+                for i in range(len(prompts)):
+                    try:
+                        if "neulab" in model:
+                            reasoning = out[i]["choices"][0]["message"]["reasoning_content"]
+                            content = out[i]["choices"][0]["message"]["content"]
+                            tokens = out[i]["usage"]["total_tokens"]
+                        elif model in together_models:
+                            reasoning = outputs[i].split("<think>")[1].split("</think>")[0].strip()
+                            content = outputs[i].split("</think>")[1].strip()
+                            tokens = out[i].usage.total_tokens
+                        reasoning_content.append(reasoning)
+                        solutions.append(content)
+                        total_tokens.append(tokens)
+                    except Exception as e:
+                        reasoning_content.append(None)
+                        solutions.append(None)
+                        total_tokens.append(0)
+                return reasoning_content, solutions, total_tokens
             return outputs
         except Exception as e:
             print(f"Error on attempt {attempt+1}: {e}")

@@ -14,6 +14,7 @@ import re
 from dotenv import load_dotenv
 from prompt import *
 from tqdm import tqdm
+from langdetect import detect
 
 load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -21,6 +22,17 @@ hf_token = os.getenv('HF_TOKEN')
 
 sft_dict = {"English": "english", "Chinese_(Simplified)": "chinese", "Bulgarian": "bulgarian", "Swahili": "swahili", "Somali": "somali", "Japanese": "japanese", "French": "french", "Latvian": "latvian"}
 boxed_dict = {"English": "Return your final response within \\boxed{{}}.", "Chinese_(Simplified)": "请在\\boxed{{}}内返回你的最终回答。"}
+lang_to_code = {
+    "Chinese": "zh-cn",
+    "Swahili": "sw",
+    "Bulgarian": "bg",
+    "Japanese": "ja",
+    "French": "fr",
+    "Bengali": "bn",
+    "Tamil": "ta",
+    "Telugu": "te",
+    "Latvian": "lv"
+}
 
 def get_keys_by_value(d, target_value):
     return [key for key, value in d.items() if value == target_value][0]
@@ -47,7 +59,7 @@ def dataset_language_detect(dataset, lang_type):
 def system_prompt_select(model, system_prompt_dict=system_prompt_dict):
     return system_prompt_dict[model] if model in list(system_prompt_dict.keys()) else 'Return your response in \\boxed{} format.'
 
-def message_generate(model, query, tokenizer, system_lang, prefix=None):
+def message_generate(model, query, tokenizer, system_lang, prefix=None, suffix=None):
     if prefix:
         message = [
             {'role': 'system', 'content': prefix},
@@ -58,7 +70,15 @@ def message_generate(model, query, tokenizer, system_lang, prefix=None):
             {'role': 'system', 'content': system_prompt_select(sft_dict[system_lang])},
             {'role': 'user', 'content': query if query else ""},
         ]
-    return tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
+    if suffix:
+        prompt = tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
+        if "experiments" in model:
+            prompt = f"{prompt}<|begin_of_thought|>\n\n{suffix}"
+        else:
+            prompt = f"{prompt}\n\n{suffix}"
+        return prompt
+    else:
+        return tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=True)
 
 def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampling_params, model_path, output_path, dataset, language_forcing):
     # Determine the column name for the current language.
@@ -116,7 +136,7 @@ def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampl
 
     else:
         # Prepare prompts for each question
-        qrys = [message_generate(model_path, p, tokenizer, system_lang, translated_prefix) for p in questions]
+        qrys = [message_generate(model_path, p, tokenizer, system_lang, translated_prefix, translated_suffix) for p in questions]
         print(qrys[0])
         # Generate responses for all questions
         outputs = llm.generate(qrys, sampling_params)
@@ -135,14 +155,24 @@ def evaluate_model_for_language(llm, tokenizer, df, language, system_lang, sampl
         for i, question_responses in tqdm(enumerate(responses), total=len(responses)):
             question_correct = []
             for response in question_responses:
-                try:
-                    answer = response.split("<|begin_of_solution|>")[1].strip()
-                except:
-                    question_correct.append(0)
-                    all_responses_processed.append(response)
-                    continue
+                if "experiments" in model_path:
+                    try:
+                        answer = response.split("<|begin_of_solution|>")[1].strip()
+                    except:
+                        question_correct.append(0)
+                        all_responses_processed.append(response)
+                        continue
+                else:
+                    answer = response
                 
                 if answer:
+                    # check if the reasoning language is the same as the target language
+                    reasoning_lang = detect(response)
+                    if reasoning_lang != lang_to_code[system_lang]:
+                        question_correct.append(0)
+                        all_responses_processed.append(response)
+                        continue
+
                     gold = str(df["answer"].iloc[i])
                     prompt = verify_answer_template.format(problem=questions[i], gt_solution=gold, model_solution=answer)
                     matches = generate_response_with_retries([prompt], "gpt-4.1-mini", "```", "```")[0]
@@ -223,11 +253,11 @@ def main(models, datasets, lang_type, system_lang, sample, output_path, max_mode
             if "MMO" in data:
                 ds = load_dataset("OLAIR/MMO")
             elif "math500" in data:
-                df = load_from_disk(f"/data/user_data/jbarua/datasets/mt-math-500").to_pandas()
+                df = load_from_disk(f"/scratch/current/joshbarua/datasets/mt-math-500").to_pandas()
             elif "math7500" in data:
-                df = load_from_disk(f"/data/user_data/jbarua/datasets/mt-math-7500").to_pandas()
+                df = load_from_disk(f"/scratch/current/joshbarua/datasets/mt-math-7500").to_pandas()
             elif "gpqa" in data:
-                df = load_from_disk(f"/data/user_data/jbarua/datasets/benchmax_gpqa").to_pandas()
+                df = load_from_disk(f"/scratch/current/joshbarua/datasets/benchmax_gpqa").to_pandas()
             else:
                 df = load_dataset("amphora/MCLM", dataset_name_dict[data], split="test").to_pandas()
             if sample:
